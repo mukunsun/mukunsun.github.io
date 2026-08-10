@@ -108,13 +108,18 @@ function mountPageMotion() {
     const pending = revealItems.filter((item) => !item.classList.contains('is-visible'));
     if (!pending.length) return;
     revealObserver?.disconnect();
+    // Threshold on element-height ratio deadlocks on tall sections: a
+    // 4692px gallery in a 631px viewport never reaches 14% visible, so the
+    // reveal never fires and the section stays at opacity:0 (black screen).
+    // Shrink the viewport via rootMargin instead: reveal once the element
+    // enters the top 80% of the viewport, which any element can reach.
     revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
         revealObserver?.unobserve(entry.target);
       });
-    }, { threshold: 0.14 });
+    }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
     pending.forEach((item) => revealObserver?.observe(item));
   };
   const syncMotionState = () => {
