@@ -73,6 +73,8 @@ html[data-page="teaching"] .detail-hero h1{font-size:clamp(3rem,5vw,5rem);overfl
 .detail-media{margin:0;min-width:0;}
 .detail-media img{display:block;width:100%;height:auto;}
 .detail-media figcaption{margin-top:var(--space-xs);font-size:var(--text-xs);color:var(--color-muted);}
+/* Tall posters must fit the viewport: cap height, scale width to match, center. */
+#visual-gallery .detail-media img{width:auto;max-width:100%;max-height:calc(100vh - 160px);margin-inline:auto;}
 .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}
 .detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,3vw,40px);align-items:start;}
 .visual-grid .visual-feature{grid-column:1/-1;}
