@@ -1,7 +1,7 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
 export const I18N_CACHE_KEY = '20260806-title-update';
-export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel'];
+export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou'];
 
 const en = {
   title: 'Mukun Sun | Website',
@@ -14,7 +14,11 @@ const en = {
     },
     vertex: {
       title: 'Reddit Community Operations | Mukun Sun',
-      description: "Mukun Sun's Reddit community operations internship at Vertex Marketing, working across content, accounts, and communities.",
+      description: "Mukun Sun's overseas community operations internship at Vertex Marketing: community entry strategy, native English content, and data-driven iteration across 15+ communities for Chinese brands going global.",
+    },
+    xinyuyou: {
+      title: 'Influencer Marketing | Mukun Sun',
+      description: "Mukun Sun's influencer marketing internship at Xinyuyou (Pawreto): sourcing, negotiating, and running creator partnerships across the US and Canada for a pet brand going global.",
     },
     teaching: {
       title: 'Teaching Assistant | Mukun Sun',
@@ -45,13 +49,14 @@ const en = {
       description: 'A concise record of places visited across the United States and China by Mukun Sun.',
     },
   },
-  navLabels: { home: 'Primary navigation', vertex: 'Project navigation', teaching: 'Internship navigation', campus: 'Project navigation', hotel: 'Project navigation', visual: 'Visual work navigation', music: 'Music navigation', photography: 'Photography navigation', travel: 'Travel navigation' },
+  navLabels: { home: 'Primary navigation', vertex: 'Project navigation', teaching: 'Internship navigation', campus: 'Project navigation', hotel: 'Project navigation', visual: 'Visual work navigation', music: 'Music navigation', photography: 'Photography navigation', travel: 'Travel navigation', xinyuyou: 'Internship navigation' },
   attributes: {
     '#nav .lang-switch': { 'aria-label': 'Language' },
     '#nav .compact-nav summary': { 'aria-label': 'Open section navigation' },
     '#nav .compact-links': { 'aria-label': 'Section navigation' },
     '#experience .experience-row--vertex .experience-media img': { alt: 'A bright shared workspace at Vertex Marketing in Shenzhen' },
     '#experience .experience-row--teaching .experience-media img': { alt: 'Mukun Sun speaking to an English writing class in Wuhan' },
+    '#experience .experience-row--xinyuyou .experience-media img': { alt: 'The Xinyuyou team workspace in Shenzhen' },
     '#projects .project-row:nth-child(1) img': { alt: 'A large campus gala audience facing a lit stage' },
     '#projects .project-row:nth-child(2) img': { alt: 'Jazz musicians performing at a hotel beside an upright bass' },
     '#projects .project-row:nth-child(3) img': { alt: 'Winter Jazz Concert key visual poster designed for a hotel jazz event' },
@@ -64,6 +69,9 @@ const en = {
     '#teaching-nav .lang-switch': { 'aria-label': 'Language' },
     '#teaching-nav .compact-nav summary': { 'aria-label': 'Open internship navigation' },
     '#teaching-nav .compact-links': { 'aria-label': 'Internship sections' },
+    '#xinyuyou-nav .lang-switch': { 'aria-label': 'Language' },
+    '#xinyuyou-nav .compact-nav summary': { 'aria-label': 'Open internship navigation' },
+    '#xinyuyou-nav .compact-links': { 'aria-label': 'Internship sections' },
     '#teaching-media .detail-media:nth-child(1) img': { alt: 'An SUU instructor leading an English writing class in Wuhan' },
     '#teaching-media .detail-media:nth-child(2) img': { alt: 'Mukun Sun with the SUU instructor after the teaching period' },
     '#teaching-dialog': { 'aria-label': 'Enlarged classroom image' },
@@ -178,9 +186,9 @@ const en = {
     '#about .about-copy p:nth-child(1)': 'I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work spans social media, community operations, visual communication, and event promotion. I like learning how an audience actually behaves before deciding what to make.',
     '#about .about-copy p:nth-child(2)': 'Outside work, I play upright and electric bass in SUU ensembles. Music has also taken me into concert planning, photography, and the small details that make an event feel memorable.',
     '#vertex-nav .brand': 'Mukun Sun<span class="en">Vertex</span>',
-    '#vertex-nav .links': '<a href="#vertex-scope">What I did</a><a href="#vertex-approach">How</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a>',
+    '#vertex-nav .links': '<a href="#vertex-context">Context</a><a href="#vertex-scope">Work</a><a href="#vertex-approach">How</a><a href="#vertex-data">Data</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a>',
     '#vertex-nav .compact-nav summary': 'Sections',
-    '#vertex-nav .compact-links': '<a href="#vertex-scope">What I did</a><a href="#vertex-approach">How</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a><a href="../index.html#experience">Portfolio index</a>',
+    '#vertex-nav .compact-links': '<a href="#vertex-context">Context</a><a href="#vertex-scope">Work</a><a href="#vertex-approach">How</a><a href="#vertex-data">Data</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a><a href="../index.html#experience">Portfolio index</a>',
     '#vertex-nav .back-link': '← Portfolio index',
     '#campus-nav .brand': 'Mukun Sun · Campus Campaign',
     '#campus-nav .links': '<a href="#campus-context">Context</a><a href="#campus-contribution">Contribution</a><a href="#campus-media">Media</a>',
@@ -333,29 +341,44 @@ const en = {
     '#experience .stitle': 'Internship',
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit Community Operations Intern',
-    '#experience .experience-row--vertex .experience-dates': '2026 · Current · Shenzhen, China',
-    '#experience .experience-row--vertex .experience-responsibility': 'I participate in Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.',
+    '#experience .experience-row--vertex .experience-dates': 'Jun–Aug 2026 · Shenzhen, China',
+    '#experience .experience-row--vertex .experience-responsibility': 'I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.',
     '#experience .experience-row--teaching .experience-company': 'Southern Utah University',
     '#experience .experience-row--teaching .experience-role': 'English Writing Teaching Assistant',
     '#experience .experience-row--teaching .experience-dates': 'May 2026 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': 'Supported an SUU instructor in English writing courses serving 200+ students in Wuhan. Provided bilingual classroom support, managed attendance and assignment grading, delivered written feedback, and organized final-grade data and course completion reporting in Excel.',
-    '#experience .experience-proofline': '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share',
+    '#experience .experience-row--xinyuyou .experience-company': 'Xinyuyou',
+    '#experience .experience-row--xinyuyou .experience-role': 'Influencer Marketing Intern',
+    '#experience .experience-row--xinyuyou .experience-dates': 'Jun–Aug 2025 · Shenzhen, China',
+    '#experience .experience-row--xinyuyou .experience-responsibility': 'I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada, reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.',
+    '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach',
+    '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share',
     '#experience .experience-link': 'Learn more about this <span aria-hidden="true">→</span>',
-    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · Reddit Community Operations</p>
-      <h1>Reddit community operations across audiences and topics.</h1>
-      <p class="hero-deck">What my Reddit community operations internship looked like: the accounts, content, and communities I worked across at Vertex Marketing.</p>
-      <p class="hero-meta">Reddit Community Operations Intern · 2026 · Current</p>`,
+    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · Overseas Community Operations</p>
+      <h1>Reddit community operations for brands going global.</h1>
+      <p class="hero-deck">An overseas community operations internship at Vertex Marketing: community entry strategy, native English content, and data-driven iteration across 15+ communities, helping Chinese brands be seen and trusted by the world.</p>
+      <p class="hero-meta">Reddit Community Operations Intern · Jun–Aug 2026 · Shenzhen, China</p>`,
+    '#vertex-context': `<h2 id="vertex-context-title">Context</h2>
+      <div class="section-copy">
+        <p>Over the past decade, "Made in China" has been turning into "brands from China." More and more Chinese companies are building sustainable brand equity overseas, and communities are where a brand earns the trust of real users. People discuss products, share experiences, and shape each other's decisions there in ways no ad campaign can replace.</p>
+        <p>I joined a full-service marketing agency serving leading Chinese brands expanding globally, with clients like DJI, Insta360, and Anker. My account-operations team was the foundation of that work: we built, ran, and kept healthy the community content assets behind every campaign. It was my first look at the whole chain, from a brand's overseas goals to community content on the ground, and user feedback flowing back into strategy.</p>
+      </div>`,
     '#vertex-scope': `<h2 id="vertex-scope-title">What I did</h2>
       <div class="section-copy">
-        <p>I worked on Reddit community operations for vertical and broad-audience communities. I researched what each subreddit talked about, wrote and published posts and comments that fit its rules and tone, and adjusted content as the audience responded. The work covered consumer technology, smart home, finance, lifestyle, family, and other topics.</p>
+        <p>My work ran across content strategy, audience operations, and data. I ran community entry strategies for brand projects, studying each community's rules, tone, and sentiment before designing an account's positioning and content approach. At peak I managed 18 account onboarding cycles in parallel and kept every project on schedule.</p>
+        <p>Beyond client projects, I maintained a content matrix spanning 15+ vertical communities, from consumer tech and smart home to gaming, finance, food &amp; drink, parenting, mental health, and careers. Each community has its own rules and preferences: finance wants precision, lifestyle wants warmth, parenting wants genuine empathy. The core skill is not writing English; it's speaking the way each audience speaks.</p>
       </div>`,
     '#vertex-approach': `<h2 id="vertex-approach-title">How I worked</h2>
       <div class="section-copy">
-        <p>I treated each community as its own audience. Before writing anything, I read the subreddit's rules and the posts that were already doing well, so my content added to the conversation instead of cluttering it. I also took part in publishing posts and kept a steady rhythm across the accounts the team ran. When the platform's rules or algorithm changed, I adjusted the content and the timing.</p>
+        <p>I treated every community as its own audience. Before writing anything, I read the subreddit's rules and the posts already doing well, so my content added to the conversation instead of cluttering it. I wrote native English for US-based audiences and kept adjusting it: reading user sentiment, following discussion trends, and managing the safety boundaries of brand mentions, staying brand-friendly without inviting negative engagement. When the platform's rules or algorithm shifted, I adapted the content and the timing.</p>
+      </div>`,
+    '#vertex-data': `<h2 id="vertex-data-title">Data</h2>
+      <div class="section-copy">
+        <p>I kept a data record for everything I published: impressions, upvotes, comments, upvote ratio, and audience geography. I also completed asset audits for 5 representative accounts, covering positioning, content structure, and top-performing posts. Those numbers became a verifiable way to evaluate my work, and they taught me to let data, not instinct, decide what to publish next.</p>
       </div>`,
     '#vertex-tooling': `<h2 id="vertex-tooling-title">Building tools</h2>
       <div class="section-copy">
-        <p>The repetitive parts of the job pushed me to build. I made a Reddit content-drafting tool that made my English posts and comments faster to write and better to read. I also put together a daily work-summary dashboard and a way to turn real content-performance data into something measurable. Later I proposed an AI-assisted workflow optimization that leadership approved and is now piloting.</p>
+        <p>Repetition pushed me to build. I built an AI-assisted content workflow covering ideation, drafting, and quality checks that cut drafting time by roughly 40%, while baking in checks for naturalness, factual grounding, and brand boundaries. I presented the workflow's design and usage to company leadership and the AI engineering team, and the optimization was approved and is now being piloted. I also put together a daily work-summary dashboard that turned real content-performance data into something measurable.</p>
       </div>`,
     '#vertex-evidence': `<h2 id="vertex-evidence-title">Numbers</h2>
       <div class="section-copy">
@@ -367,12 +390,14 @@ const en = {
           <tr><th scope="row">Engagement</th><td><strong>3,548</strong> upvotes and <strong>482</strong> comments across 16 posts</td></tr>
           <tr><th scope="row">Single-post peak</th><td><strong>406K</strong> views / <strong>891</strong> upvotes / <strong>90</strong> comments / <strong>100%</strong> upvote ratio</td></tr>
           <tr><th scope="row">Audience</th><td><strong>91.7%</strong> highest observed U.S. audience share</td></tr>
+          <tr><th scope="row">Drafting speed</th><td>About <strong>40%</strong> faster with the AI-assisted workflow</td></tr>
           <tr><th scope="row">Community coverage</th><td>At least <strong>15</strong> communities</td></tr>
         </tbody></table>
+        <p class="evidence-note">Every deliverable was on time, with zero major content violations and no account assets lost.</p>
       </div>`,
     '#vertex-community': `<h2 id="vertex-community-title">Community</h2>
       <div class="section-copy">
-        <p>The work spans broad-interest and vertical communities. I adapted research, content, and interaction to each Subreddit's rules and audience language, and participated in early setup and moderation work for an official brand community.</p>
+        <p>The work spans broad-interest and vertical communities. I adapted research, content, and interaction to each subreddit's rules and audience language, and took part in the early setup of an official brand community from zero.</p>
         <ul class="community-list" aria-label="Community themes"><li>Consumer technology</li><li>Smart home</li><li>Gaming</li><li>Programming</li><li>Finance</li><li>Food &amp; drink</li><li>Parenting</li><li>Mental health</li><li>Relationships</li><li>Careers</li></ul>
       </div>`,
     '.marquee .track': '<span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span><span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>',
@@ -412,7 +437,53 @@ const en = {
     '#contact .sign': '— Mukun Sun / 孙慕坤',
     '#site-footer span:first-child': '© 2026 Mukun Sun',
     '#vertex-footer span:first-child': 'Mukun Sun · Vertex Marketing',
-    '#vertex-footer span:last-child': 'Internship · 2026',
+    '#vertex-footer span:last-child': 'Internship · Jun–Aug 2026',
+    '#xinyuyou-nav .brand': 'Mukun Sun · Xinyuyou',
+    '#xinyuyou-nav .links': '<a href="#xinyuyou-context">Context</a><a href="#xinyuyou-scope">Work</a><a href="#xinyuyou-approach">Approach</a><a href="#xinyuyou-projects">Projects</a><a href="#xinyuyou-evidence">Numbers</a>',
+    '#xinyuyou-nav .compact-nav summary': 'Sections',
+    '#xinyuyou-nav .compact-links': '<a href="#xinyuyou-context">Context</a><a href="#xinyuyou-scope">Work</a><a href="#xinyuyou-approach">Approach</a><a href="#xinyuyou-projects">Projects</a><a href="#xinyuyou-evidence">Numbers</a><a href="../index.html#experience">Portfolio index</a>',
+    '#xinyuyou-nav .back-link': '← Portfolio index',
+    '#xinyuyou-hero': `<h1>Influencer marketing for a pet brand going global.</h1>
+      <div class="detail-hero-copy">
+        <p class="detail-eyebrow">Xinyuyou · Overseas Influencer Marketing</p>
+        <p class="detail-deck">An influencer marketing internship at Xinyuyou, the company behind the pet-safety-gate brand Pawreto: finding, negotiating with, and running creator partnerships across the US and Canada, from first outreach to published content.</p>
+        <p class="detail-meta">Influencer Marketing Intern · Jun–Aug 2025 · Shenzhen, China</p>
+      </div>`,
+    '#xinyuyou-context': `<h2 id="xinyuyou-context-title">Context</h2>
+      <div class="detail-section-copy">
+        <p>Chinese supply chains turned pet products into a fast-growing export category, but exporting products and building a brand are different jobs. On platforms like Instagram and TikTok, creators are the most direct bridge between a brand and its customers: they show products in real homes, in everyday language, in ways advertising cannot. That is the trust gap influencer marketing exists to close.</p>
+        <p>I joined Xinyuyou, a pet-product brand going global under the name Pawreto, which makes safety gates for dogs and cats and sells through Amazon in the United States and Canada. My team ran the front end of the company's growth engine — finding the right creators, building the relationships, and making sure every partnership delivered content the brand could stand behind.</p>
+      </div>`,
+    '#xinyuyou-scope': `<h2 id="xinyuyou-scope-title">What I did</h2>
+      <div class="detail-section-copy">
+        <p>Over the summer I worked across the whole arc of influencer marketing, from sourcing to measurement. I built and ran a scaled outreach system for US and Canadian creators on Instagram, reaching 476 influencers and closing 45 collaborations across gifted, affiliate, and paid models. For the paid partnerships I handled end to end, I negotiated rates, evaluated creator value, and managed contracts and payments.</p>
+        <p>As the work scaled, I managed up to 14 collaborations in parallel and reviewed the content creators produced, checking drafts against product selling points, giving revision feedback, and managing publication. The work spanned both the dog-gate and cat-gate product lines, each with its own audience and content requirements.</p>
+      </div>`,
+    '#xinyuyou-approach': `<h2 id="xinyuyou-approach-title">How I worked</h2>
+      <div class="detail-section-copy">
+        <p>Data shaped every decision. I tracked published reach, engagement, and cost per result, and used it to evaluate creators beyond follower counts: one mid-size creator's post reached 545,000 views at a cost per thousand under one dollar, more than ten times the reach of another partnership at a fraction of the cost. Cases like that taught me to weigh content fit, audience overlap, and past performance over follower numbers alone.</p>
+        <p>I also adjusted strategy product by product. The cat-gate line needed a different creator profile than the dog-gate line, so I redefined screening criteria, outreach messages, and target accounts based on what each product's content actually required.</p>
+      </div>`,
+    '#xinyuyou-projects': `<h2 id="xinyuyou-projects-title">Projects</h2>
+      <div class="detail-section-copy">
+        <p>Beyond day-to-day partnerships, I contributed to two larger initiatives. I helped run the Amazon Installation Video UGC project, consolidating shoot requirements, writing and refining creator briefs, coordinating scope and timelines with an external production partner, and aligning product, marketing, and creator teams. I also took part in the Babelio Safety Month campaign from kickoff through creator selection, content review, and results reporting, and supported a social-media giveaway for the brand.</p>
+      </div>`,
+    '#xinyuyou-evidence': `<h2 id="xinyuyou-evidence-title">Numbers</h2>
+      <div class="detail-section-copy">
+        <table class="evidence-table"><tbody>
+          <tr><th scope="row">Creators reached</th><td><strong>476</strong> influencers across the US &amp; Canada, Instagram-first</td></tr>
+          <tr><th scope="row">Collaborations</th><td><strong>45</strong> across gifted, affiliate, and paid models</td></tr>
+          <tr><th scope="row">Paid collaborations</th><td><strong>8</strong>, managed end to end</td></tr>
+          <tr><th scope="row">Videos published</th><td><strong>20+</strong> reviewed and pushed to publication</td></tr>
+          <tr><th scope="row">Peak outreach</th><td><strong>50</strong> creators in a single day</td></tr>
+          <tr><th scope="row">Parallel management</th><td><strong>14</strong> collaborations at peak</td></tr>
+          <tr><th scope="row">Single-post reach</th><td><strong>545K</strong> views at a <strong>$0.83</strong> CPM, mid-size creator</td></tr>
+          <tr><th scope="row">Product coverage</th><td><strong>7</strong> core products across dog and cat safety gates</td></tr>
+        </tbody></table>
+        <p class="evidence-note">Every collaboration was tracked from first contact to payment, with no major errors and no missed deliverables.</p>
+      </div>`,
+    '#xinyuyou-footer span': 'Mukun Sun · Xinyuyou',
+    '#xinyuyou-footer a': 'Return to internship',
   },
 };
 
@@ -427,7 +498,11 @@ const zh = {
     },
     vertex: {
       title: 'Reddit 社群运营 | 孙慕坤',
-      description: '孙慕坤在 Vertex Marketing 的 Reddit 社群运营实习，覆盖内容创作、账号运营与社区互动。',
+      description: '孙慕坤在 Vertex Marketing 的海外社区运营实习：社区进入策略、原生英文内容与数据驱动迭代，覆盖 15+ 社区，服务中国品牌出海。',
+    },
+    xinyuyou: {
+      title: '达人营销实习｜孙慕坤',
+      description: '孙慕坤在新昱佑（Pawreto）的海外达人营销实习：面向美加市场的创作者开发、合作运营与数据评估，服务中国宠物品牌出海。',
     },
     teaching: {
       title: '英语写作助教｜孙慕坤',
@@ -458,13 +533,14 @@ const zh = {
       description: '孙慕坤在美国与中国到访地点的简洁记录。',
     },
   },
-  navLabels: { home: '主导航', vertex: '项目导航', teaching: '实习导航', campus: '项目导航', hotel: '项目导航', visual: '视觉作品导航', music: '音乐导航', photography: '摄影导航', travel: '旅行导航' },
+  navLabels: { home: '主导航', vertex: '项目导航', teaching: '实习导航', campus: '项目导航', hotel: '项目导航', visual: '视觉作品导航', music: '音乐导航', photography: '摄影导航', travel: '旅行导航', xinyuyou: '实习导航' },
   attributes: {
     '#nav .lang-switch': { 'aria-label': '语言' },
     '#nav .compact-nav summary': { 'aria-label': '打开章节导航' },
     '#nav .compact-links': { 'aria-label': '章节导航' },
     '#experience .experience-row--vertex .experience-media img': { alt: 'Vertex Marketing 深圳办公空间的一角' },
     '#experience .experience-row--teaching .experience-media img': { alt: '孙慕坤在武汉面向英语写作课堂讲课' },
+    '#experience .experience-row--xinyuyou .experience-media img': { alt: '新昱佑团队在深圳的办公空间' },
     '#projects .project-row:nth-child(1) img': { alt: '大型校园晚会观众面向灯光舞台' },
     '#projects .project-row:nth-child(2) img': { alt: '爵士乐手在酒店演出，旁边摆放着低音提琴' },
     '#projects .project-row:nth-child(3) img': { alt: '为酒店爵士活动设计的冬日爵士音乐会主视觉海报' },
@@ -477,6 +553,9 @@ const zh = {
     '#teaching-nav .lang-switch': { 'aria-label': '语言' },
     '#teaching-nav .compact-nav summary': { 'aria-label': '打开实习导航' },
     '#teaching-nav .compact-links': { 'aria-label': '实习章节' },
+    '#xinyuyou-nav .lang-switch': { 'aria-label': '语言' },
+    '#xinyuyou-nav .compact-nav summary': { 'aria-label': '打开实习导航' },
+    '#xinyuyou-nav .compact-links': { 'aria-label': '实习章节' },
     '#teaching-media .detail-media:nth-child(1) img': { alt: 'SUU 教师在武汉讲授英语写作课程' },
     '#teaching-media .detail-media:nth-child(2) img': { alt: '孙慕坤与 SUU 教师在教学阶段结束后合影' },
     '#teaching-dialog': { 'aria-label': '放大的课堂图片' },
@@ -591,9 +670,9 @@ const zh = {
     '#about .about-copy p:nth-child(1)': '我在南犹他大学学习战略传播，辅修商业分析。我的实践涉及社交媒体、社群运营、视觉传播和活动推广。我习惯先理解受众实际如何参与，再决定要做什么内容。',
     '#about .about-copy p:nth-child(2)': '工作之外，我在 SUU 的乐团中演奏低音提琴和电贝斯。音乐也让我参与音乐会策划、摄影，以及那些真正影响一场活动体验的细节。',
     '#vertex-nav .brand': '孙慕坤<span class="en">Vertex</span>',
-    '#vertex-nav .links': '<a href="#vertex-scope">做了什么</a><a href="#vertex-approach">方法</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a>',
+    '#vertex-nav .links': '<a href="#vertex-context">背景</a><a href="#vertex-scope">工作</a><a href="#vertex-approach">方法</a><a href="#vertex-data">数据</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a>',
     '#vertex-nav .compact-nav summary': '章节',
-    '#vertex-nav .compact-links': '<a href="#vertex-scope">做了什么</a><a href="#vertex-approach">方法</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a><a href="../index.html#experience">返回作品集</a>',
+    '#vertex-nav .compact-links': '<a href="#vertex-context">背景</a><a href="#vertex-scope">工作</a><a href="#vertex-approach">方法</a><a href="#vertex-data">数据</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a><a href="../index.html#experience">返回作品集</a>',
     '#vertex-nav .back-link': '← 返回作品集',
     '#campus-nav .brand': '孙慕坤 · 校园整合传播',
     '#campus-nav .links': '<a href="#campus-context">背景</a><a href="#campus-contribution">负责内容</a><a href="#campus-media">现场</a>',
@@ -746,29 +825,44 @@ const zh = {
     '#experience .stitle': '实习',
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit 社群运营实习生',
-    '#experience .experience-row--vertex .experience-dates': '2026 · 至今 · Shenzhen, China',
-    '#experience .experience-row--vertex .experience-responsibility': '我参与运营消费科技、智能家居、生活方式、金融与家庭等方向的 Reddit 社区内容，并根据 Subreddit 规则、受众语境与可见表现调整内容和互动方式。',
+    '#experience .experience-row--vertex .experience-dates': '2026.06–2026.08 · Shenzhen, China',
+    '#experience .experience-row--vertex .experience-responsibility': '我负责消费科技、智能家居、生活方式、金融与家庭等方向的 Reddit 海外社区运营，根据 Subreddit 规则、受众语境与可见表现调整内容和互动方式。',
     '#experience .experience-row--teaching .experience-company': '南犹他大学',
     '#experience .experience-row--teaching .experience-role': '英语写作课程助教',
     '#experience .experience-row--teaching .experience-dates': '2026 年 5 月 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': '在武汉协助 SUU 教师为 200 多名学生开展英语写作课程，提供中英双语课堂支持；负责考勤、作业评分与书面反馈，并使用 Excel 整理期末成绩和课程完成情况。',
-    '#experience .experience-proofline': '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>',
+    '#experience .experience-row--xinyuyou .experience-company': '新昱佑',
+    '#experience .experience-row--xinyuyou .experience-role': '海外达人营销实习生',
+    '#experience .experience-row--xinyuyou .experience-dates': '2025.06–2025.08 · Shenzhen, China',
+    '#experience .experience-row--xinyuyou .experience-responsibility': '我负责新昱佑（Pawreto）的海外达人营销：面向美加市场开发创作者并推进置换、佣金与付费合作，累计触达 476 位达人、达成 45 个合作，并以曝光与成本数据评估达人价值。',
+    '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> 位达人触达 · <strong>45</strong> 个合作 · 单条最高 <strong>54.5 万</strong> 曝光',
+    '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>',
     '#experience .experience-link': '进一步了解 <span aria-hidden="true">→</span>',
-    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · Reddit 社群运营</p>
-      <h1>面向不同受众与主题的 Reddit 社群运营。</h1>
-      <p class="hero-deck">我在 Vertex Marketing 的 Reddit 社群运营实习——那些我每天打交道的账号、内容与社区。</p>
-      <p class="hero-meta">Reddit 社群运营实习生 · 2026 · 至今</p>`,
+    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · 海外社区运营</p>
+      <h1>面向出海品牌的 Reddit 社区运营。</h1>
+      <p class="hero-deck">我在 Vertex Marketing 的海外社区运营实习：社区进入策略、原生英文内容与数据驱动迭代，覆盖 15+ 个社区——让中国品牌被世界真诚地看见。</p>
+      <p class="hero-meta">Reddit 社群运营实习生 · 2026.06–2026.08 · 中国深圳</p>`,
+    '#vertex-context': `<h2 id="vertex-context-title">背景</h2>
+      <div class="section-copy">
+        <p>过去十年，"中国制造"正在向"中国品牌"跃迁。越来越多的中国企业在产品力之外，开始寻求在海外建立可持续的品牌资产，而海外社区正是品牌与真实用户建立信任的关键阵地：用户在这里讨论产品、分享体验、影响彼此的决策，其真实性与说服力远非传统广告投放可以替代。</p>
+        <p>我加入的这家整合营销服务商，正服务于这一趋势，客户覆盖 DJI、Insta360、Anker 等多家深圳出海硬件品牌。我所在的账号运营团队是这条价值链的底座，负责品牌社区内容资产的构建、运营与健康管理。在这里，我第一次完整看见了一条"从品牌出海诉求，到社区内容落地，再到用户反馈回流"的营销链路。</p>
+      </div>`,
     '#vertex-scope': `<h2 id="vertex-scope-title">做了什么</h2>
       <div class="section-copy">
-        <p>我负责 Reddit 社区运营，覆盖垂直社区与泛圈层两类。我研究每个社区在聊什么，创作并发布符合社区规则与语气的帖子和评论，并根据受众反馈持续调整内容；覆盖消费科技、智能家居、金融、生活方式、家庭等主题。</p>
+        <p>我的工作横跨内容策略、受众运营与数据洞察三个维度。我负责为品牌项目执行社区进入策略：研究目标社区的规则、语气与情绪风向，再据此设计账号的内容定位，在 5 个工作日内完成一个账号从策略准备到可交付的全流程；高峰期同时并行管理 18 个账号的进入周期，保障项目按时交付。</p>
+        <p>除项目定向运营外，我维护横跨 15+ 垂直社区的内容矩阵，从消费科技、智能家居、游戏到金融、食品饮料、母婴、心理健康与职业发展。不同社区需要不同的互动方式：金融社区要专业严谨，生活方式社区要自然亲切，母婴社区要真诚共情。核心能力不是"写英文"，而是"用目标人群的方式说话"。</p>
       </div>`,
     '#vertex-approach': `<h2 id="vertex-approach-title">怎么做的</h2>
       <div class="section-copy">
-        <p>我把每个社区当成一个独立的受众来对待。创作前，我会先研究 subreddit 的规则，以及社区里已经获得认可的话题与讨论，让我的帖子和评论是加分项而不是噪音。我也参与贴文发布，并为团队账号组合维持稳定的内容节奏。平台规则与算法变化时，我会相应调整内容与发布节奏。</p>
+        <p>我把每个社区当成一个独立的受众来对待。动笔之前，我先研究 subreddit 的规则，以及社区里已经获得认可的话题与讨论，让我的内容成为对话的加分项而不是噪音。我面向以美国为主的海外用户创作原生英文内容，并持续依据社区实时风向调优：判断用户情绪、跟随讨论趋势、管理内容安全边界，在保持品牌友好的前提下避免引发负面互动。平台规则与算法变化时，我相应调整内容与发布节奏。</p>
+      </div>`,
+    '#vertex-data': `<h2 id="vertex-data-title">数据</h2>
+      <div class="section-copy">
+        <p>我坚持为工作建立数据记录与评估体系：追踪内容的曝光、点赞、评论、好评率与受众地区分布，并完成 5 个代表性账号的资产盘点，包括账号定位、内容贡献结构与代表内容表现。这些数据沉淀为一套可验证的量化评估体系，也让我养成了"用数据说话"的习惯：内容创作不是凭感觉，而是基于受众反馈的持续迭代。</p>
       </div>`,
     '#vertex-tooling': `<h2 id="vertex-tooling-title">自建工具</h2>
       <div class="section-copy">
-        <p>重复的工作推动我自己动手做工具。我自建了一个 Reddit 内容草稿工具，加快英文帖子和评论的产出并提升质量；搭建了每日工作总结看板，并把真实的内容表现数据沉淀为可量化素材。后来我向老板提出 AI 优化工作流方案，获认可后现已进入试点配置。</p>
+        <p>重复性工作推动我动手做工具。我基于 AI 工具自研了一套内容创作工作流，覆盖"构思—起草—质量检查"全环节，将单条内容从构思到成稿的时间压缩约 40%，同时内置内容自然度、事实依据与品牌边界检查，兼顾效率与质量。实习后期，我把这套工具的设计思路与使用流程向公司负责人与 AI 工程团队做了完整展示，优化方案获得批准并进入试点。我也搭建了每日工作总结看板，把真实的内容表现数据沉淀为可量化素材。</p>
       </div>`,
     '#vertex-evidence': `<h2 id="vertex-evidence-title">数字</h2>
       <div class="section-copy">
@@ -780,12 +874,14 @@ const zh = {
           <tr><th scope="row">互动</th><td>16 条内容累计 <strong>3,548</strong> 点赞与 <strong>482</strong> 评论</td></tr>
           <tr><th scope="row">单帖峰值</th><td><strong>406K</strong> 浏览 / <strong>891</strong> 点赞 / <strong>90</strong> 评论 / <strong>100%</strong> Upvote Ratio</td></tr>
           <tr><th scope="row">受众</th><td>单帖美国受众占比最高 <strong>91.7%</strong></td></tr>
+          <tr><th scope="row">内容效率</th><td>AI 工作流让单条内容创作提速约 <strong>40%</strong></td></tr>
           <tr><th scope="row">社区覆盖</th><td>至少 <strong>15</strong> 个社区</td></tr>
         </tbody></table>
+        <p class="evidence-note">所有任务按时交付并留痕，全程零重大内容违规，未造成任何账号资产损失。</p>
       </div>`,
     '#vertex-community': `<h2 id="vertex-community-title">社区语境</h2>
       <div class="section-copy">
-        <p>这些工作覆盖泛兴趣与垂直社区。我根据不同 Subreddit 的规则与受众语言调整调研、内容和互动方式，也参与一个品牌官方社区的早期搭建与管理工作。</p>
+        <p>这些工作覆盖泛兴趣与垂直社区。我根据不同 Subreddit 的规则与受众语言调整调研、内容和互动方式，也参与一个品牌官方社区从 0 到 1 的早期搭建与管理。</p>
         <ul class="community-list" aria-label="社区主题"><li>消费科技</li><li>智能家居</li><li>游戏</li><li>编程</li><li>金融</li><li>食品饮料</li><li>母婴</li><li>心理健康</li><li>家庭关系</li><li>职业发展</li></ul>
       </div>`,
     '.marquee .track': '<span>社群运营<span class="mut">·</span>教学<span class="mut">·</span>活动传播<span class="mut">·</span>爵士演奏<span class="mut">·</span>视觉传播<span class="mut">·</span></span><span>社群运营<span class="mut">·</span>教学<span class="mut">·</span>活动传播<span class="mut">·</span>爵士演奏<span class="mut">·</span>视觉传播<span class="mut">·</span></span>',
@@ -825,7 +921,53 @@ const zh = {
     '#contact .sign': '— 孙慕坤 / Mukun Sun',
     '#site-footer span:first-child': '© 2026 孙慕坤',
     '#vertex-footer span:first-child': '孙慕坤 · Vertex Marketing',
-    '#vertex-footer span:last-child': '实习 · 2026',
+    '#vertex-footer span:last-child': '实习 · 2026.06–2026.08',
+    '#xinyuyou-nav .brand': '孙慕坤 · 新昱佑',
+    '#xinyuyou-nav .links': '<a href="#xinyuyou-context">背景</a><a href="#xinyuyou-scope">工作</a><a href="#xinyuyou-approach">方法</a><a href="#xinyuyou-projects">项目</a><a href="#xinyuyou-evidence">数字</a>',
+    '#xinyuyou-nav .compact-nav summary': '章节',
+    '#xinyuyou-nav .compact-links': '<a href="#xinyuyou-context">背景</a><a href="#xinyuyou-scope">工作</a><a href="#xinyuyou-approach">方法</a><a href="#xinyuyou-projects">项目</a><a href="#xinyuyou-evidence">数字</a><a href="../index.html#experience">返回作品集</a>',
+    '#xinyuyou-nav .back-link': '← 返回作品集',
+    '#xinyuyou-hero': `<h1>面向出海宠物品牌的达人营销。</h1>
+      <div class="detail-hero-copy">
+        <p class="detail-eyebrow">新昱佑 · 海外达人营销</p>
+        <p class="detail-deck">我在新昱佑（Xinyuyou）的达人营销实习——这家公司以 Pawreto 品牌出海，主营宠物安全门栏：从首次触达到内容发布，我负责面向美加市场的创作者开发、商务推进与合作运营。</p>
+        <p class="detail-meta">海外达人营销实习生 · 2025.06–2025.08 · 中国深圳</p>
+      </div>`,
+    '#xinyuyou-context': `<h2 id="xinyuyou-context-title">背景</h2>
+      <div class="detail-section-copy">
+        <p>过去十年，宠物经济随全球化升温，中国供应链优势让越来越多宠物用品企业走向海外——但产品出海和品牌出海是两件事。在 Instagram、TikTok 等主流平台上，达人是品牌与真实用户之间最直接的信任桥梁：他们用真实的家居场景和日常语言展示产品，其说服力远非传统广告投放可以替代——这正是达人营销要弥合的那道信任落差。</p>
+        <p>我实习的新昱佑（Xinyuyou）是一家宠物用品出海品牌公司，自主品牌 Pawreto，主营犬猫安全门栏，通过 Amazon 在美加市场销售。我所在的达人运营团队是公司增长引擎的前端：找到对的创作者、经营合作关系，并确保每一场合作都交付品牌可以放心的内容。</p>
+      </div>`,
+    '#xinyuyou-scope': `<h2 id="xinyuyou-scope-title">做了什么</h2>
+      <div class="detail-section-copy">
+        <p>那个夏天，我的工作覆盖了达人营销的完整链路，从开发到衡量。我为美国、加拿大市场的创作者建立并运行了一套可规模化的触达体系，以 Instagram 为主要平台，累计触达 476 位达人、达成 45 个合作，覆盖置换、佣金与付费三种模式；付费合作从询价、谈判到合同与付款，我全程跟进。</p>
+        <p>随着业务推进，我高峰时期并行管理 14 个合作项目，并审核创作者交付的内容——对照产品卖点检查成片、给出修改反馈、跟进发布节点。工作横跨犬门与猫门两条产品线，每一条都有不同的受众与内容要求。</p>
+      </div>`,
+    '#xinyuyou-approach': `<h2 id="xinyuyou-approach-title">怎么做的</h2>
+      <div class="detail-section-copy">
+        <p>数据是我做每个决策的依据。我持续跟踪已发布内容的曝光、互动与单位成本，并用它来评估达人，而不只参考粉丝量：一位中腰部创作者的单条内容获得 54.5 万曝光，千次成本不到 1 美元，是另一场合作的十倍曝光、几分之一的价格。这样的案例让我学会把内容匹配度、受众重合与历史表现放在粉丝数之前。</p>
+        <p>我也会按产品线调整策略。比如猫门产品需要的达人画像与犬门不同，于是我从筛选标准、触达话术到目标账号都重新定义，让内容需求决定开发方向。</p>
+      </div>`,
+    '#xinyuyou-projects': `<h2 id="xinyuyou-projects-title">项目</h2>
+      <div class="detail-section-copy">
+        <p>除了日常合作，我还参与了两项更大的项目。在 Amazon 安装视频（UGC）项目中，我负责整理拍摄需求、撰写并完善创作者 Brief、与外部制作方协调拍摄范围与交付周期，并推动产品、市场与创作团队的信息对齐。我也全程参与了 Babelio Safety Month 活动，从 Kickoff、达人筛选到内容审核与数据汇总，并协助品牌组织了社媒 Giveaway 活动。</p>
+      </div>`,
+    '#xinyuyou-evidence': `<h2 id="xinyuyou-evidence-title">数字</h2>
+      <div class="detail-section-copy">
+        <table class="evidence-table"><tbody>
+          <tr><th scope="row">达人触达</th><td><strong>476</strong> 位，覆盖美加市场，Instagram 为主</td></tr>
+          <tr><th scope="row">达成合作</th><td><strong>45</strong> 个，置换/佣金/付费多模式</td></tr>
+          <tr><th scope="row">付费合作</th><td><strong>8</strong> 个，全流程跟进</td></tr>
+          <tr><th scope="row">视频发布</th><td><strong>20+</strong> 条，审核后推动上线</td></tr>
+          <tr><th scope="row">单日峰值</th><td><strong>50</strong> 位达人开发</td></tr>
+          <tr><th scope="row">并行管理</th><td>高峰 <strong>14</strong> 个合作项目</td></tr>
+          <tr><th scope="row">单条曝光</th><td><strong>54.5 万</strong> 次，CPM <strong>0.83 美元</strong>（中腰部达人）</td></tr>
+          <tr><th scope="row">产品覆盖</th><td><strong>7</strong> 款核心产品，犬猫安全门栏</td></tr>
+        </tbody></table>
+        <p class="evidence-note">所有合作从建联到付款全程留痕，无重大失误、无遗漏交付。</p>
+      </div>`,
+    '#xinyuyou-footer span': '孙慕坤 · 新昱佑',
+    '#xinyuyou-footer a': '返回实习经历',
   },
 };
 

@@ -227,6 +227,9 @@ html.js.motion-desktop .hero.loaded .reveal-up{transition-delay:calc(var(--d,0)*
 .experience-copy{min-width:0;}
 .experience-media{margin:0;overflow:hidden;border:1px solid var(--line-2);background:var(--bg);}
 .experience-media img{width:100%;height:auto;filter:brightness(var(--effect-experience-brightness)) saturate(var(--effect-experience-saturation));}
+.experience-media--placeholder{display:grid;place-content:center;gap:12px;aspect-ratio:4/5;padding:clamp(20px,3vw,32px);border:1px solid var(--line-2);background:linear-gradient(165deg,var(--bg-2),var(--bg-1));text-align:center;}
+.experience-media--placeholder .ph-brand{font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);color:var(--ink);font-weight:600;letter-spacing:.04em;line-height:1.15;}
+.experience-media--placeholder .ph-sub{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);}
 
 /* ---------- MARQUEE ---------- */
 .marquee{overflow:hidden;border-block:1px solid var(--line);padding-block:24px;white-space:nowrap;
@@ -399,11 +402,11 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         <header>
           <p class="experience-company">Vertex Marketing</p>
           <h2 class="experience-role">Reddit Community Operations Intern</h2>
-          <p class="experience-dates">2026 · Current · Shenzhen, China</p>
+          <p class="experience-dates">Jun–Aug 2026 · Shenzhen, China</p>
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
-            <p class="experience-responsibility">I participate in Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.</p>
+            <p class="experience-responsibility">I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.</p>
             <p class="experience-proofline"><strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share</p>
             <a class="experience-link" href="projects/vertex-reddit.html">Learn more about this <span aria-hidden="true">→</span></a>
           </div>
@@ -425,6 +428,24 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
           </div>
           <figure class="experience-media" data-reveal="img">
             <img src="assets/internship/SUU_TA/classroom.webp" width="1921" height="1279" alt="Mukun Sun speaking to an English writing class in Wuhan" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </article>
+      <article class="experience-row experience-row--xinyuyou" data-reveal="">
+        <header>
+          <p class="experience-company">Xinyuyou</p>
+          <h2 class="experience-role">Influencer Marketing Intern</h2>
+          <p class="experience-dates">Jun–Aug 2025 · Shenzhen, China</p>
+        </header>
+        <div class="experience-detail">
+          <div class="experience-copy">
+            <p class="experience-responsibility">I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada — reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.</p>
+            <p class="experience-proofline"><strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach</p>
+            <a class="experience-link" href="projects/xinyuyou.html">Learn more about this <span aria-hidden="true">→</span></a>
+          </div>
+          <figure class="experience-media" data-reveal="img">
+            <!-- TODO: replace placeholder with <img src="assets/internship/Xinyuyou/xxx.webp" width height alt loading decoding> when photos are provided -->
+            <div class="experience-media--placeholder" aria-hidden="true"><span class="ph-brand">Xinyuyou</span><span class="ph-sub">Pawreto · Pet Safety Gates</span></div>
           </figure>
         </div>
       </article>
