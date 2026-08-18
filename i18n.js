@@ -18,7 +18,7 @@ const en = {
     },
     xinyuyou: {
       title: 'Influencer Marketing | Mukun Sun',
-      description: "Mukun Sun's influencer marketing internship at Xinyuyou (Pawreto): sourcing, negotiating, and running creator partnerships across the US and Canada for a pet brand going global.",
+      description: "Mukun Sun's influencer marketing internship at YUYO INNOVATIONS LLC (Pawreto): sourcing, negotiating, and running creator partnerships across the US and Canada for a pet brand going global.",
     },
     teaching: {
       title: 'Teaching Assistant | Mukun Sun',
@@ -56,7 +56,7 @@ const en = {
     '#nav .compact-links': { 'aria-label': 'Section navigation' },
     '#experience .experience-row--vertex .experience-media img': { alt: 'A bright shared workspace at Vertex Marketing in Shenzhen' },
     '#experience .experience-row--teaching .experience-media img': { alt: 'Mukun Sun speaking to an English writing class in Wuhan' },
-    '#experience .experience-row--xinyuyou .experience-media img': { alt: 'The Xinyuyou team workspace in Shenzhen' },
+    '#experience .experience-row--xinyuyou .experience-media img': { alt: 'The YUYO INNOVATIONS team workspace in Shenzhen' },
     '#projects .project-row:nth-child(1) img': { alt: 'A large campus gala audience facing a lit stage' },
     '#projects .project-row:nth-child(2) img': { alt: 'Jazz musicians performing at a hotel beside an upright bass' },
     '#projects .project-row:nth-child(3) img': { alt: 'Winter Jazz Concert key visual poster designed for a hotel jazz event' },
@@ -347,7 +347,7 @@ const en = {
     '#experience .experience-row--teaching .experience-role': 'English Writing Teaching Assistant',
     '#experience .experience-row--teaching .experience-dates': 'May 2026 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': 'Supported an SUU instructor in English writing courses serving 200+ students in Wuhan. Provided bilingual classroom support, managed attendance and assignment grading, delivered written feedback, and organized final-grade data and course completion reporting in Excel.',
-    '#experience .experience-row--xinyuyou .experience-company': 'Xinyuyou',
+    '#experience .experience-row--xinyuyou .experience-company': 'YUYO INNOVATIONS LLC',
     '#experience .experience-row--xinyuyou .experience-role': 'Influencer Marketing Intern',
     '#experience .experience-row--xinyuyou .experience-dates': 'Jun–Aug 2025 · Shenzhen, China',
     '#experience .experience-row--xinyuyou .experience-responsibility': 'I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada, reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.',
@@ -438,21 +438,21 @@ const en = {
     '#site-footer span:first-child': '© 2026 Mukun Sun',
     '#vertex-footer span:first-child': 'Mukun Sun · Vertex Marketing',
     '#vertex-footer span:last-child': 'Internship · Jun–Aug 2026',
-    '#xinyuyou-nav .brand': 'Mukun Sun · Xinyuyou',
+    '#xinyuyou-nav .brand': 'Mukun Sun · YUYO INNOVATIONS',
     '#xinyuyou-nav .links': '<a href="#xinyuyou-context">Context</a><a href="#xinyuyou-scope">Work</a><a href="#xinyuyou-approach">Approach</a><a href="#xinyuyou-projects">Projects</a><a href="#xinyuyou-evidence">Numbers</a>',
     '#xinyuyou-nav .compact-nav summary': 'Sections',
     '#xinyuyou-nav .compact-links': '<a href="#xinyuyou-context">Context</a><a href="#xinyuyou-scope">Work</a><a href="#xinyuyou-approach">Approach</a><a href="#xinyuyou-projects">Projects</a><a href="#xinyuyou-evidence">Numbers</a><a href="../index.html#experience">Portfolio index</a>',
     '#xinyuyou-nav .back-link': '← Portfolio index',
     '#xinyuyou-hero': `<h1>Influencer marketing for a pet brand going global.</h1>
       <div class="detail-hero-copy">
-        <p class="detail-eyebrow">Xinyuyou · Overseas Influencer Marketing</p>
-        <p class="detail-deck">An influencer marketing internship at Xinyuyou, the company behind the pet-safety-gate brand Pawreto: finding, negotiating with, and running creator partnerships across the US and Canada, from first outreach to published content.</p>
+        <p class="detail-eyebrow">YUYO INNOVATIONS LLC · Overseas Influencer Marketing</p>
+        <p class="detail-deck">An influencer marketing internship at YUYO INNOVATIONS LLC, the company behind the pet-safety-gate brand Pawreto: finding, negotiating with, and running creator partnerships across the US and Canada, from first outreach to published content.</p>
         <p class="detail-meta">Influencer Marketing Intern · Jun–Aug 2025 · Shenzhen, China</p>
       </div>`,
     '#xinyuyou-context': `<h2 id="xinyuyou-context-title">Context</h2>
       <div class="detail-section-copy">
         <p>Chinese supply chains turned pet products into a fast-growing export category, but exporting products and building a brand are different jobs. On platforms like Instagram and TikTok, creators are the most direct bridge between a brand and its customers: they show products in real homes, in everyday language, in ways advertising cannot. That is the trust gap influencer marketing exists to close.</p>
-        <p>I joined Xinyuyou, a pet-product brand going global under the name Pawreto, which makes safety gates for dogs and cats and sells through Amazon in the United States and Canada. My team ran the front end of the company's growth engine — finding the right creators, building the relationships, and making sure every partnership delivered content the brand could stand behind.</p>
+        <p>I joined YUYO INNOVATIONS LLC, a pet-product brand going global under the name Pawreto, which makes safety gates for dogs and cats and sells through Amazon in the United States and Canada. My team ran the front end of the company's growth engine — finding the right creators, building the relationships, and making sure every partnership delivered content the brand could stand behind.</p>
       </div>`,
     '#xinyuyou-scope': `<h2 id="xinyuyou-scope-title">What I did</h2>
       <div class="detail-section-copy">
@@ -482,7 +482,7 @@ const en = {
         </tbody></table>
         <p class="evidence-note">Every collaboration was tracked from first contact to payment, with no major errors and no missed deliverables.</p>
       </div>`,
-    '#xinyuyou-footer span': 'Mukun Sun · Xinyuyou',
+    '#xinyuyou-footer span': 'Mukun Sun · YUYO INNOVATIONS',
     '#xinyuyou-footer a': 'Return to internship',
   },
 };
@@ -502,7 +502,7 @@ const zh = {
     },
     xinyuyou: {
       title: '达人营销实习｜孙慕坤',
-      description: '孙慕坤在新昱佑（Pawreto）的海外达人营销实习：面向美加市场的创作者开发、合作运营与数据评估，服务中国宠物品牌出海。',
+      description: '孙慕坤在新昱佑（YUYO INNOVATIONS LLC）的海外达人营销实习：面向美加市场的创作者开发、合作运营与数据评估，服务中国宠物品牌出海。',
     },
     teaching: {
       title: '英语写作助教｜孙慕坤',
@@ -540,7 +540,7 @@ const zh = {
     '#nav .compact-links': { 'aria-label': '章节导航' },
     '#experience .experience-row--vertex .experience-media img': { alt: 'Vertex Marketing 深圳办公空间的一角' },
     '#experience .experience-row--teaching .experience-media img': { alt: '孙慕坤在武汉面向英语写作课堂讲课' },
-    '#experience .experience-row--xinyuyou .experience-media img': { alt: '新昱佑团队在深圳的办公空间' },
+    '#experience .experience-row--xinyuyou .experience-media img': { alt: '新昱佑（YUYO INNOVATIONS）团队在深圳的办公空间' },
     '#projects .project-row:nth-child(1) img': { alt: '大型校园晚会观众面向灯光舞台' },
     '#projects .project-row:nth-child(2) img': { alt: '爵士乐手在酒店演出，旁边摆放着低音提琴' },
     '#projects .project-row:nth-child(3) img': { alt: '为酒店爵士活动设计的冬日爵士音乐会主视觉海报' },
@@ -831,10 +831,10 @@ const zh = {
     '#experience .experience-row--teaching .experience-role': '英语写作课程助教',
     '#experience .experience-row--teaching .experience-dates': '2026 年 5 月 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': '在武汉协助 SUU 教师为 200 多名学生开展英语写作课程，提供中英双语课堂支持；负责考勤、作业评分与书面反馈，并使用 Excel 整理期末成绩和课程完成情况。',
-    '#experience .experience-row--xinyuyou .experience-company': '新昱佑',
+    '#experience .experience-row--xinyuyou .experience-company': '新昱佑（YUYO INNOVATIONS LLC）',
     '#experience .experience-row--xinyuyou .experience-role': '海外达人营销实习生',
     '#experience .experience-row--xinyuyou .experience-dates': '2025.06–2025.08 · Shenzhen, China',
-    '#experience .experience-row--xinyuyou .experience-responsibility': '我负责新昱佑（Pawreto）的海外达人营销：面向美加市场开发创作者并推进置换、佣金与付费合作，累计触达 476 位达人、达成 45 个合作，并以曝光与成本数据评估达人价值。',
+    '#experience .experience-row--xinyuyou .experience-responsibility': '我负责新昱佑（YUYO INNOVATIONS LLC）的海外达人营销：面向美加市场开发创作者并推进置换、佣金与付费合作，累计触达 476 位达人、达成 45 个合作，并以曝光与成本数据评估达人价值。',
     '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> 位达人触达 · <strong>45</strong> 个合作 · 单条最高 <strong>54.5 万</strong> 曝光',
     '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>',
     '#experience .experience-link': '进一步了解 <span aria-hidden="true">→</span>',
@@ -929,14 +929,14 @@ const zh = {
     '#xinyuyou-nav .back-link': '← 返回作品集',
     '#xinyuyou-hero': `<h1>面向出海宠物品牌的达人营销。</h1>
       <div class="detail-hero-copy">
-        <p class="detail-eyebrow">新昱佑 · 海外达人营销</p>
-        <p class="detail-deck">我在新昱佑（Xinyuyou）的达人营销实习——这家公司以 Pawreto 品牌出海，主营宠物安全门栏：从首次触达到内容发布，我负责面向美加市场的创作者开发、商务推进与合作运营。</p>
+        <p class="detail-eyebrow">新昱佑（YUYO INNOVATIONS LLC）· 海外达人营销</p>
+        <p class="detail-deck">我在新昱佑（YUYO INNOVATIONS）的达人营销实习——这家公司以 Pawreto 品牌出海，主营宠物安全门栏：从首次触达到内容发布，我负责面向美加市场的创作者开发、商务推进与合作运营。</p>
         <p class="detail-meta">海外达人营销实习生 · 2025.06–2025.08 · 中国深圳</p>
       </div>`,
     '#xinyuyou-context': `<h2 id="xinyuyou-context-title">背景</h2>
       <div class="detail-section-copy">
         <p>过去十年，宠物经济随全球化升温，中国供应链优势让越来越多宠物用品企业走向海外——但产品出海和品牌出海是两件事。在 Instagram、TikTok 等主流平台上，达人是品牌与真实用户之间最直接的信任桥梁：他们用真实的家居场景和日常语言展示产品，其说服力远非传统广告投放可以替代——这正是达人营销要弥合的那道信任落差。</p>
-        <p>我实习的新昱佑（Xinyuyou）是一家宠物用品出海品牌公司，自主品牌 Pawreto，主营犬猫安全门栏，通过 Amazon 在美加市场销售。我所在的达人运营团队是公司增长引擎的前端：找到对的创作者、经营合作关系，并确保每一场合作都交付品牌可以放心的内容。</p>
+        <p>我实习的新昱佑（YUYO INNOVATIONS LLC）是一家宠物用品出海品牌公司，自主品牌 Pawreto，主营犬猫安全门栏，通过 Amazon 在美加市场销售。我所在的达人运营团队是公司增长引擎的前端：找到对的创作者、经营合作关系，并确保每一场合作都交付品牌可以放心的内容。</p>
       </div>`,
     '#xinyuyou-scope': `<h2 id="xinyuyou-scope-title">做了什么</h2>
       <div class="detail-section-copy">
