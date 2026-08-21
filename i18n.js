@@ -361,7 +361,7 @@ const en = {
     '#vertex-context': `<h2 id="vertex-context-title">Context</h2>
       <div class="section-copy">
         <p>Over the past decade, "Made in China" has been turning into "brands from China." More and more Chinese companies are building sustainable brand equity overseas, and communities are where a brand earns the trust of real users. People discuss products, share experiences, and shape each other's decisions there in ways no ad campaign can replace.</p>
-        <p>I joined a full-service marketing agency serving leading Chinese brands expanding globally, with clients like DJI, Insta360, and Anker. My account-operations team was the foundation of that work: we built, ran, and kept healthy the community content assets behind every campaign. It was my first look at the whole chain, from a brand's overseas goals to community content on the ground, and user feedback flowing back into strategy.</p>
+        <p>I joined a full-service marketing agency serving leading Chinese consumer-technology brands expanding globally. My account-operations team was the foundation of that work: we built, ran, and kept healthy the community content assets behind every campaign. It was my first look at the whole chain, from a brand's overseas goals to community content on the ground, and user feedback flowing back into strategy.</p>
       </div>`,
     '#vertex-scope': `<h2 id="vertex-scope-title">What I did</h2>
       <div class="section-copy">
@@ -845,7 +845,7 @@ const zh = {
     '#vertex-context': `<h2 id="vertex-context-title">背景</h2>
       <div class="section-copy">
         <p>过去十年，"中国制造"正在向"中国品牌"跃迁。越来越多的中国企业在产品力之外，开始寻求在海外建立可持续的品牌资产，而海外社区正是品牌与真实用户建立信任的关键阵地：用户在这里讨论产品、分享体验、影响彼此的决策，其真实性与说服力远非传统广告投放可以替代。</p>
-        <p>我加入的这家整合营销服务商，正服务于这一趋势，客户覆盖 DJI、Insta360、Anker 等多家深圳出海硬件品牌。我所在的账号运营团队是这条价值链的底座，负责品牌社区内容资产的构建、运营与健康管理。在这里，我第一次完整看见了一条"从品牌出海诉求，到社区内容落地，再到用户反馈回流"的营销链路。</p>
+        <p>我加入的这家整合营销服务商，正服务于这一趋势，客户覆盖多家中国出海消费硬件品牌。我所在的账号运营团队是这条价值链的底座，负责品牌社区内容资产的构建、运营与健康管理。在这里，我第一次完整看见了一条"从品牌出海诉求，到社区内容落地，再到用户反馈回流"的营销链路。</p>
       </div>`,
     '#vertex-scope': `<h2 id="vertex-scope-title">做了什么</h2>
       <div class="section-copy">
