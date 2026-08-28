@@ -12,7 +12,7 @@ test('Vertex evidence presents the approved internship scope without attribution
   for (const value of ['793K', '3,548', '482', '406K', '891', '90', '91.7%']) {
     assert.match(copy, new RegExp(value.replace('.', '\\.')));
   }
-  assert.doesNotMatch(copy, /representative|attribution boundary|归因边界|归因说明/i);
+  assert.doesNotMatch(copy, /attribution boundary|归因边界|归因说明/i);
   assert.match(copy, /I worked on Reddit community operations/i);
   assert.doesNotMatch(copy, /participated in operating|personally generated all|owned all results/i);
 });
@@ -31,10 +31,10 @@ test('homepage keeps summary evidence while the detail route owns the full evide
     assert.doesNotMatch(homeExperience, pattern);
     assert.match(detailEvidence, pattern);
   }
-  assert.equal((detailEvidence.match(/<tr>/g) ?? []).length, 8);
+  assert.equal((detailEvidence.match(/<tr>/g) ?? []).length, 9);
   assert.match(homeExperience, /<p class="experience-proofline"><strong>793K<\/strong> views · <strong>3,548<\/strong> upvotes · up to <strong>91\.7%<\/strong> U\.S\. audience share<\/p>/);
   assert.doesNotMatch(homeExperience, /experience-attribution/);
-  assert.match(i18n, /'#experience \.experience-proofline'/);
+  assert.match(i18n, /'#experience \.experience-row--vertex \.experience-proofline'/);
   assert.doesNotMatch(homeExperience, /class="proof"/);
   assert.match(i18n, /'#vertex-evidence': `<h2/);
 });

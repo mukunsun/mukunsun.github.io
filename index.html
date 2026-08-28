@@ -218,6 +218,7 @@ html.js.motion-desktop .hero.loaded .reveal-up{transition-delay:calc(var(--d,0)*
 .experience-company{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
 .experience-role{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.2;color:var(--ink);font-weight:600;text-wrap:balance;}
 .experience-dates{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:20px;}
+.experience-status{font-family:var(--serif);font-size:clamp(18px,2vw,24px);line-height:1.4;color:var(--muted);}
 .experience-responsibility{font-size:15px;line-height:1.85;color:var(--ink-2);max-width:64ch;}
 .experience-proofline{margin-top:24px;font-size:12px;line-height:1.75;color:var(--muted);letter-spacing:.02em;}
 .experience-proofline strong{font-family:var(--mono);font-size:15px;line-height:1;color:var(--amber);font-weight:600;font-variant-numeric:tabular-nums;}
@@ -398,11 +399,20 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
       </div>
     </div>
     <div class="experience-list">
+      <article class="experience-row experience-row--suu-tutoring" data-reveal="">
+        <header>
+          <p class="experience-company">SUU - Tutoring Center</p>
+          <h2 class="experience-role">Marketing Intern</h2>
+        </header>
+        <div class="experience-copy">
+          <p class="experience-status">Coming soon...</p>
+        </div>
+      </article>
       <article class="experience-row experience-row--vertex" data-reveal="">
         <header>
           <p class="experience-company">Vertex Marketing</p>
           <h2 class="experience-role">Reddit Community Operations Intern</h2>
-          <p class="experience-dates">Jun–Aug 2026 · Shenzhen, China</p>
+          <p class="experience-dates">Jun–Sep 2026 · Shenzhen, China</p>
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
@@ -729,7 +739,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   syncMotionState();
 })();
 </script>
-<script type="module" src="i18n.js?v=20260806-title-update"></script>
+<script type="module" src="i18n.js?v=20260828-suu-internship"></script>
 
 
 </body></html>

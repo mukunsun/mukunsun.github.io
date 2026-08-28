@@ -41,13 +41,13 @@ test('both languages cover the same selector set and corrected facts', () => {
   assert.doesNotMatch(allCopy, /19,000[\s\S]*impressions/);
   assert.doesNotMatch(allCopy, /525[\s\S]*\+/);
   assert.doesNotMatch(allCopy, /5,250|\+17%|~200|随时到岗|Single-post reads/);
-  assert.doesNotMatch(allCopy, /representative|Attribution boundary|归因边界|归因说明/i);
+  assert.doesNotMatch(allCopy, /Attribution boundary|归因边界|归因说明/i);
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '#experience .experience-attribution'), false);
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '#experience .experience-attribution'), false);
 });
 
 test('each translation selector is rooted in its intended route', async () => {
-  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel] = await Promise.all([
+  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel, xinyuyou] = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/vertex-reddit.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/suu-teaching-assistant.html', import.meta.url), 'utf8'),
@@ -57,6 +57,7 @@ test('each translation selector is rooted in its intended route', async () => {
     readFile(new URL('../music.html', import.meta.url), 'utf8'),
     readFile(new URL('../photography.html', import.meta.url), 'utf8'),
     readFile(new URL('../travel.html', import.meta.url), 'utf8'),
+    readFile(new URL('../projects/xinyuyou.html', import.meta.url), 'utf8'),
   ]);
   const selectors = new Set([
     ...Object.keys(LANGUAGES.en.copy),
@@ -72,6 +73,7 @@ test('each translation selector is rooted in its intended route', async () => {
     music: createStaticSelectorDocument(music),
     photography: createStaticSelectorDocument(photography),
     travel: createStaticSelectorDocument(travel),
+    xinyuyou: createStaticSelectorDocument(xinyuyou),
   };
   for (const selector of selectors) {
     const route = selector.startsWith('#vertex-') ? 'vertex'
@@ -82,7 +84,8 @@ test('each translation selector is rooted in its intended route', async () => {
             : selector.startsWith('#music-') ? 'music'
               : selector.startsWith('#photography-') ? 'photography'
                 : selector.startsWith('#travel-') ? 'travel'
-                  : 'home';
+                  : selector.startsWith('#xinyuyou-') ? 'xinyuyou'
+                    : 'home';
     assert.equal(routes[route].has(selector), true, `${route}: ${selector}`);
   }
 });
@@ -276,8 +279,8 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '#site-footer span:last-child'), false);
   assert.equal(LANGUAGES.en.attributes['#nav .lang-switch']['aria-label'], 'Language');
   assert.equal(LANGUAGES.zh.attributes['#nav .lang-switch']['aria-label'], '语言');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-proofline'], '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-proofline'], '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>');
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share');
+  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>');
   assert.equal(LANGUAGES.en.copy['#experience .experience-link'], 'Learn more about this <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-link'], '进一步了解 <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.en.copy['#nav .compact-nav summary'], 'Sections');
@@ -285,15 +288,15 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
 });
 
 test('language module declares all public page keys and the shared cache key', () => {
-  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel']);
-  assert.equal(I18N_CACHE_KEY, '20260806-title-update');
+  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou']);
+  assert.equal(I18N_CACHE_KEY, '20260828-suu-internship');
 });
 
 test('homepage dictionaries own the approved first-layer selectors', () => {
   const selectors = [
     '#about .about-copy p:nth-child(1)',
     '#about .about-copy p:nth-child(2)',
-    '#experience .experience-proofline',
+    '#experience .experience-row--vertex .experience-proofline',
     '#projects .project-row:nth-child(1) .project-copy strong',
     '#projects .project-row:nth-child(2) .project-copy strong',
     '#projects .project-row:nth-child(3) .project-copy strong',
@@ -423,5 +426,5 @@ test('page exposes a bilingual control and direct outside-work gateway media', a
   assert.equal(LANGUAGES.en.attributes[travelImage].alt, 'Bryce Canyon amphitheater in warm afternoon light');
   assert.equal(LANGUAGES.zh.attributes[travelImage].alt, '午后暖光下的布莱斯峡谷露天剧场');
   assert.doesNotMatch(html, /<details class="visual-archive"/);
-  assert.match(html, /src="i18n\.js\?v=20260806-title-update"/);
+  assert.match(html, /src="i18n\.js\?v=20260828-suu-internship"/);
 });

@@ -8,7 +8,7 @@ The approved homepage order is **about → experience → projects → education
 
 ### Information architecture
 
-- Experience gives role, responsibility, a compact evidence line, careful attribution, and a link to the complete Vertex record.
+- Experience gives each entry a company and role; completed entries add responsibility, evidence, and a link to the relevant record.
 - Projects are three editorial links, not disclosures. The **second-layer routes** are `projects/campus-campaign.html`, `projects/hotel-jazz.html`, and `projects/visual-work.html`.
 - Education remains a directly readable chronological ledger with verified facts.
 - The **asymmetric Outside Work** gateway uses one large Music track and a filled supporting column for Photography and Places, with one route to `outside-work.html`.
@@ -46,7 +46,7 @@ The document starts with `no-js`, so content is visible without JavaScript. When
 
 ## Component contracts
 
-- **Experience summary:** two rows, one outer rule, one separator, a single representative-evidence line, explicit Vertex attribution, and natural-ratio teaching media.
+- **Experience summary:** three rows, one outer rule, separators between rows, a pending SUU placeholder, a single representative-evidence line for Vertex, and natural-ratio media for completed internships.
 - **Teaching Assistant detail:** a concise bilingual internship route with role and context, classroom support, course operations, and two supplied classroom images. It uses verified facts only and avoids an evidence-report voice.
 - **Project index:** three linked editorial rows with copy, an approved preview, and a route action.
 - **Education ledger:** two verified entries shown in full on the homepage.

@@ -7,17 +7,23 @@ async function readHomepage() {
   return readFile(new URL('../index.html', import.meta.url), 'utf8');
 }
 
-test('homepage presents exactly two internships in reverse chronological order', async () => {
+test('homepage presents three internships in reverse chronological order', async () => {
   const home = await readHomepage();
   const section = home.match(/<section[^>]+id="experience"[\s\S]*?<\/section>/)?.[0] ?? '';
-  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 2);
+  const suuTutoring = section.match(/<article class="experience-row experience-row--suu-tutoring"[\s\S]*?<\/article>/)?.[0] ?? '';
+  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 3);
+  assert.ok(section.indexOf('experience-row--suu-tutoring') < section.indexOf('experience-row--vertex'));
   assert.ok(section.indexOf('experience-row--vertex') < section.indexOf('experience-row--teaching'));
   assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Internship<\/h2>/);
   assert.doesNotMatch(section, /Internship Experience|class="placard"/);
+  assert.match(section, /<p class="experience-company">SUU - Tutoring Center<\/p>/);
+  assert.match(section, /<h2 class="experience-role">Marketing Intern<\/h2>/);
+  assert.match(section, /<p class="experience-status">Coming soon\.\.\.<\/p>/);
+  assert.doesNotMatch(suuTutoring, /experience-dates|experience-media/);
   assert.match(section, /<p class="experience-company">Southern Utah University<\/p>/);
   assert.doesNotMatch(section, /Southern Utah University × Wuhan Polytechnic University/);
   assert.match(section, /English Writing Teaching Assistant/);
-  assert.match(section, /2026 · Current · Shenzhen, China/);
+  assert.match(section, /Jun–Sep 2026 · Shenzhen, China/);
   assert.match(section, /May 2026 · Wuhan, China/);
   assert.match(section, /200\+/);
 });
@@ -36,15 +42,20 @@ test('teaching-assistant copy stays within the approved evidence boundary', asyn
   assert.match(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-responsibility'], /200 多名学生/);
   assert.match(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-responsibility'], /Excel/);
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--teaching .experience-company'], 'Southern Utah University');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-dates'], '2026 · Current · Shenzhen, China');
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-dates'], 'Jun–Sep 2026 · Shenzhen, China');
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--teaching .experience-dates'], 'May 2026 · Wuhan, China');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-company'], '南犹他大学');
   assert.doesNotMatch(`${section}\n${bilingualCopy}`, /Sharon Lyman|\$450|airfare|82%|96%|30%/i);
 });
 
 test('each internship has stable scoped translation selectors', () => {
-  for (const modifier of ['vertex', 'teaching']) {
-    for (const field of ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility']) {
+  const fieldsByModifier = {
+    'suu-tutoring': ['experience-company', 'experience-role', 'experience-status'],
+    vertex: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
+    teaching: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
+  };
+  for (const [modifier, fields] of Object.entries(fieldsByModifier)) {
+    for (const field of fields) {
       const selector = `#experience .experience-row--${modifier} .${field}`;
       assert.ok(Object.hasOwn(LANGUAGES.en.copy, selector), selector);
       assert.ok(Object.hasOwn(LANGUAGES.zh.copy, selector), selector);
