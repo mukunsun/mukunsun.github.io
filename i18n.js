@@ -1,6 +1,6 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20260828-suu-internship';
+export const I18N_CACHE_KEY = '20260924-yuyo-restored';
 export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou'];
 
 const en = {
@@ -349,6 +349,11 @@ const en = {
     '#experience .experience-row--teaching .experience-role': 'English Writing Teaching Assistant',
     '#experience .experience-row--teaching .experience-dates': 'May 2026 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': 'Supported an SUU instructor in English writing courses serving 200+ students in Wuhan. Provided bilingual classroom support, managed attendance and assignment grading, delivered written feedback, and organized final-grade data and course completion reporting in Excel.',
+    '#experience .experience-row--xinyuyou .experience-company': 'YUYO INNOVATIONS LLC',
+    '#experience .experience-row--xinyuyou .experience-role': 'Influencer Marketing Intern',
+    '#experience .experience-row--xinyuyou .experience-dates': 'Jun–Aug 2025 · Shenzhen, China',
+    '#experience .experience-row--xinyuyou .experience-responsibility': 'I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada, reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.',
+    '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach',
     '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share',
     '#experience .experience-link': 'Learn more about this <span aria-hidden="true">→</span>',
     '#vertex-hero': `<p class="eyebrow">Vertex Marketing · Overseas Community Operations</p>
@@ -830,6 +835,11 @@ const zh = {
     '#experience .experience-row--teaching .experience-role': '英语写作课程助教',
     '#experience .experience-row--teaching .experience-dates': '2026 年 5 月 · Wuhan, China',
     '#experience .experience-row--teaching .experience-responsibility': '在武汉协助 SUU 教师为 200 多名学生开展英语写作课程，提供中英双语课堂支持；负责考勤、作业评分与书面反馈，并使用 Excel 整理期末成绩和课程完成情况。',
+    '#experience .experience-row--xinyuyou .experience-company': '新昱佑（YUYO INNOVATIONS LLC）',
+    '#experience .experience-row--xinyuyou .experience-role': '海外达人营销实习生',
+    '#experience .experience-row--xinyuyou .experience-dates': '2025.06–2025.08 · Shenzhen, China',
+    '#experience .experience-row--xinyuyou .experience-responsibility': '我负责新昱佑（YUYO INNOVATIONS LLC）的海外达人营销：面向美加市场开发创作者并推进置换、佣金与付费合作，累计触达 476 位达人、达成 45 个合作，并以曝光与成本数据评估达人价值。',
+    '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> 位达人触达 · <strong>45</strong> 个合作 · 单条最高 <strong>54.5 万</strong> 曝光',
     '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>',
     '#experience .experience-link': '进一步了解 <span aria-hidden="true">→</span>',
     '#vertex-hero': `<p class="eyebrow">Vertex Marketing · 海外社区运营</p>

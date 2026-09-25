@@ -7,13 +7,14 @@ async function readHomepage() {
   return readFile(new URL('../index.html', import.meta.url), 'utf8');
 }
 
-test('homepage presents three internships in reverse chronological order', async () => {
+test('homepage presents four internships in reverse chronological order', async () => {
   const home = await readHomepage();
   const section = home.match(/<section[^>]+id="experience"[\s\S]*?<\/section>/)?.[0] ?? '';
   const suuTutoring = section.match(/<article class="experience-row experience-row--suu-tutoring"[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 3);
+  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 4);
   assert.ok(section.indexOf('experience-row--suu-tutoring') < section.indexOf('experience-row--vertex'));
   assert.ok(section.indexOf('experience-row--vertex') < section.indexOf('experience-row--teaching'));
+  assert.ok(section.indexOf('experience-row--teaching') < section.indexOf('experience-row--xinyuyou'));
   assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Internship<\/h2>/);
   assert.doesNotMatch(section, /Internship Experience|class="placard"/);
   assert.match(section, /<p class="experience-company">SUU - Tutoring Center<\/p>/);
@@ -26,6 +27,10 @@ test('homepage presents three internships in reverse chronological order', async
   assert.match(section, /Jun–Sep 2026 · Shenzhen, China/);
   assert.match(section, /May 2026 · Wuhan, China/);
   assert.match(section, /200\+/);
+  assert.match(section, /YUYO INNOVATIONS LLC/);
+  assert.match(section, /Influencer Marketing Intern/);
+  assert.match(section, /Jun–Aug 2025 · Shenzhen, China/);
+  assert.match(section, /href="projects\/xinyuyou\.html">Learn more about this/);
 });
 
 test('teaching-assistant copy stays within the approved evidence boundary', async () => {
@@ -53,6 +58,7 @@ test('each internship has stable scoped translation selectors', () => {
     'suu-tutoring': ['experience-company', 'experience-role', 'experience-status'],
     vertex: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
     teaching: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
+    xinyuyou: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility', 'experience-proofline'],
   };
   for (const [modifier, fields] of Object.entries(fieldsByModifier)) {
     for (const field of fields) {
@@ -72,14 +78,16 @@ test('internship list uses one outer rule and one separator per following row', 
   assert.match(home, /\.experience-row\+\.experience-row\{[^}]*border-top:1px solid var\(--line-2\);/);
 });
 
-test('each internship pairs its copy with one approved natural-ratio context image', async () => {
+test('completed image-based internships pair their copy with approved natural-ratio context images', async () => {
   const home = await readHomepage();
   const vertex = home.match(/<article class="experience-row experience-row--vertex"[\s\S]*?<\/article>/)?.[0] ?? '';
   const teaching = home.match(/<article class="experience-row experience-row--teaching"[\s\S]*?<\/article>/)?.[0] ?? '';
+  const xinyuyou = home.match(/<article class="experience-row experience-row--xinyuyou"[\s\S]*?<\/article>/)?.[0] ?? '';
   assert.match(vertex, /<div class="experience-detail">[\s\S]*?<figure class="experience-media" data-reveal="img">/);
   assert.match(teaching, /<div class="experience-detail">[\s\S]*?<figure class="experience-media" data-reveal="img">/);
   assert.match(vertex, /src="assets\/internship\/VertexMkt\/1\.webp" width="1279" height="1706" alt="A bright shared workspace at Vertex Marketing in Shenzhen"/);
   assert.match(teaching, /src="assets\/internship\/SUU_TA\/classroom\.webp" width="1921" height="1279" alt="Mukun Sun speaking to an English writing class in Wuhan"/);
+  assert.match(xinyuyou, /experience-media--placeholder/);
   assert.match(home, /\.experience-detail\{display:grid;grid-template-columns:minmax\(0,1\.05fr\) minmax\(240px,\.95fr\);/);
   assert.match(home, /\.experience-media img\{[^}]*height:auto/);
 });

@@ -46,7 +46,7 @@ The document starts with `no-js`, so content is visible without JavaScript. When
 
 ## Component contracts
 
-- **Experience summary:** three rows, one outer rule, separators between rows, a pending SUU placeholder, a single representative-evidence line for Vertex, and natural-ratio media for completed internships.
+- **Experience summary:** four rows, one outer rule, separators between rows, a pending SUU entry, a single representative-evidence line for Vertex, natural-ratio media for completed internships, and the existing YUYO branded placeholder.
 - **Teaching Assistant detail:** a concise bilingual internship route with role and context, classroom support, course operations, and two supplied classroom images. It uses verified facts only and avoids an evidence-report voice.
 - **Project index:** three linked editorial rows with copy, an approved preview, and a route action.
 - **Education ledger:** two verified entries shown in full on the homepage.
