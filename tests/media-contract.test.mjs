@@ -11,7 +11,7 @@ const approved = [
   'assets/project/CampusGala/freshmen_welcome_gala.webp',
   'assets/project/Andi/andi_fest_2.webp',
   'assets/project/Andi/andi_fest.webp',
-  'assets/visual_work/jazz_winter.webp',
+  'assets/visual_work/tutoring/work-smarter.webp',
   'assets/music/suu_jazz_fest/performance.webp',
   'assets/music/suu_jazz_fest/playing.webp',
   'assets/music/jazz_in_the_room/jazz_in_the_room.jpg',
@@ -45,7 +45,7 @@ test('homepage uses approved lead images and excludes privacy-risk images', () =
   }
   assert.match(home, /assets\/photography\/walter_disney\.webp/);
   assert.match(home, /outside-card--travel[\s\S]*?<img src="assets\/travel\/bryce_canyon\.webp" width="1448" height="1086"/);
-  assert.match(home, /class="project-row project-row--visual"[\s\S]*?src="assets\/visual_work\/jazz_winter\.webp" width="989" height="1400" alt="Winter Jazz Concert key visual poster designed for a hotel jazz event"/);
+  assert.match(home, /class="project-row project-row--visual"[\s\S]*?src="assets\/visual_work\/tutoring\/work-smarter\.webp" width="1080" height="1350" alt="SUU Tutoring Center promotional poster: Stop working harder. Start working smarter"/);
   assert.doesNotMatch(home, /class="project-row project-row--visual"[\s\S]*?src="build\/assets\/hotone_main\.jpg"/);
   assert.doesNotMatch(home, /已生成图像/);
   for (const banned of ['professor_classroom.webp', 'grand_ball_with_friends.webp', 'with_professor.webp']) {

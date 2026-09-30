@@ -1,7 +1,7 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20260924-yuyo-restored';
-export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou'];
+export const I18N_CACHE_KEY = '20260930-tutoring';
+export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring'];
 
 const en = {
   title: 'Mukun Sun | Website',
@@ -58,7 +58,7 @@ const en = {
     '#experience .experience-row--teaching .experience-media img': { alt: 'Mukun Sun speaking to an English writing class in Wuhan' },
     '#projects .project-row:nth-child(1) img': { alt: 'A large campus gala audience facing a lit stage' },
     '#projects .project-row:nth-child(2) img': { alt: 'Jazz musicians performing at a hotel beside an upright bass' },
-    '#projects .project-row:nth-child(3) img': { alt: 'Winter Jazz Concert key visual poster designed for a hotel jazz event' },
+    '#projects .project-row:nth-child(3) img': { alt: 'SUU Tutoring Center promotional poster: Stop working harder. Start working smarter' },
     '#outside-work .outside-card:nth-child(1) img': { alt: 'Mukun Sun performing upright bass at SUU Jazz Fest' },
     '#outside-work .outside-card:nth-child(2) img': { alt: 'Curved metal architecture at Walt Disney Concert Hall' },
     '#outside-work .outside-card:nth-child(3) img': { alt: 'Bryce Canyon amphitheater in warm afternoon light' },
@@ -91,14 +91,12 @@ const en = {
     '#visual-nav .lang-switch': { 'aria-label': 'Language' },
     '#visual-nav .compact-nav summary': { 'aria-label': 'Open visual work navigation' },
     '#visual-nav .compact-links': { 'aria-label': 'Visual work sections' },
-    '#visual-gallery .detail-media:nth-child(1) img': { alt: 'HOTONE tenth-anniversary product poster for the Ampero II Stomp' },
-    '#visual-gallery .detail-media:nth-child(2) img': { alt: 'HOTONE product poster featuring an electric guitar and effects processor' },
-    '#visual-gallery .detail-media:nth-child(3) img': { alt: 'HOTONE Ampero II Stomp product-detail poster' },
-    '#visual-gallery .detail-media:nth-child(4) img': { alt: 'Coastline JAZZ NIGHT concert poster in magenta and deep blue' },
-    '#visual-gallery .detail-media:nth-child(5) img': { alt: 'Coastline JAZZ NIGHT poster variation in orange and dark red' },
-
-    '#visual-gallery .detail-media:nth-child(6) img': { alt: 'Winter Jazz Concert key visual poster designed for a hotel jazz event' },
-    '#visual-gallery .detail-media:nth-child(7) img': { alt: 'International Museum Day banner for Wuhan Museum' },
+    '#visual-hotone-main img': { alt: 'HOTONE tenth-anniversary product poster for the Ampero II Stomp' },
+    '#visual-hotone-pedal img': { alt: 'HOTONE Ampero II Stomp product-detail poster' },
+    '#visual-jazz-night img': { alt: 'Coastline JAZZ NIGHT concert poster in magenta and deep blue' },
+    '#visual-jazz-winter img': { alt: 'Winter Jazz Concert key visual poster designed for a hotel jazz event' },
+    '#visual-museum img': { alt: 'International Museum Day banner for Wuhan Museum' },
+    '#visual-finals img': { alt: 'Finals Fuel Week concept poster for SUU Tutoring Center' },
     '#visual-dialog': { 'aria-label': 'Enlarged visual work' },
     '#visual-dialog .dialog-close': { 'aria-label': 'Close image', 'title': 'Close (Esc)' },
     '#music-nav .lang-switch': { 'aria-label': 'Language' },
@@ -137,6 +135,13 @@ const en = {
     '#travel-dialog .dialog-close': { 'aria-label': 'Close image', 'title': 'Close (Esc)' },
   },
   alts: {
+    'work-smarter.webp': 'SUU Tutoring Center promotional poster: Stop working harder. Start working smarter',
+    'drop-in-guide.webp': 'Drop-in tutoring check-in guide with three pinned notes explaining the queue, options, and tutor matching',
+    'retrieval-practice.webp': 'Retrieval Practice story with illustrated cards for self-quizzing, writing questions, and flashcards',
+    'study-schedule.webp': 'Study Schedule story arranging six days of preparation into an illustrated timetable',
+    'heritage-cover.webp': 'Hispanic Heritage Month spotlight cover introducing Hermani Estrada from Guatemala, with flowing blue ribbons',
+    'heritage-journey.webp': 'English–Spanish academic-journey text slide with blue ribbon graphics on textured paper, without a portrait',
+    'heritage-quote.webp': 'English–Spanish quote from Hermani about helping students as he was helped, framed by blue ribbons',
     'portrait.jpg': 'Portrait of Mukun Sun',
     'jazz_winter.jpg': 'Winter Jazz Concert key visual poster designed for a hotel jazz event',
     'hotone_main.jpg': 'HOTONE tenth-anniversary product poster for the Ampero II Stomp',
@@ -225,22 +230,35 @@ const en = {
     '#hotel-footer span': 'Mukun Sun · Hotel × Jazz',
     '#hotel-footer a': 'Return to projects',
     '#visual-nav .brand': 'Mukun Sun · Selected Visual Work',
-    '#visual-nav .links': '<a href="#visual-gallery">Visual work</a>',
+    '#visual-nav .links': '<a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a>',
     '#visual-nav .compact-nav summary': 'Sections',
-    '#visual-nav .compact-links': '<a href="#visual-gallery">Visual work</a><a href="../index.html#projects">Portfolio index</a>',
+    '#visual-nav .compact-links': '<a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a><a href="../index.html#projects">Portfolio index</a>',
     '#visual-nav .back-link': '← Portfolio index',
     '#visual-hero h1': 'Selected Visual Work',
     '#visual-hero .detail-eyebrow': 'Visual Work',
-    '#visual-hero .detail-deck': 'Event, product, print, and photographic work.',
-    '#visual-gallery h2': 'Selected Visual Work',
-    '#visual-gallery .detail-media:nth-child(1) figcaption': 'HOTONE · Tenth-Anniversary Poster',
-    '#visual-gallery .detail-media:nth-child(2) figcaption': 'HOTONE · Release Your Musical Passion',
-    '#visual-gallery .detail-media:nth-child(3) figcaption': 'HOTONE · Ampero II Stomp Detail',
-    '#visual-gallery .detail-media:nth-child(4) figcaption': 'JAZZ NIGHT · Coastline',
-    '#visual-gallery .detail-media:nth-child(5) figcaption': 'JAZZ NIGHT · Variation',
-
-    '#visual-gallery .detail-media:nth-child(6) figcaption': 'Winter Jazz Concert · Hotel Event Visual',
-    '#visual-gallery .detail-media:nth-child(7) figcaption': 'International Museum Day · Wuhan Museum',
+    '#visual-hero .detail-deck': 'Posters, social content, and visual stories for campus, culture, and music.',
+    '#visual-tutoring-work-title': 'SUU Tutoring Center',
+    '#visual-tutoring-work .tutoring-intro': 'Selected posters, study-skills stories, and a bilingual Hispanic Heritage Month spotlight. Click any image to see the full design.',
+    '#visual-tutoring-posters h3': 'Making tutoring approachable.',
+    '#visual-tutoring-posters .tutoring-series-copy p': 'A direct invitation and a visual guide to drop-in tutoring.',
+    '#visual-tutoring-study h3': 'Study Skill of the Week',
+    '#visual-tutoring-study .tutoring-series-copy p': 'Two story-format designs that turn study advice into small, practical steps.',
+    '#visual-tutoring-heritage h3': 'Hispanic Heritage Month',
+    '#visual-tutoring-heritage .tutoring-series-copy p': 'Three selected slides from an English–Spanish tutor spotlight, connected by blue ribbons and a paper-textured background.',
+    '#visual-tutoring-caption-smarter': 'Start working smarter · Promotional poster',
+    '#visual-tutoring-caption-checkin': 'Drop-in tutoring · Check-in guide',
+    '#visual-tutoring-caption-retrieval': 'Retrieval practice · Story design',
+    '#visual-tutoring-caption-schedule': 'Study schedule · Story design',
+    '#visual-tutoring-caption-cover': 'Tutor spotlight · Cover',
+    '#visual-tutoring-caption-journey': 'Tutor spotlight · Academic journey',
+    '#visual-tutoring-caption-quote': 'Tutor spotlight · In his own words',
+    '#visual-gallery h2': 'More visual work',
+    '#visual-hotone-main figcaption': 'HOTONE · Tenth-Anniversary Poster',
+    '#visual-hotone-pedal figcaption': 'HOTONE · Ampero II Stomp Detail',
+    '#visual-jazz-night figcaption': 'JAZZ NIGHT · Coastline',
+    '#visual-jazz-winter figcaption': 'Winter Jazz Concert · Hotel Event Visual',
+    '#visual-museum figcaption': 'International Museum Day · Wuhan Museum',
+    '#visual-finals figcaption': 'SUU Tutoring Center · Finals Fuel Week (concept mockup)',
     '#visual-footer span': 'Mukun Sun · Selected Visual Work',
     '#visual-footer a': 'Return to projects',
     '#music-nav .brand': 'Mukun Sun · Music',
@@ -340,7 +358,6 @@ const en = {
     '#experience .stitle': 'Internship',
     '#experience .experience-row--suu-tutoring .experience-company': 'SUU - Tutoring Center',
     '#experience .experience-row--suu-tutoring .experience-role': 'Marketing Intern',
-    '#experience .experience-row--suu-tutoring .experience-status': 'Coming soon...',
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit Community Operations Intern',
     '#experience .experience-row--vertex .experience-dates': 'Jun–Sep 2026 · Shenzhen, China',
@@ -544,7 +561,7 @@ const zh = {
     '#experience .experience-row--teaching .experience-media img': { alt: '孙慕坤在武汉面向英语写作课堂讲课' },
     '#projects .project-row:nth-child(1) img': { alt: '大型校园晚会观众面向灯光舞台' },
     '#projects .project-row:nth-child(2) img': { alt: '爵士乐手在酒店演出，旁边摆放着低音提琴' },
-    '#projects .project-row:nth-child(3) img': { alt: '为酒店爵士活动设计的冬日爵士音乐会主视觉海报' },
+    '#projects .project-row:nth-child(3) img': { alt: 'SUU 学习辅导中心文字海报：Stop working harder. Start working smarter，以红色突出 smarter' },
     '#outside-work .outside-card:nth-child(1) img': { alt: '孙慕坤在 SUU Jazz Fest 舞台上演奏低音提琴' },
     '#outside-work .outside-card:nth-child(2) img': { alt: '华特·迪士尼音乐厅的金属曲面建筑' },
     '#outside-work .outside-card:nth-child(3) img': { alt: '午后暖光下的布莱斯峡谷露天剧场' },
@@ -577,14 +594,12 @@ const zh = {
     '#visual-nav .lang-switch': { 'aria-label': '语言' },
     '#visual-nav .compact-nav summary': { 'aria-label': '打开视觉作品导航' },
     '#visual-nav .compact-links': { 'aria-label': '视觉作品章节' },
-    '#visual-gallery .detail-media:nth-child(1) img': { alt: 'HOTONE Ampero II Stomp 十周年产品海报' },
-    '#visual-gallery .detail-media:nth-child(2) img': { alt: '电吉他与效果器构成的 HOTONE 产品海报' },
-    '#visual-gallery .detail-media:nth-child(3) img': { alt: 'HOTONE Ampero II Stomp 产品特写海报' },
-    '#visual-gallery .detail-media:nth-child(4) img': { alt: '洋红与深蓝配色的海岸线 JAZZ NIGHT 演出海报' },
-    '#visual-gallery .detail-media:nth-child(5) img': { alt: '暖橙与暗红配色的海岸线 JAZZ NIGHT 海报变体' },
-
-    '#visual-gallery .detail-media:nth-child(6) img': { alt: '为酒店爵士演出设计的冬日爵士主视觉海报' },
-    '#visual-gallery .detail-media:nth-child(7) img': { alt: '武汉博物馆国际博物馆日活动 Banner' },
+    '#visual-hotone-main img': { alt: 'HOTONE Ampero II Stomp 十周年产品海报' },
+    '#visual-hotone-pedal img': { alt: 'HOTONE Ampero II Stomp 产品特写海报' },
+    '#visual-jazz-night img': { alt: '洋红与深蓝配色的海岸线 JAZZ NIGHT 演出海报' },
+    '#visual-jazz-winter img': { alt: '为酒店爵士演出设计的冬日爵士主视觉海报' },
+    '#visual-museum img': { alt: '武汉博物馆国际博物馆日活动 Banner' },
+    '#visual-finals img': { alt: 'SUU 学习辅导中心 Finals Fuel Week 概念海报' },
     '#visual-dialog': { 'aria-label': '放大的视觉作品' },
     '#visual-dialog .dialog-close': { 'aria-label': '关闭图片', 'title': '关闭（Esc）' },
     '#music-nav .lang-switch': { 'aria-label': '语言' },
@@ -623,6 +638,13 @@ const zh = {
     '#travel-dialog .dialog-close': { 'aria-label': '关闭图片', 'title': '关闭（Esc）' },
   },
   alts: {
+    'work-smarter.webp': 'SUU 学习辅导中心文字海报：Stop working harder. Start working smarter，以红色突出 smarter',
+    'drop-in-guide.webp': '随到随学辅导签到指引，以三张便签说明排队、选择选项和等待辅导员的步骤',
+    'retrieval-practice.webp': '橙色与奶油色的检索练习长图，以插画卡片介绍自测、写问题和记忆卡片',
+    'study-schedule.webp': '学习计划长图，将六天备考步骤排成带手绘学习插画的时间表',
+    'heritage-cover.webp': '西班牙裔传统月人物专题封面，以蓝色飘带介绍来自危地马拉的 Hermani Estrada',
+    'heritage-journey.webp': '英语与西班牙语学业经历文字页，以蓝色飘带和纸张纹理排版，没有人像',
+    'heritage-quote.webp': 'Hermani 关于帮助学生的英语与西班牙语寄语，四周以蓝色飘带呼应系列视觉',
     'portrait.jpg': '孙慕坤 Mukun Sun 肖像照',
     'jazz_winter.jpg': '为酒店爵士演出设计的冬日爵士主视觉海报',
     'hotone_main.jpg': 'HOTONE Ampero II Stomp 十周年产品海报',
@@ -711,22 +733,35 @@ const zh = {
     '#hotel-footer span': '孙慕坤 · 酒店 × 爵士',
     '#hotel-footer a': '返回项目列表',
     '#visual-nav .brand': '孙慕坤 · 视觉作品精选',
-    '#visual-nav .links': '<a href="#visual-gallery">视觉作品</a>',
+    '#visual-nav .links': '<a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a>',
     '#visual-nav .compact-nav summary': '章节',
-    '#visual-nav .compact-links': '<a href="#visual-gallery">视觉作品</a><a href="../index.html#projects">返回作品集</a>',
+    '#visual-nav .compact-links': '<a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a><a href="../index.html#projects">返回作品集</a>',
     '#visual-nav .back-link': '← 返回作品集',
     '#visual-hero h1': '视觉作品精选',
     '#visual-hero .detail-eyebrow': '视觉作品',
-    '#visual-hero .detail-deck': '活动、产品、印刷与摄影作品。',
-    '#visual-gallery h2': '视觉作品精选',
-    '#visual-gallery .detail-media:nth-child(1) figcaption': 'HOTONE · 十周年海报',
-    '#visual-gallery .detail-media:nth-child(2) figcaption': 'HOTONE · Release Your Musical Passion',
-    '#visual-gallery .detail-media:nth-child(3) figcaption': 'HOTONE · Ampero II Stomp 细节',
-    '#visual-gallery .detail-media:nth-child(4) figcaption': 'JAZZ NIGHT · 海岸线',
-    '#visual-gallery .detail-media:nth-child(5) figcaption': 'JAZZ NIGHT · 变体',
-
-    '#visual-gallery .detail-media:nth-child(6) figcaption': '冬日爵士音乐会 · 酒店活动视觉',
-    '#visual-gallery .detail-media:nth-child(7) figcaption': '国际博物馆日 · 武汉博物馆',
+    '#visual-hero .detail-deck': '面向校园、文化与音乐的海报、社交内容和视觉设计。',
+    '#visual-tutoring-work-title': 'SUU 学习辅导中心',
+    '#visual-tutoring-work .tutoring-intro': '精选宣传海报、学习技巧长图，以及西班牙裔传统月双语人物专题。点击图片可查看完整设计。',
+    '#visual-tutoring-posters h3': '让学习辅导更容易走近。',
+    '#visual-tutoring-posters .tutoring-series-copy p': '用直接的邀请与清晰的步骤，介绍学习辅导服务。',
+    '#visual-tutoring-study h3': '每周学习技巧',
+    '#visual-tutoring-study .tutoring-series-copy p': '两张适用于社交平台限时动态的长图，把学习建议拆成具体的小步骤。',
+    '#visual-tutoring-heritage h3': '西班牙裔传统月',
+    '#visual-tutoring-heritage .tutoring-series-copy p': '英语与西班牙语人物专题中的三张精选设计，以蓝色飘带和纸张纹理串联封面、学业经历与引语。',
+    '#visual-tutoring-caption-smarter': 'Start working smarter · 宣传海报',
+    '#visual-tutoring-caption-checkin': '随到随学辅导 · 签到指引',
+    '#visual-tutoring-caption-retrieval': '检索练习 · 学习技巧长图',
+    '#visual-tutoring-caption-schedule': '学习计划 · 学习技巧长图',
+    '#visual-tutoring-caption-cover': '辅导员人物专题 · 封面',
+    '#visual-tutoring-caption-journey': '辅导员人物专题 · 学业经历',
+    '#visual-tutoring-caption-quote': '辅导员人物专题 · 本人寄语',
+    '#visual-gallery h2': '更多视觉作品',
+    '#visual-hotone-main figcaption': 'HOTONE · 十周年海报',
+    '#visual-hotone-pedal figcaption': 'HOTONE · Ampero II Stomp 细节',
+    '#visual-jazz-night figcaption': 'JAZZ NIGHT · 海岸线',
+    '#visual-jazz-winter figcaption': '冬日爵士音乐会 · 酒店活动视觉',
+    '#visual-museum figcaption': '国际博物馆日 · 武汉博物馆',
+    '#visual-finals figcaption': 'SUU 学习辅导中心 · Finals Fuel Week（概念稿）',
     '#visual-footer span': '孙慕坤 · 视觉作品精选',
     '#visual-footer a': '返回项目列表',
     '#music-nav .brand': '孙慕坤 · 音乐',
@@ -826,7 +861,6 @@ const zh = {
     '#experience .stitle': '实习',
     '#experience .experience-row--suu-tutoring .experience-company': '南犹他大学 · Tutoring Center',
     '#experience .experience-row--suu-tutoring .experience-role': '市场营销实习生',
-    '#experience .experience-row--suu-tutoring .experience-status': '即将开始......',
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit 社群运营实习生',
     '#experience .experience-row--vertex .experience-dates': '2026.06–2026.09 · Shenzhen, China',
@@ -974,6 +1008,77 @@ const zh = {
     '#xinyuyou-footer a': '返回实习经历',
   },
 };
+
+
+en.metadata.tutoring = {"title": "Marketing Intern · SUU Tutoring Center | Mukun Sun", "description": "Weekly Instagram and Facebook content, design, video, and analytics for the Southern Utah University Tutoring Center."};
+en.navLabels.tutoring = "Internship navigation";
+Object.assign(en.copy, {
+  "#tutoring-hero": "<h1>Marketing Intern</h1><div class=\"detail-hero-copy\"><p class=\"tutoring-organization\">Southern Utah University<br>Tutoring Center</p><p class=\"detail-deck\">Weekly social content that helps SUU students find tutoring support and build better study habits.</p><p class=\"detail-meta\">Sep 2026–Present · Cedar City, UT</p><ul class=\"tutoring-skills\"><li>Content planning</li><li>Social media</li><li>Graphic design</li><li>Short-form video</li><li>Analytics</li></ul></div>",
+  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">Overview</h2><div class=\"detail-section-copy\"><p>I run the weekly Instagram and Facebook content calendar for the Southern Utah University Tutoring Center, serving students who need academic support and practical study advice. I independently take content from topic selection through design, copy, scheduling, and publishing, with center staff approving each piece before it goes live. Since September 2026, I have published 20+ Reels, Stories, and posts about tutoring services, study skills, and tutor spotlights.</p></div>",
+  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">What I do</h2><dl class=\"tutoring-list\"><div><dt>Content calendar</dt><dd>Plan weekly topics and a publishing schedule for Instagram and Facebook around tutoring services, study skills, and tutor spotlights.</dd></div><div><dt>Graphic design</dt><dd>Design posts and Stories in Canva, making service information and study advice easy to scan.</dd></div><div><dt>Short-form video</dt><dd>Edit Reels in CapCut and adapt the pacing and format for social viewing.</dd></div><div><dt>Copy & publishing</dt><dd>Write captions, prepare platform-specific content, and schedule and publish approved posts in Meta Business Suite.</dd></div><div><dt>Review collaboration</dt><dd>Send content to center staff for review, incorporate their feedback, and publish only after approval.</dd></div><div><dt>Performance review</dt><dd>Use Meta Insights to track views, reach, interactions, and follows, then use those signals to inform the next content calendar.</dd></div></dl>",
+  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">September results</h2><p class=\"tutoring-period\">Meta Insights · September 1–28, 2026</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">20.3K</p><h3>Views</h3><p>Content accumulated views across Instagram and Facebook.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">9K</p><h3>Reach</h3><p>The reported reach shows how widely the content reached audiences during this period.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">772</p><h3>Content interactions</h3><p>Interactions rose 77.3% month over month, showing more audience response.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">77.4%</p><h3>Views from non-followers</h3><p>Most views came from beyond the existing follower base, indicating discovery.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">39</p><h3>New follows</h3><p>New follows rose 69.6%, adding to the audience for future content.</p></article></div><p class=\"tutoring-source\">Views: Instagram 19,411 + Facebook 870 = 20,281, rounded to 20.3K. Growth percentages are Meta Insights comparisons with the previous month.</p>",
+  "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">Tools</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>Graphic design · Posts and Stories</dd></div><div><dt>CapCut</dt><dd>Video editing · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>Scheduling, publishing & performance analysis</dd></div></dl>",
+  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">Gallery</h2><p>Reserved for published content and Meta Insights screenshots.</p></div><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Published post</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel or Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Views & reach · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Interactions & follows · Meta Insights</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">View selected Tutoring Center designs</a>",
+  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">Key learnings</h2><div class=\"tutoring-learnings\"><article><h3>Read the metrics together.</h3><p>Views show exposure; interactions and follows show different kinds of response. I use them together when planning the next round, rather than treating a high view count as proof that students used a service.</p></article><article><h3>Write for students who are new to the center.</h3><p>With 77.4% of views coming from non-followers, a post needs to make sense without account history: what tutoring offers, who it helps, and what a student can do next.</p></article><article><h3>Match the topic to a campus need.</h3><p>Service information, practical study advice, and tutor spotlights answer different student questions. Keeping these topics distinct gives me a clearer basis for comparing content and adjusting the weekly calendar.</p></article></div>",
+  "#tutoring-nav .brand": "Mukun Sun · Tutoring Center",
+  "#tutoring-nav .links": "<a href=\"#tutoring-overview\">Overview</a><a href=\"#tutoring-responsibilities\">What I do</a><a href=\"#tutoring-results\">Results</a><a href=\"#tutoring-tools\">Tools</a><a href=\"#tutoring-gallery\">Gallery</a><a href=\"#tutoring-learnings\">Learnings</a>",
+  "#tutoring-nav .compact-nav summary": "Sections",
+  "#tutoring-nav .compact-links": "<a href=\"#tutoring-overview\">Overview</a><a href=\"#tutoring-responsibilities\">What I do</a><a href=\"#tutoring-results\">Results</a><a href=\"#tutoring-tools\">Tools</a><a href=\"#tutoring-gallery\">Gallery</a><a href=\"#tutoring-learnings\">Learnings</a><a href=\"../index.html#experience\">Return to internships</a>",
+  "#tutoring-nav .back-link": "← Portfolio index",
+  "#tutoring-footer span": "Mukun Sun · Tutoring Center",
+  "#tutoring-footer a": "Return to internships",
+  "#experience .experience-row--suu-tutoring .experience-company": "Southern Utah University · Tutoring Center",
+  "#experience .experience-row--suu-tutoring .experience-dates": "Sep 2026–Present · Cedar City, UT",
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "I independently run the Tutoring Center's weekly Instagram and Facebook content calendar: planning topics, designing posts, editing short videos, writing copy, and scheduling and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.",
+  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>20.3K</strong> views · <strong>9K</strong> reach · <strong>772</strong> interactions",
+  "#experience .experience-row--suu-tutoring .experience-report-period": "Meta Insights · Sep 1–28, 2026"
+});
+Object.assign(en.attributes, {
+  "#tutoring-nav .lang-switch": {
+    "aria-label": "Language"
+  },
+  "#tutoring-nav .compact-nav summary": {
+    "aria-label": "Open internship navigation"
+  },
+  "#tutoring-nav .compact-links": {
+    "aria-label": "Internship sections"
+  }
+});
+
+zh.metadata.tutoring = {"title": "市场营销实习 · SUU Tutoring Center | 孙慕坤", "description": "南犹他大学 Tutoring Center 市场营销实习：Instagram 与 Facebook 内容策划、平面设计、短视频、审核协作与数据复盘。"};
+zh.navLabels.tutoring = "实习详情导航";
+Object.assign(zh.copy, {
+  "#tutoring-hero": "<h1>市场营销实习生</h1><div class=\"detail-hero-copy\"><p class=\"tutoring-organization\">南犹他大学<br>Tutoring Center（学业辅导中心）</p><p class=\"detail-deck\">通过每周社交媒体内容，帮助 SUU 学生了解学业辅导服务，掌握更有效的学习方法。</p><p class=\"detail-meta\">2026.09–至今 · 美国犹他州 Cedar City</p><ul class=\"tutoring-skills\"><li>内容策划</li><li>社交媒体运营</li><li>平面设计</li><li>短视频剪辑</li><li>数据分析</li></ul></div>",
+  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">岗位概览</h2><div class=\"detail-section-copy\"><p>我负责南犹他大学 Tutoring Center 的 Instagram 与 Facebook 每周内容日历，面向需要学业支持和实用学习建议的在校学生。从选题、设计、文案到排期和发布，我独立完成内容制作与运营，并在发布前交由中心工作人员审核，获批后上线。2026 年 9 月以来，已发布 20 多条 Reels、Stories 和图文，主题涵盖辅导服务、学习技巧与 tutor spotlights（辅导员介绍）。</p></div>",
+  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">工作职责</h2><dl class=\"tutoring-list\"><div><dt>内容日历</dt><dd>围绕辅导服务、学习技巧与辅导员介绍，制定 Instagram 和 Facebook 每周选题与发布计划。</dd></div><div><dt>平面设计</dt><dd>使用 Canva 制作图文与 Stories，让服务信息和学习建议便于快速阅读。</dd></div><div><dt>短视频</dt><dd>使用 CapCut 剪辑 Reels，根据社交媒体观看场景调整节奏与内容形式。</dd></div><div><dt>文案与发布</dt><dd>撰写文案，根据平台整理内容，在 Meta Business Suite 中排期并发布已获批的帖子。</dd></div><div><dt>审核协作</dt><dd>发布前将内容提交中心工作人员审核，根据反馈修改，获批后才发布。</dd></div><div><dt>数据复盘</dt><dd>通过 Meta Insights 跟踪浏览量、触达、互动与新增关注，用这些数据指导下一轮内容计划。</dd></div></dl>",
+  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">9 月成果</h2><p class=\"tutoring-period\">Meta Insights · 2026 年 9 月 1–28 日</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">20.3K</p><h3>浏览量</h3><p>Instagram 与 Facebook 内容在统计期内累计获得的浏览量。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">9K</p><h3>触达</h3><p>统计期内报告的触达数据，反映内容覆盖受众的规模。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">772</p><h3>内容互动</h3><p>较上月增长 77.3%，说明受众对内容的回应有所增加。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">77.4%</p><h3>非粉丝浏览占比</h3><p>多数浏览来自现有粉丝之外，说明内容正在被新受众看到。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">39</p><h3>新增关注</h3><p>较上月增长 69.6%，为后续内容积累了更多受众。</p></article></div><p class=\"tutoring-source\">浏览量拆分：Instagram 19,411 + Facebook 870 = 20,281，四舍五入展示为 20.3K。增长百分比为 Meta Insights 与上月的对比数据。</p>",
+  "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">工具</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>平面设计 · 图文与 Stories</dd></div><div><dt>CapCut</dt><dd>短视频剪辑 · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>排期、发布与数据分析</dd></div></dl>",
+  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">内容与数据截图</h2><p>预留给实际发布的内容和 Meta Insights 截图。</p></div><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>已发布图文</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel 或 Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>浏览与触达 · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>互动与新增关注 · Meta Insights</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">查看 Tutoring Center 设计作品</a>",
+  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">工作中的体会</h2><div class=\"tutoring-learnings\"><article><h3>把指标放在一起看。</h3><p>浏览量反映曝光，互动与关注反映不同层面的回应。我会结合这些指标安排下一轮内容，不能仅凭高浏览量判断学生是否实际使用了辅导服务。</p></article><article><h3>为第一次接触中心的学生写内容。</h3><p>77.4% 的浏览来自非粉丝，因此帖子不能依赖读者对账号的了解：需要说清辅导能提供什么、适合谁，以及学生下一步可以怎么做。</p></article><article><h3>让选题对应具体的校园需求。</h3><p>服务信息、实用学习建议与辅导员介绍，回答的是不同问题。明确各类内容的目的，才能更有依据地比较表现、调整每周日历。</p></article></div>",
+  "#tutoring-nav .brand": "孙慕坤 · Tutoring Center",
+  "#tutoring-nav .links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">截图</a><a href=\"#tutoring-learnings\">体会</a>",
+  "#tutoring-nav .compact-nav summary": "目录",
+  "#tutoring-nav .compact-links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">截图</a><a href=\"#tutoring-learnings\">体会</a><a href=\"../index.html#experience\">返回实习经历</a>",
+  "#tutoring-nav .back-link": "← 返回作品集",
+  "#tutoring-footer span": "孙慕坤 · Tutoring Center",
+  "#tutoring-footer a": "返回实习经历",
+  "#experience .experience-row--suu-tutoring .experience-company": "南犹他大学 · Tutoring Center",
+  "#experience .experience-row--suu-tutoring .experience-dates": "2026.09–至今 · 美国犹他州 Cedar City",
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "独立负责 Tutoring Center 的 Instagram 与 Facebook 每周内容日历：选题、平面设计、短视频剪辑、文案、排期，并在工作人员审核获批后发布。2026 年 9 月以来，已发布 20 多条 Reels、Stories 和图文。",
+  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>20.3K</strong> 浏览量 · <strong>9K</strong> 触达 · <strong>772</strong> 次互动",
+  "#experience .experience-row--suu-tutoring .experience-report-period": "Meta Insights · 2026 年 9 月 1–28 日"
+});
+Object.assign(zh.attributes, {
+  "#tutoring-nav .lang-switch": {
+    "aria-label": "语言"
+  },
+  "#tutoring-nav .compact-nav summary": {
+    "aria-label": "打开实习详情目录"
+  },
+  "#tutoring-nav .compact-links": {
+    "aria-label": "实习详情章节"
+  }
+});
 
 export const LANGUAGES = { en, zh };
 

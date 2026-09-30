@@ -25,7 +25,7 @@ test('both routes enforce clipping, mobile controls, wrapping, exact cache impor
     assert.match(html, /<html\s+lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1);
   }
-  assert.match(home, /<script type="module" src="i18n\.js\?v=20260924-yuyo-restored"><\/script>/);
+  assert.match(home, /<script type="module" src="i18n\.js\?v=20260930-tutoring"><\/script>/);
   assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20260924-yuyo-restored"><\/script>/);
   assert.match(i18n, /export const DEFAULT_LANGUAGE = 'en';/);
   assert.match(i18n, /export function getInitialLanguage\(storage = globalThis\.localStorage\)/);

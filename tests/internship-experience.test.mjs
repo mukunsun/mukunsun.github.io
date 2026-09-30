@@ -17,10 +17,12 @@ test('homepage presents four internships in reverse chronological order', async 
   assert.ok(section.indexOf('experience-row--teaching') < section.indexOf('experience-row--xinyuyou'));
   assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Internship<\/h2>/);
   assert.doesNotMatch(section, /Internship Experience|class="placard"/);
-  assert.match(section, /<p class="experience-company">SUU - Tutoring Center<\/p>/);
+  assert.match(section, /<p class="experience-company">Southern Utah University · Tutoring Center<\/p>/);
   assert.match(section, /<h2 class="experience-role">Marketing Intern<\/h2>/);
-  assert.match(section, /<p class="experience-status">Coming soon\.\.\.<\/p>/);
-  assert.doesNotMatch(suuTutoring, /experience-dates|experience-media/);
+  assert.match(suuTutoring, /Sep 2026–Present · Cedar City, UT/);
+  assert.match(suuTutoring, /href="projects\/suu-tutoring-center.html"/);
+  assert.match(suuTutoring, /20\.3K[\s\S]*9K[\s\S]*772/);
+  assert.doesNotMatch(suuTutoring, /Coming soon|experience-status/);
   assert.match(section, /<p class="experience-company">Southern Utah University<\/p>/);
   assert.doesNotMatch(section, /Southern Utah University × Wuhan Polytechnic University/);
   assert.match(section, /English Writing Teaching Assistant/);
@@ -55,7 +57,7 @@ test('teaching-assistant copy stays within the approved evidence boundary', asyn
 
 test('each internship has stable scoped translation selectors', () => {
   const fieldsByModifier = {
-    'suu-tutoring': ['experience-company', 'experience-role', 'experience-status'],
+    'suu-tutoring': ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility', 'experience-proofline', 'experience-report-period'],
     vertex: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
     teaching: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
     xinyuyou: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility', 'experience-proofline'],

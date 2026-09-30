@@ -47,7 +47,7 @@ test('both languages cover the same selector set and corrected facts', () => {
 });
 
 test('each translation selector is rooted in its intended route', async () => {
-  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel, xinyuyou] = await Promise.all([
+  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel, xinyuyou, tutoring] = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/vertex-reddit.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/suu-teaching-assistant.html', import.meta.url), 'utf8'),
@@ -58,6 +58,7 @@ test('each translation selector is rooted in its intended route', async () => {
     readFile(new URL('../photography.html', import.meta.url), 'utf8'),
     readFile(new URL('../travel.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/xinyuyou.html', import.meta.url), 'utf8'),
+    readFile(new URL('../projects/suu-tutoring-center.html', import.meta.url), 'utf8'),
   ]);
   const selectors = new Set([
     ...Object.keys(LANGUAGES.en.copy),
@@ -74,9 +75,11 @@ test('each translation selector is rooted in its intended route', async () => {
     photography: createStaticSelectorDocument(photography),
     travel: createStaticSelectorDocument(travel),
     xinyuyou: createStaticSelectorDocument(xinyuyou),
+    tutoring: createStaticSelectorDocument(tutoring),
   };
   for (const selector of selectors) {
-    const route = selector.startsWith('#vertex-') ? 'vertex'
+    const route = selector.startsWith('#tutoring-') ? 'tutoring'
+      : selector.startsWith('#vertex-') ? 'vertex'
       : selector.startsWith('#teaching-') ? 'teaching'
       : selector.startsWith('#campus-') ? 'campus'
         : selector.startsWith('#hotel-') ? 'hotel'
@@ -96,7 +99,7 @@ test('second-layer dictionaries use the approved bilingual claims', () => {
     ['#campus-contribution p', 'I led the promotion work, adapted content for each platform, and connected on-site activity with online publishing.', '我负责宣传工作的组织协调，根据不同平台调整内容，并衔接现场活动与线上发布。'],
     ['#hotel-context p', 'A balcony performance connected Ni Jazz Bar with Fengmao Andi Hotel around a hotel-and-art event concept.', '一场阳台演出以“酒店与艺术”为概念，连接了 Ni Jazz Bar 与风貌安坻酒店。'],
     ['#hotel-contribution p', 'I developed the event concept, coordinated the partners and performance, planned WeChat promotion, and designed a consistent visual identity.', '我构思活动概念，协调合作方与演出，策划微信推广，并设计统一的视觉识别。'],
-    ['#visual-hero .detail-deck', 'Event, product, print, and photographic work.', '活动、产品、印刷与摄影作品。'],
+    ['#visual-hero .detail-deck', 'Posters, social content, and visual stories for campus, culture, and music.', '面向校园、文化与音乐的海报、社交内容和视觉设计。'],
     ['#music-intro .music-intro-copy', 'I play upright and electric bass, but much of my music work also happens before the stage: arranging, organizing rehearsals, coordinating venues, and building an event around a band.', '我演奏低音提琴和电贝斯，但很多音乐工作发生在登台之前：编曲、组织排练、协调场地，以及围绕一支乐队完成整场活动。'],
   ];
   for (const [selector, english, chinese] of matrix) {
@@ -142,7 +145,7 @@ test('second-layer route copy and attributes are selector-scoped and complete', 
     visual: [
       '#visual-nav .brand', '#visual-nav .links', '#visual-nav .compact-nav summary', '#visual-nav .compact-links', '#visual-nav .back-link',
       '#visual-hero h1', '#visual-hero .detail-eyebrow', '#visual-hero .detail-deck', '#visual-gallery h2',
-      ...Array.from({ length: 7 }, (_, index) => `#visual-gallery .detail-media:nth-child(${index + 1}) figcaption`),
+      ...['hotone-main', 'hotone-pedal', 'jazz-night', 'jazz-winter', 'museum', 'finals'].map((id) => `#visual-${id} figcaption`),
       '#visual-footer span', '#visual-footer a',
     ],
     music: [
@@ -190,7 +193,7 @@ test('second-layer route copy and attributes are selector-scoped and complete', 
     '#campus-nav .lang-switch', '#campus-nav .compact-nav summary', '#campus-nav .compact-links', '#campus-media img', '#campus-dialog', '#campus-dialog .dialog-close',
     '#hotel-nav .lang-switch', '#hotel-nav .compact-nav summary', '#hotel-nav .compact-links', '#hotel-media .detail-media:nth-child(1) img', '#hotel-media .detail-media:nth-child(2) img', '#hotel-dialog', '#hotel-dialog .dialog-close',
     '#visual-nav .lang-switch', '#visual-nav .compact-nav summary', '#visual-nav .compact-links',
-    ...Array.from({ length: 7 }, (_, index) => `#visual-gallery .detail-media:nth-child(${index + 1}) img`),
+    ...['hotone-main', 'hotone-pedal', 'jazz-night', 'jazz-winter', 'museum', 'finals'].map((id) => `#visual-${id} img`),
     '#visual-dialog', '#visual-dialog .dialog-close',
     '#music-nav .lang-switch', '#music-nav .compact-nav summary', '#music-nav .compact-links',
     '#music-intro .music-lead img', '#music-artist-finalist img', '#music-grand-ball img', '#music-campus-concert img', '#music-welcome-gala img',
@@ -288,8 +291,8 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
 });
 
 test('language module declares all public page keys and the shared cache key', () => {
-  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou']);
-  assert.equal(I18N_CACHE_KEY, '20260924-yuyo-restored');
+  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring']);
+  assert.equal(I18N_CACHE_KEY, '20260930-tutoring');
 });
 
 test('homepage dictionaries own the approved first-layer selectors', () => {
@@ -426,5 +429,5 @@ test('page exposes a bilingual control and direct outside-work gateway media', a
   assert.equal(LANGUAGES.en.attributes[travelImage].alt, 'Bryce Canyon amphitheater in warm afternoon light');
   assert.equal(LANGUAGES.zh.attributes[travelImage].alt, '午后暖光下的布莱斯峡谷露天剧场');
   assert.doesNotMatch(html, /<details class="visual-archive"/);
-  assert.match(html, /src="i18n\.js\?v=20260924-yuyo-restored"/);
+  assert.match(html, /src="i18n\.js\?v=20260930-tutoring"/);
 });

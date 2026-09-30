@@ -7,6 +7,7 @@ const js = await readFile(new URL('../detail.js', import.meta.url), 'utf8');
 const home = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 
 const routes = [
+  ['projects/suu-tutoring-center.html', 'tutoring'],
   ['projects/campus-campaign.html', 'campus'],
   ['projects/hotel-jazz.html', 'hotel'],
   ['projects/visual-work.html', 'visual'],
@@ -28,7 +29,7 @@ test('every second-layer route has the shared bilingual shell', async () => {
     assert.match(html, new RegExp(`<html[^>]+data-page="${key}"`));
     assert.match(html, /href="(?:\.\.\/)?detail\.css\?v=20260924-yuyo-restored"/);
     assert.match(html, /src="(?:\.\.\/)?detail\.js\?v=20260924-yuyo-restored"/);
-    assert.match(html, /src="(?:\.\.\/)?i18n\.js\?v=20260924-yuyo-restored"/);
+    assert.match(html, /src="(?:\.\.\/)?i18n\.js\?v=(?:20260924-yuyo-restored|20260930-tutoring)"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);
     assert.match(html, /data-lang="zh"/);
@@ -106,30 +107,27 @@ test('selected visual work preserves the approved gallery with real image links'
   const html = await readFile(new URL('../projects/visual-work.html', import.meta.url), 'utf8');
   const gallery = [
     ['visual_work/hotone_main.webp', 1486, 2106, 'HOTONE · Tenth-Anniversary Poster'],
-    ['visual_work/hotone_guitar.webp', 1141, 1626, 'HOTONE · Release Your Musical Passion'],
     ['visual_work/hotone_pedal.webp', 1322, 1880, 'HOTONE · Ampero II Stomp Detail'],
     ['visual_work/jazz_coast_a.webp', 1086, 1448, 'JAZZ NIGHT · Coastline'],
-    ['visual_work/jazz_coast_b.webp', 1086, 1448, 'JAZZ NIGHT · Variation'],
     ['visual_work/jazz_winter.webp', 989, 1400, 'Winter Jazz Concert · Hotel Event Visual'],
     ['visual_work/banner_museum.webp', 1983, 793, 'International Museum Day · Wuhan Museum'],
   ];
 
   assert.match(html, /<header class="detail-hero" id="visual-hero"[^>]*>[\s\S]*?<section class="detail-section" id="visual-gallery"/);
-  assert.match(html, /Event, product, print, and photographic work\./);
+  assert.match(html, /Posters, social content, and visual stories for campus, culture, and music\./);
   assert.doesNotMatch(html, /visual-lead|visual-archive|trifold/);
   for (const [file, width, height, caption] of gallery) {
     assert.match(html, new RegExp(`<a class="media-button" href="\\.\\.\\/assets\\/${file}" data-enlarge>`));
     assert.match(html, new RegExp(`<img src="\\.\\.\\/assets\\/${file}" width="${width}" height="${height}"`));
     assert.ok(html.includes(`<figcaption>${caption}</figcaption>`), caption);
   }
-  assert.ok(html.indexOf('hotone_main.webp') < html.indexOf('hotone_guitar.webp'));
-  assert.ok(html.indexOf('hotone_guitar.webp') < html.indexOf('hotone_pedal.webp'));
+  assert.ok(html.indexOf('hotone_main.webp') < html.indexOf('hotone_pedal.webp'));
   assert.ok(html.indexOf('hotone_pedal.webp') < html.indexOf('jazz_coast_a.webp'));
-  assert.ok(html.indexOf('jazz_coast_a.webp') < html.indexOf('jazz_coast_b.webp'));
-  assert.ok(html.indexOf('jazz_coast_b.webp') < html.indexOf('jazz_winter.webp'));
+  assert.ok(html.indexOf('jazz_coast_a.webp') < html.indexOf('jazz_winter.webp'));
   assert.ok(html.indexOf('jazz_winter.webp') < html.indexOf('banner_museum.webp'));
-  assert.match(html, /visual-feature[\s\S]*?hotone_main\.webp/);
-  assert.match(html, /visual-feature[\s\S]*?banner_museum\.webp/);
+  assert.match(html, /id="visual-hotone-main"/);
+  assert.match(html, /visual-feature[^>]*id="visual-museum"/);
+  assert.doesNotMatch(html, /hotone_guitar\.webp|jazz_coast_b\.webp|heritage-profile\.webp/);
   assert.doesNotMatch(html, /build\/assets|grand_ball_with_friends\.jpg|bass[123]\.jpg/);
 });
 
@@ -277,13 +275,15 @@ test('detail routes expose no-JS content and mount live reveal hooks', async () 
     const sections = html.match(/<section class="[^"]*\bdetail-section\b[^"]*"[^>]*>/g) ?? [];
     const media = html.match(/<figure class="[^"]*\bdetail-media\b[^"]*"[^>]*>/g) ?? [];
     assert.ok(sections.length > 0, `${path}: sections`);
-    if (key === 'travel') assert.equal(media.length, 0, `${path}: text-only route`);
+    if (key === 'travel' || key === 'tutoring') assert.equal(media.length, 0, `${path}: no published gallery images`);
     else assert.ok(media.length > 0, `${path}: media`);
     assert.equal(sections.every((tag) => tag.includes('data-reveal')), true, `${path}: section reveals`);
     assert.equal(media.every((tag) => tag.includes('data-reveal="media"')), true, `${path}: media reveals`);
     assert.match(html, /root\.className=root\.className\.replace\('no-js','js'\)/);
-    assert.match(html, new RegExp(`<dialog class="image-dialog" id="${key}-dialog"`));
-    assert.match(html, /data-dialog-close/);
+    if (key !== 'tutoring') {
+      assert.match(html, new RegExp(`<dialog class="image-dialog" id="${key}-dialog"`));
+      assert.match(html, /data-dialog-close/);
+    }
     assert.match(html, new RegExp(`<footer class="footer" id="${key}-footer"`));
   }
 });
