@@ -1,6 +1,6 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20260930-tutoring';
+export const I18N_CACHE_KEY = '20260930-october';
 export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring'];
 
 const en = {
@@ -238,7 +238,7 @@ const en = {
     '#visual-hero .detail-eyebrow': 'Visual Work',
     '#visual-hero .detail-deck': 'Posters, social content, and visual stories for campus, culture, and music.',
     '#visual-tutoring-work-title': 'SUU Tutoring Center',
-    '#visual-tutoring-work .tutoring-intro': 'Selected posters, study-skills stories, and a bilingual Hispanic Heritage Month spotlight. Click any image to see the full design.',
+    '#visual-tutoring-work .tutoring-intro': 'Selected posters, seasonal carousels, study-skills stories, and a bilingual Hispanic Heritage Month spotlight. Click any image to see the full design.',
     '#visual-tutoring-posters h3': 'Making tutoring approachable.',
     '#visual-tutoring-posters .tutoring-series-copy p': 'A direct invitation and a visual guide to drop-in tutoring.',
     '#visual-tutoring-study h3': 'Study Skill of the Week',
@@ -1077,6 +1077,46 @@ Object.assign(zh.attributes, {
   },
   "#tutoring-nav .compact-links": {
     "aria-label": "实习详情章节"
+  }
+});
+
+
+Object.assign(en.copy, {
+  "#visual-tutoring-october h3": "Officially October",
+  "#visual-tutoring-october .tutoring-series-copy p": "A three-slide seasonal carousel: autumn photography, a playful collage, and an invitation to the Tutoring Center.",
+  "#visual-tutoring-caption-october-cover": "Officially October · Cover",
+  "#visual-tutoring-caption-october-mood": "Autumn mood · Collage",
+  "#visual-tutoring-caption-october-invitation": "Tutoring Center · Invitation"
+});
+Object.assign(en.attributes, {
+  "#visual-tutoring-october .detail-media:nth-child(1) img": {
+    "alt": "Officially October carousel cover with red autumn leaves, paper texture, and handwritten October lettering"
+  },
+  "#visual-tutoring-october .detail-media:nth-child(2) img": {
+    "alt": "Autumn collage with a mug, candle, pumpkin, cupcake, scarf, and leaf stickers over red foliage"
+  },
+  "#visual-tutoring-october .detail-media:nth-child(3) img": {
+    "alt": "October carousel closing slide inviting students to the Tutoring Center in ELC 204, framed by red autumn leaves"
+  }
+});
+
+Object.assign(zh.copy, {
+  "#visual-tutoring-october h3": "Officially October · 十月开场",
+  "#visual-tutoring-october .tutoring-series-copy p": "三张秋日主题轮播图，以红叶摄影、趣味拼贴与辅导中心邀请串联完整内容。",
+  "#visual-tutoring-caption-october-cover": "Officially October · 封面",
+  "#visual-tutoring-caption-october-mood": "秋日氛围 · 拼贴",
+  "#visual-tutoring-caption-october-invitation": "Tutoring Center · 到访邀请",
+  "#visual-tutoring-work .tutoring-intro": "精选宣传海报、季节主题轮播、学习技巧长图与西班牙裔传统月双语人物专题。点击图片可查看完整设计。"
+});
+Object.assign(zh.attributes, {
+  "#visual-tutoring-october .detail-media:nth-child(1) img": {
+    "alt": "Officially October 轮播封面：红色秋叶、纸张纹理与手写十月标题"
+  },
+  "#visual-tutoring-october .detail-media:nth-child(2) img": {
+    "alt": "秋日拼贴：红叶背景上叠加马克杯、蜡烛、南瓜、纸杯蛋糕、围巾和叶片贴纸"
+  },
+  "#visual-tutoring-october .detail-media:nth-child(3) img": {
+    "alt": "十月轮播收尾图：红叶照片围绕到访 Tutoring Center 的邀请，标注 ELC 204"
   }
 });
 

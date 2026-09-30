@@ -1,5 +1,6 @@
 /* Tutoring Center additions inherit the site's dark gallery and shared tokens. */
 #visual-tutoring-work{display:block;scroll-margin-top:88px;}
+#visual-tutoring-october{scroll-margin-top:88px;}
 .tutoring-heading{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(32px,6vw,88px);align-items:start;}
 .tutoring-heading h2{max-width:12ch;}
 .tutoring-intro{max-width:54ch;margin:0;color:var(--color-ink-soft);font-size:var(--text-md);}
