@@ -24,6 +24,16 @@ html[data-page="tutoring"] .detail-hero{align-items:center;}
 .screenshot-placeholder span{font-family:var(--font-mono);font-size:var(--text-xs);line-height:1.8;color:var(--color-muted);}
 .tutoring-screenshots figcaption{margin-top:var(--space-xs);font-size:var(--text-sm);color:var(--color-ink-soft);}
 .tutoring-design-link{display:inline-flex;align-items:center;min-height:44px;margin-top:var(--space-lg);font-size:var(--text-sm);color:var(--color-accent-bright);text-decoration:underline;text-underline-offset:.3em;}
+.tutoring-designs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-xl);max-width:840px;margin-inline:auto;}
+.tutoring-designs .detail-media{margin:0;}
+.screenshot-reserve{margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--color-rule);}
+.screenshot-reserve summary{display:flex;align-items:center;justify-content:space-between;min-height:44px;cursor:pointer;font-size:var(--text-sm);color:var(--color-ink-soft);list-style:none;}
+.screenshot-reserve summary::-webkit-details-marker{display:none;}
+.screenshot-reserve summary::after{content:"+";font-size:var(--text-lg);color:var(--color-accent-bright);}
+.screenshot-reserve[open] summary::after{content:"−";}
+.screenshot-reserve>p{margin:var(--space-sm) 0 var(--space-lg);font-size:var(--text-sm);color:var(--color-muted);}
+.screenshot-reserve .screenshot-placeholder{aspect-ratio:16/9;}
+@media(max-width:40rem){.tutoring-designs{grid-template-columns:minmax(0,1fr);gap:var(--space-lg);}}
 .tutoring-learnings article+article{margin-top:var(--space-xl);}
 .tutoring-learnings h3{margin:0 0 var(--space-xs);}
 .tutoring-learnings p{margin:0;color:var(--color-ink-soft);}

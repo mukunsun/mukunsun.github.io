@@ -32,8 +32,8 @@ test('English uses straight quotes while Chinese uses full-width punctuation', (
 test('both languages cover the same selector set and corrected facts', () => {
   assert.deepEqual(Object.keys(LANGUAGES.en.copy), Object.keys(LANGUAGES.zh.copy));
   assert.deepEqual(Object.keys(LANGUAGES.en.attributes), Object.keys(LANGUAGES.zh.attributes));
-  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Communication, community, and music.');
-  assert.equal(LANGUAGES.zh.copy['.hero .role'], '传播、社群与音乐。');
+  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Social media, community, and visual communication.');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '社交内容、社群运营与视觉传播。');
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '.hero .roleen'), false);
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '.hero .roleen'), false);
   assert.ok(!Object.hasOwn(LANGUAGES.en.copy, '.hero .ghost'));
@@ -95,8 +95,7 @@ test('each translation selector is rooted in its intended route', async () => {
 
 test('second-layer dictionaries use the approved bilingual claims', () => {
   const matrix = [
-    ['#campus-context p', 'Campus welcome and New Year events needed coordinated promotion across online and offline channels.', '校园迎新与新年活动需要在线上线下渠道之间保持协调一致的宣传。'],
-    ['#campus-contribution p', 'I led the promotion work, adapted content for each platform, and connected on-site activity with online publishing.', '我负责宣传工作的组织协调，根据不同平台调整内容，并衔接现场活动与线上发布。'],
+    ['#campus-context p', 'Welcome and New Year events brought the campus together. The promotion work connected online publishing with the activity on site.', '迎新与新年活动让校园师生聚在一起，宣传工作需要衔接线上发布与现场活动。'],
     ['#hotel-context p', 'A balcony performance connected Ni Jazz Bar with Fengmao Andi Hotel around a hotel-and-art event concept.', '一场阳台演出以“酒店与艺术”为概念，连接了 Ni Jazz Bar 与风貌安坻酒店。'],
     ['#hotel-contribution p', 'I developed the event concept, coordinated the partners and performance, planned WeChat promotion, and designed a consistent visual identity.', '我构思活动概念，协调合作方与演出，策划微信推广，并设计统一的视觉识别。'],
     ['#visual-hero .detail-deck', 'Posters, social content, and visual stories for campus, culture, and music.', '面向校园、文化与音乐的海报、社交内容和视觉设计。'],
@@ -106,11 +105,14 @@ test('second-layer dictionaries use the approved bilingual claims', () => {
     assert.equal(LANGUAGES.en.copy[selector], english, selector);
     assert.equal(LANGUAGES.zh.copy[selector], chinese, selector);
   }
+  assert.match(LANGUAGES.en.copy['#campus-contribution'], /Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site & online/);
+  assert.match(LANGUAGES.zh.copy['#campus-contribution'], /宣传协调[\s\S]*平台适配[\s\S]*现场与线上衔接/);
+  assert.doesNotMatch(LANGUAGES.en.copy['#campus-contribution'], /attendance|conversion|reach|team size/i);
   assert.doesNotMatch(JSON.stringify(matrix), /19,000|525|5,250|\+17%|~200/);
 });
 
 test('Chinese professional labels use 社群 while subreddit contexts retain 社区', () => {
-  assert.equal(LANGUAGES.zh.copy['.hero .role'], '传播、社群与音乐。');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '社交内容、社群运营与视觉传播。');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-role'], 'Reddit 社群运营实习生');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-company'], '南犹他大学');
   assert.equal(LANGUAGES.zh.copy['#edu .edu-entry:nth-child(1) .edu-school'], '南犹他大学');
@@ -133,7 +135,7 @@ test('second-layer route copy and attributes are selector-scoped and complete', 
     campus: [
       '#campus-nav .brand', '#campus-nav .links', '#campus-nav .compact-nav summary', '#campus-nav .compact-links', '#campus-nav .back-link',
       '#campus-hero h1', '#campus-hero .detail-eyebrow', '#campus-hero .detail-deck', '#campus-hero .detail-meta',
-      '#campus-context h2', '#campus-context p', '#campus-contribution h2', '#campus-contribution p',
+      '#campus-context h2', '#campus-context p', '#campus-contribution h2', '#campus-contribution',
       '#campus-media h2', '#campus-media figcaption', '#campus-footer span', '#campus-footer a',
     ],
     hotel: [
@@ -257,7 +259,7 @@ test('applyLanguage updates every node matched by a shared copy selector', () =>
       return null;
     },
     querySelectorAll(selector) {
-      if (selector === '#experience .experience-link') return links;
+      if (selector === '#experience .experience-row--vertex .experience-link') return links;
       return [];
     },
   };
@@ -265,8 +267,8 @@ test('applyLanguage updates every node matched by a shared copy selector', () =>
   applyLanguage('zh', doc, null);
 
   assert.deepEqual(links.map((link) => link.innerHTML), [
-    LANGUAGES.zh.copy['#experience .experience-link'],
-    LANGUAGES.zh.copy['#experience .experience-link'],
+    LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-link'],
+    LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-link'],
   ]);
 });
 
@@ -284,15 +286,15 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
   assert.equal(LANGUAGES.zh.attributes['#nav .lang-switch']['aria-label'], '语言');
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-link'], 'Learn more about this <span aria-hidden="true">→</span>');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-link'], '进一步了解 <span aria-hidden="true">→</span>');
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-link'], 'Explore community operations <span aria-hidden="true">→</span>');
+  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-link'], '了解社群运营 <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.en.copy['#nav .compact-nav summary'], 'Sections');
   assert.equal(LANGUAGES.zh.copy['#nav .compact-nav summary'], '章节');
 });
 
 test('language module declares all public page keys and the shared cache key', () => {
   assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring']);
-  assert.equal(I18N_CACHE_KEY, '20260930-october');
+  assert.equal(I18N_CACHE_KEY, '20260930-preview');
 });
 
 test('homepage dictionaries own the approved first-layer selectors', () => {
@@ -429,5 +431,5 @@ test('page exposes a bilingual control and direct outside-work gateway media', a
   assert.equal(LANGUAGES.en.attributes[travelImage].alt, 'Bryce Canyon amphitheater in warm afternoon light');
   assert.equal(LANGUAGES.zh.attributes[travelImage].alt, '午后暖光下的布莱斯峡谷露天剧场');
   assert.doesNotMatch(html, /<details class="visual-archive"/);
-  assert.match(html, /src="i18n\.js\?v=20260930-october"/);
+  assert.match(html, /src="i18n\.js\?v=20260930-preview"/);
 });

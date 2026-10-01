@@ -32,7 +32,7 @@ test('homepage presents four internships in reverse chronological order', async 
   assert.match(section, /YUYO INNOVATIONS LLC/);
   assert.match(section, /Influencer Marketing Intern/);
   assert.match(section, /Jun–Aug 2025 · Shenzhen, China/);
-  assert.match(section, /href="projects\/xinyuyou\.html">Learn more about this/);
+  assert.match(section, /href="projects\/xinyuyou\.html">Explore creator partnerships/);
 });
 
 test('teaching-assistant copy stays within the approved evidence boundary', async () => {
@@ -96,10 +96,10 @@ test('completed image-based internships pair their copy with approved natural-ra
 
 test('homepage internship action invites exploration instead of claiming evidence', async () => {
   const home = await readHomepage();
-  assert.match(home, />Learn more about this <span aria-hidden="true">→<\/span><\/a>/);
+  assert.match(home, />View Tutoring Center work <span aria-hidden="true">→<\/span><\/a>/);
   assert.doesNotMatch(home, /View internship evidence|查看实习证据/);
-  assert.equal(LANGUAGES.en.copy['#experience .experience-link'], 'Learn more about this <span aria-hidden="true">→</span>');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-link'], '进一步了解 <span aria-hidden="true">→</span>');
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--suu-tutoring .experience-link'], 'View Tutoring Center work <span aria-hidden="true">→</span>');
+  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--suu-tutoring .experience-link'], '查看辅导中心工作 <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.en.attributes['#experience .experience-row--vertex .experience-media img'].alt, 'A bright shared workspace at Vertex Marketing in Shenzhen');
   assert.equal(LANGUAGES.zh.attributes['#experience .experience-row--teaching .experience-media img'].alt, '孙慕坤在武汉面向英语写作课堂讲课');
 });
@@ -110,7 +110,7 @@ test('Teaching Assistant internship opens a concise bilingual detail route', asy
     readFile(new URL('../projects/suu-teaching-assistant.html', import.meta.url), 'utf8'),
   ]);
   const teaching = home.match(/<article class="experience-row experience-row--teaching"[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.match(teaching, /href="projects\/suu-teaching-assistant\.html">Learn more about this/);
+  assert.match(teaching, /href="projects\/suu-teaching-assistant\.html">Explore classroom support/);
   assert.match(detail, /<html lang="en" class="no-js" data-language="en" data-page="teaching">/);
   assert.match(detail, /<title>Teaching Assistant \| Mukun Sun<\/title>/);
   assert.match(detail, /id="teaching-context"[\s\S]*?id="teaching-classroom"[\s\S]*?id="teaching-operations"[\s\S]*?id="teaching-bridge"[\s\S]*?id="teaching-media"/);

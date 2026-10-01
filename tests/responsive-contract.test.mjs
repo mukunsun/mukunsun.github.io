@@ -25,8 +25,8 @@ test('both routes enforce clipping, mobile controls, wrapping, exact cache impor
     assert.match(html, /<html\s+lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1);
   }
-  assert.match(home, /<script type="module" src="i18n\.js\?v=20260930-october"><\/script>/);
-  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20260924-yuyo-restored"><\/script>/);
+  assert.match(home, /<script type="module" src="i18n\.js\?v=20260930-preview"><\/script>/);
+  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20260930-preview"><\/script>/);
   assert.match(i18n, /export const DEFAULT_LANGUAGE = 'en';/);
   assert.match(i18n, /export function getInitialLanguage\(storage = globalThis\.localStorage\)/);
   assert.match(i18n, /storage\?\.getItem\(STORAGE_KEY\)/);
@@ -37,31 +37,31 @@ test('outside-work detail routes load one shared versioned module and cache-bust
   for (const [name, html] of [['music', music], ['photography', photography], ['travel', travel]]) {
     assert.match(html, /<html lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js/g) ?? []).length, 1, `${name}: one i18n script URL`);
-    assert.match(html, /src="i18n\.js\?v=20260924-yuyo-restored"/);
-    assert.match(html, /href="detail\.css\?v=20260924-yuyo-restored"/);
-    assert.match(html, /src="detail\.js\?v=20260924-yuyo-restored"/);
+    assert.match(html, /src="i18n\.js\?v=20260930-preview"/);
+    assert.match(html, /href="detail\.css\?v=20260930-preview"/);
+    assert.match(html, /src="detail\.js\?v=20260930-preview"/);
   }
   assert.doesNotMatch(detailJs, /(?:import|from)\s*['"]\.\/i18n\.js['"]/);
 });
 
 test('detail routes collapse at 60rem and 40rem while coarse pointers change only navigation', async () => {
   const [, , , , , , css] = await readContracts();
-  assert.match(css, /@media\(max-width:60rem\)\{[^}]*\.detail-hero,\.detail-section,\.music-page-intro\{grid-template-columns:minmax\(0,1fr\);\}/);
-  assert.match(css, /@media\(max-width:60rem\)\{\.photography-gallery-head\{grid-template-columns:minmax\(0,1fr\);/);
-  assert.match(css, /@media\(max-width:60rem\)\{[\s\S]*?\.music-event--media,\.music-study-row--media\{grid-template-columns:minmax\(132px,\.32fr\) minmax\(0,1fr\);\}/);
+  assert.match(css, /@media\(max-width:(?:60|85)rem\)\{[^}]*\.detail-hero,\.detail-section,\.music-page-intro\{grid-template-columns:minmax\(0,1fr\);\}/);
+  assert.match(css, /@media\(max-width:(?:60|85)rem\)\{\.photography-gallery-head\{grid-template-columns:minmax\(0,1fr\);/);
+  assert.match(css, /@media\(max-width:(?:60|85)rem\)\{[\s\S]*?\.music-event--media,\.music-study-row--media\{grid-template-columns:minmax\(132px,\.32fr\) minmax\(0,1fr\);\}/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?\.music-event,\.music-event--media\{grid-template-columns:minmax\(0,1fr\)\}/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?\.photography-sequence,\.travel-region,\.travel-region-copy p\{grid-template-columns:minmax\(0,1fr\)\}/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?\.photography-gallery-head\{grid-template-columns:minmax\(0,1fr\);/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?\.photography-gallery-head h2\{white-space:normal;/);
-  assert.match(css, /@media\(max-width:60rem\),\(pointer:coarse\)\{\.compact-nav\{display:block;\}\.detail-nav \.links,\.detail-nav \.back-link\{display:none;\}\}/);
-  assert.doesNotMatch(css, /@media\(max-width:60rem\),\(pointer:coarse\)\{[^}]*\.(?:detail-hero|detail-section|music-page-intro|music-event|photography-sequence|travel-note)/);
+  assert.match(css, /@media\(max-width:(?:60|85)rem\),\(pointer:coarse\)\{\.compact-nav\{display:block;\}\.detail-nav \.links,\.detail-nav \.back-link\{display:none;\}\}/);
+  assert.doesNotMatch(css, /@media\(max-width:(?:60|85)rem\),\(pointer:coarse\)\{[^}]*\.(?:detail-hero|detail-section|music-page-intro|music-event|photography-sequence|travel-note)/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?html\[data-page="photography"\] \.detail-hero h1\{[^}]*font-size:clamp\([^}]*white-space:nowrap;/);
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?html\[data-page="travel"\] \.outside-hero-media img\{[^}]*object-position:/);
 });
 
 test('homepage collapses every asymmetric editorial track at 60rem', async () => {
   const [home] = await readContracts();
-  assert.match(home, /@media\(max-width:60rem\)\{\.about-top,\.experience-row,\.experience-detail,\.project-row,\.outside-grid\{grid-template-columns:minmax\(0,1fr\);\}\}/);
+  assert.match(home, /@media\(max-width:(?:60|85)rem\)\{\.about-top,\.experience-row,\.experience-detail,\.project-row,\.outside-grid\{grid-template-columns:minmax\(0,1fr\);\}\}/);
   assert.doesNotMatch(home, /\.project-row summary\{/);
 });
 
@@ -91,11 +91,11 @@ test('compact navigation preserves 44px section access through 60rem and on coar
   assert.match(detail, /class="compact-links"[^>]*[\s\S]*?href="#vertex-scope"[\s\S]*?href="#vertex-community"/);
   assert.doesNotMatch(detail, /href="#vertex-attribution"/);
   for (const html of [home, detail]) {
-    assert.match(html, /@media \(max-width:60rem\),\(pointer:coarse\)\{[^}]*\.nav \.brand,[^}]*\.lang-switch button,[^}]*\.compact-nav summary,[^}]*\.compact-links a\{min-height:44px;/);
-    assert.match(html, /@media \(max-width:60rem\),\(pointer:coarse\)\{\.compact-nav\{display:block;/);
+    assert.match(html, /@media \(max-width:(?:60|85)rem\),\(pointer:coarse\)\{[^}]*\.nav \.brand,[^}]*\.lang-switch button,[^}]*\.compact-nav summary,[^}]*\.compact-links a\{min-height:44px;/);
+    assert.match(html, /@media \(max-width:(?:60|85)rem\),\(pointer:coarse\)\{\.compact-nav\{display:block;/);
   }
-  assert.match(home, /@media \(max-width:60rem\),\(pointer:coarse\)\{\.nav \.links\{display:none;\}\}/);
-  assert.match(detail, /@media \(max-width:60rem\),\(pointer:coarse\)\{\.nav \.links,\.back-link\{display:none;\}\}/);
+  assert.match(home, /@media \(max-width:(?:60|85)rem\),\(pointer:coarse\)\{\.nav \.links\{display:none;\}\}/);
+  assert.match(detail, /@media \(max-width:(?:60|85)rem\),\(pointer:coarse\)\{\.nav \.links,\.back-link\{display:none;\}\}/);
 });
 
 test('homepage preserves the required desktop motion contracts without obsolete counters', async () => {

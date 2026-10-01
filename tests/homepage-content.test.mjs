@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 test('hero leads with the approved concise identity line', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /<div class="role[^>]*>Communication, community, and music\.<\/div>/);
+  assert.match(html, /<div class="role[^>]*>Social media, community, and visual communication\.<\/div>/);
   assert.doesNotMatch(html, /class="ghost"/);
 });
 

@@ -1,3 +1,5 @@
+import './navigation.js?v=20260930-preview';
+
 export function mountImageDialog(dialog) {
   if (!dialog) return;
   const image = dialog.querySelector('img');
@@ -36,16 +38,17 @@ export function mountImageDialog(dialog) {
     window.setTimeout(finish, 500);
   };
 
-  document.querySelectorAll('[data-enlarge]').forEach((trigger) => {
-    trigger.addEventListener('click', (event) => {
-      event.preventDefault();
-      previousFocus = trigger;
-      const source = trigger.querySelector('img') || trigger;
-      image.src = trigger.dataset.fullSrc || trigger.href || source.currentSrc || source.src;
-      image.alt = source.alt || '';
-      image.style.transform = '';
-      openDialog();
-    });
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest?.('[data-enlarge]');
+    if (!trigger) return;
+    event.preventDefault();
+    previousFocus = trigger;
+    const source = trigger.querySelector('img') || trigger;
+    image.src = trigger.dataset.fullSrc || trigger.href || source.currentSrc || source.src;
+    image.alt = source.alt || '';
+    image.dataset.scale = '1';
+    image.style.transform = '';
+    openDialog();
   });
 
   close.addEventListener('click', () => closeDialog());

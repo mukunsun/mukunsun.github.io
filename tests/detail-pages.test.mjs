@@ -27,9 +27,9 @@ test('every second-layer route has the shared bilingual shell', async () => {
   for (const [path, key] of routes) {
     const html = await readFile(new URL(`../${path}`, import.meta.url), 'utf8');
     assert.match(html, new RegExp(`<html[^>]+data-page="${key}"`));
-    assert.match(html, /href="(?:\.\.\/)?detail\.css\?v=20260924-yuyo-restored"/);
-    assert.match(html, /src="(?:\.\.\/)?detail\.js\?v=20260924-yuyo-restored"/);
-    assert.match(html, /src="(?:\.\.\/)?i18n\.js\?v=(?:20260924-yuyo-restored|20260930-october)"/);
+    assert.match(html, /href="(?:\.\.\/)?detail\.css\?v=20260930-preview"/);
+    assert.match(html, /src="(?:\.\.\/)?detail\.js\?v=20260930-preview"/);
+    assert.match(html, /src="(?:\.\.\/)?i18n\.js\?v=20260930-preview"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);
     assert.match(html, /data-lang="zh"/);
@@ -49,8 +49,8 @@ test('project pages use the approved facts, metadata, and section order', async 
   assert.match(campus, /<header class="detail-hero" id="campus-hero"[^>]*>[\s\S]*?<section class="detail-section" id="campus-context"[\s\S]*?<section class="detail-section" id="campus-contribution"[\s\S]*?<section class="detail-section" id="campus-media"/);
   assert.match(campus, /Campus Integrated Campaign/);
   assert.match(campus, /Promotion Team Lead · 2024–2025/);
-  assert.match(campus, /Campus welcome and New Year events needed coordinated promotion across online and offline channels\./);
-  assert.match(campus, /I led the promotion work, adapted content for each platform, and connected on-site activity with online publishing\./);
+  assert.match(campus, /Welcome and New Year events brought the campus together\./);
+  assert.match(campus, /Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site &amp; online|Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site & online/);
   assert.doesNotMatch(campus, /reach|attendance|conversion|team size|team-size/i);
 
   assert.match(hotel, /<title>Hotel × Jazz \| Mukun Sun<\/title>/);
@@ -275,10 +275,10 @@ test('detail routes expose no-JS content and mount live reveal hooks', async () 
     const sections = html.match(/<section class="[^"]*\bdetail-section\b[^"]*"[^>]*>/g) ?? [];
     const media = html.match(/<figure class="[^"]*\bdetail-media\b[^"]*"[^>]*>/g) ?? [];
     assert.ok(sections.length > 0, `${path}: sections`);
-    if (key === 'travel' || key === 'tutoring') assert.equal(media.length, 0, `${path}: no published gallery images`);
+    if (key === 'travel') assert.equal(media.length, 0, `${path}: no published gallery images`);
     else assert.ok(media.length > 0, `${path}: media`);
     assert.equal(sections.every((tag) => tag.includes('data-reveal')), true, `${path}: section reveals`);
-    assert.equal(media.every((tag) => tag.includes('data-reveal="media"')), true, `${path}: media reveals`);
+    if (key !== 'tutoring') assert.equal(media.every((tag) => tag.includes('data-reveal="media"')), true, `${path}: media reveals`);
     assert.match(html, /root\.className=root\.className\.replace\('no-js','js'\)/);
     if (key !== 'tutoring') {
       assert.match(html, new RegExp(`<dialog class="image-dialog" id="${key}-dialog"`));

@@ -74,7 +74,7 @@ test('portrait parallax is mounted and consumed by a composited transform', () =
 });
 
 test('hero, responsive image track, and display wrapping satisfy layout gates', () => {
-  assert.match(home, /\.hero\{[^}]*padding-block:96px 128px;/);
+  assert.match(home, /\.hero\{[^}]*padding-block:clamp\(104px,8vw,128px\) 32px;/);
   assert.match(home, /\.about-top\{[^}]*grid-template-columns:minmax\(0,1\.35fr\) minmax\(240px,\.65fr\)/);
   assert.match(home, /\.experience-row\{[^}]*grid-template-columns:minmax\(0,\.72fr\) minmax\(0,1\.28fr\)/);
   assert.match(home, /\.project-row\{[^}]*grid-template-columns:minmax\(0,1\.2fr\) minmax\(220px,\.55fr\) auto/);
@@ -106,8 +106,9 @@ test('spacing declarations avoid off-scale pixel values', () => {
   }
 });
 
-test('empty hero ornaments are absent and the remaining cue is hidden from assistive tech', () => {
+test('hero action arrows are hidden from assistive tech and empty ornaments are absent', () => {
   assert.doesNotMatch(home, /class="hero-kick|class="nameen|class="status/);
   assert.doesNotMatch(home, /hero-kick|hero-foot \.status/);
-  assert.match(i18n, /class="bar" aria-hidden="true"/);
+  assert.match(home, /class="hero-feature-arrow" aria-hidden="true"/);
+  assert.match(home, /class="hero-primary"[^>]*>[\s\S]*?<span aria-hidden="true">→<\/span>/);
 });

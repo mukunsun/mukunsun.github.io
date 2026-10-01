@@ -1,6 +1,6 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20260930-october';
+export const I18N_CACHE_KEY = '20260930-preview';
 export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring'];
 
 const en = {
@@ -184,11 +184,16 @@ const en = {
     '#nav .compact-nav summary': 'Sections',
     '#nav .compact-links': '<a href="#about">About</a><a href="#experience">Work</a><a href="#outside-work">Outside Work</a><a href="#contact">Contact</a>',
     '.hero h1': 'Mukun Sun',
-    '.hero .role': 'Communication, community, and music.',
-    '.hero .scrollcue': 'Scroll to explore<span class="bar" aria-hidden="true"></span>',
+    '.hero .role': 'Social media, community, and visual communication.',
+    '.hero-description': 'I plan content, make the visuals, and use audience response to shape what comes next.',
+    '.hero-primary': 'View selected work <span aria-hidden="true">→</span>',
+    '.hero-secondary': 'Explore my experience',
+    '.hero-feature-context': 'Social design · SUU Tutoring Center',
+    '.hero-current': '<strong>Marketing Intern · SUU Tutoring Center</strong><br>Cedar City, Utah · Sep 2026–Present',
+    '.hero-personal': "Outside work, you'll find me on bass.",
     '#about .stitle': 'About Me',
-    '#about .about-copy p:nth-child(1)': 'I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work spans social media, community operations, visual communication, and event promotion. I like learning how an audience actually behaves before deciding what to make.',
-    '#about .about-copy p:nth-child(2)': 'Outside work, I play upright and electric bass in SUU ensembles. Music has also taken me into concert planning, photography, and the small details that make an event feel memorable.',
+    '#about .about-copy p:nth-child(1)': 'I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work connects social content, community operations, visual design, and event promotion.',
+    '#about .about-copy p:nth-child(2)': 'Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.',
     '#vertex-nav .brand': 'Mukun Sun<span class="en">Vertex</span>',
     '#vertex-nav .links': '<a href="#vertex-context">Context</a><a href="#vertex-scope">Work</a><a href="#vertex-approach">How</a><a href="#vertex-data">Data</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a>',
     '#vertex-nav .compact-nav summary': 'Sections',
@@ -204,9 +209,9 @@ const en = {
     '#campus-hero .detail-deck': 'Coordinated promotion for campus welcome and New Year events across online and offline channels.',
     '#campus-hero .detail-meta': 'Promotion Team Lead · 2024–2025',
     '#campus-context h2': 'Context',
-    '#campus-context p': 'Campus welcome and New Year events needed coordinated promotion across online and offline channels.',
+    '#campus-context p': 'Welcome and New Year events brought the campus together. The promotion work connected online publishing with the activity on site.',
     '#campus-contribution h2': 'Contribution',
-    '#campus-contribution p': 'I led the promotion work, adapted content for each platform, and connected on-site activity with online publishing.',
+    '#campus-contribution': '<h2 id="campus-contribution-title">My contribution</h2><dl class="contribution-list"><div><dt>Promotion coordination</dt><dd>Led the promotion work across online and offline channels.</dd></div><div><dt>Platform adaptation</dt><dd>Adapted content for each platform rather than using one version everywhere.</dd></div><div><dt>On-site & online</dt><dd>Connected event activity on site with online publishing.</dd></div></dl>',
     '#campus-media h2': 'Event view',
     '#campus-media figcaption': 'Campus welcome gala · event view',
     '#campus-footer span': 'Mukun Sun · Campus Integrated Campaign',
@@ -372,11 +377,14 @@ const en = {
     '#experience .experience-row--xinyuyou .experience-responsibility': 'I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada, reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.',
     '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach',
     '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share',
-    '#experience .experience-link': 'Learn more about this <span aria-hidden="true">→</span>',
-    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · Overseas Community Operations</p>
-      <h1>Reddit community operations for brands going global.</h1>
-      <p class="hero-deck">An overseas community operations internship at Vertex Marketing: community entry strategy, native English content, and data-driven iteration across 15+ communities, helping Chinese brands be seen and trusted by the world.</p>
-      <p class="hero-meta">Reddit Community Operations Intern · Jun–Sep 2026 · Shenzhen, China</p>`,
+    '#experience .experience-row--suu-tutoring .experience-link': 'View Tutoring Center work <span aria-hidden="true">→</span>',
+    '#experience .experience-row--vertex .experience-link': 'Explore community operations <span aria-hidden="true">→</span>',
+    '#experience .experience-row--teaching .experience-link': 'Explore classroom support <span aria-hidden="true">→</span>',
+    '#experience .experience-row--xinyuyou .experience-link': 'Explore creator partnerships <span aria-hidden="true">→</span>',
+    '#vertex-hero': `<h1>Community work for brands going global.</h1>
+      <p class="hero-deck">Community research, native English content, and performance analysis across 15+ Reddit communities.</p>
+      <p class="hero-meta">Vertex Marketing · Reddit Community Operations Intern<br>Jun–Sep 2026 · Shenzhen, China</p>
+      <p class="hero-evidence"><strong>793K views</strong> across 15 posts with visible view data.<br><a href="#vertex-evidence">Explore the results and sample scope →</a></p>`,
     '#vertex-context': `<h2 id="vertex-context-title">Context</h2>
       <div class="section-copy">
         <p>Over the past decade, "Made in China" has been turning into "brands from China." More and more Chinese companies are building sustainable brand equity overseas, and communities are where a brand earns the trust of real users. People discuss products, share experiences, and shape each other's decisions there in ways no ad campaign can replace.</p>
@@ -687,11 +695,16 @@ const zh = {
     '#nav .compact-nav summary': '章节',
     '#nav .compact-links': '<a href="#about">关于</a><a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
     '.hero h1': '孙慕坤',
-    '.hero .role': '传播、社群与音乐。',
-    '.hero .scrollcue': '向下浏览<span class="bar" aria-hidden="true"></span>',
+    '.hero .role': '<span class="role-phrase">社交内容、</span><span class="role-phrase">社群运营</span><span class="role-phrase">与视觉传播。</span>',
+    '.hero-description': '从内容计划到视觉制作，再根据受众反馈调整下一轮内容。',
+    '.hero-primary': '查看精选作品 <span aria-hidden="true">→</span>',
+    '.hero-secondary': '了解实习经历',
+    '.hero-feature-context': '社交内容设计 · SUU 辅导中心',
+    '.hero-current': '<strong>市场营销实习生 · SUU 辅导中心</strong><br>美国犹他州锡达城 · 2026 年 9 月至今',
+    '.hero-personal': '工作之外，我在乐团里演奏贝斯。',
     '#about .stitle': '关于我',
-    '#about .about-copy p:nth-child(1)': '我在南犹他大学学习战略传播，辅修商业分析。我的实践涉及社交媒体、社群运营、视觉传播和活动推广。我习惯先理解受众实际如何参与，再决定要做什么内容。',
-    '#about .about-copy p:nth-child(2)': '工作之外，我在 SUU 的乐团中演奏低音提琴和电贝斯。音乐也让我参与音乐会策划、摄影，以及那些真正影响一场活动体验的细节。',
+    '#about .about-copy p:nth-child(1)': '我在南犹他大学学习战略传播，辅修商业分析。我的实践连接社交内容、社群运营、视觉设计与活动推广。',
+    '#about .about-copy p:nth-child(2)': '工作之外，我在 SUU 乐团演奏低音提琴和电贝斯，也拍摄城市与风景，参与音乐会策划。',
     '#vertex-nav .brand': '孙慕坤<span class="en">Vertex</span>',
     '#vertex-nav .links': '<a href="#vertex-context">背景</a><a href="#vertex-scope">工作</a><a href="#vertex-approach">方法</a><a href="#vertex-data">数据</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a>',
     '#vertex-nav .compact-nav summary': '章节',
@@ -707,9 +720,9 @@ const zh = {
     '#campus-hero .detail-deck': '面向校园迎新与新年活动的线上线下协同宣传。',
     '#campus-hero .detail-meta': '宣传负责人 · 2024–2025',
     '#campus-context h2': '背景',
-    '#campus-context p': '校园迎新与新年活动需要在线上线下渠道之间保持协调一致的宣传。',
+    '#campus-context p': '迎新与新年活动让校园师生聚在一起，宣传工作需要衔接线上发布与现场活动。',
     '#campus-contribution h2': '负责内容',
-    '#campus-contribution p': '我负责宣传工作的组织协调，根据不同平台调整内容，并衔接现场活动与线上发布。',
+    '#campus-contribution': '<h2 id="campus-contribution-title">我的贡献</h2><dl class="contribution-list"><div><dt>宣传协调</dt><dd>负责线上与线下渠道宣传工作的组织协调。</dd></div><div><dt>平台适配</dt><dd>根据不同平台调整内容，使表达适合各自的发布场景。</dd></div><div><dt>现场与线上衔接</dt><dd>将活动现场与线上内容发布联系起来。</dd></div></dl>',
     '#campus-media h2': '活动现场',
     '#campus-media figcaption': '校园迎新晚会 · 活动现场',
     '#campus-footer span': '孙慕坤 · 校园整合传播',
@@ -875,11 +888,14 @@ const zh = {
     '#experience .experience-row--xinyuyou .experience-responsibility': '我负责新昱佑（YUYO INNOVATIONS LLC）的海外达人营销：面向美加市场开发创作者并推进置换、佣金与付费合作，累计触达 476 位达人、达成 45 个合作，并以曝光与成本数据评估达人价值。',
     '#experience .experience-row--xinyuyou .experience-proofline': '<strong>476</strong> 位达人触达 · <strong>45</strong> 个合作 · 单条最高 <strong>54.5 万</strong> 曝光',
     '#experience .experience-row--vertex .experience-proofline': '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>',
-    '#experience .experience-link': '进一步了解 <span aria-hidden="true">→</span>',
-    '#vertex-hero': `<p class="eyebrow">Vertex Marketing · 海外社区运营</p>
-      <h1>面向出海品牌的 Reddit 社群运营。</h1>
-      <p class="hero-deck">我在 Vertex Marketing 的海外社区运营实习：社区进入策略、原生英文内容与数据驱动迭代，覆盖 15+ 个社区——让中国品牌被世界真诚地看见。</p>
-      <p class="hero-meta">Reddit 社群运营实习生 · 2026.06–2026.09 · 中国深圳</p>`,
+    '#experience .experience-row--suu-tutoring .experience-link': '查看辅导中心工作 <span aria-hidden="true">→</span>',
+    '#experience .experience-row--vertex .experience-link': '了解社群运营 <span aria-hidden="true">→</span>',
+    '#experience .experience-row--teaching .experience-link': '了解课堂支持 <span aria-hidden="true">→</span>',
+    '#experience .experience-row--xinyuyou .experience-link': '了解达人合作 <span aria-hidden="true">→</span>',
+    '#vertex-hero': `<h1>面向出海品牌的社群运营。</h1>
+      <p class="hero-deck">社区调研、原生英文内容与数据分析，覆盖 15+ 个 Reddit 社区。</p>
+      <p class="hero-meta">Vertex Marketing · Reddit 社群运营实习生<br>2026 年 6–9 月 · 中国深圳</p>
+      <p class="hero-evidence"><strong>79.3 万次浏览</strong>，来自 15 条可查看浏览数据的帖子。<br><a href="#vertex-evidence">查看结果与样本范围 →</a></p>`,
     '#vertex-context': `<h2 id="vertex-context-title">背景</h2>
       <div class="section-copy">
         <p>过去十年，"中国制造"正在向"中国品牌"跃迁。越来越多的中国企业在产品力之外，开始寻求在海外建立可持续的品牌资产，而海外社区正是品牌与真实用户建立信任的关键阵地：用户在这里讨论产品、分享体验、影响彼此的决策，其真实性与说服力远非传统广告投放可以替代。</p>
@@ -1018,7 +1034,7 @@ Object.assign(en.copy, {
   "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">What I do</h2><dl class=\"tutoring-list\"><div><dt>Content calendar</dt><dd>Plan weekly topics and a publishing schedule for Instagram and Facebook around tutoring services, study skills, and tutor spotlights.</dd></div><div><dt>Graphic design</dt><dd>Design posts and Stories in Canva, making service information and study advice easy to scan.</dd></div><div><dt>Short-form video</dt><dd>Edit Reels in CapCut and adapt the pacing and format for social viewing.</dd></div><div><dt>Copy & publishing</dt><dd>Write captions, prepare platform-specific content, and schedule and publish approved posts in Meta Business Suite.</dd></div><div><dt>Review collaboration</dt><dd>Send content to center staff for review, incorporate their feedback, and publish only after approval.</dd></div><div><dt>Performance review</dt><dd>Use Meta Insights to track views, reach, interactions, and follows, then use those signals to inform the next content calendar.</dd></div></dl>",
   "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">September results</h2><p class=\"tutoring-period\">Meta Insights · September 1–28, 2026</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">20.3K</p><h3>Views</h3><p>Content accumulated views across Instagram and Facebook.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">9K</p><h3>Reach</h3><p>The reported reach shows how widely the content reached audiences during this period.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">772</p><h3>Content interactions</h3><p>Interactions rose 77.3% month over month, showing more audience response.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">77.4%</p><h3>Views from non-followers</h3><p>Most views came from beyond the existing follower base, indicating discovery.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">39</p><h3>New follows</h3><p>New follows rose 69.6%, adding to the audience for future content.</p></article></div><p class=\"tutoring-source\">Views: Instagram 19,411 + Facebook 870 = 20,281, rounded to 20.3K. Growth percentages are Meta Insights comparisons with the previous month.</p>",
   "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">Tools</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>Graphic design · Posts and Stories</dd></div><div><dt>CapCut</dt><dd>Video editing · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>Scheduling, publishing & performance analysis</dd></div></dl>",
-  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">Gallery</h2><p>Reserved for published content and Meta Insights screenshots.</p></div><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Published post</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel or Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Views & reach · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Interactions & follows · Meta Insights</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">View selected Tutoring Center designs</a>",
+  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">Selected designs</h2><p>Service promotion and practical guidance for students, shown as original designs.</p></div><div class=\"tutoring-designs\"><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/work-smarter.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/work-smarter.webp\" width=\"1080\" height=\"1350\" alt=\"Tutoring Center promotional poster: Stop working harder. Start working smarter\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Service promotion · Design original</figcaption></figure><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/drop-in-guide.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/drop-in-guide.webp\" width=\"1080\" height=\"1350\" alt=\"Drop-in tutoring check-in guide with three steps and practical tips\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Check-in guide · Design original</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">Explore the full Tutoring Center collection →</a><details class=\"screenshot-reserve\"><summary>Post & Insights screenshots</summary><p>Published-post and Meta Insights screenshots will be added here.</p><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Published post</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel or Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Views & reach · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Interactions & follows · Meta Insights</figcaption></figure></div></details>",
   "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">Key learnings</h2><div class=\"tutoring-learnings\"><article><h3>Read the metrics together.</h3><p>Views show exposure; interactions and follows show different kinds of response. I use them together when planning the next round, rather than treating a high view count as proof that students used a service.</p></article><article><h3>Write for students who are new to the center.</h3><p>With 77.4% of views coming from non-followers, a post needs to make sense without account history: what tutoring offers, who it helps, and what a student can do next.</p></article><article><h3>Match the topic to a campus need.</h3><p>Service information, practical study advice, and tutor spotlights answer different student questions. Keeping these topics distinct gives me a clearer basis for comparing content and adjusting the weekly calendar.</p></article></div>",
   "#tutoring-nav .brand": "Mukun Sun · Tutoring Center",
   "#tutoring-nav .links": "<a href=\"#tutoring-overview\">Overview</a><a href=\"#tutoring-responsibilities\">What I do</a><a href=\"#tutoring-results\">Results</a><a href=\"#tutoring-tools\">Tools</a><a href=\"#tutoring-gallery\">Gallery</a><a href=\"#tutoring-learnings\">Learnings</a>",
@@ -1029,7 +1045,7 @@ Object.assign(en.copy, {
   "#tutoring-footer a": "Return to internships",
   "#experience .experience-row--suu-tutoring .experience-company": "Southern Utah University · Tutoring Center",
   "#experience .experience-row--suu-tutoring .experience-dates": "Sep 2026–Present · Cedar City, UT",
-  "#experience .experience-row--suu-tutoring .experience-responsibility": "I independently run the Tutoring Center's weekly Instagram and Facebook content calendar: planning topics, designing posts, editing short videos, writing copy, and scheduling and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.",
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "I independently plan and produce weekly Instagram and Facebook content, from design and short video to copy and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.",
   "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>20.3K</strong> views · <strong>9K</strong> reach · <strong>772</strong> interactions",
   "#experience .experience-row--suu-tutoring .experience-report-period": "Meta Insights · Sep 1–28, 2026"
 });
@@ -1053,18 +1069,18 @@ Object.assign(zh.copy, {
   "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">工作职责</h2><dl class=\"tutoring-list\"><div><dt>内容日历</dt><dd>围绕辅导服务、学习技巧与辅导员介绍，制定 Instagram 和 Facebook 每周选题与发布计划。</dd></div><div><dt>平面设计</dt><dd>使用 Canva 制作图文与 Stories，让服务信息和学习建议便于快速阅读。</dd></div><div><dt>短视频</dt><dd>使用 CapCut 剪辑 Reels，根据社交媒体观看场景调整节奏与内容形式。</dd></div><div><dt>文案与发布</dt><dd>撰写文案，根据平台整理内容，在 Meta Business Suite 中排期并发布已获批的帖子。</dd></div><div><dt>审核协作</dt><dd>发布前将内容提交中心工作人员审核，根据反馈修改，获批后才发布。</dd></div><div><dt>数据复盘</dt><dd>通过 Meta Insights 跟踪浏览量、触达、互动与新增关注，用这些数据指导下一轮内容计划。</dd></div></dl>",
   "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">9 月成果</h2><p class=\"tutoring-period\">Meta Insights · 2026 年 9 月 1–28 日</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">20.3K</p><h3>浏览量</h3><p>Instagram 与 Facebook 内容在统计期内累计获得的浏览量。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">9K</p><h3>触达</h3><p>统计期内报告的触达数据，反映内容覆盖受众的规模。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">772</p><h3>内容互动</h3><p>较上月增长 77.3%，说明受众对内容的回应有所增加。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">77.4%</p><h3>非粉丝浏览占比</h3><p>多数浏览来自现有粉丝之外，说明内容正在被新受众看到。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">39</p><h3>新增关注</h3><p>较上月增长 69.6%，为后续内容积累了更多受众。</p></article></div><p class=\"tutoring-source\">浏览量拆分：Instagram 19,411 + Facebook 870 = 20,281，四舍五入展示为 20.3K。增长百分比为 Meta Insights 与上月的对比数据。</p>",
   "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">工具</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>平面设计 · 图文与 Stories</dd></div><div><dt>CapCut</dt><dd>短视频剪辑 · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>排期、发布与数据分析</dd></div></dl>",
-  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">内容与数据截图</h2><p>预留给实际发布的内容和 Meta Insights 截图。</p></div><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>已发布图文</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel 或 Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>浏览与触达 · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>互动与新增关注 · Meta Insights</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">查看 Tutoring Center 设计作品</a>",
+  "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">设计作品</h2><p>面向学生的服务宣传与操作指引，以下展示设计原稿。</p></div><div class=\"tutoring-designs\"><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/work-smarter.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/work-smarter.webp\" width=\"1080\" height=\"1350\" alt=\"辅导中心宣传海报：别再只是更努力，开始更聪明地学习\" loading=\"lazy\" decoding=\"async\"></a><figcaption>服务宣传 · 设计原稿</figcaption></figure><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/drop-in-guide.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/drop-in-guide.webp\" width=\"1080\" height=\"1350\" alt=\"Drop-in tutoring 签到流程与实用提示海报\" loading=\"lazy\" decoding=\"async\"></a><figcaption>签到指引 · 设计原稿</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">查看完整 Tutoring Center 系列 →</a><details class=\"screenshot-reserve\"><summary>帖子与 Insights 截图</summary><p>实际发布的帖子与数据截图将在这里补充。</p><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>已发布图文</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel 或 Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>浏览与触达 · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>互动与新增关注 · Meta Insights</figcaption></figure></div></details>",
   "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">工作中的体会</h2><div class=\"tutoring-learnings\"><article><h3>把指标放在一起看。</h3><p>浏览量反映曝光，互动与关注反映不同层面的回应。我会结合这些指标安排下一轮内容，不能仅凭高浏览量判断学生是否实际使用了辅导服务。</p></article><article><h3>为第一次接触中心的学生写内容。</h3><p>77.4% 的浏览来自非粉丝，因此帖子不能依赖读者对账号的了解：需要说清辅导能提供什么、适合谁，以及学生下一步可以怎么做。</p></article><article><h3>让选题对应具体的校园需求。</h3><p>服务信息、实用学习建议与辅导员介绍，回答的是不同问题。明确各类内容的目的，才能更有依据地比较表现、调整每周日历。</p></article></div>",
   "#tutoring-nav .brand": "孙慕坤 · Tutoring Center",
-  "#tutoring-nav .links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">截图</a><a href=\"#tutoring-learnings\">体会</a>",
+  "#tutoring-nav .links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">作品</a><a href=\"#tutoring-learnings\">体会</a>",
   "#tutoring-nav .compact-nav summary": "目录",
-  "#tutoring-nav .compact-links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">截图</a><a href=\"#tutoring-learnings\">体会</a><a href=\"../index.html#experience\">返回实习经历</a>",
+  "#tutoring-nav .compact-links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">作品</a><a href=\"#tutoring-learnings\">体会</a><a href=\"../index.html#experience\">返回实习经历</a>",
   "#tutoring-nav .back-link": "← 返回作品集",
   "#tutoring-footer span": "孙慕坤 · Tutoring Center",
   "#tutoring-footer a": "返回实习经历",
   "#experience .experience-row--suu-tutoring .experience-company": "南犹他大学 · Tutoring Center",
   "#experience .experience-row--suu-tutoring .experience-dates": "2026.09–至今 · 美国犹他州 Cedar City",
-  "#experience .experience-row--suu-tutoring .experience-responsibility": "独立负责 Tutoring Center 的 Instagram 与 Facebook 每周内容日历：选题、平面设计、短视频剪辑、文案、排期，并在工作人员审核获批后发布。2026 年 9 月以来，已发布 20 多条 Reels、Stories 和图文。",
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "独立策划并制作 Instagram 与 Facebook 每周内容，负责设计、短视频、文案与发布，获工作人员审核批准后上线。2026 年 9 月以来，已发布 20 多条 Reels、Stories 和图文。",
   "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>20.3K</strong> 浏览量 · <strong>9K</strong> 触达 · <strong>772</strong> 次互动",
   "#experience .experience-row--suu-tutoring .experience-report-period": "Meta Insights · 2026 年 9 月 1–28 日"
 });
@@ -1117,6 +1133,55 @@ Object.assign(zh.attributes, {
   },
   "#visual-tutoring-october .detail-media:nth-child(3) img": {
     "alt": "十月轮播收尾图：红叶照片围绕到访 Tutoring Center 的邀请，标注 ELC 204"
+  }
+});
+
+Object.assign(en.attributes, {
+  ".hero-feature a": {
+    "aria-label": "View the Officially October design series"
+  },
+  ".hero-feature img": {
+    "alt": "Officially October carousel cover: red autumn leaves and handwritten lettering on textured white paper"
+  },
+  "#about .portrait img": {
+    "alt": "Portrait of Mukun Sun"
+  },
+  ".experience-row--suu-tutoring .experience-media a": {
+    "aria-label": "View selected Tutoring Center designs"
+  },
+  ".experience-row--suu-tutoring .experience-media img": {
+    "alt": "Tutoring Center poster inviting students to stop working harder and start working smarter"
+  },
+  "#tutoring-dialog": {
+    "aria-label": "Enlarged Tutoring Center design"
+  },
+  "#tutoring-dialog .dialog-close": {
+    "aria-label": "Close image",
+    "title": "Close (Esc)"
+  }
+});
+Object.assign(zh.attributes, {
+  ".hero-feature a": {
+    "aria-label": "查看 Officially October 设计系列"
+  },
+  ".hero-feature img": {
+    "alt": "Officially October 轮播封面：红色秋叶与纹理纸上的手写标题"
+  },
+  "#about .portrait img": {
+    "alt": "孙慕坤肖像"
+  },
+  ".experience-row--suu-tutoring .experience-media a": {
+    "aria-label": "查看辅导中心设计精选"
+  },
+  ".experience-row--suu-tutoring .experience-media img": {
+    "alt": "辅导中心宣传海报：别再只是更努力，开始更聪明地学习"
+  },
+  "#tutoring-dialog": {
+    "aria-label": "辅导中心设计大图"
+  },
+  "#tutoring-dialog .dialog-close": {
+    "aria-label": "关闭图片",
+    "title": "关闭（Esc）"
   }
 });
 

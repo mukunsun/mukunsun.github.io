@@ -35,7 +35,10 @@ test('four screenshot slots are explicit placeholders, not fake images or intera
   for (const language of ['en', 'zh']) {
     const gallery = LANGUAGES[language].copy['#tutoring-gallery'];
     assert.equal((gallery.match(/TODO: replace with screenshot/g) ?? []).length, 4);
-    assert.doesNotMatch(gallery, /<img|<button|data-enlarge/);
+    const slots = gallery.match(/<details class="screenshot-reserve">[\s\S]*?<\/details>/)?.[0] ?? "";
+    assert.ok(slots);
+    assert.doesNotMatch(slots, /<img|<button|data-enlarge/);
+    assert.match(gallery, /Design original|设计原稿/);
     assert.match(gallery, /visual-work.html#visual-tutoring-work/);
   }
   assert.equal((page.match(/TODO: replace with screenshot/g) ?? []).length, 4);

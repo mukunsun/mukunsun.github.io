@@ -105,18 +105,18 @@ html.js.motion-desktop .spot.on{opacity:1;}
 .nav .brand{font-family:var(--serif);font-size:16px;letter-spacing:.16em;color:var(--ink);font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap;}
 .nav .brand .en{font-family:var(--sans);font-size:9.5px;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;font-weight:400;}
 html[lang="zh"] .nav .brand .en{font-family:var(--mono);}
-.nav .links{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.nav .links{display:flex;align-items:center;gap:clamp(12px,2vw,28px);font-family:var(--sans);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);}
 .nav .links a{position:relative;padding:4px 0;transition:color .35s;white-space:nowrap;}
 .nav .links a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--amber);opacity:0;transition:opacity .4s var(--ease);}
 .nav .links a:hover::after{opacity:1;}
 .nav-actions{display:flex;align-items:center;gap:clamp(12px,2vw,28px);}
-.lang-switch{display:inline-flex;align-items:center;padding:4px;border:1px solid var(--line-2);border-radius:999px;background:color-mix(in oklch,var(--bg) 30%,transparent);font-family:var(--sans);font-size:9.5px;letter-spacing:.08em;color:var(--muted);}
+.lang-switch{display:inline-flex;align-items:center;padding:4px;border:1px solid var(--line-2);border-radius:999px;background:color-mix(in oklch,var(--bg) 30%,transparent);font-family:var(--sans);font-size:12px;letter-spacing:.04em;color:var(--ink-2);}
 .lang-switch button{appearance:none;border:0;background:transparent;color:inherit;font:inherit;line-height:1;padding:8px 12px;border-radius:999px;cursor:pointer;transition:background .3s,color .3s;white-space:nowrap;}
 .lang-switch button:hover{color:var(--ink);}
 .lang-switch button.active{background:var(--amber);color:var(--color-accent-ink);}
 .theme-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid var(--line-2);border-radius:50%;background:transparent;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);}
 .theme-toggle:hover{border-color:var(--ember);background:var(--bg-2);color:var(--amber);}
-.compact-nav{display:none;position:relative;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.compact-nav{display:none;position:relative;font-family:var(--sans);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);}
 .compact-nav summary{display:flex;align-items:center;cursor:pointer;list-style:none;padding-inline:12px;white-space:nowrap;}
 .compact-nav summary::-webkit-details-marker{display:none;}
 .compact-nav summary::after{content:"+";margin-left:8px;color:var(--amber);}
@@ -132,12 +132,15 @@ html[lang="zh"] .nav .brand .en{font-family:var(--mono);}
 
 /* ---------- layout primitives ---------- */
 .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut);}
+html{scroll-padding-top:100px;}
 section{position:relative;content-visibility:auto;contain-intrinsic-size:auto 900px;}
-.band{padding-block:clamp(88px,12vw,168px);}
+.band{padding-block:clamp(64px,8vw,112px);}
+#about{padding-block:clamp(56px,7vw,88px);}
+#edu{padding-block:clamp(56px,6vw,88px);}
 .divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto;}
 
 /* section header / placard system */
-.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(40px,6vw,76px);flex-wrap:wrap;}
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(32px,4vw,48px);flex-wrap:wrap;}
 .placard{font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);
   display:flex;align-items:center;gap:12px;margin-bottom:20px;}
 .placard::before{content:"";width:26px;height:1px;background:var(--ember);display:inline-block;}
@@ -153,27 +156,45 @@ section{position:relative;content-visibility:auto;contain-intrinsic-size:auto 90
 h1,h2,h3,.stitle,.project-copy strong,.edu-school,.edu-degree,.experience-role,.closing h2{min-width:0;overflow-wrap:anywhere;}
 
 /* ---------- HERO ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;
-  padding-block:96px 128px;}
+.hero{min-height:min(100svh,900px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;
+  padding-block:clamp(104px,8vw,128px) 32px;}
+.hero>.wrap{width:100%;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);gap:clamp(40px,6vw,88px);align-items:center;}
+.hero-copy{min-width:0;}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;
   background:
     radial-gradient(80% 60% at 72% 8%,var(--color-bloom-hot),transparent 60%),
     radial-gradient(90% 70% at 12% 96%,var(--color-bloom-low),transparent 62%),
     var(--bg);}
-.hero h1{font-family:var(--serif);font-weight:700;color:var(--ink);line-height:.92;letter-spacing:.02em;
-  font-size:clamp(52px,10.5vw,132px);}
-.hero .role{margin-top:clamp(28px,3.6vw,48px);font-family:var(--serif);font-weight:400;color:var(--ink-2);
-  font-size:clamp(var(--text-xl),3vw,2.5rem);line-height:1.3;max-width:28ch;text-wrap:balance;}
+.hero h1{font-family:var(--serif);font-weight:600;color:var(--ink);line-height:1.04;letter-spacing:-.025em;
+  font-size:clamp(52px,7.5vw,96px);}
+.hero .role{margin-top:28px;font-family:var(--serif);font-weight:400;color:var(--ink-2);
+  font-size:clamp(26px,3vw,38px);line-height:1.25;max-width:25ch;text-wrap:balance;}
+.hero-description{max-width:44ch;margin-top:24px;font-size:16px;line-height:1.8;color:var(--ink-2);}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:28px;}
+.hero-primary,.hero-secondary{display:inline-flex;align-items:center;gap:16px;min-height:44px;font-size:14px;}
+.hero-primary{color:var(--ink);border-bottom:1px solid var(--amber);}
+.hero-secondary{color:var(--muted);}
+.hero-primary:hover,.hero-secondary:hover{color:var(--amber);}
+.hero-feature{margin:0;width:100%;max-width:340px;justify-self:end;}
+.hero-feature>a{display:block;}
+.hero-feature img{display:block;width:100%;height:auto;}
+.hero-feature figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:16px;font-size:12px;line-height:1.7;color:var(--muted);}
+.hero-feature-title{display:block;color:var(--ink);font-size:14px;}
+.hero-feature-arrow{color:var(--amber);font-size:20px;}
 .hero .role b{color:var(--amber);font-weight:400;}
-.hero-foot{margin-top:auto;padding-top:clamp(36px,5vw,60px);display:flex;justify-content:flex-end;align-items:center;
-  gap:24px;flex-wrap:wrap;border-top:1px solid var(--line);}
+.hero .role-phrase{display:inline-block;}
+.hero-foot{margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px 32px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:var(--muted);}
+.hero-current strong{font-weight:400;color:var(--ink-2);}
 .scrollcue{font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
   display:flex;align-items:center;gap:12px;white-space:nowrap;}
 .scrollcue .bar{width:1px;height:34px;background:linear-gradient(var(--amber),transparent);position:relative;overflow:hidden;}
 .scrollcue .bar::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--amber);}
 html.js.motion-desktop .scrollcue .bar::after{animation:cue 2.2s var(--ease) infinite;}
 @keyframes cue{0%{transform:translateY(-100%)}100%{transform:translateY(280%)}}
-@media (max-width:40rem){.hero{padding-block:80px 108px;}}
+@media (max-width:60rem){.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;}.hero-feature{max-width:280px;}.hero h1{font-size:clamp(48px,7vw,72px);}}
+@media (max-width:40rem){.hero{min-height:0;padding-block:116px 40px;}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;}.hero h1{font-size:clamp(44px,12vw,64px);}.hero .role{margin-top:20px;font-size:28px;max-width:24ch;}.hero-description{margin-top:20px;}.hero-feature{justify-self:start;max-width:260px;}.hero-foot{margin-top:32px;gap:12px;}.hero-foot>p{width:100%;}}
 
 /* hero load choreography */
 html.js.motion-desktop .reveal-up{opacity:0;transform:translateY(40px);}
@@ -226,6 +247,11 @@ html.js.motion-desktop .hero.loaded .reveal-up{transition-delay:calc(var(--d,0)*
 @media (hover:hover) and (pointer:fine) and (min-width:40.001rem) and (prefers-reduced-motion:no-preference){.experience-link:hover{color:var(--amber);}}
 .experience-detail{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(240px,.95fr);gap:clamp(24px,4vw,56px);align-items:center;}
 .experience-copy{min-width:0;}
+.experience-row--suu-tutoring .experience-detail{grid-template-columns:minmax(0,1.4fr) minmax(140px,.6fr);gap:32px;}
+.experience-row--suu-tutoring .experience-media{border:0;max-width:200px;justify-self:end;}
+.experience-row--suu-tutoring .experience-media img{filter:none;}
+.experience-row--suu-tutoring .experience-media a{display:block;}
+@media(max-width:60rem){.experience-row--suu-tutoring .experience-detail{grid-template-columns:minmax(0,1fr);gap:24px;}.experience-row--suu-tutoring .experience-media{max-width:180px;justify-self:start;}}
 .experience-media{margin:0;overflow:hidden;border:1px solid var(--line-2);background:var(--bg);}
 .experience-media img{width:100%;height:auto;filter:brightness(var(--effect-experience-brightness)) saturate(var(--effect-experience-saturation));}
 .experience-media--placeholder{display:grid;place-content:center;gap:12px;aspect-ratio:4/5;padding:clamp(20px,3vw,32px);border:1px solid var(--line-2);background:linear-gradient(165deg,var(--bg-2),var(--bg-1));text-align:center;}
@@ -358,10 +384,21 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="wrap">
-    <h1 class="reveal-up" style="--d:300">Mukun Sun</h1>
-    <div class="role reveal-up" style="--d:520">Communication, community, and music.</div>
-    <div class="hero-foot reveal-up" style="--d:720">
-      <div class="scrollcue">Scroll to explore<span class="bar" aria-hidden="true"></span></div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="reveal-up" style="--d:100">Mukun Sun</h1>
+        <div class="role reveal-up" style="--d:220">Social media, community, and visual communication.</div>
+        <p class="hero-description reveal-up" style="--d:340">I plan content, make the visuals, and use audience response to shape what comes next.</p>
+        <div class="hero-actions reveal-up" style="--d:440"><a class="hero-primary" href="#projects">View selected work <span aria-hidden="true">→</span></a><a class="hero-secondary" href="#experience">Explore my experience</a></div>
+      </div>
+      <figure class="hero-feature reveal-up" style="--d:260">
+        <a href="projects/visual-work.html#visual-tutoring-october" aria-label="View the Officially October design series"><img src="assets/visual_work/tutoring/october-cover.webp" width="1080" height="1350" alt="Officially October carousel cover: red autumn leaves and handwritten lettering on textured white paper" fetchpriority="high" decoding="async"></a>
+        <figcaption><span><span class="hero-feature-title">Officially October</span><span class="hero-feature-context">Social design · SUU Tutoring Center</span></span><span class="hero-feature-arrow" aria-hidden="true">↗</span></figcaption>
+      </figure>
+    </div>
+    <div class="hero-foot reveal-up" style="--d:520">
+      <p class="hero-current"><strong>Marketing Intern · SUU Tutoring Center</strong><br>Cedar City, Utah · Sep 2026–Present</p>
+      <p class="hero-personal">Outside work, you'll find me on bass.</p>
     </div>
   </div>
 </header>
@@ -371,16 +408,15 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   <div class="wrap">
     <div class="about-top">
       <div class="about-text">
-        <div class="placard" data-reveal=""><span class="cn"></span></div>
         <h2 class="stitle" data-reveal="">About Me</h2>
         <div class="about-copy">
-          <p class="lede" data-reveal>I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work spans social media, community operations, visual communication, and event promotion. I like learning how an audience actually behaves before deciding what to make.</p>
-          <p data-reveal>Outside work, I play upright and electric bass in SUU ensembles. Music has also taken me into concert planning, photography, and the small details that make an event feel memorable.</p>
+          <p class="lede" data-reveal>I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work connects social content, community operations, visual design, and event promotion.</p>
+          <p data-reveal>Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.</p>
         </div>
       </div>
       <figure class="portrait" data-reveal="img" data-parallax="0.03">
         <div class="pframe">
-          <img src="assets/portrait/portrait.webp" alt="Portrait of Mukun Sun" loading="lazy" decoding="async">
+          <img src="assets/portrait/portrait.webp" width="900" height="1125" alt="Portrait of Mukun Sun" loading="lazy" decoding="async">
           <span class="pglow" aria-hidden="true"></span>
         </div>
         <figcaption class="pcap"></figcaption>
@@ -401,12 +437,12 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
     <div class="experience-list">
       <article class="experience-row experience-row--suu-tutoring" data-reveal="">
         <header><p class="experience-company">Southern Utah University · Tutoring Center</p><h2 class="experience-role">Marketing Intern</h2><p class="experience-dates">Sep 2026–Present · Cedar City, UT</p></header>
-        <div class="experience-copy">
-          <p class="experience-responsibility">I independently run the Tutoring Center's weekly Instagram and Facebook content calendar: planning topics, designing posts, editing short videos, writing copy, and scheduling and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.</p>
+        <div class="experience-detail"><div class="experience-copy">
+          <p class="experience-responsibility">I independently plan and produce weekly Instagram and Facebook content, from design and short video to copy and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.</p>
           <p class="experience-proofline"><strong>20.3K</strong> views · <strong>9K</strong> reach · <strong>772</strong> interactions</p>
           <p class="experience-report-period">Meta Insights · Sep 1–28, 2026</p>
-          <a class="experience-link" href="projects/suu-tutoring-center.html">Learn more about this <span aria-hidden="true">→</span></a>
-        </div>
+          <a class="experience-link" href="projects/suu-tutoring-center.html">View Tutoring Center work <span aria-hidden="true">→</span></a>
+        </div><figure class="experience-media"><a href="projects/visual-work.html#visual-tutoring-work" aria-label="View selected Tutoring Center designs"><img src="assets/visual_work/tutoring/work-smarter.webp" width="1080" height="1350" alt="Tutoring Center poster inviting students to stop working harder and start working smarter" loading="lazy" decoding="async"></a></figure></div>
       </article>
       <article class="experience-row experience-row--vertex" data-reveal="">
         <header>
@@ -418,7 +454,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
           <div class="experience-copy">
             <p class="experience-responsibility">I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.</p>
             <p class="experience-proofline"><strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share</p>
-            <a class="experience-link" href="projects/vertex-reddit.html">Learn more about this <span aria-hidden="true">→</span></a>
+            <a class="experience-link" href="projects/vertex-reddit.html">Explore community operations <span aria-hidden="true">→</span></a>
           </div>
           <figure class="experience-media" data-reveal="img">
             <img src="assets/internship/VertexMkt/1.webp" width="1279" height="1706" alt="A bright shared workspace at Vertex Marketing in Shenzhen" loading="lazy" decoding="async">
@@ -434,7 +470,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         <div class="experience-detail">
           <div class="experience-copy">
             <p class="experience-responsibility">Supported an SUU instructor in English writing courses serving 200+ students in Wuhan. Provided bilingual classroom support, managed attendance and assignment grading, delivered written feedback, and organized final-grade data and course completion reporting in Excel.</p>
-            <a class="experience-link" href="projects/suu-teaching-assistant.html">Learn more about this <span aria-hidden="true">→</span></a>
+            <a class="experience-link" href="projects/suu-teaching-assistant.html">Explore classroom support <span aria-hidden="true">→</span></a>
           </div>
           <figure class="experience-media" data-reveal="img">
             <img src="assets/internship/SUU_TA/classroom.webp" width="1921" height="1279" alt="Mukun Sun speaking to an English writing class in Wuhan" loading="lazy" decoding="async">
@@ -451,7 +487,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
           <div class="experience-copy">
             <p class="experience-responsibility">I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada — reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.</p>
             <p class="experience-proofline"><strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach</p>
-            <a class="experience-link" href="projects/xinyuyou.html">Learn more about this <span aria-hidden="true">→</span></a>
+            <a class="experience-link" href="projects/xinyuyou.html">Explore creator partnerships <span aria-hidden="true">→</span></a>
           </div>
           <figure class="experience-media" data-reveal="img">
             <!-- TODO: replace the branded placeholder with supplied YUYO photography. -->
@@ -757,7 +793,8 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   syncMotionState();
 })();
 </script>
-<script type="module" src="i18n.js?v=20260930-october"></script>
+<script type="module" src="i18n.js?v=20260930-preview"></script>
+<script type="module" src="navigation.js?v=20260930-preview"></script>
 
 
 </body></html>
