@@ -28,3 +28,11 @@
 @media(max-width:40rem){
   .tutoring-pair,.tutoring-triptych{grid-template-columns:minmax(0,1fr);gap:var(--space-xl);}
 }
+
+/* Concerts lead the archive; long-form service design retains its complete ratio. */
+#visual-concerts{display:block;scroll-margin-top:88px;}
+#visual-concerts h2{width:min(100%,960px);margin:0 auto clamp(32px,4vw,48px);}
+#visual-concerts .visual-grid{width:min(100%,960px);margin-inline:auto;gap:clamp(40px,5vw,56px) clamp(24px,3vw,32px);}
+#visual-concerts .visual-grid img{width:100%;height:auto;}
+#visual-tutoring-infographic{scroll-margin-top:88px;}
+.tutoring-single{width:min(100%,440px);justify-self:center;}

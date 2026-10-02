@@ -29,7 +29,8 @@ test('every second-layer route has the shared bilingual shell', async () => {
     assert.match(html, new RegExp(`<html[^>]+data-page="${key}"`));
     assert.match(html, /href="(?:\.\.\/)?detail\.css\?v=20260930-preview"/);
     assert.match(html, /src="(?:\.\.\/)?detail\.js\?v=20260930-preview"/);
-    assert.match(html, /src="(?:\.\.\/)?i18n\.js\?v=20260930-preview"/);
+    const languageVersion = key === 'visual' ? '20261002-gallery' : '20260930-preview';
+    assert.match(html, new RegExp('src="(?:\\.\\.\\/)?i18n\\.js\\?v=' + languageVersion + '"'));
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);
     assert.match(html, /data-lang="zh"/);
@@ -122,7 +123,8 @@ test('selected visual work preserves the approved gallery with real image links'
     assert.ok(html.includes(`<figcaption>${caption}</figcaption>`), caption);
   }
   assert.ok(html.indexOf('hotone_main.webp') < html.indexOf('hotone_pedal.webp'));
-  assert.ok(html.indexOf('hotone_pedal.webp') < html.indexOf('jazz_coast_a.webp'));
+  assert.ok(html.indexOf('visual-concerts-title') < html.indexOf('id="visual-tutoring-work"'));
+  assert.ok(html.indexOf('jazz_winter.webp') < html.indexOf('hotone_main.webp'));
   assert.ok(html.indexOf('jazz_coast_a.webp') < html.indexOf('jazz_winter.webp'));
   assert.ok(html.indexOf('jazz_winter.webp') < html.indexOf('banner_museum.webp'));
   assert.match(html, /id="visual-hotone-main"/);

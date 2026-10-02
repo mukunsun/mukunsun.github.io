@@ -235,15 +235,15 @@ const en = {
     '#hotel-footer span': 'Mukun Sun · Hotel × Jazz',
     '#hotel-footer a': 'Return to projects',
     '#visual-nav .brand': 'Mukun Sun · Selected Visual Work',
-    '#visual-nav .links': '<a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a>',
+    '#visual-nav .links': '<a href="#visual-concerts">Jazz posters</a><a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a>',
     '#visual-nav .compact-nav summary': 'Sections',
-    '#visual-nav .compact-links': '<a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a><a href="../index.html#projects">Portfolio index</a>',
+    '#visual-nav .compact-links': '<a href="#visual-concerts">Jazz posters</a><a href="#visual-tutoring-work">Tutoring Center</a><a href="#visual-gallery">More work</a><a href="../index.html#projects">Portfolio index</a>',
     '#visual-nav .back-link': '← Portfolio index',
     '#visual-hero h1': 'Selected Visual Work',
     '#visual-hero .detail-eyebrow': 'Visual Work',
     '#visual-hero .detail-deck': 'Posters, social content, and visual stories for campus, culture, and music.',
     '#visual-tutoring-work-title': 'SUU Tutoring Center',
-    '#visual-tutoring-work .tutoring-intro': 'Selected posters, seasonal carousels, study-skills stories, and a bilingual Hispanic Heritage Month spotlight. Click any image to see the full design.',
+    '#visual-tutoring-work .tutoring-intro': 'Selected posters, a service infographic, seasonal carousels, study-skills stories, and a bilingual Hispanic Heritage Month spotlight. Click any image to see the full design.',
     '#visual-tutoring-posters h3': 'Making tutoring approachable.',
     '#visual-tutoring-posters .tutoring-series-copy p': 'A direct invitation and a visual guide to drop-in tutoring.',
     '#visual-tutoring-study h3': 'Study Skill of the Week',
@@ -746,9 +746,9 @@ const zh = {
     '#hotel-footer span': '孙慕坤 · 酒店 × 爵士',
     '#hotel-footer a': '返回项目列表',
     '#visual-nav .brand': '孙慕坤 · 视觉作品精选',
-    '#visual-nav .links': '<a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a>',
+    '#visual-nav .links': '<a href="#visual-concerts">爵士海报</a><a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a>',
     '#visual-nav .compact-nav summary': '章节',
-    '#visual-nav .compact-links': '<a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a><a href="../index.html#projects">返回作品集</a>',
+    '#visual-nav .compact-links': '<a href="#visual-concerts">爵士海报</a><a href="#visual-tutoring-work">学习辅导中心</a><a href="#visual-gallery">更多作品</a><a href="../index.html#projects">返回作品集</a>',
     '#visual-nav .back-link': '← 返回作品集',
     '#visual-hero h1': '视觉作品精选',
     '#visual-hero .detail-eyebrow': '视觉作品',
@@ -1122,7 +1122,7 @@ Object.assign(zh.copy, {
   "#visual-tutoring-caption-october-cover": "Officially October · 封面",
   "#visual-tutoring-caption-october-mood": "秋日氛围 · 拼贴",
   "#visual-tutoring-caption-october-invitation": "Tutoring Center · 到访邀请",
-  "#visual-tutoring-work .tutoring-intro": "精选宣传海报、季节主题轮播、学习技巧长图与西班牙裔传统月双语人物专题。点击图片可查看完整设计。"
+  "#visual-tutoring-work .tutoring-intro": "精选宣传海报、服务信息图、季节主题轮播、学习技巧长图与西班牙裔传统月双语人物专题。点击图片可查看完整设计。"
 });
 Object.assign(zh.attributes, {
   "#visual-tutoring-october .detail-media:nth-child(1) img": {
@@ -1183,6 +1183,25 @@ Object.assign(zh.attributes, {
     "aria-label": "关闭图片",
     "title": "关闭（Esc）"
   }
+});
+
+Object.assign(en.copy, {
+  '#visual-concerts-title': 'Jazz concert posters',
+  '#visual-tutoring-infographic h3': 'Midterms are coming.',
+  '#visual-tutoring-infographic .tutoring-series-copy p': 'A service infographic bringing drop-in tutoring, PAL groups, study squads, and recurring one-on-one support into one guide.',
+  '#visual-tutoring-caption-infographic': 'Midterms are coming · Service infographic'
+});
+Object.assign(zh.copy, {
+  '#visual-concerts-title': '爵士音乐会海报',
+  '#visual-tutoring-infographic h3': '期中考试将至。',
+  '#visual-tutoring-infographic .tutoring-series-copy p': '一张服务信息图，将随到随学辅导、PAL 学习小组、Study Squads 与定期一对一辅导整理成清晰的指南。',
+  '#visual-tutoring-caption-infographic': '期中考试将至 · 辅导服务信息图'
+});
+Object.assign(en.attributes, {
+  '#visual-tutoring-infographic img': { alt: 'Red and white Midterms are coming infographic explaining four SUU Tutoring Center services' }
+});
+Object.assign(zh.attributes, {
+  '#visual-tutoring-infographic img': { alt: '红白配色的期中考试服务信息图，介绍 SUU 学习辅导中心的四种学习支持服务' }
 });
 
 export const LANGUAGES = { en, zh };
