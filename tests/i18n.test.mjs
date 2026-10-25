@@ -86,7 +86,7 @@ test('each translation selector is rooted in its intended route', async () => {
           : selector.startsWith('#visual-') ? 'visual'
             : selector.startsWith('#music-') ? 'music'
               : selector.startsWith('#photography-') ? 'photography'
-                : selector.startsWith('#travel-') ? 'travel'
+                : selector.startsWith('#travel-') || selector.startsWith('.travel-') ? 'travel'
                   : selector.startsWith('#xinyuyou-') ? 'xinyuyou'
                     : 'home';
     assert.equal(routes[route].has(selector), true, `${route}: ${selector}`);
@@ -175,11 +175,13 @@ test('second-layer route copy and attributes are selector-scoped and complete', 
     ],
     travel: [
       '#travel-nav .brand', '#travel-nav .links', '#travel-nav .compact-nav summary', '#travel-nav .compact-links', '#travel-nav .back-link',
-      '#travel-hero h1', '#travel-hero .detail-eyebrow', '#travel-hero .detail-deck',
-      '#travel-notes h2', '#travel-notes .travel-intro',
-      '#travel-us h2', '#travel-us .travel-region-copy',
-      '#travel-china h2', '#travel-china .travel-region-copy',
-      '#travel-footer span', '#travel-footer a',
+      '#travel-hero h1', '#travel-hero .detail-deck',
+      '#travel-cover-location', '#travel-cover-note', '#travel-place-links', '#travel-place-select',
+      '#travel-notes-title', '#travel-record-toggle', '#travel-notes .travel-intro',
+      '#travel-us-title', '#travel-us .travel-region-copy',
+      '#travel-china-title', '#travel-china .travel-region-copy',
+      '#travel-korea-title', '#travel-korea .travel-region-copy',
+      '#travel-footer span', '#travel-footer .photography-link', '#travel-footer .return-home',
     ],
   };
   for (const [route, selectors] of Object.entries(copyRoots)) {

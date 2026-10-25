@@ -30,7 +30,7 @@
   --color-bloom-closing-low: oklch(0.34 0.06 50 / 0.4);
   --effect-nav-surface-soft: color-mix(in oklab, var(--color-paper) 55%, transparent);
   --effect-nav-surface: color-mix(in oklab, var(--color-paper) 92%, transparent);
-  --effect-nav-blur: 26px;
+  --effect-nav-blur: 12px;
   --effect-nav-saturation: 1.25;
   --effect-dialog-backdrop: color-mix(in oklab, var(--color-paper) 82%, transparent);
   --effect-media-brightness: 0.94;
@@ -114,7 +114,7 @@ html[data-theme="light"] {
   --color-bloom-closing-low: oklch(0.83 0.04 64 / 0.3);
   --effect-nav-surface-soft: color-mix(in oklab, var(--color-paper) 48%, transparent);
   --effect-nav-surface: color-mix(in oklab, var(--color-paper) 91%, transparent);
-  --effect-nav-blur: 18px;
+  --effect-nav-blur: 12px;
   --effect-nav-saturation: 1.12;
   --effect-dialog-backdrop: color-mix(in oklab, var(--color-paper) 76%, transparent);
   --effect-media-brightness: 1;

@@ -37,9 +37,10 @@ test('outside-work detail routes load one shared versioned module and cache-bust
   for (const [name, html] of [['music', music], ['photography', photography], ['travel', travel]]) {
     assert.match(html, /<html lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js/g) ?? []).length, 1, `${name}: one i18n script URL`);
-    assert.match(html, /src="i18n\.js\?v=20260930-preview"/);
-    assert.match(html, /href="detail\.css\?v=20260930-preview"/);
-    assert.match(html, /src="detail\.js\?v=20260930-preview"/);
+    const version = name === 'travel' ? '20261024-travel' : '20260930-preview';
+    assert.match(html, new RegExp('src="i18n\\.js\\?v=' + version + '"'));
+    assert.match(html, new RegExp('href="detail\\.css\\?v=' + version + '"'));
+    assert.match(html, new RegExp('src="detail\\.js\\?v=' + version + '"'));
   }
   assert.doesNotMatch(detailJs, /(?:import|from)\s*['"]\.\/i18n\.js['"]/);
 });
@@ -107,7 +108,7 @@ test('homepage preserves the required desktop motion contracts without obsolete 
   assert.match(home, /html\.js\.motion-desktop \[data-reveal="img"\]\{transform:translateY\(46px\) scale\(1\.04\);\}/);
   assert.match(home, /@media\s*\(pointer:fine\) and \(min-width:40\.001rem\) and \(prefers-reduced-motion:no-preference\)\{\.progress\{display:block;\}\}/);
   assert.match(home, /\.progress\{[^}]*width:100%;[^}]*transform:scaleX\(0\);[^}]*transform-origin:left;/);
-  assert.match(home, /html\.js\.motion-desktop \.spot\.on\{opacity:1;\}/);
+  assert.match(home, /html\.js\.motion-desktop \.spot\.on\{[^}]*opacity:1;/);
   assert.match(home, /data-parallax="0\.03"/);
   assert.match(home, /transform:translate3d\(0,var\(--parallax-y,0px\),0\) scale\(1\.08\)/);
   assert.doesNotMatch(home, /data-count|startCount/);

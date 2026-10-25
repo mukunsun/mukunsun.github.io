@@ -27,9 +27,10 @@ test('every second-layer route has the shared bilingual shell', async () => {
   for (const [path, key] of routes) {
     const html = await readFile(new URL(`../${path}`, import.meta.url), 'utf8');
     assert.match(html, new RegExp(`<html[^>]+data-page="${key}"`));
-    assert.match(html, /href="(?:\.\.\/)?detail\.css\?v=20260930-preview"/);
-    assert.match(html, /src="(?:\.\.\/)?detail\.js\?v=20260930-preview"/);
-    const languageVersion = key === 'visual' ? '20261002-gallery' : '20260930-preview';
+    const shellVersion = key === 'travel' ? '20261024-travel' : '20260930-preview';
+    assert.match(html, new RegExp('href="(?:\\.\\.\\/)?detail\\.css\\?v=' + shellVersion + '"'));
+    assert.match(html, new RegExp('src="(?:\\.\\.\\/)?detail\\.js\\?v=' + shellVersion + '"'));
+    const languageVersion = key === 'visual' ? '20261002-gallery' : shellVersion;
     assert.match(html, new RegExp('src="(?:\\.\\.\\/)?i18n\\.js\\?v=' + languageVersion + '"'));
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);
@@ -200,7 +201,7 @@ test('music history presents verified performances, production work, and study i
   assert.match(html, /SUU professor Xun Sun/);
 });
 
-test('photography owns the supplied images and travel is a factual text ledger', async () => {
+test('photography owns its curated images while travel retains a factual place record below its photo chapters', async () => {
   const [photography, travel] = await Promise.all([
     readFile(new URL('../photography.html', import.meta.url), 'utf8'),
     readFile(new URL('../travel.html', import.meta.url), 'utf8'),
@@ -223,7 +224,9 @@ test('photography owns the supplied images and travel is a factual text ledger',
   for (const place of ['Los Angeles', 'San Diego', 'San Francisco', 'Las Vegas', 'Cedar City', 'Zion N.P.', 'Beijing', 'Hong Kong', 'Wuhan', 'Tongren', 'Chengdu']) {
     assert.match(travel, new RegExp(place.replace('.', '\\.')));
   }
-  assert.doesNotMatch(travel, /assets\/photography\/|<figure|data-enlarge|<time|itinerary|recommend/i);
+  assert.doesNotMatch(travel, /assets\/photography\/|<time|itinerary|recommend/i);
+  assert.equal((travel.match(/data-travel-place>/g) ?? []).length, 7);
+  assert.match(travel, /class="travel-archive"/);
 });
 
 test('photography presents consistent orientation frames while full sources remain enlargeable', async () => {
@@ -249,7 +252,6 @@ test('outside-work heroes use route-owned images with stable editorial overlays'
   const pages = [
     ['music.html', 'music', 'assets/music/suu_jazz_fest/playing.webp'],
     ['photography.html', 'photography', 'assets/photography/the_strip.webp'],
-    ['travel.html', 'travel', 'assets/travel/bryce_canyon.webp'],
   ];
   for (const [path, key, image] of pages) {
     const html = await readFile(new URL(`../${path}`, import.meta.url), 'utf8');
@@ -258,6 +260,9 @@ test('outside-work heroes use route-owned images with stable editorial overlays'
   }
   const travel = await readFile(new URL('../travel.html', import.meta.url), 'utf8');
   assert.doesNotMatch(travel, /assets\/photography\//);
+  assert.match(travel, /<figure class="travel-cover" id="travel-cover">/);
+  assert.match(travel, /assets\/travel\/journal\/bryce-bench-960\.webp/);
+  assert.match(travel, /fetchpriority="high"/);
   assert.match(css, /\.detail-hero\[data-outside-hero\]\{[^}]*position:relative;[^}]*overflow:hidden;/);
   assert.match(css, /\.outside-hero-media::after\{[^}]*background:var\(--hero-scrim,var\(--outside-hero-scrim\)\);/);
   assert.match(css, /\.outside-hero-media::before\{[^}]*background:var\(--outside-hero-nav-scrim\);/);
@@ -273,10 +278,13 @@ test('detail routes expose no-JS content and mount live reveal hooks', async () 
   for (const [path, key] of routes) {
     const html = await readFile(new URL(`../${path}`, import.meta.url), 'utf8');
     assert.match(html, new RegExp(`<html lang="en" class="no-js" data-language="en" data-page="${key}">`));
-    assert.match(html, new RegExp(`<header class="detail-hero" id="${key}-hero"(?: data-outside-hero)? data-reveal>`));
+    if (key === 'travel') {
+      assert.match(html, /<header class="travel-hero" id="travel-hero">/);
+      assert.equal((html.match(/<figure class="travel-(?:cover|photo)[^"]*"/g) ?? []).length, 25);
+    } else assert.match(html, new RegExp(`<header class="detail-hero" id="${key}-hero"(?: data-outside-hero)? data-reveal>`));
     const sections = html.match(/<section class="[^"]*\bdetail-section\b[^"]*"[^>]*>/g) ?? [];
     const media = html.match(/<figure class="[^"]*\bdetail-media\b[^"]*"[^>]*>/g) ?? [];
-    assert.ok(sections.length > 0, `${path}: sections`);
+    if (key !== 'travel') assert.ok(sections.length > 0, `${path}: sections`);
     if (key === 'travel') assert.equal(media.length, 0, `${path}: no published gallery images`);
     else assert.ok(media.length > 0, `${path}: media`);
     assert.equal(sections.every((tag) => tag.includes('data-reveal')), true, `${path}: section reveals`);

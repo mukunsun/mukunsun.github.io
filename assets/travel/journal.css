@@ -1,0 +1,72 @@
+/* Travel inherits the shared gallery system; each place owns a photo sequence. */
+.travel-main{padding-bottom:var(--space-xl);}
+.travel-skip{position:fixed;top:var(--space-sm);left:var(--space-sm);z-index:60;padding:var(--space-xs) var(--space-sm);background:var(--color-paper-raised);color:var(--color-ink);transform:translateY(-200%);}
+.travel-skip:focus{transform:none;}
+.travel-hero{padding-top:clamp(112px,9vw,136px);}
+.travel-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:var(--space-xl);align-items:end;}
+.travel-heading h1{margin:0;font-family:var(--font-display);font-size:clamp(3.5rem,7vw,6rem);font-weight:600;line-height:1.02;letter-spacing:-.035em;}
+.travel-heading-copy{max-width:40ch;justify-self:end;}
+.travel-heading .detail-deck{margin:0;font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.7;color:var(--color-ink-soft);}
+.travel-explore{display:inline-flex;align-items:center;gap:var(--space-xs);min-height:44px;margin-top:var(--space-xs);font-size:var(--text-xs);color:var(--color-ink);}
+.travel-explore span[aria-hidden]{color:var(--color-accent-bright);}
+.travel-explore:hover{color:var(--color-accent-bright);}
+.travel-cover{margin:var(--space-lg) 0 0;}
+.travel-cover .media-button{height:clamp(320px,39vw,520px);overflow:hidden;}
+.travel-cover img{width:100%;height:100%;object-fit:cover;object-position:center 64%;}
+.travel-cover figcaption{display:flex;justify-content:space-between;gap:var(--space-sm);margin-top:var(--space-xs);font-size:var(--text-xs);line-height:1.6;color:var(--color-muted);}
+.travel-cover figcaption span:first-child{color:var(--color-ink-soft);}
+.travel-index{position:sticky;top:64px;z-index:15;display:flex;align-items:center;gap:var(--space-lg);margin-top:var(--space-xl);padding-block:var(--space-2xs);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule);background:var(--color-paper);scroll-margin-top:80px;}
+.travel-index-label{flex:none;font-size:var(--text-xs);color:var(--color-muted);}
+.travel-place-links{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--space-lg);}
+.travel-place-links a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;font-size:13px;color:var(--color-muted);text-decoration-line:underline;text-decoration-color:transparent;text-underline-offset:8px;}
+.travel-place-links a:hover,.travel-place-links a[aria-current="location"]{color:var(--color-ink);text-decoration-color:var(--color-accent-bright);}
+.travel-place-select{display:none;width:100%;min-width:0;min-height:44px;padding:var(--space-2xs) var(--space-xs);border:1px solid var(--color-rule);border-radius:var(--radius-card);background:var(--color-paper-raised);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-xs);}
+.travel-chapter{display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);padding-block:clamp(72px,8vw,112px);border-bottom:1px solid var(--color-rule);scroll-margin-top:calc(152px - clamp(72px,8vw,112px));}
+.travel-chapter-heading{position:sticky;top:152px;align-self:start;}
+.travel-chapter h2{margin:0;font-family:var(--font-display);font-size:clamp(2rem,3.3vw,3rem);font-weight:600;line-height:1.12;letter-spacing:-.025em;}
+.travel-context{margin:var(--space-xs) 0 0;font-size:var(--text-xs);line-height:1.6;color:var(--color-muted);}
+.travel-observation{max-width:31ch;margin:var(--space-lg) 0 0;color:var(--color-ink-soft);font-size:15px;line-height:1.9;}
+.travel-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-lg) var(--space-sm);align-items:start;}
+.travel-photos--three,.travel-photos--seoul{grid-template-columns:repeat(2,minmax(0,1fr));}
+.travel-photo{min-width:0;margin:0;}
+.travel-photo--lead{grid-column:1/-1;}
+.travel-photos--seoul .travel-photo--portrait{grid-row:span 2;align-self:center;}
+.travel-photo img{display:block;width:100%;height:auto;}
+.travel-photo figcaption{margin-top:var(--space-2xs);font-size:var(--text-xs);line-height:1.6;color:var(--color-muted);}
+.travel-archive{padding-top:clamp(64px,7vw,96px);scroll-margin-top:156px;}
+.travel-archive h2{margin:0 0 var(--space-md);font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:600;line-height:1.2;}
+.travel-archive summary{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);min-height:44px;padding-block:var(--space-xs);border-top:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule);list-style:none;cursor:pointer;color:var(--color-ink-soft);font-size:14px;}
+.travel-archive summary::-webkit-details-marker{display:none;}
+.travel-archive summary::after{content:"+";color:var(--color-accent-bright);font-size:20px;}
+.travel-archive details[open] summary::after{content:"−";}
+.travel-intro{margin-block:var(--space-lg);max-width:65ch;color:var(--color-muted);font-size:14px;}
+.travel-archive .travel-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-lg);border:0;}
+.travel-archive .travel-region{display:block;padding-block:0;border:0;}
+.travel-archive .travel-region h3{margin:0 0 var(--space-sm);font-family:var(--font-display);font-size:20px;font-weight:600;}
+.travel-archive .travel-region-copy{font-size:13px;}
+.travel-footer-links{display:flex;flex-wrap:wrap;gap:var(--space-lg);}
+@media(max-width:64rem){
+  .travel-index{gap:var(--space-md);}
+  .travel-index.is-ready .travel-place-links{display:none;}
+  .travel-index.is-ready .travel-place-select{display:block;}
+  .travel-index:not(.is-ready){align-items:start;}
+  .travel-place-links{gap:0 var(--space-md);}
+  .travel-chapter{grid-template-columns:minmax(0,1fr);gap:var(--space-lg);scroll-margin-top:calc(144px - clamp(72px,8vw,112px));}
+  .travel-chapter-heading{position:static;display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1fr);gap:var(--space-lg);}
+  .travel-observation{max-width:48ch;margin:0;}
+}
+@media(max-width:40rem){
+  .travel-hero{padding-top:112px;}
+  .travel-heading{grid-template-columns:minmax(0,1fr);gap:var(--space-md);}
+  .travel-heading-copy{justify-self:start;}
+  .travel-cover{margin-top:var(--space-md);}
+  .travel-cover .media-button{height:auto;aspect-ratio:4/3;}
+  .travel-cover figcaption{flex-direction:column;gap:var(--space-3xs);}
+  .travel-index{margin-top:var(--space-lg);}
+  .travel-chapter{padding-block:var(--space-xl);scroll-margin-top:96px;}
+  .travel-chapter-heading{display:block;}
+  .travel-observation{margin-top:var(--space-sm);}
+  .travel-photos,.travel-photos--three,.travel-photos--seoul{grid-template-columns:minmax(0,1fr);gap:var(--space-lg);}
+  .travel-photos--seoul .travel-photo--portrait{grid-row:auto;}
+  .travel-archive .travel-ledger{grid-template-columns:minmax(0,1fr);}
+}

@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171411">
   <title>Travel | Mukun Sun</title>
-  <meta name="description" content="A concise record of places visited across the United States and China by Mukun Sun.">
+  <meta name="description" content="Photo notes from New York, Seoul, Hong Kong and the American West: local atmosphere, everyday details and open country, by Mukun Sun.">
   <link rel="canonical" href="https://mukunsun.com/travel.html">
+  <meta property="og:title" content="Travel | Mukun Sun">
+  <meta property="og:description" content="Photo notes from New York, Seoul, Hong Kong and the American West, by Mukun Sun.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mukunsun.com/travel.html">
+  <meta property="og:image" content="https://mukunsun.com/assets/travel/journal/bryce-bench-1800.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script>
   (function(root){
@@ -18,9 +24,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&amp;family=Noto+Serif+SC:wght@200..900&amp;family=Fragment+Mono:ital@0;1&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="detail.css?v=20260930-preview">
+  <link rel="stylesheet" href="detail.css?v=20261024-travel">
+  <link rel="stylesheet" href="assets/travel/journal.css?v=20261024">
 </head>
 <body>
+  <a class="travel-skip" href="#travel-main">Skip to travel notes</a>
   <div class="progress" aria-hidden="true"></div>
   <nav class="detail-nav" id="travel-nav" aria-label="Travel navigation">
     <a class="brand" href="index.html">Mukun Sun · Travel</a>
@@ -35,34 +43,249 @@
     </div>
   </nav>
 
-  <main class="detail-wrap">
-    <header class="detail-hero" id="travel-hero" data-outside-hero data-reveal>
-      <div class="outside-hero-media" aria-hidden="true"><img src="assets/travel/bryce_canyon.webp" width="1448" height="1086" alt="" decoding="async"></div>
-      <h1>Travel</h1>
-      <div class="detail-hero-copy"><p class="detail-eyebrow">Places visited</p><p class="detail-deck">Continuously updating...</p></div>
+  <main class="detail-wrap travel-main" id="travel-main" tabindex="-1">
+    <header class="travel-hero" id="travel-hero">
+      <div class="travel-heading">
+        <h1>Travel</h1>
+        <div class="travel-heading-copy"><p class="detail-deck">City streets, small stops, and open country. Photo notes, one place at a time.</p><a class="travel-explore" href="#travel-places"><span class="travel-explore-label">Explore places</span><span aria-hidden="true">↓</span></a></div>
+      </div>
+      <figure class="travel-cover" id="travel-cover">
+        <a class="media-button" href="assets/travel/journal/bryce-bench-1800.webp" data-enlarge><img src="assets/travel/journal/bryce-bench-960.webp" srcset="assets/travel/journal/bryce-bench-480.webp 480w, assets/travel/journal/bryce-bench-960.webp 960w, assets/travel/journal/bryce-bench-1800.webp 1800w" sizes="(min-width: 1400px) 1240px, calc(100vw - 40px)" width="960" height="647" alt="A person sitting on a wooden bench above the hoodoos at Bryce Canyon" fetchpriority="high" decoding="async"></a>
+        <figcaption><span id="travel-cover-location">Bryce Canyon, Utah</span><span id="travel-cover-note">A pause above the canyon.</span></figcaption>
+      </figure>
     </header>
 
-    <section class="detail-section" id="travel-notes" aria-labelledby="travel-notes-title" data-reveal>
-      <h2 id="travel-notes-title">Travel record</h2>
-      <div class="detail-section-copy">
-        <p class="travel-intro">Places I have visited, grouped simply by region.</p>
+    <nav class="travel-index" id="travel-places" aria-label="Places in these photo notes">
+      <span class="travel-index-label">Places</span>
+      <div class="travel-place-links" id="travel-place-links"><a href="#travel-new-york">New York</a><a href="#travel-seoul">Seoul</a><a href="#travel-hong-kong">Hong Kong</a><a href="#travel-los-angeles">Los Angeles</a><a href="#travel-salt-lake-city">Salt Lake City</a><a href="#travel-bryce-canyon">Bryce Canyon</a><a href="#travel-kanab">Kanab</a></div>
+      <select class="travel-place-select" id="travel-place-select" aria-label="Choose a place"><option value="" disabled selected>Choose a place</option><option value="travel-new-york">New York</option><option value="travel-seoul">Seoul</option><option value="travel-hong-kong">Hong Kong</option><option value="travel-los-angeles">Los Angeles</option><option value="travel-salt-lake-city">Salt Lake City</option><option value="travel-bryce-canyon">Bryce Canyon</option><option value="travel-kanab">Kanab</option></select>
+    </nav>
+
+    <section class="travel-chapter" id="travel-new-york" aria-labelledby="travel-new-york-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-new-york-title">New York</h2><p class="travel-context">United States</p></div>
+        <p class="travel-observation">A bridge between brick buildings, food carts on busy corners, and the skyline across the water.</p>
+      </header>
+      <div class="travel-photos">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-ny-bridge">
+            <a class="media-button" href="assets/travel/journal/ny-bridge-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/ny-bridge-960.webp" srcset="assets/travel/journal/ny-bridge-480.webp 480w, assets/travel/journal/ny-bridge-960.webp 960w, assets/travel/journal/ny-bridge-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="720" alt="The Manhattan Bridge framed by brick buildings on a New York street at dusk" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Manhattan Bridge, at dusk</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-ny-cart">
+            <a class="media-button" href="assets/travel/journal/ny-cart-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/ny-cart-960.webp" srcset="assets/travel/journal/ny-cart-480.webp 480w, assets/travel/journal/ny-cart-960.webp 960w, assets/travel/journal/ny-cart-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="A street-food cart with bright umbrellas on a busy New York sidewalk" loading="lazy" decoding="async">
+            </a>
+            <figcaption>A stop at the street corner</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-ny-waterfront">
+            <a class="media-button" href="assets/travel/journal/ny-waterfront-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/ny-waterfront-960.webp" srcset="assets/travel/journal/ny-waterfront-480.webp 480w, assets/travel/journal/ny-waterfront-960.webp 960w, assets/travel/journal/ny-waterfront-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="The Lower Manhattan skyline seen across blue water" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The city across the water</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-ny-times-square">
+            <a class="media-button" href="assets/travel/journal/ny-times-square-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/ny-times-square-960.webp" srcset="assets/travel/journal/ny-times-square-480.webp 480w, assets/travel/journal/ny-times-square-960.webp 960w, assets/travel/journal/ny-times-square-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="Illuminated billboards and people in Times Square at night" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Times Square, after dark</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-seoul" aria-labelledby="travel-seoul-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-seoul-title">Seoul</h2><p class="travel-context">South Korea</p></div>
+        <p class="travel-observation">Signs stack above the sidewalk. The small stops are at street level: an alley, a bowl of noodles, a music-bar door.</p>
+      </header>
+      <div class="travel-photos travel-photos--seoul">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-seoul-street">
+            <a class="media-button" href="assets/travel/journal/seoul-street-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/seoul-street-960.webp" srcset="assets/travel/journal/seoul-street-480.webp 480w, assets/travel/journal/seoul-street-960.webp 960w, assets/travel/journal/seoul-street-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="720" alt="A Seoul street lined with shop signs and a yellow bus" loading="lazy" decoding="async">
+            </a>
+            <figcaption>At street level</figcaption>
+          </figure>
+          <figure class="travel-photo travel-photo--portrait" id="travel-photo-seoul-alley">
+            <a class="media-button" href="assets/travel/journal/seoul-alley-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/seoul-alley-960.webp" srcset="assets/travel/journal/seoul-alley-480.webp 480w, assets/travel/journal/seoul-alley-960.webp 960w, assets/travel/journal/seoul-alley-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="1280" alt="A narrow Seoul alley with plants and vertical shop signs" loading="lazy" decoding="async">
+            </a>
+            <figcaption>A turn into the alley</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-seoul-noodles">
+            <a class="media-button" href="assets/travel/journal/seoul-noodles-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/seoul-noodles-960.webp" srcset="assets/travel/journal/seoul-noodles-480.webp 480w, assets/travel/journal/seoul-noodles-960.webp 960w, assets/travel/journal/seoul-noodles-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="Noodles topped with egg and cucumber, with a dumpling on the side" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Noodles and a dumpling</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-seoul-music">
+            <a class="media-button" href="assets/travel/journal/seoul-music-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/seoul-music-960.webp" srcset="assets/travel/journal/seoul-music-480.webp 480w, assets/travel/journal/seoul-music-960.webp 960w, assets/travel/journal/seoul-music-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="A music-bar doorway with a guitar-shaped neon sign" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Music, just off the street</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-hong-kong" aria-labelledby="travel-hong-kong-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-hong-kong-title">Hong Kong</h2><p class="travel-context">China</p></div>
+        <p class="travel-observation">Buses and shopfronts fill the streets. The waterfront leaves a little more room around the skyline.</p>
+      </header>
+      <div class="travel-photos">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-hk-street">
+            <a class="media-button" href="assets/travel/journal/hk-street-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/hk-street-960.webp" srcset="assets/travel/journal/hk-street-480.webp 480w, assets/travel/journal/hk-street-960.webp 960w, assets/travel/journal/hk-street-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="720" alt="A Hong Kong street with double-decker buses between tall buildings" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Between the towers</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-hk-shopfronts">
+            <a class="media-button" href="assets/travel/journal/hk-shopfronts-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/hk-shopfronts-960.webp" srcset="assets/travel/journal/hk-shopfronts-480.webp 480w, assets/travel/journal/hk-shopfronts-960.webp 960w, assets/travel/journal/hk-shopfronts-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="Shopfronts and pedestrians outside Chungking Mansions in Hong Kong" loading="lazy" decoding="async">
+            </a>
+            <figcaption>A street full of signs</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-hk-wheel">
+            <a class="media-button" href="assets/travel/journal/hk-wheel-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/hk-wheel-960.webp" srcset="assets/travel/journal/hk-wheel-480.webp 480w, assets/travel/journal/hk-wheel-960.webp 960w, assets/travel/journal/hk-wheel-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="An observation wheel and the Hong Kong skyline at dusk" loading="lazy" decoding="async">
+            </a>
+            <figcaption>By the harbor, at dusk</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-hk-waterfront">
+            <a class="media-button" href="assets/travel/journal/hk-waterfront-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/hk-waterfront-960.webp" srcset="assets/travel/journal/hk-waterfront-480.webp 480w, assets/travel/journal/hk-waterfront-960.webp 960w, assets/travel/journal/hk-waterfront-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="Hong Kong harbor and illuminated buildings beside a waterfront promenade" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Last light on the waterfront</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-los-angeles" aria-labelledby="travel-los-angeles-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-los-angeles-title">Los Angeles</h2><p class="travel-context">Santa Monica, California</p></div>
+        <p class="travel-observation">An open beach, an empty swing set, and the busy entrance to the pier.</p>
+      </header>
+      <div class="travel-photos travel-photos--three">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-la-shoreline">
+            <a class="media-button" href="assets/travel/journal/la-shoreline-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/la-shoreline-960.webp" srcset="assets/travel/journal/la-shoreline-480.webp 480w, assets/travel/journal/la-shoreline-960.webp 960w, assets/travel/journal/la-shoreline-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="647" alt="People along the Santa Monica shoreline with mountains in the distance" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Along the Pacific</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-la-swings">
+            <a class="media-button" href="assets/travel/journal/la-swings-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/la-swings-960.webp" srcset="assets/travel/journal/la-swings-480.webp 480w, assets/travel/journal/la-swings-960.webp 960w, assets/travel/journal/la-swings-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="Empty beach swings with the Santa Monica Pier amusement rides in the distance" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Swings and a distant Ferris wheel</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-la-pier">
+            <a class="media-button" href="assets/travel/journal/la-pier-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/la-pier-960.webp" srcset="assets/travel/journal/la-pier-480.webp 480w, assets/travel/journal/la-pier-960.webp 960w, assets/travel/journal/la-pier-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="People and birds by the entrance to Santa Monica Pier" loading="lazy" decoding="async">
+            </a>
+            <figcaption>At the pier entrance</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-salt-lake-city" aria-labelledby="travel-salt-lake-city-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-salt-lake-city-title">Salt Lake City</h2><p class="travel-context">Utah, United States</p></div>
+        <p class="travel-observation">Campus streets, classical facades, and the approach to the capitol: a few frames from the road.</p>
+      </header>
+      <div class="travel-photos travel-photos--three">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-slc-capitol">
+            <a class="media-button" href="assets/travel/journal/slc-capitol-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/slc-capitol-960.webp" srcset="assets/travel/journal/slc-capitol-480.webp 480w, assets/travel/journal/slc-capitol-960.webp 960w, assets/travel/journal/slc-capitol-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="647" alt="The Utah State Capitol and its approach in Salt Lake City" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The capitol approach</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-slc-road">
+            <a class="media-button" href="assets/travel/journal/slc-road-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/slc-road-960.webp" srcset="assets/travel/journal/slc-road-480.webp 480w, assets/travel/journal/slc-road-960.webp 960w, assets/travel/journal/slc-road-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="A campus street seen through a car windshield in Salt Lake City" loading="lazy" decoding="async">
+            </a>
+            <figcaption>From the road</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-slc-columns">
+            <a class="media-button" href="assets/travel/journal/slc-columns-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/slc-columns-960.webp" srcset="assets/travel/journal/slc-columns-480.webp 480w, assets/travel/journal/slc-columns-960.webp 960w, assets/travel/journal/slc-columns-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="A classical stone building with columns and steps" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Columns and light</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-bryce-canyon" aria-labelledby="travel-bryce-canyon-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-bryce-canyon-title">Bryce Canyon</h2><p class="travel-context">Utah, United States</p></div>
+        <p class="travel-observation">The wide view breaks into individual hoodoos, pine trees, and a path along the rock.</p>
+      </header>
+      <div class="travel-photos travel-photos--three">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-bryce-amphitheater">
+            <a class="media-button" href="assets/travel/journal/bryce-amphitheater-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/bryce-amphitheater-960.webp" srcset="assets/travel/journal/bryce-amphitheater-480.webp 480w, assets/travel/journal/bryce-amphitheater-960.webp 960w, assets/travel/journal/bryce-amphitheater-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="647" alt="Orange hoodoos filling the Bryce Canyon amphitheater under a blue sky" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The amphitheater</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-bryce-spires">
+            <a class="media-button" href="assets/travel/journal/bryce-spires-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/bryce-spires-960.webp" srcset="assets/travel/journal/bryce-spires-480.webp 480w, assets/travel/journal/bryce-spires-960.webp 960w, assets/travel/journal/bryce-spires-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="Two tall Bryce Canyon rock spires against a deep blue sky" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Looking a little closer</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-bryce-trail">
+            <a class="media-button" href="assets/travel/journal/bryce-trail-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/bryce-trail-960.webp" srcset="assets/travel/journal/bryce-trail-480.webp 480w, assets/travel/journal/bryce-trail-960.webp 960w, assets/travel/journal/bryce-trail-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="647" alt="A sunlit path beside pine trees and Bryce Canyon rock formations" loading="lazy" decoding="async">
+            </a>
+            <figcaption>A path along the rock</figcaption>
+          </figure>
+      </div>
+    </section>
+    <section class="travel-chapter" id="travel-kanab" aria-labelledby="travel-kanab-title" data-travel-place>
+      <header class="travel-chapter-heading">
+        <div><h2 id="travel-kanab-title">Kanab</h2><p class="travel-context">Utah, United States</p></div>
+        <p class="travel-observation">Gardens, woodwork, and red rock beyond the window.</p>
+      </header>
+      <div class="travel-photos travel-photos--three">
+          <figure class="travel-photo travel-photo--lead" id="travel-photo-kanab-garden">
+            <a class="media-button" href="assets/travel/journal/kanab-garden-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/kanab-garden-960.webp" srcset="assets/travel/journal/kanab-garden-480.webp 480w, assets/travel/journal/kanab-garden-960.webp 960w, assets/travel/journal/kanab-garden-1800.webp 1800w" sizes="(min-width: 1440px) 885px, (min-width: 1025px) 65vw, calc(100vw - 40px)" width="960" height="720" alt="A garden courtyard with trees and red rock in the distance in Kanab" loading="lazy" decoding="async">
+            </a>
+            <figcaption>A garden in the red-rock country</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-kanab-window">
+            <a class="media-button" href="assets/travel/journal/kanab-window-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/kanab-window-960.webp" srcset="assets/travel/journal/kanab-window-480.webp 480w, assets/travel/journal/kanab-window-960.webp 960w, assets/travel/journal/kanab-window-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="Red rock and blue sky framed by a doorway in Kanab" loading="lazy" decoding="async">
+            </a>
+            <figcaption>The view outside</figcaption>
+          </figure>
+          <figure class="travel-photo" id="travel-photo-kanab-horse">
+            <a class="media-button" href="assets/travel/journal/kanab-horse-1800.webp" data-enlarge>
+              <img src="assets/travel/journal/kanab-horse-960.webp" srcset="assets/travel/journal/kanab-horse-480.webp 480w, assets/travel/journal/kanab-horse-960.webp 960w, assets/travel/journal/kanab-horse-1800.webp 1800w" sizes="(min-width: 1440px) 430px, (min-width: 1025px) 32vw, (min-width: 641px) 48vw, calc(100vw - 40px)" width="960" height="720" alt="A wooden rocking horse on a sunlit path beside garden plants" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Woodwork in the sun</figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <section class="travel-archive" id="travel-notes" aria-labelledby="travel-notes-title">
+      <h2 id="travel-notes-title">More places along the way</h2>
+      <details>
+        <summary><span id="travel-record-toggle">View the place record</span></summary>
+        <p class="travel-intro">A wider record of places visited, including the places outside these photo notes.</p>
         <div class="travel-ledger">
           <section class="travel-region" id="travel-us">
-            <h2>United States</h2>
-            <div class="travel-region-copy"><p><strong>California</strong><span>Los Angeles · San Diego · San Francisco</span></p><p><strong>Nevada</strong><span>Las Vegas</span></p><p><strong>Utah</strong><span>Cedar City · St. George · Salt Lake City · Zion N.P. · Bryce Canyon N.P.</span></p></div>
+            <h3 id="travel-us-title">United States</h3>
+            <div class="travel-region-copy"><p><strong>California</strong><span>Los Angeles · San Diego · San Francisco</span></p><p><strong>Nevada</strong><span>Las Vegas</span></p><p><strong>Utah</strong><span>Cedar City · St. George · Salt Lake City · Zion N.P. · Bryce Canyon N.P. · Kanab</span></p><p><strong>New York</strong><span>New York City</span></p></div>
           </section>
           <section class="travel-region" id="travel-china">
-            <h2>China</h2>
+            <h3 id="travel-china-title">China</h3>
             <div class="travel-region-copy"><p><strong>Municipalities &amp; regions</strong><span>Beijing · Shanghai · Hong Kong · Chongqing</span></p><p><strong>Guangdong</strong><span>Guangzhou · Shenzhen</span></p><p><strong>Hubei</strong><span>Wuhan · Xianning</span></p><p><strong>Henan</strong><span>Shangqiu · Zhengzhou · Kaifeng</span></p><p><strong>Jiangsu</strong><span>Suzhou · Lake Taihu</span></p><p><strong>Guizhou</strong><span>Guiyang · Tongren</span></p><p><strong>Sichuan</strong><span>Chengdu</span></p></div>
           </section>
+          <section class="travel-region" id="travel-korea"><h3 id="travel-korea-title">South Korea</h3><div class="travel-region-copy"><p><strong>Seoul</strong><span>City streets and everyday stops</span></p></div></section>
         </div>
-      </div>
+      </details>
     </section>
   </main>
 
   <dialog class="image-dialog" id="travel-dialog" aria-label="Enlarged travel image"><button class="dialog-close" type="button" data-dialog-close aria-label="Close image">×</button><img alt=""></dialog>
-  <footer class="footer" id="travel-footer"><span>Mukun Sun · Travel</span><a href="index.html#outside-work">Return home</a></footer>
-  <script type="module" src="i18n.js?v=20260930-preview"></script>
-  <script type="module" src="detail.js?v=20260930-preview"></script>
+  <footer class="footer" id="travel-footer"><span>Mukun Sun · Travel</span><div class="travel-footer-links"><a class="photography-link" href="photography.html">Explore Photography</a><a class="return-home" href="index.html#outside-work">Return home</a></div></footer>
+  <script type="module" src="i18n.js?v=20261024-travel"></script>
+  <script type="module" src="detail.js?v=20261024-travel"></script>
+  <script type="module" src="assets/travel/journal.js?v=20261024"></script>
 </body>
 </html>

@@ -96,10 +96,10 @@ function mountPageMotion() {
   const revealAll = () => revealItems.forEach((item) => item.classList.add('is-visible'));
   const updateScroll = () => {
     frame = null;
-    nav?.classList.toggle('solid', window.scrollY > 8);
-    if (!progress) return;
-    const distance = document.documentElement.scrollHeight - window.innerHeight;
+    const distance = motionEnabled && progress ? document.documentElement.scrollHeight - window.innerHeight : 0;
     const ratio = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+    nav?.classList.toggle('solid', window.scrollY > 8);
+    if (!motionEnabled || !progress) return;
     progress.style.transform = `scaleX(${motionEnabled ? ratio : 0})`;
   };
   const onScroll = () => {
@@ -133,6 +133,7 @@ function mountPageMotion() {
       revealObserver?.disconnect();
       revealObserver = null;
       revealAll();
+      if (progress) progress.style.transform = 'scaleX(0)';
     }
     updateScroll();
   };

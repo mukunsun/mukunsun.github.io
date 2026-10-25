@@ -30,19 +30,19 @@ At `60rem` and below, all asymmetric homepage tracks collapse to one column. Com
 
 All full-image previews are **natural-ratio media** with intrinsic width and height attributes and `height:auto`; project and outside-work images are not forced into equal-card crops. The portrait keeps its authored framing and subtle parallax treatment.
 
-The three Outside Work routes use image-integrated editorial heroes. Music owns a performance photograph, Photography owns `the_strip`, and Travel owns the dedicated Bryce Canyon image. Theme-aware layered scrims protect the type without flattening the image; mobile views use intentional focal positions. Photography thumbnails use consistent 4:3 landscape and 3:4 portrait frames, while the enlarge dialog always presents the full natural-ratio source. The `Photography` hero title remains on one line at supported widths.
+The Music and Photography routes use image-integrated editorial heroes. Music owns a performance photograph and Photography owns `the_strip`. Theme-aware layered scrims protect the type without flattening the image; mobile views use intentional focal positions. Photography thumbnails use consistent 4:3 landscape and 3:4 portrait frames, while the enlarge dialog always presents the full natural-ratio source. The `Photography` hero title remains on one line at supported widths.
 
-Navigation uses one restrained frosted material across the homepage and detail routes: a 48% soft page-color surface, 18px localized blur, modest backdrop saturation, and a fine lower rule. Image-led heroes use a lighter 36% top protection scrim so the photograph remains visible through the glass. The scrolled state switches to the denser theme surface without adding a shadow or another visual layer.
+Navigation uses one restrained frosted material across the homepage and detail routes: a theme-aware soft page-color surface, 12px localized blur, modest backdrop saturation, and a fine lower rule. Image-led heroes use a lighter 36% top protection scrim so the photograph remains visible through the glass. The scrolled state switches to the denser theme surface without adding a shadow or another visual layer.
 
-Outside Work exposure follows the photograph rather than a uniform preset. Photography remains dark and atmospheric. Music uses a moderately brighter performance treatment. Travel preserves the Bryce Canyon highlights with higher brightness and saturation plus a directional text-protection scrim. The same Bryce Canyon asset supplies the temporary Travel homepage cover.
+Outside Work exposure follows the photograph rather than a uniform preset. Photography remains dark and atmospheric. Music uses a moderately brighter performance treatment. Travel uses a separate compact title band above an untreated Bryce Canyon bench photograph, with a wide desktop crop and a 4:3 mobile crop. The homepage Travel gateway continues to use its existing Bryce Canyon asset.
 
 The Photography gallery is a route-specific full-width composition. Its title and short introduction share one horizontal ruled band; the image sequence begins below at the full content width. Landscapes span the row, portraits use two equal columns, and all media collapses to one column on small screens.
 
 ## Motion
 
-The original **dark-gallery motion** is preserved: hero entrance choreography, observer-driven section reveals, linear marquee movement, portrait parallax, pointer spotlight, film grain, and transform-based progress. Project links use a restrained underline reveal; media remains legible without hover.
+The **dark-gallery motion** keeps hero entrance choreography, observer-driven section reveals, linear marquee movement, portrait parallax, pointer spotlight, and transform-based progress. Film grain is a static texture. The spotlight uses a fixed 840px raster area moved by transform, so pointer movement does not repaint a viewport-sized gradient. Revealed content releases permanent layer hints and identity transforms. Scroll work is batched into animation frames, with document-height reads and progress updates skipped when the progress indicator is disabled. Project links use a restrained underline reveal; media remains legible without hover.
 
-The document starts with `no-js`, so content is visible without JavaScript. When IntersectionObserver is unavailable, all reveal content is exposed immediately. `prefers-reduced-motion: reduce`, narrow screens, and coarse pointers suppress spatial transforms, parallax, spotlight, grain animation, marquee motion, and nonessential transitions while keeping all content visible.
+The document starts with `no-js`, so content is visible without JavaScript. When IntersectionObserver is unavailable, all reveal content is exposed immediately. `prefers-reduced-motion: reduce`, narrow screens, and coarse pointers suppress spatial transforms, parallax, spotlight, marquee motion, and nonessential transitions while keeping all content visible.
 
 ## Component contracts
 
@@ -52,6 +52,7 @@ The document starts with `no-js`, so content is visible without JavaScript. When
 - **Project index:** three linked editorial rows with copy, an approved preview, and a route action.
 - **Education ledger:** two verified entries shown in full on the homepage.
 - **Outside Work gateway:** three unequal entries in one link, with Music dominant, Photography supportive, and Places text-led.
+- **Travel journal:** 25 photographs across one cover and seven place chapters, with short observations and captions. A sticky desktop text index becomes a native place selector on mobile. Chapter images retain intrinsic natural ratios, and native enlargement shows the full image. English-first copy, captions, alt text, and controls have complete Chinese translations. The original place ledger stays collapsed at the bottom. Responsive WebPs provide 480px, 960px, and 1800px sources, with chapter images loaded lazily. The route inherits the existing gallery fonts and shared tokens without adding a palette.
 - **Compact navigation:** four first-layer destinations—About, Work, Outside Work, and Contact—with separate language controls.
 - **Contact:** “Get in touch.”, one neutral availability sentence, and direct email/LinkedIn actions.
 

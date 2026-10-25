@@ -65,7 +65,9 @@ test('Photography and Travel are independent bilingual routes', async () => {
   assert.match(travel, /data-page="travel"/);
   assert.match(travel, /id="travel-notes"/);
   assert.match(travel, /class="travel-ledger"/);
-  assert.doesNotMatch(travel, /assets\/photography\/|<figure|data-enlarge/);
+  assert.doesNotMatch(travel, /assets\/photography\//);
+  assert.match(travel, /class="travel-chapter"/);
+  assert.match(travel, /data-enlarge/);
   assert.doesNotMatch(`${photography}\n${travel}`, /coming soon|待更新|敬请期待/i);
   assert.doesNotMatch(
     `${travel}\n${LANGUAGES.en.metadata.travel.description}\n${LANGUAGES.zh.metadata.travel.description}`,
@@ -73,7 +75,7 @@ test('Photography and Travel are independent bilingual routes', async () => {
   );
 });
 
-test('Photography owns every supplied photograph while Travel stays text-only', async () => {
+test('Photography retains its curated collection while Travel uses its separate place photographs', async () => {
   const [photography, travel] = await Promise.all([
     readFile(new URL('../photography.html', import.meta.url), 'utf8'),
     readFile(new URL('../travel.html', import.meta.url), 'utf8'),

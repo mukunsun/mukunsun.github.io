@@ -82,11 +82,10 @@ button:disabled,[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-ev
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity:var(--effect-grain-opacity);mix-blend-mode:var(--effect-grain-blend);z-index:92;
 }
-html.js.motion-desktop .grain{animation:grain .55s steps(3) infinite;}
-@keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(-3%,2%)}66%{transform:translate(2%,-2%)}100%{transform:translate(0,0)}}
+/* Static texture keeps the gallery finish without a perpetual full-screen animation. */
 .vignette{background:radial-gradient(120% 90% at 50% 28%,transparent 52%,color-mix(in oklch,var(--color-shadow) 42%,transparent) 100%);z-index:91;}
-.spot{z-index:89;opacity:0;transition:opacity .8s ease;background:radial-gradient(420px circle at var(--mx,50%) var(--my,30%),var(--color-spotlight),transparent 62%);mix-blend-mode:var(--effect-spotlight-blend);}
-html.js.motion-desktop .spot.on{opacity:1;}
+.spot{inset:0 auto auto 0;width:840px;height:840px;contain:strict;z-index:89;opacity:0;transition:opacity .8s var(--ease);background:radial-gradient(420px circle at center,var(--color-spotlight),transparent 62%);transform:translate3d(calc(var(--mx,50vw) - 420px),calc(var(--my,30vh) - 420px),0);mix-blend-mode:var(--effect-spotlight-blend);}
+html.js.motion-desktop .spot.on{opacity:1;will-change:transform;}
 /* gallery mat frame */
 .mat{z-index:88;border:1px solid var(--line);margin:16px;border-radius:3px;mix-blend-mode:var(--effect-frame-blend);}
 @media (max-width:680px){.mat{display:none;}}
@@ -337,7 +336,7 @@ html.js.motion-desktop .marquee .track{animation:scroll 34s linear infinite;}
 
 /* ---------- reveal system ---------- */
 html.js.motion-desktop [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .95s var(--ease);
-  transition-delay:calc(var(--i,0)*70ms);will-change:opacity,transform;}
+  transition-delay:calc(var(--i,0)*70ms);}
 html.js.motion-desktop [data-reveal="img"]{transform:translateY(46px) scale(1.04);}
 html.js.motion-desktop [data-reveal].in{opacity:1;transform:none;}
 html.js.motion-desktop [data-reveal="line"]{opacity:1;transform:none;}
@@ -685,10 +684,10 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
     scrollFrame=requestAnimationFrame(function(){
       scrollFrame=0;
       var y=window.pageYOffset||document.documentElement.scrollTop;
-      nav.classList.toggle('solid',y>window.innerHeight*0.7);
-      var h=document.documentElement.scrollHeight-window.innerHeight;
+      var h=motionDesktop?document.documentElement.scrollHeight-window.innerHeight:0;
       var progress=h>0?Math.min(1,Math.max(0,y/h)):0;
-      prog.style.transform='scaleX('+(motionDesktop?progress:0)+')';
+      nav.classList.toggle('solid',y>window.innerHeight*0.7);
+      if(motionDesktop)prog.style.transform='scaleX('+(motionDesktop?progress:0)+')';
     });
   }
 
@@ -781,6 +780,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
       startHero();startReveal();startSpotlight();startParallax();
     }else{
       stopHero();stopReveal();stopSpotlight();stopParallax();
+      prog.style.transform='scaleX(0)';
     }
     onScroll();
   }

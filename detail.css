@@ -147,7 +147,7 @@ html[data-page="teaching"] .detail-hero h1{font-size:clamp(3rem,5vw,5rem);overfl
 [data-reveal]{opacity:1;transform:none;}
 html.js.motion-detail [data-reveal]{opacity:0;transform:translate3d(0,var(--space-md),0);transition:opacity var(--dur-medium) var(--ease-out),transform var(--dur-medium) var(--ease-out);}
 html.js.motion-detail [data-reveal="media"]{transform:scale(1.015);}
-html.js.motion-detail [data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0);}
+html.js.motion-detail [data-reveal].is-visible{opacity:1;transform:none;}
 .image-dialog{max-width:min(94vw,1400px);max-height:94vh;padding:0;border:1px solid var(--color-rule);background:var(--color-paper-raised);color:var(--color-ink);overflow:auto;opacity:0;transform:translateY(14px) scale(.985);transition:opacity var(--dur-medium) var(--ease-out),transform var(--dur-medium) var(--ease-out);}
 .image-dialog.is-open{opacity:1;transform:none;}
 .image-dialog.is-closing{opacity:0;transform:translateY(10px) scale(.99);}

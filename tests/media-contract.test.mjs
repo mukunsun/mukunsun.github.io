@@ -84,5 +84,7 @@ test('Photography alone owns the approved photographs with intrinsic dimensions'
   assert.doesNotMatch(photography, /<img(?![^>]*width=)(?=[^>]*assets\/photography\/)/);
   assert.doesNotMatch(photography, /<img(?![^>]*height=)(?=[^>]*assets\/photography\/)/);
   assert.doesNotMatch(photography, /assets\/photography\/(?!building|chongqing|santa_monica_beach|tongren|walter_disney|boats|the_strip)[^"']+/);
-  assert.doesNotMatch(travel, /assets\/photography\/|<figure|data-enlarge/);
+  assert.doesNotMatch(travel, /assets\/photography\//);
+  assert.match(travel, /assets\/travel\/journal\/[^"']+\.webp/);
+  assert.match(travel, /data-enlarge/);
 });
