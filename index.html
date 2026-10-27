@@ -4,21 +4,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#171411">
 <title>Mukun Sun | Website</title>
-<meta name="description" content="A professional and personal portfolio of communication, community work, visual projects, education, music, and photography by Mukun Sun.">
+<meta name="description" content="Marketing and communications work by Mukun Sun: campus campaigns, creator partnerships, campaign analysis, and an AI tool in development. Graduating April 2027.">
 <link rel="canonical" href="https://mukunsun.com/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="Mukun Sun | Website">
-<meta property="og:description" content="A professional and personal portfolio of communication, community work, visual projects, education, music, and photography by Mukun Sun.">
+<meta property="og:description" content="Marketing and communications work by Mukun Sun: campus campaigns, creator partnerships, campaign analysis, and an AI tool in development. Graduating April 2027.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mukunsun.com/">
-<meta property="og:image" content="https://mukunsun.com/assets/og-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://mukunsun.com/assets/og-card.png">
+<meta property="og:image:width" content="1735">
+<meta property="og:image:height" content="906">
 <meta property="og:image:alt" content="Mukun Sun | Communication, Community & Music">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mukun Sun | Website">
-<meta name="twitter:description" content="A professional and personal portfolio of communication, community work, visual projects, education, music, and photography by Mukun Sun.">
-<meta name="twitter:image" content="https://mukunsun.com/assets/og-card.jpg">
+<meta name="twitter:description" content="Marketing and communications work by Mukun Sun: campus campaigns, creator partnerships, campaign analysis, and an AI tool in development. Graduating April 2027.">
+<meta name="twitter:image" content="https://mukunsun.com/assets/og-card.png">
 <meta name="twitter:image:alt" content="Mukun Sun | Communication, Community & Music">
 <script>
 (function(root){
@@ -158,8 +158,7 @@ h1,h2,h3,.stitle,.project-copy strong,.edu-school,.edu-degree,.experience-role,.
 .hero{min-height:min(100svh,900px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;
   padding-block:clamp(104px,8vw,128px) 32px;}
 .hero>.wrap{width:100%;}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);gap:clamp(40px,6vw,88px);align-items:center;}
-.hero-copy{min-width:0;}
+.hero-copy{min-width:0;max-width:56rem;}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;
   background:
     radial-gradient(80% 60% at 72% 8%,var(--color-bloom-hot),transparent 60%),
@@ -175,15 +174,9 @@ h1,h2,h3,.stitle,.project-copy strong,.edu-school,.edu-degree,.experience-role,.
 .hero-primary{color:var(--ink);border-bottom:1px solid var(--amber);}
 .hero-secondary{color:var(--muted);}
 .hero-primary:hover,.hero-secondary:hover{color:var(--amber);}
-.hero-feature{margin:0;width:100%;max-width:340px;justify-self:end;}
-.hero-feature>a{display:block;}
-.hero-feature img{display:block;width:100%;height:auto;}
-.hero-feature figcaption{display:flex;justify-content:space-between;gap:16px;margin-top:16px;font-size:12px;line-height:1.7;color:var(--muted);}
-.hero-feature-title{display:block;color:var(--ink);font-size:14px;}
-.hero-feature-arrow{color:var(--amber);font-size:20px;}
 .hero .role b{color:var(--amber);font-weight:400;}
 .hero .role-phrase{display:inline-block;}
-.hero-foot{margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;
+.hero-foot{margin-top:clamp(40px,5vw,64px);padding-top:20px;display:flex;justify-content:space-between;align-items:baseline;
   gap:16px 32px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:13px;line-height:1.7;color:var(--muted);}
 .hero-current strong{font-weight:400;color:var(--ink-2);}
 .scrollcue{font-family:var(--sans);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
@@ -192,8 +185,8 @@ h1,h2,h3,.stitle,.project-copy strong,.edu-school,.edu-degree,.experience-role,.
 .scrollcue .bar::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--amber);}
 html.js.motion-desktop .scrollcue .bar::after{animation:cue 2.2s var(--ease) infinite;}
 @keyframes cue{0%{transform:translateY(-100%)}100%{transform:translateY(280%)}}
-@media (max-width:60rem){.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;}.hero-feature{max-width:280px;}.hero h1{font-size:clamp(48px,7vw,72px);}}
-@media (max-width:40rem){.hero{min-height:0;padding-block:116px 40px;}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;}.hero h1{font-size:clamp(44px,12vw,64px);}.hero .role{margin-top:20px;font-size:28px;max-width:24ch;}.hero-description{margin-top:20px;}.hero-feature{justify-self:start;max-width:260px;}.hero-foot{margin-top:32px;gap:12px;}.hero-foot>p{width:100%;}}
+@media (max-width:60rem){.hero h1{font-size:clamp(48px,7vw,72px);}}
+@media (max-width:40rem){.hero{min-height:0;padding-block:116px 40px;}.hero h1{font-size:clamp(44px,12vw,64px);}.hero .role{margin-top:20px;font-size:28px;max-width:24ch;}.hero-description{margin-top:20px;}.hero-foot{margin-top:32px;gap:12px;}.hero-foot>p{width:100%;}}
 
 /* hero load choreography */
 html.js.motion-desktop .reveal-up{opacity:0;transform:translateY(40px);}
@@ -274,7 +267,7 @@ html.js.motion-desktop .marquee .track{animation:scroll 34s linear infinite;}
 .project-copy>span{font-size:14.5px;line-height:1.7;color:var(--ink-2);max-width:58ch;}
 .project-preview{display:block;border:1px solid var(--line);background:var(--bg);}
 .project-preview img{width:100%;height:auto;filter:brightness(var(--effect-project-brightness)) saturate(var(--effect-project-saturation));transition:filter .45s var(--ease);}
-.project-action{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
+.project-action{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
 @media (hover:hover) and (pointer:fine) and (min-width:40.001rem) and (prefers-reduced-motion:no-preference){
   .project-row{position:relative;}
   .project-row::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
@@ -351,6 +344,10 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   .scrollcue .bar::after{animation:none!important;transform:none!important;}
   .pframe img,.portrait:hover .pframe img,.contact-action:active,[data-parallax] img{transform:none!important;transition:none!important;}
 }
+.project-row--microloud{grid-template-columns:minmax(0,1fr) auto;}
+.project-status{font-size:var(--text-sm);line-height:1.6;color:var(--muted);}
+.edu-record{font-size:var(--text-sm);line-height:1.7;color:var(--ink-2);}
+@media(max-width:40rem){.project-row--microloud{grid-template-columns:minmax(0,1fr);}}
 </style>
 </head>
 <body>
@@ -380,20 +377,14 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <h1 class="reveal-up" style="--d:100">Mukun Sun</h1>
-        <div class="role reveal-up" style="--d:220">Social media, community, and visual communication.</div>
-        <p class="hero-description reveal-up" style="--d:340">I plan content, make the visuals, and use audience response to shape what comes next.</p>
-        <div class="hero-actions reveal-up" style="--d:440"><a class="hero-primary" href="#projects">View selected work <span aria-hidden="true">→</span></a><a class="hero-secondary" href="#experience">Explore my experience</a></div>
-      </div>
-      <figure class="hero-feature reveal-up" style="--d:260">
-        <a href="projects/visual-work.html#visual-tutoring-october" aria-label="View the Officially October design series"><img src="assets/visual_work/tutoring/october-cover.webp" width="1080" height="1350" alt="Officially October carousel cover: red autumn leaves and handwritten lettering on textured white paper" fetchpriority="high" decoding="async"></a>
-        <figcaption><span><span class="hero-feature-title">Officially October</span><span class="hero-feature-context">Social design · SUU Tutoring Center</span></span><span class="hero-feature-arrow" aria-hidden="true">↗</span></figcaption>
-      </figure>
+    <div class="hero-copy">
+      <h1 class="reveal-up" style="--d:100">Mukun Sun</h1>
+      <div class="role reveal-up" style="--d:220">Marketing, partnerships, and campaign analysis.</div>
+      <p class="hero-description reveal-up" style="--d:340">I create social content, coordinate campaigns, and turn audience data into recommendations.</p>
+      <div class="hero-actions reveal-up" style="--d:440"><a class="hero-primary" href="#projects">View selected work <span aria-hidden="true">→</span></a><a class="hero-secondary" href="#experience">Explore my experience</a></div>
     </div>
     <div class="hero-foot reveal-up" style="--d:520">
-      <p class="hero-current"><strong>Marketing Intern · SUU Tutoring Center</strong><br>Cedar City, Utah · Sep 2026–Present</p>
+      <p class="hero-current"><strong>Lead Marketing and Media · SUU Tutoring Center</strong><br>Cedar City, Utah · Sep 2026 - Present</p>
       <p class="hero-personal">Outside work, you'll find me on bass.</p>
     </div>
   </div>
@@ -406,8 +397,9 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
       <div class="about-text">
         <h2 class="stitle" data-reveal="">About Me</h2>
         <div class="about-copy">
-          <p class="lede" data-reveal>I study Strategic Communication at Southern Utah University, with a minor in Business Analytics. My work connects social content, community operations, visual design, and event promotion.</p>
-          <p data-reveal>Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.</p>
+          <p class="lede about-intro" data-reveal>I study Strategic Communication at Southern Utah University, with a minor in Business Analytics, and graduate in April 2027. My work spans campus marketing, creator partnerships, and Reddit community operations.</p>
+          <p class="about-tools" data-reveal>My toolkit includes Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel for reporting.</p>
+          <p class="about-personal" data-reveal>Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.</p>
         </div>
       </div>
       <figure class="portrait" data-reveal="img" data-parallax="0.03">
@@ -427,16 +419,16 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   <div class="wrap">
     <div class="shead">
       <div>
-        <h2 class="stitle" data-reveal="">Internship</h2>
+        <h2 class="stitle" data-reveal="">Experience</h2>
       </div>
     </div>
     <div class="experience-list">
       <article class="experience-row experience-row--suu-tutoring" data-reveal="">
-        <header><p class="experience-company">Southern Utah University · Tutoring Center</p><h2 class="experience-role">Marketing Intern</h2><p class="experience-dates">Sep 2026–Present · Cedar City, UT</p></header>
+        <header><p class="experience-company">Southern Utah University · Tutoring Center</p><h2 class="experience-role">Lead Marketing and Media</h2><p class="experience-dates">Sep 2026 - Present · Cedar City, Utah</p></header>
         <div class="experience-detail"><div class="experience-copy">
-          <p class="experience-responsibility">I independently plan and produce weekly Instagram and Facebook content, from design and short video to copy and publishing after staff approval. Published 20+ Reels, Stories, and posts since September 2026.</p>
-          <p class="experience-proofline"><strong>20.3K</strong> views · <strong>9K</strong> reach · <strong>772</strong> interactions</p>
-          <p class="experience-report-period">Meta Insights · Sep 1–28, 2026</p>
+          <p class="experience-responsibility">I create social content and coordinate campus promotions with staff review before publishing. I also analyzed 300+ student portal survey responses and developed outreach recommendations.</p>
+          <p class="experience-proofline"><strong>55K</strong> views · <strong>2.1K</strong> interactions</p>
+          <p class="experience-report-period">Account snapshot · Sep-Oct 2026</p>
           <a class="experience-link" href="projects/suu-tutoring-center.html">View Tutoring Center work <span aria-hidden="true">→</span></a>
         </div><figure class="experience-media" data-reveal="img"><a href="projects/visual-work.html#visual-tutoring-work" aria-label="View selected Tutoring Center designs"><img src="assets/visual_work/tutoring/work-smarter.webp" width="1080" height="1350" alt="Tutoring Center poster inviting students to stop working harder and start working smarter" loading="lazy" decoding="async"></a></figure></div>
       </article>
@@ -444,12 +436,12 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         <header>
           <p class="experience-company">Vertex Marketing</p>
           <h2 class="experience-role">Reddit Community Operations Intern</h2>
-          <p class="experience-dates">Jun–Sep 2026 · Shenzhen, China</p>
+          <p class="experience-dates">Jun 2026 - Aug 2026 · Shenzhen, China</p>
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
             <p class="experience-responsibility">I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.</p>
-            <p class="experience-proofline"><strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share</p>
+            <p class="experience-proofline"><strong>793K</strong> views · <strong>3,548</strong> upvotes · <strong>406K</strong> top-post views</p>
             <a class="experience-link" href="projects/vertex-reddit.html">Explore community operations <span aria-hidden="true">→</span></a>
           </div>
           <figure class="experience-media" data-reveal="img">
@@ -457,32 +449,16 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
           </figure>
         </div>
       </article>
-      <article class="experience-row experience-row--teaching" data-reveal="">
-        <header>
-          <p class="experience-company">Southern Utah University</p>
-          <h2 class="experience-role">English Writing Teaching Assistant</h2>
-          <p class="experience-dates">May 2026 · Wuhan, China</p>
-        </header>
-        <div class="experience-detail">
-          <div class="experience-copy">
-            <p class="experience-responsibility">Supported an SUU instructor in English writing courses serving 200+ students in Wuhan. Provided bilingual classroom support, managed attendance and assignment grading, delivered written feedback, and organized final-grade data and course completion reporting in Excel.</p>
-            <a class="experience-link" href="projects/suu-teaching-assistant.html">Explore classroom support <span aria-hidden="true">→</span></a>
-          </div>
-          <figure class="experience-media" data-reveal="img">
-            <img src="assets/internship/SUU_TA/classroom.webp" width="1921" height="1279" alt="Mukun Sun speaking to an English writing class in Wuhan" loading="lazy" decoding="async">
-          </figure>
-        </div>
-      </article>
       <article class="experience-row experience-row--xinyuyou" data-reveal="">
         <header>
           <p class="experience-company">YUYO INNOVATIONS LLC</p>
           <h2 class="experience-role">Influencer Marketing Intern</h2>
-          <p class="experience-dates">Jun–Aug 2025 · Shenzhen, China</p>
+          <p class="experience-dates">Jun 2025 - Aug 2025 · Shenzhen, China</p>
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
             <p class="experience-responsibility">I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada — reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.</p>
-            <p class="experience-proofline"><strong>476</strong> creators reached · <strong>45</strong> collaborations · <strong>545K</strong> single-post reach</p>
+            <p class="experience-proofline"><strong>476</strong> creators contacted · <strong>45</strong> collaborations · <strong>8</strong> paid partnerships</p>
             <a class="experience-link" href="projects/xinyuyou.html">Explore creator partnerships <span aria-hidden="true">→</span></a>
           </div>
           <figure class="experience-media" data-reveal="img">
@@ -498,8 +474,8 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
 <!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>
-    <span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>
+    <span>Community Operations<span class="mut">·</span>Creator Partnerships<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>
+    <span>Community Operations<span class="mut">·</span>Creator Partnerships<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>
   </div>
 </div>
 
@@ -509,13 +485,18 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
     <div class="shead">
       <div>
         <h2 class="stitle" data-reveal="">Projects</h2>
-        <p class="lede section-intro" data-reveal="">Three selected routes into campaign coordination, event promotion, and visual communication.</p>
+        <p class="lede section-intro" data-reveal="">An AI tool in development, campus campaign leadership, and selected event and visual work.</p>
       </div>
     </div>
 
     <div class="project-list">
+      <a class="project-row project-row--microloud" href="projects/microloud.html" data-reveal>
+        <span class="project-copy"><strong>Microloud</strong><span>Developing an AI-powered marketing tool to help artists with limited budgets attract potential clients.</span><small class="project-status">In development · Jul 2026 - Present</small></span>
+        <span class="project-action">Explore the project <span aria-hidden="true">→</span></span>
+      </a>
+
       <a class="project-row project-row--campus" href="projects/campus-campaign.html" data-reveal>
-        <span class="project-copy"><strong>Campus Integrated Campaign</strong><span>Promotion coordination for campus welcome and New Year events across online and offline channels.</span></span>
+        <span class="project-copy"><strong>Campus Welcome &amp; New Year Events</strong><span>Led a 22-person promotion team. Top-performing event posts reached 8,000+ people, with up to 19,000 impressions.</span></span>
         <span class="project-preview"><img src="assets/project/CampusGala/freshmen_welcome_gala.webp" width="1600" height="1067" alt="A large campus gala audience facing a lit stage" loading="lazy" decoding="async"></span>
         <span class="project-action">View project <span aria-hidden="true">→</span></span>
       </a>
@@ -548,23 +529,13 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
       <article class="edu-entry" data-reveal="" style="--i:0">
         <header>
           <h3 class="edu-school">Southern Utah University</h3>
-          <p class="edu-dates">Aug 2025 — May 2027</p>
+          <p class="edu-dates">Apr 2027</p>
         </header>
         <div>
           <p class="edu-degree">B.S. in Strategic Communication</p>
           <p class="edu-secondary">Minor · Business Analytics</p>
-          <p class="edu-focus">Coursework: Social Media Strategy, Social Media Branding, Strategic Campaigns, Content Creation, Statistical Inference, Data Analytics.</p>
-        </div>
-      </article>
-
-      <article class="edu-entry" data-reveal="" style="--i:1">
-        <header>
-          <h3 class="edu-school">Wuhan Polytechnic University</h3>
-          <p class="edu-dates">Sep 2023 — Jun 2025</p>
-        </header>
-        <div>
-          <p class="edu-degree">B.A. in Advertising</p>
-          <p class="edu-focus">Coursework: Writing for Communication, Digital Copy Layout &amp; Design, Advertising Investigation &amp; Analysis, Organizational Communication.</p>
+          <p class="edu-record">SUU GPA: 3.66/4.0 · Dean's List, Spring 2026</p>
+          <p class="edu-focus">Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics I, Applied Linear Models.</p>
         </div>
       </article>
     </div>
@@ -607,7 +578,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   <div class="wrap">
     
     <h2 data-reveal>Get in touch.</h2>
-    <p class="contact-intro" data-reveal>You can reach me by email or LinkedIn.</p>
+    <p class="contact-intro" data-reveal>Open to 2027 graduate opportunities across the U.S. Reach me by email or LinkedIn.</p>
     <div class="contact-actions" data-reveal="">
       <a class="contact-action" href="mailto:aquakaze31@gmail.com"><span class="contact-label">Email Me</span><span aria-hidden="true">↗</span></a>
       <a class="contact-action" href="https://www.linkedin.com/in/mukunsun" target="_blank" rel="noopener noreferrer"><span class="contact-label">LinkedIn</span><span aria-hidden="true">↗</span></a>
@@ -790,7 +761,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   syncMotionState();
 })();
 </script>
-<script type="module" src="i18n.js?v=20260930-preview"></script>
+<script type="module" src="i18n.js?v=20261026-resume"></script>
 <script type="module" src="navigation.js?v=20260930-preview"></script>
 
 

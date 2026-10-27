@@ -7,51 +7,45 @@ async function readHomepage() {
   return readFile(new URL('../index.html', import.meta.url), 'utf8');
 }
 
-test('homepage presents four internships in reverse chronological order', async () => {
+test('homepage presents three current resume roles in reverse chronological order', async () => {
   const home = await readHomepage();
   const section = home.match(/<section[^>]+id="experience"[\s\S]*?<\/section>/)?.[0] ?? '';
   const suuTutoring = section.match(/<article class="experience-row experience-row--suu-tutoring"[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 4);
+  assert.equal((section.match(/class="experience-row(?:\s|\")/g) ?? []).length, 3);
   assert.ok(section.indexOf('experience-row--suu-tutoring') < section.indexOf('experience-row--vertex'));
-  assert.ok(section.indexOf('experience-row--vertex') < section.indexOf('experience-row--teaching'));
-  assert.ok(section.indexOf('experience-row--teaching') < section.indexOf('experience-row--xinyuyou'));
-  assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Internship<\/h2>/);
+  assert.ok(section.indexOf('experience-row--vertex') < section.indexOf('experience-row--xinyuyou'));
+  assert.doesNotMatch(section, /experience-row--teaching/);
+  assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Experience<\/h2>/);
   assert.doesNotMatch(section, /Internship Experience|class="placard"/);
   assert.match(section, /<p class="experience-company">Southern Utah University · Tutoring Center<\/p>/);
-  assert.match(section, /<h2 class="experience-role">Marketing Intern<\/h2>/);
-  assert.match(suuTutoring, /Sep 2026–Present · Cedar City, UT/);
+  assert.match(section, /<h2 class="experience-role">Lead Marketing and Media<\/h2>/);
+  assert.match(suuTutoring, /Sep 2026 - Present · Cedar City, Utah/);
   assert.match(suuTutoring, /href="projects\/suu-tutoring-center.html"/);
-  assert.match(suuTutoring, /20\.3K[\s\S]*9K[\s\S]*772/);
+  assert.match(suuTutoring, /55K[\s\S]*2\.1K/);
+  assert.match(suuTutoring, /300\+/);
   assert.doesNotMatch(suuTutoring, /Coming soon|experience-status/);
-  assert.match(section, /<p class="experience-company">Southern Utah University<\/p>/);
   assert.doesNotMatch(section, /Southern Utah University × Wuhan Polytechnic University/);
-  assert.match(section, /English Writing Teaching Assistant/);
-  assert.match(section, /Jun–Sep 2026 · Shenzhen, China/);
-  assert.match(section, /May 2026 · Wuhan, China/);
-  assert.match(section, /200\+/);
+  assert.match(section, /Jun 2026 - Aug 2026 · Shenzhen, China/);
   assert.match(section, /YUYO INNOVATIONS LLC/);
   assert.match(section, /Influencer Marketing Intern/);
-  assert.match(section, /Jun–Aug 2025 · Shenzhen, China/);
+  assert.match(section, /Jun 2025 - Aug 2025 · Shenzhen, China/);
   assert.match(section, /href="projects\/xinyuyou\.html">Explore creator partnerships/);
 });
 
-test('teaching-assistant copy stays within the approved evidence boundary', async () => {
+test('archived teaching-assistant copy stays within the approved evidence boundary', async () => {
   const home = await readHomepage();
   const section = home.match(/<section[^>]+id="experience"[\s\S]*?<\/section>/)?.[0] ?? '';
   const bilingualCopy = JSON.stringify(LANGUAGES);
   for (const phrase of [
-    /bilingual classroom support/i,
-    /attendance and assignment grading/i,
+    /bilingual support/i,
+    /attendance[\s\S]*graded assignments/i,
     /written feedback/i,
-    /final-grade data/i,
-    /course completion reporting/i,
+    /final-grade spreadsheets/i,
+    /course-completion reports/i,
   ]) assert.match(`${section}\n${bilingualCopy}`, phrase);
-  assert.match(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-responsibility'], /200 多名学生/);
-  assert.match(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-responsibility'], /Excel/);
-  assert.equal(LANGUAGES.en.copy['#experience .experience-row--teaching .experience-company'], 'Southern Utah University');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-dates'], 'Jun–Sep 2026 · Shenzhen, China');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-row--teaching .experience-dates'], 'May 2026 · Wuhan, China');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-company'], '南犹他大学');
+  assert.match(LANGUAGES.zh.copy['#teaching-operations p'], /Excel/);
+  assert.equal(Object.hasOwn(LANGUAGES.en.copy, '#experience .experience-row--teaching .experience-company'), false);
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-dates'], 'Jun 2026 - Aug 2026 · Shenzhen, China');
   assert.doesNotMatch(`${section}\n${bilingualCopy}`, /Sharon Lyman|\$450|airfare|82%|96%|30%/i);
 });
 
@@ -59,7 +53,6 @@ test('each internship has stable scoped translation selectors', () => {
   const fieldsByModifier = {
     'suu-tutoring': ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility', 'experience-proofline', 'experience-report-period'],
     vertex: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
-    teaching: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility'],
     xinyuyou: ['experience-company', 'experience-role', 'experience-dates', 'experience-responsibility', 'experience-proofline'],
   };
   for (const [modifier, fields] of Object.entries(fieldsByModifier)) {
@@ -69,8 +62,8 @@ test('each internship has stable scoped translation selectors', () => {
       assert.ok(Object.hasOwn(LANGUAGES.zh.copy, selector), selector);
     }
   }
-  assert.equal(LANGUAGES.en.copy['#experience .stitle'], 'Internship');
-  assert.equal(LANGUAGES.zh.copy['#experience .stitle'], '实习');
+  assert.equal(LANGUAGES.en.copy['#experience .stitle'], 'Experience');
+  assert.equal(LANGUAGES.zh.copy['#experience .stitle'], '工作经历');
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '#experience .placard'), false);
 });
 
@@ -83,12 +76,9 @@ test('internship list uses one outer rule and one separator per following row', 
 test('completed image-based internships pair their copy with approved natural-ratio context images', async () => {
   const home = await readHomepage();
   const vertex = home.match(/<article class="experience-row experience-row--vertex"[\s\S]*?<\/article>/)?.[0] ?? '';
-  const teaching = home.match(/<article class="experience-row experience-row--teaching"[\s\S]*?<\/article>/)?.[0] ?? '';
   const xinyuyou = home.match(/<article class="experience-row experience-row--xinyuyou"[\s\S]*?<\/article>/)?.[0] ?? '';
   assert.match(vertex, /<div class="experience-detail">[\s\S]*?<figure class="experience-media" data-reveal="img">/);
-  assert.match(teaching, /<div class="experience-detail">[\s\S]*?<figure class="experience-media" data-reveal="img">/);
   assert.match(vertex, /src="assets\/internship\/VertexMkt\/1\.webp" width="1279" height="1706" alt="A bright shared workspace at Vertex Marketing in Shenzhen"/);
-  assert.match(teaching, /src="assets\/internship\/SUU_TA\/classroom\.webp" width="1921" height="1279" alt="Mukun Sun speaking to an English writing class in Wuhan"/);
   assert.match(xinyuyou, /experience-media--placeholder/);
   assert.match(home, /\.experience-detail\{display:grid;grid-template-columns:minmax\(0,1\.05fr\) minmax\(240px,\.95fr\);/);
   assert.match(home, /\.experience-media img\{[^}]*height:auto/);
@@ -101,16 +91,15 @@ test('homepage internship action invites exploration instead of claiming evidenc
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--suu-tutoring .experience-link'], 'View Tutoring Center work <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--suu-tutoring .experience-link'], '查看辅导中心工作 <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.en.attributes['#experience .experience-row--vertex .experience-media img'].alt, 'A bright shared workspace at Vertex Marketing in Shenzhen');
-  assert.equal(LANGUAGES.zh.attributes['#experience .experience-row--teaching .experience-media img'].alt, '孙慕坤在武汉面向英语写作课堂讲课');
+  assert.equal(Object.hasOwn(LANGUAGES.zh.attributes, '#experience .experience-row--teaching .experience-media img'), false);
 });
 
-test('Teaching Assistant internship opens a concise bilingual detail route', async () => {
+test('Teaching Assistant detail route remains available independently of the primary experience list', async () => {
   const [home, detail] = await Promise.all([
     readHomepage(),
     readFile(new URL('../projects/suu-teaching-assistant.html', import.meta.url), 'utf8'),
   ]);
-  const teaching = home.match(/<article class="experience-row experience-row--teaching"[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.match(teaching, /href="projects\/suu-teaching-assistant\.html">Explore classroom support/);
+  assert.doesNotMatch(home, /experience-row--teaching/);
   assert.match(detail, /<html lang="en" class="no-js" data-language="en" data-page="teaching">/);
   assert.match(detail, /<title>Teaching Assistant \| Mukun Sun<\/title>/);
   assert.match(detail, /id="teaching-context"[\s\S]*?id="teaching-classroom"[\s\S]*?id="teaching-operations"[\s\S]*?id="teaching-bridge"[\s\S]*?id="teaching-media"/);

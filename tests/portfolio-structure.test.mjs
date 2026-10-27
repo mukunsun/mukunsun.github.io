@@ -8,15 +8,16 @@ test('homepage separates personal-site content into compact sections', async () 
     assert.match(html, new RegExp(`<section[^>]+id="${id}"`));
   }
   for (const href of [
+    'projects/microloud.html',
     'projects/campus-campaign.html',
     'projects/hotel-jazz.html',
     'projects/visual-work.html',
   ]) assert.match(html, new RegExp(`href="${href}"`));
-  assert.equal((html.match(/class="project-row(?:\s|")/g) ?? []).length, 3);
+  assert.equal((html.match(/class="project-row(?:\s|")/g) ?? []).length, 4);
   assert.doesNotMatch(html, /<section[^>]+id="visual-work"/);
   assert.doesNotMatch(html, /<details class="project-row/);
   assert.equal((html.match(/class="case"/g) ?? []).length, 0);
-  assert.doesNotMatch(html, /Selected Impact|19,000|8,000\+|Team leAd/);
+  assert.doesNotMatch(html, /Selected Impact|Team leAd|19,000 attendees/);
 });
 
 test('artwork previews keep natural proportions', async () => {

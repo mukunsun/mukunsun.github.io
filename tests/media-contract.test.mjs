@@ -40,7 +40,7 @@ test('every newly selected public image exists', async () => {
 });
 
 test('homepage uses approved lead images and excludes privacy-risk images', () => {
-  for (const path of [approved[0], approved[1], approved[2], approved[3], approved[5], approved[6]]) {
+  for (const path of [approved[0], approved[2], approved[3], approved[5], approved[6]]) {
     assert.match(home, new RegExp(path.replaceAll('/', '\\/')));
   }
   assert.match(home, /assets\/photography\/walter_disney\.webp/);

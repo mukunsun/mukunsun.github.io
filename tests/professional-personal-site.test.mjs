@@ -17,15 +17,15 @@ test('homepage follows the approved two-layer index order', () => {
 });
 
 test('hero and About use the approved concise identity copy', () => {
-  assert.match(home, /<div class="role[^>]*>Social media, community, and visual communication\.<\/div>/);
+  assert.match(home, /<div class="role[^>]*>Marketing, partnerships, and campaign analysis\.<\/div>/);
   assert.doesNotMatch(home, /class="roleen"/);
   assert.match(home, /I study Strategic Communication at Southern Utah University/);
   assert.match(home, /Outside work, I play upright and electric bass/);
   assert.doesNotMatch(home, /capability-ledger|capability-row|<h3>Workflow<\/h3>/);
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '社交内容、社群运营与视觉传播。');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
   const about = [
-    LANGUAGES.zh.copy['#about .about-copy p:nth-child(1)'],
-    LANGUAGES.zh.copy['#about .about-copy p:nth-child(2)'],
+    LANGUAGES.zh.copy['#about .about-intro'],
+    LANGUAGES.zh.copy['#about .about-personal'],
   ].join('\n');
   assert.doesNotMatch(about, /社区运营/);
 });
@@ -37,13 +37,14 @@ test('homepage name uses a restrained display scale', () => {
   assert.ok(Number(rule[3]) <= 136, 'desktop title remains understated');
 });
 
-test('homepage exposes three second-layer work routes', () => {
+test('homepage exposes four second-layer work routes', () => {
   for (const href of [
+    'projects/microloud.html',
     'projects/campus-campaign.html',
     'projects/hotel-jazz.html',
     'projects/visual-work.html',
   ]) assert.match(home, new RegExp(`href="${href}"`));
-  assert.equal((home.match(/class="project-row/g) ?? []).length, 3);
+  assert.equal((home.match(/class="project-row/g) ?? []).length, 4);
   assert.doesNotMatch(home, /<details class="project-row/);
 });
 
@@ -61,6 +62,6 @@ test('Outside Work remains one asymmetric composition with three direct route li
 
 test('contact is neutral rather than a campaign sales pitch', () => {
   assert.match(home, /Get in touch\./);
-  assert.match(home, /You can reach me by email or LinkedIn\./);
+  assert.match(home, /Open to 2027 graduate opportunities across the U\.S\. Reach me by email or LinkedIn\./);
   assert.doesNotMatch(home, /Let.{0,3}s make the next campaign/);
 });

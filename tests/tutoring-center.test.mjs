@@ -15,18 +15,19 @@ test('tutoring role preserves the requested section order and staff approval wor
   }
   for (const language of ['en', 'zh']) {
     const copy = LANGUAGES[language].copy;
-    assert.match(copy['#tutoring-overview'], /20/);
+    assert.match(copy['#tutoring-overview'], /300/);
     assert.match(copy['#tutoring-responsibilities'], /Canva[\s\S]*CapCut[\s\S]*Meta Business Suite[\s\S]*Meta Insights/);
     assert.match(copy['#tutoring-responsibilities'], language === 'en' ? /publish only after approval/ : /获批后才发布/);
   }
 });
 
-test('September metrics preserve account totals, comparison rates and reporting window in both languages', () => {
+test('current account metrics keep the earlier September reporting window separate in both languages', () => {
   assert.equal(19411 + 870, 20281);
   for (const language of ['en', 'zh']) {
     const results = LANGUAGES[language].copy['#tutoring-results'];
-    for (const fact of ['20.3K', '9K', '772', '77.3%', '77.4%', '39', '69.6%', '19,411', '870', '20,281', '1–28', '2026']) assert.ok(results.includes(fact), `${language}: ${fact}`);
-    assert.equal((results.match(/class="metric-number"/g) ?? []).length, 5);
+    for (const fact of ['55K', '21K', '2.1K', '~80%', '20.3K', '9K', '772', '77.3%', '77.4%', '39', '69.6%', '19,411', '870', '20,281', '1-28', '2026']) assert.ok(results.includes(fact), `${language}: ${fact}`);
+    assert.equal((results.match(/class="metric-number"/g) ?? []).length, 4);
+    assert.match(results, /<details class="tutoring-history">[\s\S]*20\.3K/);
     assert.doesNotMatch(results, /conversion|bookings|appointments|预约量/i);
   }
 });

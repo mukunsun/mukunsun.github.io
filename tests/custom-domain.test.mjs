@@ -8,6 +8,8 @@ const pages = [
   ['photography.html', 'https://mukunsun.com/photography.html'],
   ['travel.html', 'https://mukunsun.com/travel.html'],
   ['projects/campus-campaign.html', 'https://mukunsun.com/projects/campus-campaign.html'],
+  ['projects/microloud.html', 'https://mukunsun.com/projects/microloud.html'],
+  ['projects/suu-tutoring-center.html', 'https://mukunsun.com/projects/suu-tutoring-center.html'],
   ['projects/hotel-jazz.html', 'https://mukunsun.com/projects/hotel-jazz.html'],
   ['projects/suu-teaching-assistant.html', 'https://mukunsun.com/projects/suu-teaching-assistant.html'],
   ['projects/vertex-reddit.html', 'https://mukunsun.com/projects/vertex-reddit.html'],
@@ -34,6 +36,6 @@ test('every public page declares the custom-domain canonical URL', async () => {
 test('homepage social previews use the custom domain', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   assert.match(html, /property="og:url" content="https:\/\/mukunsun\.com\/"/);
-  assert.match(html, /property="og:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.jpg"/);
-  assert.match(html, /name="twitter:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.jpg"/);
+  assert.match(html, /property="og:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.png"/);
+  assert.match(html, /name="twitter:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.png"/);
 });

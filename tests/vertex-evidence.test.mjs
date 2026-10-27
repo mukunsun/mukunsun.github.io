@@ -25,14 +25,14 @@ test('homepage keeps summary evidence while the detail route owns the full evide
   ]);
   const homeExperience = home.match(/<section[^>]+id="experience"[\s\S]*?<\/section>/)?.[0] ?? '';
   const detailEvidence = detail.match(/<section id="vertex-evidence"[\s\S]*?<\/section>/)?.[0] ?? '';
-  for (const value of ['3,548', '793K', '91.7%']) assert.match(homeExperience, new RegExp(value.replace('.', '\\.')));
-  for (const value of ['15,433', '472', '482', '406K', '891', '90']) {
+  for (const value of ['3,548', '793K', '406K']) assert.match(homeExperience, new RegExp(value.replace('.', '\\.')));
+  for (const value of ['15,433', '472', '482', '891', '90']) {
     const pattern = new RegExp(value);
     assert.doesNotMatch(homeExperience, pattern);
     assert.match(detailEvidence, pattern);
   }
   assert.equal((detailEvidence.match(/<tr>/g) ?? []).length, 9);
-  assert.match(homeExperience, /<p class="experience-proofline"><strong>793K<\/strong> views · <strong>3,548<\/strong> upvotes · up to <strong>91\.7%<\/strong> U\.S\. audience share<\/p>/);
+  assert.match(homeExperience, /<p class="experience-proofline"><strong>793K<\/strong> views · <strong>3,548<\/strong> upvotes · <strong>406K<\/strong> top-post views<\/p>/);
   assert.doesNotMatch(homeExperience, /experience-attribution/);
   assert.match(i18n, /'#experience \.experience-row--vertex \.experience-proofline'/);
   assert.doesNotMatch(homeExperience, /class="proof"/);

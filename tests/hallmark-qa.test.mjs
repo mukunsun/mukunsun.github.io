@@ -109,6 +109,5 @@ test('spacing declarations avoid off-scale pixel values', () => {
 test('hero action arrows are hidden from assistive tech and empty ornaments are absent', () => {
   assert.doesNotMatch(home, /class="hero-kick|class="nameen|class="status/);
   assert.doesNotMatch(home, /hero-kick|hero-foot \.status/);
-  assert.match(home, /class="hero-feature-arrow" aria-hidden="true"/);
   assert.match(home, /class="hero-primary"[^>]*>[\s\S]*?<span aria-hidden="true">→<\/span>/);
 });

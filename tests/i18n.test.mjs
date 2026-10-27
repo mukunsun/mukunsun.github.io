@@ -32,13 +32,13 @@ test('English uses straight quotes while Chinese uses full-width punctuation', (
 test('both languages cover the same selector set and corrected facts', () => {
   assert.deepEqual(Object.keys(LANGUAGES.en.copy), Object.keys(LANGUAGES.zh.copy));
   assert.deepEqual(Object.keys(LANGUAGES.en.attributes), Object.keys(LANGUAGES.zh.attributes));
-  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Social media, community, and visual communication.');
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '社交内容、社群运营与视觉传播。');
+  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Marketing, partnerships, and campaign analysis.');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '.hero .roleen'), false);
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '.hero .roleen'), false);
   assert.ok(!Object.hasOwn(LANGUAGES.en.copy, '.hero .ghost'));
   const allCopy = JSON.stringify(LANGUAGES);
-  assert.doesNotMatch(allCopy, /19,000[\s\S]*impressions/);
+  assert.match(LANGUAGES.en.copy['#projects .project-row--campus .project-copy span'], /19,000 impressions/);
   assert.doesNotMatch(allCopy, /525[\s\S]*\+/);
   assert.doesNotMatch(allCopy, /5,250|\+17%|~200|随时到岗|Single-post reads/);
   assert.doesNotMatch(allCopy, /Attribution boundary|归因边界|归因说明/i);
@@ -47,7 +47,7 @@ test('both languages cover the same selector set and corrected facts', () => {
 });
 
 test('each translation selector is rooted in its intended route', async () => {
-  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel, xinyuyou, tutoring] = await Promise.all([
+  const [home, vertex, teaching, campus, hotel, visual, music, photography, travel, xinyuyou, tutoring, microloud] = await Promise.all([
     readFile(new URL('../index.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/vertex-reddit.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/suu-teaching-assistant.html', import.meta.url), 'utf8'),
@@ -59,6 +59,7 @@ test('each translation selector is rooted in its intended route', async () => {
     readFile(new URL('../travel.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/xinyuyou.html', import.meta.url), 'utf8'),
     readFile(new URL('../projects/suu-tutoring-center.html', import.meta.url), 'utf8'),
+    readFile(new URL('../projects/microloud.html', import.meta.url), 'utf8'),
   ]);
   const selectors = new Set([
     ...Object.keys(LANGUAGES.en.copy),
@@ -76,9 +77,11 @@ test('each translation selector is rooted in its intended route', async () => {
     travel: createStaticSelectorDocument(travel),
     xinyuyou: createStaticSelectorDocument(xinyuyou),
     tutoring: createStaticSelectorDocument(tutoring),
+    microloud: createStaticSelectorDocument(microloud),
   };
   for (const selector of selectors) {
-    const route = selector.startsWith('#tutoring-') ? 'tutoring'
+    const route = selector.startsWith('#microloud-') ? 'microloud'
+      : selector.startsWith('#tutoring-') ? 'tutoring'
       : selector.startsWith('#vertex-') ? 'vertex'
       : selector.startsWith('#teaching-') ? 'teaching'
       : selector.startsWith('#campus-') ? 'campus'
@@ -105,16 +108,16 @@ test('second-layer dictionaries use the approved bilingual claims', () => {
     assert.equal(LANGUAGES.en.copy[selector], english, selector);
     assert.equal(LANGUAGES.zh.copy[selector], chinese, selector);
   }
-  assert.match(LANGUAGES.en.copy['#campus-contribution'], /Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site & online/);
-  assert.match(LANGUAGES.zh.copy['#campus-contribution'], /宣传协调[\s\S]*平台适配[\s\S]*现场与线上衔接/);
-  assert.doesNotMatch(LANGUAGES.en.copy['#campus-contribution'], /attendance|conversion|reach|team size/i);
+  assert.match(LANGUAGES.en.copy['#campus-contribution'], /22-person[\s\S]*8,000\+[\s\S]*19,000/);
+  assert.match(LANGUAGES.zh.copy['#campus-contribution'], /22[\s\S]*8,000[\s\S]*19,000/);
+  assert.doesNotMatch(LANGUAGES.en.copy['#campus-contribution'], /attendance|conversion|19,000 attendees/i);
   assert.doesNotMatch(JSON.stringify(matrix), /19,000|525|5,250|\+17%|~200/);
 });
 
 test('Chinese professional labels use 社群 while subreddit contexts retain 社区', () => {
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '社交内容、社群运营与视觉传播。');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-role'], 'Reddit 社群运营实习生');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--teaching .experience-company'], '南犹他大学');
+  assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '#experience .experience-row--teaching .experience-company'), false);
   assert.equal(LANGUAGES.zh.copy['#edu .edu-entry:nth-child(1) .edu-school'], '南犹他大学');
   assert.match(LANGUAGES.zh.copy['#vertex-hero'], /Reddit 社群运营/);
   assert.doesNotMatch(LANGUAGES.zh.copy['#vertex-hero'], /Reddit 社区运营/);
@@ -124,6 +127,12 @@ test('Chinese professional labels use 社群 while subreddit contexts retain 社
 
 test('second-layer route copy and attributes are selector-scoped and complete', () => {
   const copyRoots = {
+    microloud: [
+      '#microloud-nav .brand', '#microloud-nav .links', '#microloud-nav .compact-nav summary', '#microloud-nav .compact-links', '#microloud-nav .back-link',
+      '#microloud-hero h1', '#microloud-hero .detail-deck', '#microloud-hero .detail-meta', '#microloud-hero .project-state',
+      '#microloud-overview h2', '#microloud-overview .detail-section-copy', '#microloud-work h2', '#microloud-work .detail-section-copy',
+      '#microloud-measurement h2', '#microloud-measurement .detail-section-copy', '#microloud-footer span', '#microloud-footer a',
+    ],
     teaching: [
       '#teaching-nav .brand', '#teaching-nav .links', '#teaching-nav .compact-nav summary', '#teaching-nav .compact-links', '#teaching-nav .back-link',
       '#teaching-hero h1', '#teaching-hero .detail-eyebrow', '#teaching-hero .detail-deck', '#teaching-hero .detail-meta',
@@ -192,6 +201,7 @@ test('second-layer route copy and attributes are selector-scoped and complete', 
   }
 
   const attributeSelectors = [
+    '#microloud-nav .lang-switch', '#microloud-nav .compact-nav summary', '#microloud-nav .compact-links',
     '#teaching-nav .lang-switch', '#teaching-nav .compact-nav summary', '#teaching-nav .compact-links',
     '#teaching-media .detail-media:nth-child(1) img', '#teaching-media .detail-media:nth-child(2) img', '#teaching-dialog', '#teaching-dialog .dialog-close',
     '#campus-nav .lang-switch', '#campus-nav .compact-nav summary', '#campus-nav .compact-links', '#campus-media img', '#campus-dialog', '#campus-dialog .dialog-close',
@@ -286,8 +296,8 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '#site-footer span:last-child'), false);
   assert.equal(LANGUAGES.en.attributes['#nav .lang-switch']['aria-label'], 'Language');
   assert.equal(LANGUAGES.zh.attributes['#nav .lang-switch']['aria-label'], '语言');
-  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> views · <strong>3,548</strong> upvotes · up to <strong>91.7%</strong> U.S. audience share');
-  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 点赞 · 美国受众占比最高 <strong>91.7%</strong>');
+  assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> views · <strong>3,548</strong> upvotes · <strong>406K</strong> top-post views');
+  assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-proofline'], '<strong>793K</strong> 浏览量 · <strong>3,548</strong> 次赞同 · 单帖最高 <strong>406K</strong> 浏览');
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-link'], 'Explore community operations <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-link'], '了解社群运营 <span aria-hidden="true">→</span>');
   assert.equal(LANGUAGES.en.copy['#nav .compact-nav summary'], 'Sections');
@@ -295,18 +305,20 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
 });
 
 test('language module declares all public page keys and the shared cache key', () => {
-  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring']);
-  assert.equal(I18N_CACHE_KEY, '20260930-preview');
+  assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring', 'microloud']);
+  assert.equal(I18N_CACHE_KEY, '20261026-resume');
 });
 
 test('homepage dictionaries own the approved first-layer selectors', () => {
   const selectors = [
-    '#about .about-copy p:nth-child(1)',
-    '#about .about-copy p:nth-child(2)',
+    '#about .about-intro',
+    '#about .about-personal',
+    '#about .about-tools',
     '#experience .experience-row--vertex .experience-proofline',
-    '#projects .project-row:nth-child(1) .project-copy strong',
-    '#projects .project-row:nth-child(2) .project-copy strong',
-    '#projects .project-row:nth-child(3) .project-copy strong',
+    '#projects .project-row--microloud .project-copy strong',
+    '#projects .project-row--campus .project-copy strong',
+    '#projects .project-row--hotel .project-copy strong',
+    '#projects .project-row--visual .project-copy strong',
     '#outside-work .outside-card:nth-child(1) strong',
     '#outside-work .outside-card:nth-child(2) strong',
     '#outside-work .outside-card:nth-child(3) strong',
@@ -317,8 +329,8 @@ test('homepage dictionaries own the approved first-layer selectors', () => {
     assert.ok(LANGUAGES.en.copy[selector], selector);
     assert.ok(LANGUAGES.zh.copy[selector], selector);
   }
-  assert.equal(LANGUAGES.en.copy['#projects .project-row:nth-child(3) .project-copy strong'], 'Selected Visual Work');
-  assert.equal(LANGUAGES.en.copy['#contact .contact-intro'], 'You can reach me by email or LinkedIn.');
+  assert.equal(LANGUAGES.en.copy['#projects .project-row--visual .project-copy strong'], 'Selected Visual Work');
+  assert.equal(LANGUAGES.en.copy['#contact .contact-intro'], 'Open to 2027 graduate opportunities across the U.S. Reach me by email or LinkedIn.');
   const dictionarySelectors = Object.keys(LANGUAGES.en.copy);
   assert.equal(dictionarySelectors.some((selector) => /capability-row|\.visual-archive|project-context|project-contribution/.test(selector)), false);
 });
@@ -367,9 +379,9 @@ test('applyLanguage uses page-specific metadata in both languages', () => {
     }
   }
   assert.equal(LANGUAGES.en.metadata.home.title, 'Mukun Sun | Website');
-  assert.equal(LANGUAGES.en.metadata.home.description, 'A professional and personal portfolio of communication, community work, visual projects, education, music, and photography by Mukun Sun.');
+  assert.equal(LANGUAGES.en.metadata.home.description, 'Marketing and communications work by Mukun Sun: campus campaigns, creator partnerships, campaign analysis, and an AI tool in development. Graduating April 2027.');
   assert.equal(LANGUAGES.zh.metadata.home.title, '孙慕坤｜传播、社群与音乐');
-  assert.equal(LANGUAGES.zh.metadata.home.description, '孙慕坤的个人网站：社交媒体与社群运营、传播项目、视觉作品、教育经历，以及音乐与摄影。');
+  assert.equal(LANGUAGES.zh.metadata.home.description, '孙慕坤的营销传播作品集：校园推广、创作者合作、数据分析与开发中的 AI 工具。南犹他大学战略传播专业，辅修商业分析，预计 2027 年 4 月毕业。');
   for (const language of ['en', 'zh']) {
     for (const page of PAGE_KEYS) {
       const metadata = LANGUAGES[language].metadata[page];
@@ -433,5 +445,5 @@ test('page exposes a bilingual control and direct outside-work gateway media', a
   assert.equal(LANGUAGES.en.attributes[travelImage].alt, 'Bryce Canyon amphitheater in warm afternoon light');
   assert.equal(LANGUAGES.zh.attributes[travelImage].alt, '午后暖光下的布莱斯峡谷露天剧场');
   assert.doesNotMatch(html, /<details class="visual-archive"/);
-  assert.match(html, /src="i18n\.js\?v=20260930-preview"/);
+  assert.match(html, /src="i18n\.js\?v=20261026-resume"/);
 });

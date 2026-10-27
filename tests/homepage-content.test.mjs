@@ -4,27 +4,27 @@ import { readFile } from 'node:fs/promises';
 
 test('hero leads with the approved concise identity line', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /<div class="role[^>]*>Social media, community, and visual communication\.<\/div>/);
+  assert.match(html, /<div class="role[^>]*>Marketing, partnerships, and campaign analysis\.<\/div>/);
   assert.doesNotMatch(html, /class="ghost"/);
 });
 
 test('homepage exposes complete sharing metadata', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  const description = 'A professional and personal portfolio of communication, community work, visual projects, education, music, and photography by Mukun Sun.';
+  const description = 'Marketing and communications work by Mukun Sun: campus campaigns, creator partnerships, campaign analysis, and an AI tool in development. Graduating April 2027.';
   assert.match(html, /rel="canonical" href="https:\/\/mukunsun\.com\/"/);
   assert.match(html, /rel="icon" href="assets\/favicon\.svg"/);
   assert.match(html, /property="og:title"/);
   assert.ok(html.includes(`<meta property="og:description" content="${description}">`));
   assert.match(html, /property="og:type" content="website"/);
   assert.match(html, /property="og:url" content="https:\/\/mukunsun\.com\/"/);
-  assert.match(html, /property="og:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.jpg"/);
-  assert.match(html, /property="og:image:width" content="1200"/);
-  assert.match(html, /property="og:image:height" content="630"/);
+  assert.match(html, /property="og:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.png"/);
+  assert.match(html, /property="og:image:width" content="1735"/);
+  assert.match(html, /property="og:image:height" content="906"/);
   assert.match(html, /property="og:image:alt" content="Mukun Sun \| Communication, Community & Music"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /name="twitter:title"/);
   assert.ok(html.includes(`<meta name="twitter:description" content="${description}">`));
-  assert.match(html, /name="twitter:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.jpg"/);
+  assert.match(html, /name="twitter:image" content="https:\/\/mukunsun\.com\/assets\/og-card\.png"/);
   assert.match(html, /name="twitter:image:alt" content="Mukun Sun \| Communication, Community & Music"/);
   assert.doesNotMatch(html, /(?:og:image|twitter:image)" content="[^"]*portrait\.jpg"/);
 });

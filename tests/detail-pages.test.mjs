@@ -8,6 +8,7 @@ const home = await readFile(new URL('../index.html', import.meta.url), 'utf8');
 
 const routes = [
   ['projects/suu-tutoring-center.html', 'tutoring'],
+  ['projects/microloud.html', 'microloud'],
   ['projects/campus-campaign.html', 'campus'],
   ['projects/hotel-jazz.html', 'hotel'],
   ['projects/visual-work.html', 'visual'],
@@ -30,7 +31,7 @@ test('every second-layer route has the shared bilingual shell', async () => {
     const shellVersion = key === 'travel' ? '20261024-travel' : '20260930-preview';
     assert.match(html, new RegExp('href="(?:\\.\\.\\/)?detail\\.css\\?v=' + shellVersion + '"'));
     assert.match(html, new RegExp('src="(?:\\.\\.\\/)?detail\\.js\\?v=' + shellVersion + '"'));
-    const languageVersion = key === 'visual' ? '20261002-gallery' : shellVersion;
+    const languageVersion = '20261026-resume';
     assert.match(html, new RegExp('src="(?:\\.\\.\\/)?i18n\\.js\\?v=' + languageVersion + '"'));
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);
@@ -46,14 +47,14 @@ test('project pages use the approved facts, metadata, and section order', async 
   ]);
 
   assert.match(campus, /<title>Campus Integrated Campaign \| Mukun Sun<\/title>/);
-  assert.match(campus, /<meta name="description" content="Promotion coordination for campus welcome and New Year events across online and offline channels\.">/);
+  assert.match(campus, /<meta name="description" content="Led a 22-person promotion team\. Top-performing event posts reached 8,000\+ people, with up to 19,000 impressions\.">/);
   assert.match(campus, /<link rel="canonical" href="https:\/\/mukunsun\.com\/projects\/campus-campaign\.html">/);
   assert.match(campus, /<header class="detail-hero" id="campus-hero"[^>]*>[\s\S]*?<section class="detail-section" id="campus-context"[\s\S]*?<section class="detail-section" id="campus-contribution"[\s\S]*?<section class="detail-section" id="campus-media"/);
   assert.match(campus, /Campus Integrated Campaign/);
-  assert.match(campus, /Promotion Team Lead · 2024–2025/);
+  assert.match(campus, /Promotion Lead · May 2024 - Jun 2025/);
   assert.match(campus, /Welcome and New Year events brought the campus together\./);
-  assert.match(campus, /Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site &amp; online|Promotion coordination[\s\S]*Platform adaptation[\s\S]*On-site & online/);
-  assert.doesNotMatch(campus, /reach|attendance|conversion|team size|team-size/i);
+  assert.match(campus, /22-person[\s\S]*8,000\+[\s\S]*19,000/);
+  assert.doesNotMatch(campus, /attendance|conversion|19,000 attendees/i);
 
   assert.match(hotel, /<title>Hotel × Jazz \| Mukun Sun<\/title>/);
   assert.match(hotel, /<meta name="description" content="Event concept, partner coordination, WeChat promotion, and visual identity for a hotel and jazz collaboration\.">/);
@@ -285,12 +286,12 @@ test('detail routes expose no-JS content and mount live reveal hooks', async () 
     const sections = html.match(/<section class="[^"]*\bdetail-section\b[^"]*"[^>]*>/g) ?? [];
     const media = html.match(/<figure class="[^"]*\bdetail-media\b[^"]*"[^>]*>/g) ?? [];
     if (key !== 'travel') assert.ok(sections.length > 0, `${path}: sections`);
-    if (key === 'travel') assert.equal(media.length, 0, `${path}: no published gallery images`);
+    if (['travel', 'microloud'].includes(key)) assert.equal(media.length, 0, `${path}: no gallery figures`);
     else assert.ok(media.length > 0, `${path}: media`);
     assert.equal(sections.every((tag) => tag.includes('data-reveal')), true, `${path}: section reveals`);
     if (key !== 'tutoring') assert.equal(media.every((tag) => tag.includes('data-reveal="media"')), true, `${path}: media reveals`);
     assert.match(html, /root\.className=root\.className\.replace\('no-js','js'\)/);
-    if (key !== 'tutoring') {
+    if (!['tutoring', 'microloud'].includes(key)) {
       assert.match(html, new RegExp(`<dialog class="image-dialog" id="${key}-dialog"`));
       assert.match(html, /data-dialog-close/);
     }

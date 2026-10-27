@@ -25,8 +25,8 @@ test('both routes enforce clipping, mobile controls, wrapping, exact cache impor
     assert.match(html, /<html\s+lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1);
   }
-  assert.match(home, /<script type="module" src="i18n\.js\?v=20260930-preview"><\/script>/);
-  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20260930-preview"><\/script>/);
+  assert.match(home, /<script type="module" src="i18n\.js\?v=20261026-resume"><\/script>/);
+  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20261026-resume"><\/script>/);
   assert.match(i18n, /export const DEFAULT_LANGUAGE = 'en';/);
   assert.match(i18n, /export function getInitialLanguage\(storage = globalThis\.localStorage\)/);
   assert.match(i18n, /storage\?\.getItem\(STORAGE_KEY\)/);
@@ -38,7 +38,7 @@ test('outside-work detail routes load one shared versioned module and cache-bust
     assert.match(html, /<html lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js/g) ?? []).length, 1, `${name}: one i18n script URL`);
     const version = name === 'travel' ? '20261024-travel' : '20260930-preview';
-    assert.match(html, new RegExp('src="i18n\\.js\\?v=' + version + '"'));
+    assert.match(html, /src="i18n\.js\?v=20261026-resume"/);
     assert.match(html, new RegExp('href="detail\\.css\\?v=' + version + '"'));
     assert.match(html, new RegExp('src="detail\\.js\\?v=' + version + '"'));
   }
