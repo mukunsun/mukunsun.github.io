@@ -13,7 +13,7 @@ test('Vertex evidence presents the approved internship scope without attribution
     assert.match(copy, new RegExp(value.replace('.', '\\.')));
   }
   assert.doesNotMatch(copy, /attribution boundary|归因边界|归因说明/i);
-  assert.match(copy, /I worked on Reddit community operations/i);
+  assert.match(copy, /I managed content and engagement across 5 Reddit accounts and 15\+ communities/i);
   assert.doesNotMatch(copy, /participated in operating|personally generated all|owned all results/i);
 });
 

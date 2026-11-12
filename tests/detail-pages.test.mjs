@@ -31,7 +31,7 @@ test('every second-layer route has the shared bilingual shell', async () => {
     const shellVersion = key === 'travel' ? '20261024-travel' : '20260930-preview';
     assert.match(html, new RegExp('href="(?:\\.\\.\\/)?detail\\.css\\?v=' + shellVersion + '"'));
     assert.match(html, new RegExp('src="(?:\\.\\.\\/)?detail\\.js\\?v=' + shellVersion + '"'));
-    const languageVersion = '20261026-resume';
+    const languageVersion = '20261111-profile';
     assert.match(html, new RegExp('src="(?:\\.\\.\\/)?i18n\\.js\\?v=' + languageVersion + '"'));
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1, `${path}: one i18n module instance`);
     assert.match(html, /data-lang="en"/);

@@ -348,6 +348,27 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
 .project-status{font-size:var(--text-sm);line-height:1.6;color:var(--muted);}
 .edu-record{font-size:var(--text-sm);line-height:1.7;color:var(--ink-2);}
 @media(max-width:40rem){.project-row--microloud{grid-template-columns:minmax(0,1fr);}}
+/* Native profile records inherit the gallery typography and palette. */
+.profile-disclosure{margin-top:24px;color:var(--ink-2);font-size:14px;line-height:1.75;}
+.profile-disclosure summary{min-height:44px;padding-block:12px;cursor:pointer;color:var(--ink);}
+.profile-disclosure summary::marker{color:var(--amber);}
+.edu-credentials{max-width:58ch;}
+.credential-context{margin-block:4px 12px;font-size:13px;}
+.credential-list{list-style:none;margin:0;padding:0;}
+.credential-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;}
+.credential-list li+li{border-top:1px solid var(--line-2);}
+.credential-list a{display:block;min-width:0;min-height:44px;padding-block:12px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;}
+.credential-list a:hover,.previous-title:hover{color:var(--amber);}
+.credential-list time{font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap;}
+.credential-translation{display:block;font-size:12px;line-height:1.6;color:var(--ink-2);}
+.previous-list{margin-top:12px;border-top:1px solid var(--line-2);}
+.previous-item{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(24px,6vw,88px);padding-block:24px;border-bottom:1px solid var(--line-2);}
+.previous-item h3{font-family:var(--serif);font-size:22px;line-height:1.35;color:var(--ink);font-weight:500;}
+.previous-title{color:var(--ink);}
+a.previous-title{text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:4px;}
+.previous-meta{margin-top:8px;color:var(--faint);font-size:12px;line-height:1.8;}
+.previous-description{max-width:64ch;color:var(--ink-2);font-size:15px;line-height:1.85;}
+@media(max-width:680px){.previous-item{grid-template-columns:minmax(0,1fr);gap:12px;}.previous-item h3{font-size:20px;}}
 </style>
 </head>
 <body>
@@ -398,7 +419,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         <h2 class="stitle" data-reveal="">About Me</h2>
         <div class="about-copy">
           <p class="lede about-intro" data-reveal>I study Strategic Communication at Southern Utah University, with a minor in Business Analytics, and graduate in April 2027. My work spans campus marketing, creator partnerships, and Reddit community operations.</p>
-          <p class="about-tools" data-reveal>My toolkit includes Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel for reporting.</p>
+          <p class="about-tools" data-reveal>I use Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel PivotTables and VLOOKUP for reporting. My toolkit also includes Google Analytics and Meta Business Suite.</p>
           <p class="about-personal" data-reveal>Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.</p>
         </div>
       </div>
@@ -426,9 +447,9 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
       <article class="experience-row experience-row--suu-tutoring" data-reveal="">
         <header><p class="experience-company">Southern Utah University · Tutoring Center</p><h2 class="experience-role">Lead Marketing and Media</h2><p class="experience-dates">Sep 2026 - Present · Cedar City, Utah</p></header>
         <div class="experience-detail"><div class="experience-copy">
-          <p class="experience-responsibility">I create social content and coordinate campus promotions with staff review before publishing. I also analyzed 300+ student portal survey responses and developed outreach recommendations.</p>
-          <p class="experience-proofline"><strong>55K</strong> views · <strong>2.1K</strong> interactions</p>
-          <p class="experience-report-period">Account snapshot · Sep-Oct 2026</p>
+          <p class="experience-responsibility">I create graphics and short videos, coordinate campus promotions with staff review before publishing, and research tutoring awareness and barriers. I presented survey findings and outreach recommendations to center leadership.</p>
+          <p class="experience-proofline"><strong>76.8K</strong> views · <strong>26K</strong> reach · <strong>2.8K</strong> interactions</p>
+          <p class="experience-report-period">Account totals since Sep 2026 · Profile snapshot checked Nov 11, 2026</p>
           <a class="experience-link" href="projects/suu-tutoring-center.html">View Tutoring Center work <span aria-hidden="true">→</span></a>
         </div><figure class="experience-media" data-reveal="img"><a href="projects/visual-work.html#visual-tutoring-work" aria-label="View selected Tutoring Center designs"><img src="assets/visual_work/tutoring/work-smarter.webp" width="1080" height="1350" alt="Tutoring Center poster inviting students to stop working harder and start working smarter" loading="lazy" decoding="async"></a></figure></div>
       </article>
@@ -440,7 +461,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
-            <p class="experience-responsibility">I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.</p>
+            <p class="experience-responsibility">I managed content and engagement across 5 Reddit accounts and 15+ communities, adapting posts to each subreddit's rules and audience language.</p>
             <p class="experience-proofline"><strong>793K</strong> views · <strong>3,548</strong> upvotes · <strong>406K</strong> top-post views</p>
             <a class="experience-link" href="projects/vertex-reddit.html">Explore community operations <span aria-hidden="true">→</span></a>
           </div>
@@ -457,7 +478,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         </header>
         <div class="experience-detail">
           <div class="experience-copy">
-            <p class="experience-responsibility">I worked on overseas influencer marketing for a pet brand going global (Pawreto, pet safety gates): sourcing and running creator partnerships across the US and Canada — reaching 476 influencers, closing 45 collaborations, and evaluating creators with reach and cost data.</p>
+            <p class="experience-responsibility">I ran creator outreach for Pawreto across the U.S. and Canada and managed gifted, affiliate, and paid collaborations, with up to 14 in parallel. For paid partnerships, I reviewed 20+ videos and used reach, engagement, and cost per result to refine creator selection.</p>
             <p class="experience-proofline"><strong>476</strong> creators contacted · <strong>45</strong> collaborations · <strong>8</strong> paid partnerships</p>
             <a class="experience-link" href="projects/xinyuyou.html">Explore creator partnerships <span aria-hidden="true">→</span></a>
           </div>
@@ -468,6 +489,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
         </div>
       </article>
     </div>
+    <details class="experience-previous profile-disclosure"><summary>Earlier experience</summary><div class="previous-list"><article class="previous-item" id="earlier-teaching"><header><h3><a class="previous-title" href="projects/suu-teaching-assistant.html">Interpreter and Teaching Assistant</a></h3><p class="previous-meta">Southern Utah University · May 2026 · Wuhan, China</p></header><p class="previous-description">Interpreted for Professor Sharon Lyman's English writing program at Wuhan Polytechnic University and organized course records and scores for 200+ students in Excel.</p></article><article class="previous-item" id="earlier-dominos"><header><h3 class="previous-title">Team Member · Domino's</h3><p class="previous-meta">Part-time · Feb 2025 - May 2025 · Wuhan, China</p></header><p class="previous-description">Worked across front-of-house service, kitchen, and delivery, handling orders during busy shifts alongside full-time study.</p></article></div></details>
   </div>
 </section>
 
@@ -535,7 +557,8 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
           <p class="edu-degree">B.S. in Strategic Communication</p>
           <p class="edu-secondary">Minor · Business Analytics</p>
           <p class="edu-record">SUU GPA: 3.66/4.0 · Dean's List, Spring 2026</p>
-          <p class="edu-focus">Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics I, Applied Linear Models.</p>
+          <p class="edu-focus">Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics. Data Management is planned spring coursework.</p>
+          <details class="edu-credentials profile-disclosure"><summary>SUU competency credentials</summary><p class="credential-context">Issued by Southern Utah University, September-November 2026. Select a credential to view its public record.</p><ul class="credential-list"><li><a id="credential-engaged-influencer" href="https://api.badgr.io/public/assertions/m9C9kwv_QFGY-6QiBbs6Ug" target="_blank" rel="noopener noreferrer">Engaged Influencer</a><time class="credential-issued--nov" datetime="2026-11">Nov 2026</time></li><li><a id="credential-task-prioritization" href="https://api.badgr.io/public/assertions/Qim6vz1ZQgOc8S9pguddog" target="_blank" rel="noopener noreferrer">Task Prioritization</a><time class="credential-issued--nov" datetime="2026-11">Nov 2026</time></li><li><a id="credential-versatile-communicator" href="https://api.badgr.io/public/assertions/GrVCMqTvSlKi0p1zrVknEg" target="_blank" rel="noopener noreferrer">Versatile Communicator</a><time class="credential-issued--oct" datetime="2026-10">Oct 2026</time></li><li><a id="credential-dedication" href="https://api.badgr.io/public/assertions/3lbX-UBLRnWeoZl3fqGeJw" target="_blank" rel="noopener noreferrer">Dedication</a><time class="credential-issued--oct" datetime="2026-10">Oct 2026</time></li><li><a id="credential-appropriate-inquiry" href="https://api.badgr.io/public/assertions/yoH4Up1PQYylafNdHBwMmg" target="_blank" rel="noopener noreferrer">Appropriate Inquiry</a><time class="credential-issued--oct" datetime="2026-10">Oct 2026</time></li><li><a id="credential-attention-to-detail" href="https://api.badgr.io/public/assertions/NqVGyfrrT2mEvoqJcbZ1Kw" target="_blank" rel="noopener noreferrer">Attention to Detail</a><time class="credential-issued--oct" datetime="2026-10">Oct 2026</time></li><li><a id="credential-organized-communicator" href="https://api.badgr.io/public/assertions/R68hjakVQryTjd3b9d8kPA" target="_blank" rel="noopener noreferrer">Organized Communicator</a><time class="credential-issued--sep" datetime="2026-09">Sep 2026</time></li><li><a id="credential-present-prepared" href="https://api.badgr.io/public/assertions/OLg9oPQES0aXaEn9RlSncw" target="_blank" rel="noopener noreferrer">Present &amp; Prepared</a><time class="credential-issued--sep" datetime="2026-09">Sep 2026</time></li></ul></details>
         </div>
       </article>
     </div>
@@ -761,7 +784,7 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   syncMotionState();
 })();
 </script>
-<script type="module" src="i18n.js?v=20261026-resume"></script>
+<script type="module" src="i18n.js?v=20261111-profile"></script>
 <script type="module" src="navigation.js?v=20260930-preview"></script>
 
 

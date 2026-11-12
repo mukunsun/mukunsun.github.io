@@ -1,6 +1,6 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20261026-resume';
+export const I18N_CACHE_KEY = '20261111-profile';
 export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring', 'microloud'];
 
 const en = {
@@ -21,8 +21,8 @@ const en = {
       description: "Mukun Sun's influencer marketing internship at YUYO INNOVATIONS LLC (Pawreto): sourcing, negotiating, and running creator partnerships across the US and Canada for a pet brand going global.",
     },
     teaching: {
-      title: 'Teaching Assistant | Mukun Sun',
-      description: 'Classroom and course support for Southern Utah University English writing courses in Wuhan.',
+      title: "Interpreter and Teaching Assistant | Mukun Sun",
+      description: "Bilingual classroom support and Excel course records for Professor Sharon Lyman's SUU English writing program in Wuhan.",
     },
     campus: {
       title: 'Campus Integrated Campaign | Mukun Sun',
@@ -183,27 +183,27 @@ const en = {
     'walter_disney.webp': 'Curved metal architecture at Walt Disney Concert Hall',
   },
   copy: {
-    '#teaching-nav .brand': 'Mukun Sun · Teaching Assistant',
+    "#teaching-nav .brand": "Mukun Sun · Interpreting & Teaching",
     '#teaching-nav .links': '<a href="#teaching-context">Context</a><a href="#teaching-classroom">Classroom</a><a href="#teaching-operations">Operations</a><a href="#teaching-bridge">Bridge</a><a href="#teaching-media">Media</a>',
     '#teaching-nav .compact-nav summary': 'Sections',
     '#teaching-nav .compact-links': '<a href="#teaching-context">Context</a><a href="#teaching-classroom">Classroom</a><a href="#teaching-operations">Operations</a><a href="#teaching-bridge">Bridge</a><a href="#teaching-media">Media</a><a href="../index.html#experience">Portfolio index</a>',
     '#teaching-nav .back-link': '← Portfolio index',
-    '#teaching-hero h1': 'Teaching Assistant',
+    "#teaching-hero h1": "Interpreter and Teaching Assistant",
     '#teaching-hero .detail-eyebrow': 'Southern Utah University · Internship',
-    '#teaching-hero .detail-deck': 'Classroom and course support for English writing courses serving 200+ students in Wuhan.',
+    "#teaching-hero .detail-deck": "Bilingual classroom support and Excel course records for an SUU English writing program serving 200+ students in Wuhan.",
     '#teaching-hero .detail-meta': 'May 2026 · Wuhan, China',
     '#teaching-context h2': 'Role & Context',
-    '#teaching-context p': "I was a teaching assistant for Southern Utah University's English writing program in Wuhan, run in partnership with Wuhan Polytechnic University. An SUU professor led intensive writing courses for 200+ students in five classes across two majors, advertising and construction management. I supported the classroom and ran the course operations.",
+    "#teaching-context p": "I served as interpreter and teaching assistant for Professor Sharon Lyman's Southern Utah University English writing program at Wuhan Polytechnic University in May 2026. The program served 200+ students. I supported classroom communication and organized course records and scores.",
     '#teaching-classroom h2': 'Classroom Support',
     '#teaching-classroom p': 'I provided bilingual support and interpreted between the professor and the students. I helped students understand the professor, and I helped the professor understand how teaching and communication work in a Chinese classroom. Since students\' English ranged widely, I adjusted my explanations and feedback to each level.',
     '#teaching-operations h2': 'Course Operations',
-    '#teaching-operations p': "I managed attendance, graded assignments against the professor's rubric (spelling, structure, grammar, logic), gave written feedback, and built the final-grade spreadsheets and course-completion reports in Excel myself.",
+    "#teaching-operations p": "I organized course records and scores for 200+ students in Excel. I managed attendance, graded assignments against the professor's rubric, gave written feedback, and prepared final-grade spreadsheets and course-completion reports.",
     '#teaching-bridge h2': 'Cultural Bridge',
-    '#teaching-bridge p': 'The professor was visiting China for the first time. I helped close the distance that unfamiliarity can create: I taught her to use Alipay for the subway, took her to try local food, visited the Yellow Crane Tower together, and planned a trip to Mount Lu. What I took away: communication depends less on perfect understanding than on an open, attentive, responsive attitude.',
+    "#teaching-bridge p": "Working between English and Chinese taught me to slow down and check what each person had understood. When a literal translation missed the context, I asked another question before explaining. The role depended as much on listening as translating.",
     '#teaching-media h2': 'In the Classroom',
     '#teaching-media .detail-media:nth-child(1) figcaption': 'English writing course · Wuhan',
     '#teaching-media .detail-media:nth-child(2) figcaption': 'After the teaching period · May 2026',
-    '#teaching-footer span': 'Mukun Sun · Teaching Assistant',
+    "#teaching-footer span": "Mukun Sun · Interpreting & Teaching",
     '#teaching-footer a': 'Return to internship',
     '#nav .brand': 'Mukun Sun<span class="en">孙慕坤</span>',
     '#nav .links': '<a href="#about">About</a><a href="#experience">Work</a><a href="#outside-work">Outside Work</a><a href="#contact">Contact</a>',
@@ -446,11 +446,11 @@ const en = {
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit Community Operations Intern',
     '#experience .experience-row--vertex .experience-dates': "Jun 2026 - Aug 2026 · Shenzhen, China",
-    '#experience .experience-row--vertex .experience-responsibility': 'I worked on Reddit community operations across consumer technology, smart-home, lifestyle, finance, and family-oriented communities, adapting content and interaction to subreddit rules, audience context, and visible performance.',
+    "#experience .experience-row--vertex .experience-responsibility": "I managed content and engagement across 5 Reddit accounts and 15+ communities, adapting posts to each subreddit's rules and audience language.",
     '#experience .experience-row--xinyuyou .experience-company': 'YUYO INNOVATIONS LLC',
     '#experience .experience-row--xinyuyou .experience-role': 'Influencer Marketing Intern',
     '#experience .experience-row--xinyuyou .experience-dates': 'Jun 2025 - Aug 2025 · Shenzhen, China',
-    '#experience .experience-row--xinyuyou .experience-responsibility': "I contacted creators across the U.S. and Canada for Pawreto, secured gifted, affiliate, and paid collaborations, and managed paid partnerships from outreach through content review. I tracked reach, engagement, and cost per result to refine creator selection.",
+    "#experience .experience-row--xinyuyou .experience-responsibility": "I ran creator outreach for Pawreto across the U.S. and Canada and managed gifted, affiliate, and paid collaborations, with up to 14 in parallel. For paid partnerships, I reviewed 20+ videos and used reach, engagement, and cost per result to refine creator selection.",
     '#experience .experience-row--xinyuyou .experience-proofline': "<strong>476</strong> creators contacted · <strong>45</strong> collaborations · <strong>8</strong> paid partnerships",
     '#experience .experience-row--vertex .experience-proofline': "<strong>793K</strong> views · <strong>3,548</strong> upvotes · <strong>406K</strong> top-post views",
     '#experience .experience-row--suu-tutoring .experience-link': 'View Tutoring Center work <span aria-hidden="true">→</span>',
@@ -519,7 +519,7 @@ const en = {
     '#edu .edu-entry:nth-child(1) .edu-dates': "Apr 2027",
     '#edu .edu-entry:nth-child(1) .edu-degree': 'B.S. in Strategic Communication',
     '#edu .edu-entry:nth-child(1) .edu-secondary': 'Minor · Business Analytics',
-    '#edu .edu-entry:nth-child(1) .edu-focus': "Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics I, Applied Linear Models.",
+    "#edu .edu-entry:nth-child(1) .edu-focus": "Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics. Data Management is planned spring coursework.",
     '#outside-work .stitle': 'Outside Work',
     '#outside-work .section-intro': 'Music, photography, and travel shape how I pay attention to people and atmosphere.',
     '#outside-work .outside-card:nth-child(1) strong': 'Music',
@@ -603,8 +603,8 @@ const zh = {
       description: '孙慕坤在新昱佑（YUYO INNOVATIONS LLC）的海外达人营销实习：面向美加市场的创作者开发、合作运营与数据评估，服务中国宠物品牌出海。',
     },
     teaching: {
-      title: '英语写作助教｜孙慕坤',
-      description: '孙慕坤在武汉为南犹他大学英语写作课程提供课堂与课程运营支持。',
+      title: "口译与英语写作助教｜孙慕坤",
+      description: "孙慕坤为 Sharon Lyman 教授在武汉开展的 SUU 英语写作课程提供口译与教学支持，并用 Excel 整理课程记录与成绩。",
     },
     campus: {
       title: '校园整合传播｜孙慕坤',
@@ -765,27 +765,27 @@ const zh = {
     'walter_disney.webp': '华特·迪士尼音乐厅的金属曲面建筑',
   },
   copy: {
-    '#teaching-nav .brand': '孙慕坤 · 英语写作助教',
+    "#teaching-nav .brand": "孙慕坤 · 口译与教学",
     '#teaching-nav .links': '<a href="#teaching-context">背景</a><a href="#teaching-classroom">课堂</a><a href="#teaching-operations">课程运营</a><a href="#teaching-bridge">文化桥梁</a><a href="#teaching-media">现场</a>',
     '#teaching-nav .compact-nav summary': '章节',
     '#teaching-nav .compact-links': '<a href="#teaching-context">背景</a><a href="#teaching-classroom">课堂</a><a href="#teaching-operations">课程运营</a><a href="#teaching-bridge">文化桥梁</a><a href="#teaching-media">现场</a><a href="../index.html#experience">返回作品集</a>',
     '#teaching-nav .back-link': '← 返回作品集',
-    '#teaching-hero h1': '英语写作助教',
+    "#teaching-hero h1": "口译与英语写作助教",
     '#teaching-hero .detail-eyebrow': '南犹他大学 · 实习',
-    '#teaching-hero .detail-deck': '在武汉为服务 200 多名学生的英语写作课程提供课堂与课程支持。',
+    "#teaching-hero .detail-deck": "为 SUU 在武汉开展的英语写作课程提供双语课堂支持，并用 Excel 整理 200 多名学生的课程记录。",
     '#teaching-hero .detail-meta': '2026 年 5 月 · 中国武汉',
     '#teaching-context h2': '角色与背景',
-    '#teaching-context p': '我担任南犹他大学（SUU）与武汉轻工大学合作开展的英语写作课程助教。SUU 教授为广告学与工程管理两个专业、共 5 个班的 200 多名学生集中授课，我负责课堂支持与课程运营。',
+    "#teaching-context p": "2026 年 5 月，我为 Sharon Lyman 教授在武汉轻工大学开展的南犹他大学英语写作课程担任口译与助教。课程面向 200 多名学生，我负责课堂沟通支持，并整理课程记录与成绩。",
     '#teaching-classroom h2': '课堂支持',
     '#teaching-classroom p': '我提供中英双语支持，并在教授与学生之间担任口译：帮学生理解教授，也帮教授理解中国课堂的沟通方式。由于学生英语水平跨度很大，我会针对不同水平调整讲解与反馈。',
     '#teaching-operations h2': '课程运营',
-    '#teaching-operations p': '我负责考勤管理，按教授设计的评分标准批改作业（拼写、结构、语法、逻辑）并给出书面反馈，独立使用 Excel 完成期末成绩表与课程完成情况报告的制作。',
+    "#teaching-operations p": "我使用 Excel 整理 200 多名学生的课程记录与成绩，管理考勤，按教授的评分标准批改作业并给出书面反馈，制作期末成绩表与课程完成情况报告。",
     '#teaching-bridge h2': '文化桥梁',
-    '#teaching-bridge p': '教授是第一次来中国。我帮她缩小“不熟悉”带来的距离感——教她用支付宝坐地铁、带她尝中国食物、参观黄鹤楼、规划庐山游。我的体会是：交流顺畅的关键不在于 100% 听懂，而在于友好开放的态度与认真聆听、积极回应的姿态。',
+    "#teaching-bridge p": "在中英文之间传递信息，让我学会放慢速度，确认双方实际理解了什么。遇到直译无法传达的语境时，我会先多问一个问题，再作解释。这份工作既需要翻译，也需要认真听取双方的意思。",
     '#teaching-media h2': '课堂现场',
     '#teaching-media .detail-media:nth-child(1) figcaption': '英语写作课程 · 武汉',
     '#teaching-media .detail-media:nth-child(2) figcaption': '教学阶段结束后 · 2026 年 5 月',
-    '#teaching-footer span': '孙慕坤 · 英语写作助教',
+    "#teaching-footer span": "孙慕坤 · 口译与教学",
     '#teaching-footer a': "返回工作经历",
     '#nav .brand': '孙慕坤<span class="en">Mukun&nbsp;Sun</span>',
     '#nav .links': '<a href="#about">关于</a><a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
@@ -1028,11 +1028,11 @@ const zh = {
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
     '#experience .experience-row--vertex .experience-role': 'Reddit 社群运营实习生',
     '#experience .experience-row--vertex .experience-dates': "2026.06 - 2026.08 · 中国深圳",
-    '#experience .experience-row--vertex .experience-responsibility': '我负责消费科技、智能家居、生活方式、金融与家庭等方向的 Reddit 海外社区运营，根据 Subreddit 规则、受众语境与可见表现调整内容和互动方式。',
+    "#experience .experience-row--vertex .experience-responsibility": "我运营 5 个 Reddit 账号、覆盖 15 个以上社区，根据各社区规则与受众语言调整内容和互动。",
     '#experience .experience-row--xinyuyou .experience-company': '新昱佑（YUYO INNOVATIONS LLC）',
     '#experience .experience-row--xinyuyou .experience-role': '海外达人营销实习生',
     '#experience .experience-row--xinyuyou .experience-dates': '2025.06 - 2025.08 · 中国深圳',
-    '#experience .experience-row--xinyuyou .experience-responsibility': "我为 Pawreto 开发美国与加拿大的创作者合作，推进赠品、佣金与付费合作，负责付费项目的外联、内容审核与进度跟进，并根据触达、互动和单位结果成本调整达人筛选。",
+    "#experience .experience-row--xinyuyou .experience-responsibility": "我为 Pawreto 开发美国与加拿大的创作者合作，推进赠品、佣金与付费项目，最多同时跟进 14 项合作。付费项目中，我审核了 20 多条视频，并根据触达、互动和单位结果成本调整达人筛选。",
     '#experience .experience-row--xinyuyou .experience-proofline': "联系 <strong>476</strong> 位创作者 · <strong>45</strong> 次合作 · <strong>8</strong> 次付费合作",
     '#experience .experience-row--vertex .experience-proofline': "<strong>793K</strong> 浏览量 · <strong>3,548</strong> 次赞同 · 单帖最高 <strong>406K</strong> 浏览",
     '#experience .experience-row--suu-tutoring .experience-link': '查看辅导中心工作 <span aria-hidden="true">→</span>',
@@ -1101,7 +1101,7 @@ const zh = {
     '#edu .edu-entry:nth-child(1) .edu-dates': "2027 年 4 月毕业",
     '#edu .edu-entry:nth-child(1) .edu-degree': '战略传播理学学士（在读）',
     '#edu .edu-entry:nth-child(1) .edu-secondary': '辅修 · 商业分析',
-    '#edu .edu-entry:nth-child(1) .edu-focus': "相关课程：社交媒体策略、战略传播活动、数据分析 I、应用线性模型。",
+    "#edu .edu-entry:nth-child(1) .edu-focus": "相关课程：社交媒体策略、战略传播活动、数据分析。数据管理为春季计划课程。",
     '#outside-work .stitle': '工作之外',
     '#outside-work .section-intro': '音乐、摄影与旅行经历，塑造了我观察人与氛围的方式。',
     '#outside-work .outside-card:nth-child(1) strong': '音乐',
@@ -1172,12 +1172,12 @@ en.metadata.tutoring = {"title": "Lead Marketing and Media · SUU Tutoring Cente
 en.navLabels.tutoring = "Internship navigation";
 Object.assign(en.copy, {
   "#tutoring-hero": "<h1>Lead Marketing and Media</h1><div class=\"detail-hero-copy\"><p class=\"tutoring-organization\">Southern Utah University<br>Tutoring Center</p><p class=\"detail-deck\">Social content, campus campaigns, and student research for SUU's academic support services.</p><p class=\"detail-meta\">Sep 2026 - Present · Cedar City, Utah</p><ul class=\"tutoring-skills\"><li>Content planning</li><li>Campaign coordination</li><li>Graphic design</li><li>Short-form video</li><li>Survey analysis</li></ul></div>",
-  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">Overview</h2><div class=\"detail-section-copy\"><p>I plan and produce Instagram and Facebook content for the Southern Utah University Tutoring Center. I take content from topic selection through design, copy, scheduling, and publishing, with center staff approving each piece before it goes live.</p><p>Alongside campus promotions, I collected and analyzed 300+ responses to a student portal survey and developed recommendations for student outreach.</p></div>",
-  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">What I do</h2><dl class=\"tutoring-list\"><div><dt>Content calendar</dt><dd>Plan weekly topics and a publishing schedule for Instagram and Facebook around tutoring services, study skills, and tutor spotlights.</dd></div><div><dt>Graphic design</dt><dd>Design posts and Stories in Canva, making service information and study advice easy to scan.</dd></div><div><dt>Short-form video</dt><dd>Edit Reels in CapCut and adapt the pacing and format for social viewing.</dd></div><div><dt>Copy & publishing</dt><dd>Write captions, prepare platform-specific content, and schedule and publish approved posts in Meta Business Suite.</dd></div><div><dt>Review collaboration</dt><dd>Send content to center staff for review, incorporate their feedback, and publish only after approval.</dd></div><div><dt>Performance review</dt><dd>Use Meta Insights to track views, reach, interactions, and follows, then use those signals to inform the next content calendar.</dd></div></dl>",
-  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">September-October snapshot</h2><p class=\"tutoring-period\">Meta Insights · Sep-Oct 2026</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">55K</p><h3>Views</h3><p>Account-level content views during the reporting period.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">21K</p><h3>Reach</h3><p>Reported audience reach during the same period.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">2.1K</p><h3>Content interactions</h3><p>Recorded interactions with account content.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">~80%</p><h3>Views from non-followers</h3><p>Approximately four in five views came from outside the existing follower base.</p></article></div><p class=\"tutoring-source\">Account-level Meta Insights totals for September-October 2026, rounded for this summary.</p><details class=\"tutoring-history\"><summary>Earlier snapshot · September 1-28, 2026</summary><p>20.3K views, 9K reach, 772 interactions, 77.4% of views from non-followers, and 39 new follows. The original views total was Instagram 19,411 + Facebook 870 = 20,281. Meta Insights reported 77.3% interaction growth and 69.6% new-follow growth compared with the previous month. These figures belong to the earlier reporting window.</p></details>",
+  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">Overview</h2><div class=\"detail-section-copy\"><p>I plan and produce Instagram and Facebook content for the Southern Utah University Tutoring Center. I take content from topic selection through design, copy, scheduling, and publishing, with center staff approving each piece before it goes live.</p><p>I also designed and analyzed a student survey on tutoring awareness and barriers, then presented the findings and outreach recommendations to center leadership.</p></div>",
+  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">What I do</h2><dl class=\"tutoring-list\"><div><dt>Content calendar</dt><dd>Plan weekly topics and a publishing schedule for Instagram and Facebook around tutoring services, study skills, and tutor spotlights.</dd></div><div><dt>Graphic design</dt><dd>Design posts and Stories in Canva, making service information and study advice easy to scan.</dd></div><div><dt>Short-form video</dt><dd>Edit Reels in CapCut and adapt the pacing and format for social viewing.</dd></div><div><dt>Copy & publishing</dt><dd>Write captions, prepare platform-specific content, and schedule and publish approved posts in Meta Business Suite.</dd></div><div><dt>Review collaboration</dt><dd>Send content to center staff for review, incorporate their feedback, and publish only after approval.</dd></div><div><dt>Performance review</dt><dd>Use Meta Insights to track views, reach, interactions, and follows, then use those signals to inform the next content calendar.</dd></div><div><dt>Campus promotions</dt><dd>Coordinate midterm outreach and Halloween event planning with center staff, from campaign design to material distribution.</dd></div><div><dt>Student research</dt><dd>Design and analyze a survey on tutoring awareness and barriers; present findings and outreach recommendations to center leadership.</dd></div></dl>",
+  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">Since September 2026</h2><p class=\"tutoring-period\">Cumulative account snapshot</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">76.8K</p><h3>Views</h3><p>Cumulative account-level content views since September 2026.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">26K</p><h3>Reach</h3><p>Reported audience reach over the same cumulative period.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">2.8K</p><h3>Content interactions</h3><p>Recorded interactions with account content.</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">~80%</p><h3>Views from non-followers</h3><p>Approximately four in five views came from outside the existing follower base.</p></article></div><p class=\"tutoring-source\">Account-level totals reported in my current résumé and LinkedIn profile; checked November 11, 2026.</p><details class=\"tutoring-history\"><summary>Earlier account snapshots</summary><p><strong>September-October 2026:</strong> 55K views, 21K reach, 2.1K interactions, and approximately 80% of views from non-followers.</p><p><strong>September 1-28, 2026:</strong> 20.3K views, 9K reach, 772 interactions, 77.4% of views from non-followers, and 39 new follows. The original views total was Instagram 19,411 + Facebook 870 = 20,281. Meta Insights reported 77.3% interaction growth and 69.6% new-follow growth compared with the previous month. These figures belong to their earlier reporting windows.</p></details>",
   "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">Tools</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>Graphic design · Posts and Stories</dd></div><div><dt>CapCut</dt><dd>Video editing · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>Scheduling, publishing & performance analysis</dd></div></dl>",
   "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">Selected designs</h2><p>Service promotion and practical guidance for students, shown as original designs.</p></div><div class=\"tutoring-designs\"><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/work-smarter.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/work-smarter.webp\" width=\"1080\" height=\"1350\" alt=\"Tutoring Center promotional poster: Stop working harder. Start working smarter\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Service promotion · Design original</figcaption></figure><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/drop-in-guide.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/drop-in-guide.webp\" width=\"1080\" height=\"1350\" alt=\"Drop-in tutoring check-in guide with three steps and practical tips\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Check-in guide · Design original</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">Explore the full Tutoring Center collection →</a><details class=\"screenshot-reserve\"><summary>Post & Insights screenshots</summary><p>Published-post and Meta Insights screenshots will be added here.</p><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Published post</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel or Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Views & reach · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Interactions & follows · Meta Insights</figcaption></figure></div></details>",
-  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">Key learnings</h2><div class=\"tutoring-learnings\"><article><h3>Read the metrics together.</h3><p>Views, interactions, and service use measure different things. I use the content metrics to plan the next round without treating exposure as evidence of completed tutoring appointments.</p></article><article><h3>Write for students who are new to the center.</h3><p>With roughly 80% of views coming from non-followers, each post needs to explain what the service offers, who it helps, and what a student can do next.</p></article><article><h3>Listen beyond the feed.</h3><p>The student portal survey adds another perspective on student needs. I use that distinction when developing outreach recommendations.</p></article></div>",
+  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">Key learnings</h2><div class=\"tutoring-learnings\"><article><h3>Read the metrics together.</h3><p>Views, interactions, and service use measure different things. I use the content metrics to plan the next round without treating exposure as evidence of completed tutoring appointments.</p></article><article><h3>Write for students who are new to the center.</h3><p>With roughly 80% of views coming from non-followers, each post needs to explain what the service offers, who it helps, and what a student can do next.</p></article><article><h3>Listen beyond the feed.</h3><p>The survey on tutoring awareness and barriers helps explain what students know about the service and what may keep them from using it. I presented the findings with outreach recommendations.</p></article></div>",
   "#tutoring-nav .brand": "Mukun Sun · Tutoring Center",
   "#tutoring-nav .links": "<a href=\"#tutoring-overview\">Overview</a><a href=\"#tutoring-responsibilities\">What I do</a><a href=\"#tutoring-results\">Results</a><a href=\"#tutoring-tools\">Tools</a><a href=\"#tutoring-gallery\">Gallery</a><a href=\"#tutoring-learnings\">Learnings</a>",
   "#tutoring-nav .compact-nav summary": "Sections",
@@ -1187,9 +1187,9 @@ Object.assign(en.copy, {
   "#tutoring-footer a": "Return to experience",
   "#experience .experience-row--suu-tutoring .experience-company": "Southern Utah University · Tutoring Center",
   "#experience .experience-row--suu-tutoring .experience-dates": "Sep 2026 - Present · Cedar City, Utah",
-  "#experience .experience-row--suu-tutoring .experience-responsibility": "I create social content and coordinate campus promotions with staff review before publishing. I also analyzed 300+ student portal survey responses and developed outreach recommendations.",
-  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>55K</strong> views · <strong>2.1K</strong> interactions",
-  "#experience .experience-row--suu-tutoring .experience-report-period": "Account snapshot · Sep-Oct 2026"
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "I create graphics and short videos, coordinate campus promotions with staff review before publishing, and research tutoring awareness and barriers. I presented survey findings and outreach recommendations to center leadership.",
+  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>76.8K</strong> views · <strong>26K</strong> reach · <strong>2.8K</strong> interactions",
+  "#experience .experience-row--suu-tutoring .experience-report-period": "Account totals since Sep 2026 · Profile snapshot checked Nov 11, 2026",
 });
 Object.assign(en.attributes, {
   "#tutoring-nav .lang-switch": {
@@ -1207,12 +1207,12 @@ zh.metadata.tutoring = {"title": "营销与媒体 · SUU Tutoring Center | 孙�
 zh.navLabels.tutoring = "实习详情导航";
 Object.assign(zh.copy, {
   "#tutoring-hero": "<h1>营销与媒体负责人</h1><div class=\"detail-hero-copy\"><p class=\"tutoring-organization\">南犹他大学<br>Tutoring Center（学业辅导中心）</p><p class=\"detail-deck\">为 SUU 学业支持服务制作社交内容、协调校园推广并开展学生调研。</p><p class=\"detail-meta\">2026.09 至今 · 美国犹他州锡达城</p><ul class=\"tutoring-skills\"><li>内容策划</li><li>活动推广</li><li>平面设计</li><li>短视频剪辑</li><li>问卷分析</li></ul></div>",
-  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">岗位概览</h2><div class=\"detail-section-copy\"><p>我负责南犹他大学 Tutoring Center 的 Instagram 与 Facebook 内容，从选题、设计、文案到排期与发布，在上线前由中心工作人员审核。</p><p>除校园推广外，我还收集并分析了 300 多份学生门户问卷答复，并形成学生沟通与推广建议。</p></div>",
-  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">工作职责</h2><dl class=\"tutoring-list\"><div><dt>内容日历</dt><dd>围绕辅导服务、学习技巧与辅导员介绍，制定 Instagram 和 Facebook 每周选题与发布计划。</dd></div><div><dt>平面设计</dt><dd>使用 Canva 制作图文与 Stories，让服务信息和学习建议便于快速阅读。</dd></div><div><dt>短视频</dt><dd>使用 CapCut 剪辑 Reels，根据社交媒体观看场景调整节奏与内容形式。</dd></div><div><dt>文案与发布</dt><dd>撰写文案，根据平台整理内容，在 Meta Business Suite 中排期并发布已获批的帖子。</dd></div><div><dt>审核协作</dt><dd>发布前将内容提交中心工作人员审核，根据反馈修改，获批后才发布。</dd></div><div><dt>数据复盘</dt><dd>通过 Meta Insights 跟踪浏览量、触达、互动与新增关注，用这些数据指导下一轮内容计划。</dd></div></dl>",
-  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">9-10 月数据快照</h2><p class=\"tutoring-period\">Meta Insights · 2026 年 9-10 月</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">55K</p><h3>浏览量</h3><p>统计期间账号内容累计获得的浏览量。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">21K</p><h3>触达</h3><p>同一统计期间报告的受众触达。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">2.1K</p><h3>内容互动</h3><p>账号内容获得的互动。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">~80%</p><h3>非粉丝浏览占比</h3><p>约五分之四的浏览来自现有粉丝之外。</p></article></div><p class=\"tutoring-source\">2026 年 9-10 月 Meta Insights 账号级数据，展示值经过取整。</p><details class=\"tutoring-history\"><summary>较早快照 · 2026 年 9 月 1-28 日</summary><p>20.3K 浏览量、9K 触达、772 次互动、77.4% 非粉丝浏览占比和 39 位新增关注。原始浏览量为 Instagram 19,411 + Facebook 870 = 20,281。Meta Insights 显示互动较上月增长 77.3%，新增关注增长 69.6%。这些数字属于较早的统计窗口。</p></details>",
+  "#tutoring-overview": "<h2 id=\"tutoring-overview-title\">岗位概览</h2><div class=\"detail-section-copy\"><p>我负责南犹他大学 Tutoring Center 的 Instagram 与 Facebook 内容，从选题、设计、文案到排期与发布，在上线前由中心工作人员审核。</p><p>我还设计并分析了有关学生对辅导服务认知及使用障碍的调查，向中心管理团队汇报结果与推广建议。</p></div>",
+  "#tutoring-responsibilities": "<h2 id=\"tutoring-responsibilities-title\">工作职责</h2><dl class=\"tutoring-list\"><div><dt>内容日历</dt><dd>围绕辅导服务、学习技巧与辅导员介绍，制定 Instagram 和 Facebook 每周选题与发布计划。</dd></div><div><dt>平面设计</dt><dd>使用 Canva 制作图文与 Stories，让服务信息和学习建议便于快速阅读。</dd></div><div><dt>短视频</dt><dd>使用 CapCut 剪辑 Reels，根据社交媒体观看场景调整节奏与内容形式。</dd></div><div><dt>文案与发布</dt><dd>撰写文案，根据平台整理内容，在 Meta Business Suite 中排期并发布已获批的帖子。</dd></div><div><dt>审核协作</dt><dd>发布前将内容提交中心工作人员审核，根据反馈修改，获批后才发布。</dd></div><div><dt>数据复盘</dt><dd>通过 Meta Insights 跟踪浏览量、触达、互动与新增关注，用这些数据指导下一轮内容计划。</dd></div><div><dt>校园推广</dt><dd>与中心工作人员协调期中推广和万圣节活动筹备，从活动设计推进到物料分发。</dd></div><div><dt>学生调研</dt><dd>设计并分析有关辅导服务认知与使用障碍的调查，向中心管理团队汇报发现与推广建议。</dd></div></dl>",
+  "#tutoring-results": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-results-title\">2026 年 9 月起的累计数据</h2><p class=\"tutoring-period\">账号累计数据快照</p></div><div class=\"tutoring-metrics\"><article class=\"tutoring-metric\"><p class=\"metric-number\">76.8K</p><h3>浏览量</h3><p>2026 年 9 月起的账号内容累计浏览量。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">26K</p><h3>触达</h3><p>同一累计统计范围内报告的受众触达。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">2.8K</p><h3>内容互动</h3><p>账号内容获得的累计互动。</p></article><article class=\"tutoring-metric\"><p class=\"metric-number\">~80%</p><h3>非粉丝浏览占比</h3><p>约五分之四的浏览来自现有粉丝之外。</p></article></div><p class=\"tutoring-source\">账号级累计数据，来自当前简历与 LinkedIn 资料，核对于 2026 年 11 月 11 日。</p><details class=\"tutoring-history\"><summary>较早的账号数据快照</summary><p><strong>2026 年 9-10 月：</strong>55K 浏览量、21K 触达、2.1K 次互动，约 80% 的浏览来自非粉丝。</p><p><strong>2026 年 9 月 1-28 日：</strong>20.3K 浏览量、9K 触达、772 次互动、77.4% 非粉丝浏览占比和 39 位新增关注。原始浏览量为 Instagram 19,411 + Facebook 870 = 20,281。Meta Insights 显示互动较上月增长 77.3%，新增关注增长 69.6%。这些数字属于各自较早的统计窗口。</p></details>",
   "#tutoring-tools": "<h2 id=\"tutoring-tools-title\">工具</h2><dl class=\"tutoring-list tutoring-tools\"><div><dt>Canva</dt><dd>平面设计 · 图文与 Stories</dd></div><div><dt>CapCut</dt><dd>短视频剪辑 · Reels</dd></div><div><dt>Meta Business Suite / Meta Insights</dt><dd>排期、发布与数据分析</dd></div></dl>",
   "#tutoring-gallery": "<div class=\"tutoring-section-head\"><h2 id=\"tutoring-gallery-title\">设计作品</h2><p>面向学生的服务宣传与操作指引，以下展示设计原稿。</p></div><div class=\"tutoring-designs\"><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/work-smarter.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/work-smarter.webp\" width=\"1080\" height=\"1350\" alt=\"辅导中心宣传海报：别再只是更努力，开始更聪明地学习\" loading=\"lazy\" decoding=\"async\"></a><figcaption>服务宣传 · 设计原稿</figcaption></figure><figure class=\"detail-media\"><a class=\"media-button\" href=\"../assets/visual_work/tutoring/drop-in-guide.webp\" data-enlarge><img src=\"../assets/visual_work/tutoring/drop-in-guide.webp\" width=\"1080\" height=\"1350\" alt=\"Drop-in tutoring 签到流程与实用提示海报\" loading=\"lazy\" decoding=\"async\"></a><figcaption>签到指引 · 设计原稿</figcaption></figure></div><a class=\"tutoring-design-link\" href=\"visual-work.html#visual-tutoring-work\">查看完整 Tutoring Center 系列 →</a><details class=\"screenshot-reserve\"><summary>帖子与 Insights 截图</summary><p>实际发布的帖子与数据截图将在这里补充。</p><div class=\"tutoring-screenshots\"><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>已发布图文</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>Reel 或 Story</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>浏览与触达 · Meta Insights</figcaption></figure><figure><div class=\"screenshot-placeholder\"><span>TODO: replace with screenshot</span></div><figcaption>互动与新增关注 · Meta Insights</figcaption></figure></div></details>",
-  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">工作中的体会</h2><div class=\"tutoring-learnings\"><article><h3>把不同指标放在一起看。</h3><p>浏览、互动与服务使用是不同的指标。我用内容数据安排下一轮传播，不把曝光直接当成已完成的辅导预约。</p></article><article><h3>为第一次接触中心的学生写内容。</h3><p>约 80% 的浏览来自非粉丝，因此每条帖子都需要说清服务提供什么、适合谁，以及学生下一步可以怎么做。</p></article><article><h3>也听取信息流之外的反馈。</h3><p>学生门户问卷提供了了解学生需求的另一种视角，也为推广建议提供依据。</p></article></div>",
+  "#tutoring-learnings": "<h2 id=\"tutoring-learnings-title\">工作中的体会</h2><div class=\"tutoring-learnings\"><article><h3>把不同指标放在一起看。</h3><p>浏览、互动与服务使用是不同的指标。我用内容数据安排下一轮传播，不把曝光直接当成已完成的辅导预约。</p></article><article><h3>为第一次接触中心的学生写内容。</h3><p>约 80% 的浏览来自非粉丝，因此每条帖子都需要说清服务提供什么、适合谁，以及学生下一步可以怎么做。</p></article><article><h3>也听取信息流之外的反馈。</h3><p>有关辅导服务认知与使用障碍的调查，帮助我了解学生知道什么，以及哪些因素可能影响他们使用服务。我将调查发现与推广建议一并汇报。</p></article></div>",
   "#tutoring-nav .brand": "孙慕坤 · Tutoring Center",
   "#tutoring-nav .links": "<a href=\"#tutoring-overview\">概览</a><a href=\"#tutoring-responsibilities\">职责</a><a href=\"#tutoring-results\">成果</a><a href=\"#tutoring-tools\">工具</a><a href=\"#tutoring-gallery\">作品</a><a href=\"#tutoring-learnings\">体会</a>",
   "#tutoring-nav .compact-nav summary": "目录",
@@ -1222,9 +1222,9 @@ Object.assign(zh.copy, {
   "#tutoring-footer a": "返回实习经历",
   "#experience .experience-row--suu-tutoring .experience-company": "南犹他大学 · Tutoring Center",
   "#experience .experience-row--suu-tutoring .experience-dates": "2026.09 至今 · 美国犹他州锡达城",
-  "#experience .experience-row--suu-tutoring .experience-responsibility": "我制作社交内容、协调校园推广，并在发布前交由中心工作人员审核。我还收集并分析了 300 多份学生门户问卷答复，形成学生沟通与推广建议。",
-  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>55K</strong> 浏览量 · <strong>2.1K</strong> 次互动",
-  "#experience .experience-row--suu-tutoring .experience-report-period": "账号数据快照 · 2026 年 9-10 月"
+  "#experience .experience-row--suu-tutoring .experience-responsibility": "我制作平面内容和短视频、协调校园推广，并在发布前交由中心工作人员审核。我还设计并分析了有关学生对辅导服务认知及使用障碍的调查，向中心管理团队汇报结果与推广建议。",
+  "#experience .experience-row--suu-tutoring .experience-proofline": "<strong>76.8K</strong> 浏览量 · <strong>26K</strong> 触达 · <strong>2.8K</strong> 次互动",
+  "#experience .experience-row--suu-tutoring .experience-report-period": "2026 年 9 月起的账号累计数据 · 资料核对于 2026 年 11 月 11 日",
 });
 Object.assign(zh.attributes, {
   "#tutoring-nav .lang-switch": {
@@ -1337,7 +1337,7 @@ Object.assign(zh.attributes, {
 
 // Current resume sync: October 26, 2026. New selectors are stable across row ordering.
 Object.assign(en.copy, {
-  "#about .about-tools": "My toolkit includes Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel for reporting.",
+  "#about .about-tools": "I use Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel PivotTables and VLOOKUP for reporting. My toolkit also includes Google Analytics and Meta Business Suite.",
   "#edu .edu-record": "SUU GPA: 3.66/4.0 · Dean's List, Spring 2026",
   "#projects .project-row--microloud .project-copy strong": "Microloud",
   "#projects .project-row--microloud .project-copy span": "Developing an AI-powered marketing tool to help artists with limited budgets attract potential clients.",
@@ -1370,7 +1370,7 @@ Object.assign(en.metadata, {
 });
 Object.assign(en.navLabels, {"microloud":"Project navigation","tutoring":"Experience navigation"});
 Object.assign(zh.copy, {
-  "#about .about-tools": "工具方面，我使用 Python 清理、汇总和可视化数据，使用 R 进行线性回归与可视化，并用 Excel 整理报告。",
+  "#about .about-tools": "我使用 Python 清理、汇总和可视化数据，使用 R 进行线性回归与可视化，并用 Excel 数据透视表和 VLOOKUP 整理报告。常用工具还包括 Google Analytics 和 Meta Business Suite。",
   "#edu .edu-record": "SUU GPA：3.66/4.0 · 2026 年春季院长名单",
   "#projects .project-row--microloud .project-copy strong": "Microloud",
   "#projects .project-row--microloud .project-copy span": "正在开发以 AI 为基础的营销工具，帮助预算有限的艺术家吸引潜在客户。",
@@ -1412,6 +1412,52 @@ Object.assign(zh.attributes, {
   '#microloud-nav .lang-switch': { 'aria-label': '语言' },
   '#microloud-nav .compact-nav summary': { 'aria-label': '打开项目导航' },
   '#microloud-nav .compact-links': { 'aria-label': '项目目录' }
+});
+
+// LinkedIn and supplied resume checked November 11, 2026. Disclosure roots stay intact on language changes.
+Object.assign(en.copy, {
+  "#experience .experience-previous summary": "Earlier experience",
+  "#earlier-teaching .previous-title": "Interpreter and Teaching Assistant",
+  "#earlier-teaching .previous-meta": "Southern Utah University · May 2026 · Wuhan, China",
+  "#earlier-teaching .previous-description": "Interpreted for Professor Sharon Lyman's English writing program at Wuhan Polytechnic University and organized course records and scores for 200+ students in Excel.",
+  "#earlier-dominos .previous-title": "Team Member · Domino's",
+  "#earlier-dominos .previous-meta": "Part-time · Feb 2025 - May 2025 · Wuhan, China",
+  "#earlier-dominos .previous-description": "Worked across front-of-house service, kitchen, and delivery, handling orders during busy shifts alongside full-time study.",
+  "#edu .edu-credentials summary": "SUU competency credentials",
+  "#edu .credential-context": "Issued by Southern Utah University, September-November 2026. Select a credential to view its public record.",
+  "#credential-engaged-influencer": "Engaged Influencer",
+  "#credential-task-prioritization": "Task Prioritization",
+  "#credential-versatile-communicator": "Versatile Communicator",
+  "#credential-dedication": "Dedication",
+  "#credential-appropriate-inquiry": "Appropriate Inquiry",
+  "#credential-attention-to-detail": "Attention to Detail",
+  "#credential-organized-communicator": "Organized Communicator",
+  "#credential-present-prepared": "Present &amp; Prepared",
+  "#edu .credential-list .credential-issued--sep": "Sep 2026",
+  "#edu .credential-list .credential-issued--oct": "Oct 2026",
+  "#edu .credential-list .credential-issued--nov": "Nov 2026"
+});
+Object.assign(zh.copy, {
+  "#experience .experience-previous summary": "更早的工作经历",
+  "#earlier-teaching .previous-title": "口译与英语写作助教",
+  "#earlier-teaching .previous-meta": "南犹他大学 · 2026 年 5 月 · 中国武汉",
+  "#earlier-teaching .previous-description": "为 Sharon Lyman 教授在武汉轻工大学开展的英语写作课程提供口译支持，并使用 Excel 整理 200 多名学生的课程记录与成绩。",
+  "#earlier-dominos .previous-title": "门店团队成员 · Domino's",
+  "#earlier-dominos .previous-meta": "兼职 · 2025 年 2-5 月 · 中国武汉",
+  "#earlier-dominos .previous-description": "在全日制学习期间兼顾门店工作，轮岗前台、后厨与配送，处理订单并应对繁忙班次。",
+  "#edu .edu-credentials summary": "SUU 能力认证",
+  "#edu .credential-context": "由南犹他大学于 2026 年 9-11 月颁发。点击名称可查看公开认证记录。",
+  "#credential-engaged-influencer": "Engaged Influencer<span class=\"credential-translation\">积极参与与影响力</span>",
+  "#credential-task-prioritization": "Task Prioritization<span class=\"credential-translation\">任务优先级管理</span>",
+  "#credential-versatile-communicator": "Versatile Communicator<span class=\"credential-translation\">多场景沟通</span>",
+  "#credential-dedication": "Dedication<span class=\"credential-translation\">投入与坚持</span>",
+  "#credential-appropriate-inquiry": "Appropriate Inquiry<span class=\"credential-translation\">有效提问</span>",
+  "#credential-attention-to-detail": "Attention to Detail<span class=\"credential-translation\">注重细节</span>",
+  "#credential-organized-communicator": "Organized Communicator<span class=\"credential-translation\">条理化沟通</span>",
+  "#credential-present-prepared": "Present &amp; Prepared<span class=\"credential-translation\">专注与准备</span>",
+  "#edu .credential-list .credential-issued--sep": "2026 年 9 月",
+  "#edu .credential-list .credential-issued--oct": "2026 年 10 月",
+  "#edu .credential-list .credential-issued--nov": "2026 年 11 月"
 });
 
 export const LANGUAGES = { en, zh };

@@ -8,7 +8,7 @@ test('education copy keeps coursework concise and emphasizes the Business Analyt
   assert.match(html, /class="edu-dates">Apr 2027<\/p>/);
   const education = html.match(/<section[^>]+id="edu"[\s\S]*?<\/section>/)?.[0] ?? '';
   assert.doesNotMatch(education, /Aug 2025|May 2027|Wuhan Polytechnic University/);
-  assert.match(html, /Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics I, Applied Linear Models/);
+  assert.match(html, /Relevant coursework: Social Media Strategies, Strategic Campaigns, Data Analytics\. Data Management is planned spring coursework/);
   assert.match(html, /SUU GPA: 3\.66\/4\.0/);
   assert.doesNotMatch(html, /Degree awarded upon completion at SUU/);
   assert.match(html, /<p class="edu-secondary">Minor · Business Analytics<\/p>/);

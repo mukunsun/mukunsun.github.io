@@ -21,8 +21,8 @@ test('homepage presents three current resume roles in reverse chronological orde
   assert.match(section, /<h2 class="experience-role">Lead Marketing and Media<\/h2>/);
   assert.match(suuTutoring, /Sep 2026 - Present · Cedar City, Utah/);
   assert.match(suuTutoring, /href="projects\/suu-tutoring-center.html"/);
-  assert.match(suuTutoring, /55K[\s\S]*2\.1K/);
-  assert.match(suuTutoring, /300\+/);
+  assert.match(suuTutoring, /76\.8K[\s\S]*26K[\s\S]*2\.8K/);
+  assert.match(suuTutoring, /tutoring awareness and barriers/);
   assert.doesNotMatch(suuTutoring, /Coming soon|experience-status/);
   assert.doesNotMatch(section, /Southern Utah University × Wuhan Polytechnic University/);
   assert.match(section, /Jun 2026 - Aug 2026 · Shenzhen, China/);
@@ -46,7 +46,7 @@ test('archived teaching-assistant copy stays within the approved evidence bounda
   assert.match(LANGUAGES.zh.copy['#teaching-operations p'], /Excel/);
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '#experience .experience-row--teaching .experience-company'), false);
   assert.equal(LANGUAGES.en.copy['#experience .experience-row--vertex .experience-dates'], 'Jun 2026 - Aug 2026 · Shenzhen, China');
-  assert.doesNotMatch(`${section}\n${bilingualCopy}`, /Sharon Lyman|\$450|airfare|82%|96%|30%/i);
+  assert.doesNotMatch(`${section}\n${bilingualCopy}`, /\$450|airfare|82%|96%|30%/i);
 });
 
 test('each internship has stable scoped translation selectors', () => {
@@ -101,12 +101,12 @@ test('Teaching Assistant detail route remains available independently of the pri
   ]);
   assert.doesNotMatch(home, /experience-row--teaching/);
   assert.match(detail, /<html lang="en" class="no-js" data-language="en" data-page="teaching">/);
-  assert.match(detail, /<title>Teaching Assistant \| Mukun Sun<\/title>/);
+  assert.match(detail, /<title>Interpreter and Teaching Assistant \| Mukun Sun<\/title>/);
   assert.match(detail, /id="teaching-context"[\s\S]*?id="teaching-classroom"[\s\S]*?id="teaching-operations"[\s\S]*?id="teaching-bridge"[\s\S]*?id="teaching-media"/);
-  for (const fact of ['May 2026', 'Wuhan, China', '200+ students', 'bilingual support', 'graded assignments', 'Excel', 'Yellow Crane Tower']) {
+  for (const fact of ['May 2026', 'Wuhan, China', '200+ students', 'bilingual support', 'graded assignments', 'Excel', 'Sharon Lyman']) {
     assert.match(detail, new RegExp(fact.replace('+', '\\+'), 'i'));
   }
   assert.match(detail, /professor_classroom\.webp" width="1279" height="1706"/);
   assert.match(detail, /with_professor\.webp" width="1706" height="1279"/);
-  assert.doesNotMatch(detail, /Sharon Lyman|\$450|airfare/i);
+  assert.doesNotMatch(detail, /\$450|airfare/i);
 });
