@@ -1,0 +1,18 @@
+.microloud-logo{
+  display:block;
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:3/2;
+  border:1px solid var(--color-rule);
+}
+.microloud-logo img{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:calc(400% / 3);
+  max-width:none;
+  height:auto;
+  transform:translate(-50%,-46.5%);
+}
+#projects .microloud-logo img{filter:none;transition:none;}
+.microloud-identity{min-width:0;align-self:center;}

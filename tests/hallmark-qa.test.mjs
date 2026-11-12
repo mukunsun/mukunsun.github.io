@@ -77,7 +77,7 @@ test('hero, responsive image track, and display wrapping satisfy layout gates', 
   assert.match(home, /\.hero\{[^}]*padding-block:clamp\(104px,8vw,128px\) 32px;/);
   assert.match(home, /\.about-top\{[^}]*grid-template-columns:minmax\(0,1\.35fr\) minmax\(240px,\.65fr\)/);
   assert.match(home, /\.experience-row\{[^}]*grid-template-columns:minmax\(0,\.72fr\) minmax\(0,1\.28fr\)/);
-  assert.match(home, /\.project-row\{[^}]*grid-template-columns:minmax\(0,1\.2fr\) minmax\(220px,\.55fr\) auto/);
+  assert.match(home, /\.project-row\{[^}]*grid-template-columns:minmax\(0,1\.2fr\) minmax\(220px,\.55fr\) 160px/);
   assert.match(home, /\.outside-grid\{[^}]*grid-template-columns:minmax\(0,1\.6fr\) minmax\(240px,1fr\)/);
   assert.match(home, /h1,h2,h3,[^{}]*\{min-width:0;overflow-wrap:anywhere;\}/);
   assert.match(detail, /h1,h2,h3\{min-width:0;overflow-wrap:anywhere;\}/);

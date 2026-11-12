@@ -261,13 +261,13 @@ html.js.motion-desktop .marquee .track{animation:scroll 34s linear infinite;}
 /* ---------- PROJECT INDEX ---------- */
 .section-intro{max-width:62ch;margin-top:20px;}
 .project-list{border-top:1px solid var(--line-2);}
-.project-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.55fr) auto;gap:clamp(20px,4vw,60px);align-items:center;min-height:44px;padding-block:clamp(28px,4vw,44px);border-bottom:1px solid var(--line-2);}
+.project-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.55fr) 160px;gap:clamp(20px,4vw,60px);align-items:center;min-height:44px;padding-block:clamp(28px,4vw,44px);border-bottom:1px solid var(--line-2);}
 .project-copy{display:grid;gap:12px;min-width:0;}
 .project-copy strong{font-family:var(--serif);font-size:clamp(22px,3vw,34px);line-height:1.25;color:var(--ink);font-weight:600;}
 .project-copy>span{font-size:14.5px;line-height:1.7;color:var(--ink-2);max-width:58ch;}
 .project-preview{display:block;border:1px solid var(--line);background:var(--bg);}
 .project-preview img{width:100%;height:auto;filter:brightness(var(--effect-project-brightness)) saturate(var(--effect-project-saturation));transition:filter .45s var(--ease);}
-.project-action{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
+.project-action{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);white-space:nowrap;justify-self:end;}
 @media (hover:hover) and (pointer:fine) and (min-width:40.001rem) and (prefers-reduced-motion:no-preference){
   .project-row{position:relative;}
   .project-row::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
@@ -344,10 +344,8 @@ html.js.motion-desktop [data-reveal="line"]::after,html.js.motion-desktop .lineg
   .scrollcue .bar::after{animation:none!important;transform:none!important;}
   .pframe img,.portrait:hover .pframe img,.contact-action:active,[data-parallax] img{transform:none!important;transition:none!important;}
 }
-.project-row--microloud{grid-template-columns:minmax(0,1fr) auto;}
 .project-status{font-size:var(--text-sm);line-height:1.6;color:var(--muted);}
 .edu-record{font-size:var(--text-sm);line-height:1.7;color:var(--ink-2);}
-@media(max-width:40rem){.project-row--microloud{grid-template-columns:minmax(0,1fr);}}
 /* Native profile records inherit the gallery typography and palette. */
 .profile-disclosure{margin-top:24px;color:var(--ink-2);font-size:14px;line-height:1.75;}
 .profile-disclosure summary{min-height:44px;padding-block:12px;cursor:pointer;color:var(--ink);}
@@ -370,6 +368,7 @@ a.previous-title{text-decoration:underline;text-decoration-color:var(--line-2);t
 .previous-description{max-width:64ch;color:var(--ink-2);font-size:15px;line-height:1.85;}
 @media(max-width:680px){.previous-item{grid-template-columns:minmax(0,1fr);gap:12px;}.previous-item h3{font-size:20px;}}
 </style>
+<link rel="stylesheet" href="assets/project/microloud/logo.css?v=20261111-logo">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -514,6 +513,7 @@ a.previous-title{text-decoration:underline;text-decoration-color:var(--line-2);t
     <div class="project-list">
       <a class="project-row project-row--microloud" href="projects/microloud.html" data-reveal>
         <span class="project-copy"><strong>Microloud</strong><span>Developing an AI-powered marketing tool to help artists with limited budgets attract potential clients.</span><small class="project-status">In development · Jul 2026 - Present</small></span>
+        <span class="project-preview microloud-logo"><img src="assets/project/microloud/logo.png" width="2000" height="2000" alt="Microloud. Make a little go loud." loading="lazy" decoding="async"></span>
         <span class="project-action">Explore the project <span aria-hidden="true">→</span></span>
       </a>
 
