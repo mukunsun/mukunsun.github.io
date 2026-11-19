@@ -16,22 +16,20 @@ test('homepage follows the approved two-layer index order', () => {
   assert.doesNotMatch(home, /id="campus-music"|id="visual-work"/);
 });
 
-test('hero and About use the approved concise identity copy', () => {
-  assert.match(home, /<div class="role[^>]*>Marketing, partnerships, and campaign analysis\.<\/div>/);
-  assert.doesNotMatch(home, /class="roleen"/);
-  assert.match(home, /I study Strategic Communication at Southern Utah University/);
-  assert.match(home, /Outside work, I play upright and electric bass/);
+test('the merged introduction uses the approved identity and keeps tool details in Education', () => {
+  const intro = home.match(/<header class="hero"[^>]*>[\s\S]*?<\/header>/)?.[0] ?? '';
+  assert.match(intro, /<h1 id="hero-title">Mukun Sun<\/h1>/);
+  assert.match(intro, /<p class="role">Marketing &amp; Communication<\/p>/);
+  assert.match(intro, /I create social content, coordinate campaigns and turn audience research into practical recommendations\./);
+  assert.doesNotMatch(intro, /Python|Google Analytics|class="hero-foot"/);
+  assert.match(home, /<section[^>]+id="edu"[^>]*>[\s\S]*?<p class="edu-focus edu-tools">I use Python/);
   assert.doesNotMatch(home, /capability-ledger|capability-row|<h3>Workflow<\/h3>/);
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
-  const about = [
-    LANGUAGES.zh.copy['#about .about-intro'],
-    LANGUAGES.zh.copy['#about .about-personal'],
-  ].join('\n');
-  assert.doesNotMatch(about, /社区运营/);
+  assert.equal(LANGUAGES.zh.copy['.hero .role'], '营销传播');
+  assert.doesNotMatch(LANGUAGES.zh.copy['.hero-description'], /社区运营/);
 });
 
 test('homepage name uses a restrained display scale', () => {
-  const rule = home.match(/\.hero h1\{[^}]*font-size:clamp\((\d+)px,([\d.]+)vw,(\d+)px\);/);
+  const rule = home.match(/\.hero h1\s*\{[^}]*font-size:\s*clamp\((\d+)px,\s*([\d.]+)vw,\s*(\d+)px\);/);
   assert.ok(rule, 'homepage hero title scale');
   assert.ok(Number(rule[2]) < 12, 'viewport scale stays below poster-like sizing');
   assert.ok(Number(rule[3]) <= 136, 'desktop title remains understated');

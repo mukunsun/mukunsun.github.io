@@ -10,7 +10,7 @@ test('the site uses the locked Professional Personal design system', async () =>
   ]);
   assert.match(design, /English-first/);
   assert.match(design, /Locked Professional Personal Contract \(2026-07-29\)/);
-  assert.match(design, /about → experience → projects → education → outside work → contact/i);
+  assert.match(design, /introduction → work experience → projects → education → outside work → contact/i);
   assert.match(design, /60\/40 positioning/i);
   assert.match(design, /second-layer routes/i);
   assert.match(design, /asymmetric Outside Work/i);

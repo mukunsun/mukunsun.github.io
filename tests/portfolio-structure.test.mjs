@@ -4,7 +4,9 @@ import { readFile } from 'node:fs/promises';
 
 test('homepage separates personal-site content into compact sections', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  for (const id of ['about', 'experience', 'projects', 'edu', 'outside-work', 'contact']) {
+  assert.match(html, /<header[^>]+id="top"[^>]*>[\s\S]*?<div class="hero-copy" id="about">[\s\S]*?<\/header>/);
+  assert.doesNotMatch(html, /<section[^>]+id="about"/);
+  for (const id of ['experience', 'projects', 'edu', 'outside-work', 'contact']) {
     assert.match(html, new RegExp(`<section[^>]+id="${id}"`));
   }
   for (const href of [

@@ -17,10 +17,10 @@ test('education copy keeps coursework concise and emphasizes the Business Analyt
   assert.doesNotMatch(html, /style="width:\s*(?:550|578)px\s*!important/);
 });
 
-test('About copy is concise and the homepage links directly to outside-work routes', async () => {
+test('the homepage introduction is concise and outside-work routes remain direct', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /I study Strategic Communication at Southern Utah University/);
-  assert.match(html, /Outside work, I play upright and electric bass/);
+  assert.match(html, /<p class="hero-education">Strategic Communication at Southern Utah University\.<\/p>/);
+  assert.match(html, /<a class="hero-primary" href="#experience">Explore my work/);
   assert.match(html, /href="music\.html"/);
   assert.match(html, /href="photography\.html"/);
   assert.match(html, /href="travel\.html"/);

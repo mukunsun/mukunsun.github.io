@@ -15,7 +15,7 @@ test('homepage presents three current resume roles in reverse chronological orde
   assert.ok(section.indexOf('experience-row--suu-tutoring') < section.indexOf('experience-row--vertex'));
   assert.ok(section.indexOf('experience-row--vertex') < section.indexOf('experience-row--xinyuyou'));
   assert.doesNotMatch(section, /experience-row--teaching/);
-  assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Experience<\/h2>/);
+  assert.match(section, /<div class="shead">[\s\S]*?<h2 class="stitle"[^>]*>Work Experience<\/h2>/);
   assert.doesNotMatch(section, /Internship Experience|class="placard"/);
   assert.match(section, /<p class="experience-company">Southern Utah University · Tutoring Center<\/p>/);
   assert.match(section, /<h2 class="experience-role">Lead Marketing and Media<\/h2>/);
@@ -62,7 +62,7 @@ test('each internship has stable scoped translation selectors', () => {
       assert.ok(Object.hasOwn(LANGUAGES.zh.copy, selector), selector);
     }
   }
-  assert.equal(LANGUAGES.en.copy['#experience .stitle'], 'Experience');
+  assert.equal(LANGUAGES.en.copy['#experience .stitle'], 'Work Experience');
   assert.equal(LANGUAGES.zh.copy['#experience .stitle'], '工作经历');
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '#experience .placard'), false);
 });

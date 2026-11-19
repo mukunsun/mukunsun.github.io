@@ -117,7 +117,7 @@ test('small-screen navigation prioritizes section and language controls over the
     readFile(new URL('detail.css', rootUrl), 'utf8'),
     readFile(new URL('projects/vertex-reddit.html', rootUrl), 'utf8'),
   ]);
-  assert.match(home, /@media \(max-width:30rem\)\{\.nav \.brand\{display:none;\}/);
+  assert.match(home, /@media \(max-width:22rem\)\{\.nav \.brand\{display:none;\}/);
   assert.match(detail, /@media\(max-width:30rem\)\{\.detail-nav \.brand\{display:none;\}/);
   assert.match(vertex, /@media \(max-width:30rem\)\{\.nav \.brand\{display:none;\}/);
 });

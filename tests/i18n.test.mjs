@@ -32,8 +32,8 @@ test('English uses straight quotes while Chinese uses full-width punctuation', (
 test('both languages cover the same selector set and corrected facts', () => {
   assert.deepEqual(Object.keys(LANGUAGES.en.copy), Object.keys(LANGUAGES.zh.copy));
   assert.deepEqual(Object.keys(LANGUAGES.en.attributes), Object.keys(LANGUAGES.zh.attributes));
-  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Marketing, partnerships, and campaign analysis.');
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
+  assert.equal(LANGUAGES.en.copy['.hero .role'], 'Marketing &amp; Communication');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'], '营销传播');
   assert.equal(Object.hasOwn(LANGUAGES.en.copy, '.hero .roleen'), false);
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '.hero .roleen'), false);
   assert.ok(!Object.hasOwn(LANGUAGES.en.copy, '.hero .ghost'));
@@ -115,7 +115,7 @@ test('second-layer dictionaries use the approved bilingual claims', () => {
 });
 
 test('Chinese professional labels use 社群 while subreddit contexts retain 社区', () => {
-  assert.equal(LANGUAGES.zh.copy['.hero .role'].replace(/<[^>]*>/g, ''), '营销传播、创作者合作与数据分析。');
+  assert.equal(LANGUAGES.zh.copy['.hero .role'], '营销传播');
   assert.equal(LANGUAGES.zh.copy['#experience .experience-row--vertex .experience-role'], 'Reddit 社群运营实习生');
   assert.equal(Object.hasOwn(LANGUAGES.zh.copy, '#experience .experience-row--teaching .experience-company'), false);
   assert.equal(LANGUAGES.zh.copy['#edu .edu-entry:nth-child(1) .edu-school'], '南犹他大学');
@@ -306,14 +306,15 @@ test('footer, language, proof, and compact-navigation labels are bilingual', () 
 
 test('language module declares all public page keys and the shared cache key', () => {
   assert.deepEqual(PAGE_KEYS, ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring', 'microloud']);
-  assert.equal(I18N_CACHE_KEY, '20261111-profile');
+  assert.equal(I18N_CACHE_KEY, '20261118-intro');
 });
 
 test('homepage dictionaries own the approved first-layer selectors', () => {
   const selectors = [
-    '#about .about-intro',
-    '#about .about-personal',
-    '#about .about-tools',
+    '.hero-description',
+    '.hero-education',
+    '.hero-primary',
+    '#edu .edu-tools',
     '#experience .experience-row--vertex .experience-proofline',
     '#projects .project-row--microloud .project-copy strong',
     '#projects .project-row--campus .project-copy strong',
@@ -393,10 +394,10 @@ test('applyLanguage uses page-specific metadata in both languages', () => {
   }
 });
 
-test('homepage navigation presents the four approved first-layer destinations in both languages', async () => {
+test('homepage navigation presents the three first-layer destinations in both languages', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  const english = '<a href="#about">About</a><a href="#experience">Work</a><a href="#outside-work">Outside Work</a><a href="#contact">Contact</a>';
-  const chinese = '<a href="#about">关于</a><a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>';
+  const english = '<a href="#experience">Work</a><a href="#outside-work">Outside work</a><a href="#contact">Contact</a>';
+  const chinese = '<a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>';
   assert.match(html, new RegExp(english.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.equal(LANGUAGES.en.copy['#nav .links'], english);
   assert.equal(LANGUAGES.en.copy['#nav .compact-links'], english);
@@ -444,6 +445,9 @@ test('page exposes a bilingual control and direct outside-work gateway media', a
   const travelImage = '#outside-work .outside-card:nth-child(3) img';
   assert.equal(LANGUAGES.en.attributes[travelImage].alt, 'Bryce Canyon amphitheater in warm afternoon light');
   assert.equal(LANGUAGES.zh.attributes[travelImage].alt, '午后暖光下的布莱斯峡谷露天剧场');
+  const portrait = '#top .hero-portrait img';
+  assert.equal(LANGUAGES.en.attributes[portrait].alt, 'Portrait of Mukun Sun');
+  assert.equal(LANGUAGES.zh.attributes[portrait].alt, '孙慕坤肖像');
   assert.doesNotMatch(html, /<details class="visual-archive"/);
-  assert.match(html, /src="i18n\.js\?v=20261111-profile"/);
+  assert.match(html, /src="i18n\.js\?v=20261118-intro"/);
 });

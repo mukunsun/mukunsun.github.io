@@ -25,8 +25,8 @@ test('both routes enforce clipping, mobile controls, wrapping, exact cache impor
     assert.match(html, /<html\s+lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js\?v=/g) ?? []).length, 1);
   }
-  assert.match(home, /<script type="module" src="i18n\.js\?v=20261111-profile"><\/script>/);
-  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20261111-profile"><\/script>/);
+  assert.match(home, /<script type="module" src="i18n\.js\?v=20261118-intro"><\/script>/);
+  assert.match(detail, /<script type="module" src="\.\.\/i18n\.js\?v=20261118-intro"><\/script>/);
   assert.match(i18n, /export const DEFAULT_LANGUAGE = 'en';/);
   assert.match(i18n, /export function getInitialLanguage\(storage = globalThis\.localStorage\)/);
   assert.match(i18n, /storage\?\.getItem\(STORAGE_KEY\)/);
@@ -38,7 +38,7 @@ test('outside-work detail routes load one shared versioned module and cache-bust
     assert.match(html, /<html lang="en"[^>]*data-language="en"/);
     assert.equal((html.match(/i18n\.js/g) ?? []).length, 1, `${name}: one i18n script URL`);
     const version = name === 'travel' ? '20261024-travel' : '20260930-preview';
-    assert.match(html, /src="i18n\.js\?v=20261111-profile"/);
+    assert.match(html, /src="i18n\.js\?v=20261118-intro"/);
     assert.match(html, new RegExp('href="detail\\.css\\?v=' + version + '"'));
     assert.match(html, new RegExp('src="detail\\.js\\?v=' + version + '"'));
   }
@@ -60,18 +60,18 @@ test('detail routes collapse at 60rem and 40rem while coarse pointers change onl
   assert.match(css, /@media\(max-width:40rem\)\{[\s\S]*?html\[data-page="travel"\] \.outside-hero-media img\{[^}]*object-position:/);
 });
 
-test('homepage collapses every asymmetric editorial track at 60rem', async () => {
+test('homepage collapses the introduction and editorial tracks at narrow widths', async () => {
   const [home] = await readContracts();
-  assert.match(home, /@media\(max-width:(?:60|85)rem\)\{\.about-top,\.experience-row,\.experience-detail,\.project-row,\.outside-grid\{grid-template-columns:minmax\(0,1fr\);\}\}/);
+  assert.match(home, /@media \(max-width: 42rem\)\s*\{\s*\.hero-layout\s*\{\s*grid-template-columns:\s*minmax\(0, 1fr\);/);
+  assert.match(home, /@media\(max-width:(?:60|85)rem\)\{\.experience-row,\.experience-detail,\.project-row,\.outside-grid\{grid-template-columns:minmax\(0,1fr\);\}\}/);
   assert.doesNotMatch(home, /\.project-row summary\{/);
 });
 
-test('reduced motion exposes content and suppresses grain, spotlight, parallax, and spatial transforms', async () => {
+test('reduced motion exposes content and suppresses grain, spotlight, and spatial transforms', async () => {
   const [home, detail] = await readContracts();
   assert.match(home, /@media\s*\(prefers-reduced-motion:\s*reduce\)\{[\s\S]*?\[data-reveal\][^}]*opacity:1!important;transform:none!important;transition:none!important;/);
   assert.match(home, /\.grain,\.spot,\.progress\{display:none!important;\}/);
-  assert.match(home, /\[data-parallax\] img\{transform:none!important;transition:none!important;\}/);
-  assert.match(home, /\.pframe img,[^}]*transform:none!important;transition:none!important;/);
+  assert.match(home, /\.contact-action:active\{transform:none!important;transition:none!important;\}/);
   assert.match(detail, /@media\s*\(prefers-reduced-motion:\s*reduce\)\{html\{scroll-behavior:auto;\}\.progress\{display:none!important;\}\}/);
 });
 
@@ -87,7 +87,7 @@ test('reveals remain observer-driven below the fold with no-IO and no-JS fallbac
 test('compact navigation preserves 44px section access through 60rem and on coarse pointers', async () => {
   const [home, detail] = await readContracts();
   assert.match(home, /<details class="compact-nav">[\s\S]*?<summary[^>]*>Sections<\/summary>[\s\S]*?class="compact-links"[^>]*role="navigation"/);
-  assert.match(home, /class="compact-links"[^>]*[\s\S]*?href="#about"[\s\S]*?href="#contact"/);
+  assert.match(home, /class="compact-links"[^>]*>[\s\S]*?href="#experience"[\s\S]*?href="#outside-work"[\s\S]*?href="#contact"/);
   assert.match(detail, /<details class="compact-nav">[\s\S]*?<summary[^>]*>Sections<\/summary>[\s\S]*?class="compact-links"[^>]*role="navigation"/);
   assert.match(detail, /class="compact-links"[^>]*[\s\S]*?href="#vertex-scope"[\s\S]*?href="#vertex-community"/);
   assert.doesNotMatch(detail, /href="#vertex-attribution"/);
@@ -101,17 +101,14 @@ test('compact navigation preserves 44px section access through 60rem and on coar
 
 test('homepage preserves the required desktop motion contracts without obsolete counters', async () => {
   const [home] = await readContracts();
-  assert.match(home, /html\.js\.motion-desktop \.reveal-up\{opacity:0;transform:translateY\(40px\);\}/);
-  assert.match(home, /hero\.classList\.add\('loaded'\)/);
+  assert.doesNotMatch(home, /reveal-up|hero\.classList\.add\('loaded'\)/);
   assert.match(home, /\.project-row::after\{[^}]*transform:scaleX\(0\);/);
   assert.match(home, /\.project-row:hover::after,[^}]*\.project-row:focus-visible::after[^}]*transform:scaleX\(1\);/);
   assert.match(home, /html\.js\.motion-desktop \[data-reveal="img"\]\{transform:translateY\(46px\) scale\(1\.04\);\}/);
   assert.match(home, /@media\s*\(pointer:fine\) and \(min-width:40\.001rem\) and \(prefers-reduced-motion:no-preference\)\{\.progress\{display:block;\}\}/);
   assert.match(home, /\.progress\{[^}]*width:100%;[^}]*transform:scaleX\(0\);[^}]*transform-origin:left;/);
   assert.match(home, /html\.js\.motion-desktop \.spot\.on\{[^}]*opacity:1;/);
-  assert.match(home, /data-parallax="0\.03"/);
-  assert.match(home, /transform:translate3d\(0,var\(--parallax-y,0px\),0\) scale\(1\.08\)/);
-  assert.doesNotMatch(home, /data-count|startCount/);
+  assert.doesNotMatch(home, /data-count|startCount|\.marquee|class="marquee"|@keyframes\s+scroll\b/);
 });
 
 test('both routes react to live motion capability changes and gate progress writes', async () => {
@@ -130,11 +127,7 @@ test('both routes react to live motion capability changes and gate progress writ
   assert.match(home, /revealEls\.forEach\(function\(el\)\{el\.classList\.add\('in'\);\}\);/);
   assert.match(home, /cancelAnimationFrame\(spotlightFrame\)/);
   assert.match(home, /removeEventListener\('pointermove',onSpotlightMove\)/);
-  assert.match(home, /cancelAnimationFrame\(parallaxFrame\)/);
-  assert.match(home, /removeEventListener\('scroll',queueParallax\)/);
-  assert.match(home, /removeEventListener\('resize',queueParallax\)/);
   assert.match(home, /if\(spotlightListening\)return;/);
-  assert.match(home, /if\(parallaxListening\|\|!parallaxItems\.length\)return;/);
 });
 
 test('homepage spotlight animation settles instead of running forever', async () => {

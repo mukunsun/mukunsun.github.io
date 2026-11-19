@@ -1,6 +1,6 @@
 export const DEFAULT_LANGUAGE = 'en';
 export const STORAGE_KEY = 'portfolio-language';
-export const I18N_CACHE_KEY = '20261111-profile';
+export const I18N_CACHE_KEY = '20261118-intro';
 export const PAGE_KEYS = ['home', 'vertex', 'teaching', 'campus', 'hotel', 'visual', 'music', 'photography', 'travel', 'xinyuyou', 'tutoring', 'microloud'];
 
 const en = {
@@ -205,20 +205,15 @@ const en = {
     '#teaching-media .detail-media:nth-child(2) figcaption': 'After the teaching period · May 2026',
     "#teaching-footer span": "Mukun Sun · Interpreting & Teaching",
     '#teaching-footer a': 'Return to internship',
-    '#nav .brand': 'Mukun Sun<span class="en">孙慕坤</span>',
-    '#nav .links': '<a href="#about">About</a><a href="#experience">Work</a><a href="#outside-work">Outside Work</a><a href="#contact">Contact</a>',
+    '#nav .brand': 'Mukun Sun',
+    '#nav .links': '<a href="#experience">Work</a><a href="#outside-work">Outside work</a><a href="#contact">Contact</a>',
     '#nav .compact-nav summary': 'Sections',
-    '#nav .compact-links': '<a href="#about">About</a><a href="#experience">Work</a><a href="#outside-work">Outside Work</a><a href="#contact">Contact</a>',
+    '#nav .compact-links': '<a href="#experience">Work</a><a href="#outside-work">Outside work</a><a href="#contact">Contact</a>',
     '.hero h1': 'Mukun Sun',
-    '.hero .role': "Marketing, partnerships, and campaign analysis.",
-    '.hero-description': "I create social content, coordinate campaigns, and turn audience data into recommendations.",
-    '.hero-primary': 'View selected work <span aria-hidden="true">→</span>',
-    '.hero-secondary': 'Explore my experience',
-    '.hero-current': "<strong>Lead Marketing and Media · SUU Tutoring Center</strong><br>Cedar City, Utah · Sep 2026 - Present",
-    '.hero-personal': "Outside work, you'll find me on bass.",
-    '#about .stitle': 'About Me',
-    '#about .about-intro': "I study Strategic Communication at Southern Utah University, with a minor in Business Analytics, and graduate in April 2027. My work spans campus marketing, creator partnerships, and Reddit community operations.",
-    '#about .about-personal': 'Outside work, I play upright and electric bass in SUU ensembles, photograph places, and help bring concerts to life.',
+    '.hero .role': 'Marketing &amp; Communication',
+    '.hero-description': 'I create social content, coordinate campaigns and turn audience research into practical recommendations.',
+    '.hero-education': 'Strategic Communication at Southern Utah University.',
+    '.hero-primary': 'Explore my work <span aria-hidden="true">→</span>',
     '#vertex-nav .brand': 'Mukun Sun<span class="en">Vertex</span>',
     '#vertex-nav .links': '<a href="#vertex-context">Context</a><a href="#vertex-scope">Work</a><a href="#vertex-approach">How</a><a href="#vertex-data">Data</a><a href="#vertex-tooling">Tools</a><a href="#vertex-evidence">Numbers</a><a href="#vertex-community">Community</a>',
     '#vertex-nav .compact-nav summary': 'Sections',
@@ -440,7 +435,7 @@ const en = {
     "#travel-photo-kanab-garden figcaption": "A garden in the red-rock country",
     "#travel-photo-kanab-window figcaption": "The view outside",
     "#travel-photo-kanab-horse figcaption": "Woodwork in the sun",
-    '#experience .stitle': "Experience",
+    '#experience .stitle': 'Work Experience',
     '#experience .experience-row--suu-tutoring .experience-company': 'SUU - Tutoring Center',
     '#experience .experience-row--suu-tutoring .experience-role': "Lead Marketing and Media",
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
@@ -502,7 +497,6 @@ const en = {
         <p>The work spans broad-interest and vertical communities. I adapted research, content, and interaction to each subreddit's rules and audience language, and took part in the early setup of an official brand community from zero.</p>
         <ul class="community-list" aria-label="Community themes"><li>Consumer technology</li><li>Smart home</li><li>Gaming</li><li>Programming</li><li>Finance</li><li>Food &amp; drink</li><li>Parenting</li><li>Mental health</li><li>Relationships</li><li>Careers</li></ul>
       </div>`,
-    '.marquee .track': '<span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span><span>Community Operations<span class="mut">·</span>Teaching<span class="mut">·</span>Campaigns<span class="mut">·</span>Jazz Performance<span class="mut">·</span>Visual Communication<span class="mut">·</span></span>',
     '#projects .stitle': 'Projects',
     '#projects .section-intro': "An AI tool in development, campus campaign leadership, and selected event and visual work.",
     '#projects .project-row--campus .project-copy strong': "Campus Welcome &amp; New Year Events",
@@ -787,20 +781,15 @@ const zh = {
     '#teaching-media .detail-media:nth-child(2) figcaption': '教学阶段结束后 · 2026 年 5 月',
     "#teaching-footer span": "孙慕坤 · 口译与教学",
     '#teaching-footer a': "返回工作经历",
-    '#nav .brand': '孙慕坤<span class="en">Mukun&nbsp;Sun</span>',
-    '#nav .links': '<a href="#about">关于</a><a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
+    '#nav .brand': '孙慕坤',
+    '#nav .links': '<a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
     '#nav .compact-nav summary': '章节',
-    '#nav .compact-links': '<a href="#about">关于</a><a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
+    '#nav .compact-links': '<a href="#experience">工作</a><a href="#outside-work">工作之外</a><a href="#contact">联系</a>',
     '.hero h1': '孙慕坤',
-    '.hero .role': "<span class=\"role-phrase\">营销传播、</span><span class=\"role-phrase\">创作者合作</span><span class=\"role-phrase\">与数据分析。</span>",
-    '.hero-description': "制作社交内容、协调传播活动，并根据受众数据提出具体建议。",
-    '.hero-primary': '查看精选作品 <span aria-hidden="true">→</span>',
-    '.hero-secondary': '了解实习经历',
-    '.hero-current': "<strong>营销与媒体负责人 · SUU 辅导中心</strong><br>美国犹他州锡达城 · 2026 年 9 月至今",
-    '.hero-personal': '工作之外，我在乐团里演奏贝斯。',
-    '#about .stitle': '关于我',
-    '#about .about-intro': "我在南犹他大学学习战略传播，辅修商业分析，预计于 2027 年 4 月毕业。我的实践包括校园营销、创作者合作与 Reddit 社群运营。",
-    '#about .about-personal': '工作之外，我在 SUU 乐团演奏低音提琴和电贝斯，也拍摄城市与风景，参与音乐会策划。',
+    '.hero .role': '营销传播',
+    '.hero-description': '我制作社交内容、协调传播活动，并根据受众研究提出具体建议。',
+    '.hero-education': '就读于南犹他大学，主修战略传播。',
+    '.hero-primary': '查看我的作品 <span aria-hidden="true">→</span>',
     '#vertex-nav .brand': '孙慕坤<span class="en">Vertex</span>',
     '#vertex-nav .links': '<a href="#vertex-context">背景</a><a href="#vertex-scope">工作</a><a href="#vertex-approach">方法</a><a href="#vertex-data">数据</a><a href="#vertex-tooling">工具</a><a href="#vertex-evidence">数字</a><a href="#vertex-community">社区</a>',
     '#vertex-nav .compact-nav summary': '章节',
@@ -1022,7 +1011,7 @@ const zh = {
     "#travel-photo-kanab-garden figcaption": "红岩之间的院子",
     "#travel-photo-kanab-window figcaption": "框景里的红岩",
     "#travel-photo-kanab-horse figcaption": "阳光下的木马",
-    '#experience .stitle': "工作经历",
+    '#experience .stitle': '工作经历',
     '#experience .experience-row--suu-tutoring .experience-company': '南犹他大学 · Tutoring Center',
     '#experience .experience-row--suu-tutoring .experience-role': "营销与媒体负责人",
     '#experience .experience-row--vertex .experience-company': 'Vertex Marketing',
@@ -1084,7 +1073,6 @@ const zh = {
         <p>这些工作覆盖泛兴趣与垂直社区。我根据不同 Subreddit 的规则与受众语言调整调研、内容和互动方式，也参与一个品牌官方社区从 0 到 1 的早期搭建与管理。</p>
         <ul class="community-list" aria-label="社区主题"><li>消费科技</li><li>智能家居</li><li>游戏</li><li>编程</li><li>金融</li><li>食品饮料</li><li>母婴</li><li>心理健康</li><li>家庭关系</li><li>职业发展</li></ul>
       </div>`,
-    '.marquee .track': '<span>社群运营<span class="mut">·</span>教学<span class="mut">·</span>活动传播<span class="mut">·</span>爵士演奏<span class="mut">·</span>视觉传播<span class="mut">·</span></span><span>社群运营<span class="mut">·</span>教学<span class="mut">·</span>活动传播<span class="mut">·</span>爵士演奏<span class="mut">·</span>视觉传播<span class="mut">·</span></span>',
     '#projects .stitle': '项目',
     '#projects .section-intro': "开发中的 AI 工具、校园活动宣传统筹，以及活动与视觉作品精选。",
     '#projects .project-row--campus .project-copy strong': "校园迎新与新年活动",
@@ -1279,7 +1267,7 @@ Object.assign(zh.attributes, {
 });
 
 Object.assign(en.attributes, {
-  "#about .portrait img": {
+  "#top .hero-portrait img": {
     "alt": "Portrait of Mukun Sun"
   },
   ".experience-row--suu-tutoring .experience-media a": {
@@ -1297,7 +1285,7 @@ Object.assign(en.attributes, {
   }
 });
 Object.assign(zh.attributes, {
-  "#about .portrait img": {
+  "#top .hero-portrait img": {
     "alt": "孙慕坤肖像"
   },
   ".experience-row--suu-tutoring .experience-media a": {
@@ -1337,7 +1325,7 @@ Object.assign(zh.attributes, {
 
 // Current resume sync: October 26, 2026. New selectors are stable across row ordering.
 Object.assign(en.copy, {
-  "#about .about-tools": "I use Python for data cleaning, aggregation, and visualization; R for linear regression and visualization; and Excel PivotTables and VLOOKUP for reporting. My toolkit also includes Google Analytics and Meta Business Suite.",
+  "#edu .edu-tools": "I use Python to clean, summarize, and visualize data, R for linear regression and visualization, and Excel PivotTables and VLOOKUP for reporting. I also use Google Analytics and Meta Business Suite.",
   "#edu .edu-record": "SUU GPA: 3.66/4.0 · Dean's List, Spring 2026",
   "#projects .project-row--microloud .project-copy strong": "Microloud",
   "#projects .project-row--microloud .project-copy span": "Developing an AI-powered marketing tool to help artists with limited budgets attract potential clients.",
@@ -1370,7 +1358,7 @@ Object.assign(en.metadata, {
 });
 Object.assign(en.navLabels, {"microloud":"Project navigation","tutoring":"Experience navigation"});
 Object.assign(zh.copy, {
-  "#about .about-tools": "我使用 Python 清理、汇总和可视化数据，使用 R 进行线性回归与可视化，并用 Excel 数据透视表和 VLOOKUP 整理报告。常用工具还包括 Google Analytics 和 Meta Business Suite。",
+  "#edu .edu-tools": "我用 Python 清理、汇总和可视化数据，用 R 做线性回归和可视化，用 Excel 数据透视表和 VLOOKUP 整理报告。常用工具还包括 Google Analytics 和 Meta Business Suite。",
   "#edu .edu-record": "SUU GPA：3.66/4.0 · 2026 年春季院长名单",
   "#projects .project-row--microloud .project-copy strong": "Microloud",
   "#projects .project-row--microloud .project-copy span": "正在开发以 AI 为基础的营销工具，帮助预算有限的艺术家吸引潜在客户。",

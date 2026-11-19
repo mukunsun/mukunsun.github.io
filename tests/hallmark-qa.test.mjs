@@ -51,31 +51,30 @@ test('motion avoids layout-property transitions and stacked hover effects', () =
   assert.doesNotMatch(home, /\.experience-link:hover\{[^}]*gap:/);
 });
 
-test('Fragment Mono is loaded but restricted to the wordmark and compact evidence-number registers', () => {
+test('Fragment Mono is restricted to compact evidence numbers and the detail wordmark', () => {
   assert.match(tokens, /--font-mono:\s*'Fragment Mono',\s*ui-monospace/);
   for (const html of [home, detail]) {
     assert.match(html, /family=Fragment\+Mono:ital@0;1/);
   }
   const homeUses = inlineStyles(home).match(/font-family:var\(--mono\)/g) ?? [];
   const detailUses = inlineStyles(detail).match(/font-family:var\(--font-mono\)/g) ?? [];
-  assert.equal(homeUses.length, 2);
+  assert.equal(homeUses.length, 1);
   assert.equal(detailUses.length, 2);
-  assert.match(home, /html\[lang="zh"\] \.nav \.brand \.en\{font-family:var\(--mono\)/);
   assert.match(home, /\.experience-proofline strong\{[^}]*font-family:var\(--mono\)/);
   assert.match(detail, /html\[lang="zh"\] \.nav \.brand \.en\{font-family:var\(--font-mono\)/);
   assert.match(detail, /\.evidence-table strong\{font-family:var\(--font-mono\)/);
 });
 
-test('portrait parallax is mounted and consumed by a composited transform', () => {
-  assert.match(home, /<figure class="portrait" data-reveal="img" data-parallax="0\.03">/);
-  assert.match(home, /\.pframe img\{[^}]*transform:translate3d\(0,var\(--parallax-y,0px\),0\) scale\(1\.08\)/);
-  assert.match(home, /img\.style\.setProperty\('--parallax-y',offset\.toFixed\(1\)\+'px'\)/);
-  assert.match(home, /img\.style\.removeProperty\('--parallax-y'\)/);
+test('the original portrait loads directly in the static introduction', () => {
+  const intro = home.match(/<header class="hero"[^>]*>[\s\S]*?<\/header>/)?.[0] ?? '';
+  assert.match(intro, /<figure class="hero-portrait">\s*<img src="assets\/portrait\/portrait\.webp" width="900" height="1125" alt="Portrait of Mukun Sun" fetchpriority="high">/);
+  assert.doesNotMatch(intro, /data-reveal|loading="lazy"/);
+  assert.doesNotMatch(home, /data-parallax|parallaxFrame/);
 });
 
 test('hero, responsive image track, and display wrapping satisfy layout gates', () => {
-  assert.match(home, /\.hero\{[^}]*padding-block:clamp\(104px,8vw,128px\) 32px;/);
-  assert.match(home, /\.about-top\{[^}]*grid-template-columns:minmax\(0,1\.35fr\) minmax\(240px,\.65fr\)/);
+  assert.match(home, /\.hero\s*\{[^}]*font-family:\s*var\(--sans\)/);
+  assert.match(home, /\.hero-layout\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*1\.42fr\) minmax\(0,\s*1fr\)/);
   assert.match(home, /\.experience-row\{[^}]*grid-template-columns:minmax\(0,\.72fr\) minmax\(0,1\.28fr\)/);
   assert.match(home, /\.project-row\{[^}]*grid-template-columns:minmax\(0,1\.2fr\) minmax\(220px,\.55fr\) 160px/);
   assert.match(home, /\.outside-grid\{[^}]*grid-template-columns:minmax\(0,1\.6fr\) minmax\(240px,1fr\)/);
