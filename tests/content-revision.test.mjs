@@ -19,7 +19,7 @@ test('education copy keeps coursework concise and emphasizes the Business Analyt
 
 test('the homepage introduction is concise and outside-work routes remain direct', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /<p class="hero-education">Strategic Communication at Southern Utah University\.<\/p>/);
+  assert.match(html, /<p class="hero-education">Strategic Communication at Southern Utah University · Expected graduation April 2027<\/p>/);
   assert.match(html, /<a class="hero-primary" href="#experience">Explore my work/);
   assert.match(html, /href="music\.html"/);
   assert.match(html, /href="photography\.html"/);

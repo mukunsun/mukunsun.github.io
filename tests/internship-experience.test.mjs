@@ -21,7 +21,7 @@ test('homepage presents three current resume roles in reverse chronological orde
   assert.match(section, /<h2 class="experience-role">Lead Marketing and Media<\/h2>/);
   assert.match(suuTutoring, /Sep 2026 - Present · Cedar City, Utah/);
   assert.match(suuTutoring, /href="projects\/suu-tutoring-center.html"/);
-  assert.match(suuTutoring, /76\.8K[\s\S]*26K[\s\S]*2\.8K/);
+  assert.match(suuTutoring, /103\.8K[\s\S]*38K[\s\S]*4\.3K/);
   assert.match(suuTutoring, /tutoring awareness and barriers/);
   assert.doesNotMatch(suuTutoring, /Coming soon|experience-status/);
   assert.doesNotMatch(section, /Southern Utah University × Wuhan Polytechnic University/);
